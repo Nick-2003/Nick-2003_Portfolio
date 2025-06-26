@@ -2,3 +2,14 @@
 title: "inventory_system"
 ---
 
+## Problem Statement
+
+## Project Goals and Objectives
+
+## Process and Approach
+
+## Results
+
+## Impact and Reflection
+
+## Future Improvements

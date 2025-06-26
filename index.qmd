@@ -12,4 +12,25 @@ about:
       href: https://github.com/Nick-2003
 ---
 
-Enter your biography blurb here.
+Recent graduate at the University of British Columbia with a Bachelors in Mathematics and a Minor in Data Science. Seeking to enter the field of data analytics and product analysis.
+
+## Tools
+- Language: Python, R, SQL
+- Database: MySQL, MongoDB
+- Visualization: Power BI, Python (Altair)
+- Platforms and Interfaces: GitHub, Jupyter, Kaggle, R (Quarto)
+
+## Data Analytics Techniques
+- Bootstrap sampling
+- Central limit theorem
+- Two-sample t-test for mean differences
+- Two-sample F-test for differences in standard deviation
+- Linear regression
+- Data visualisation
+- Hypothesis testing
+- Reproducible workflows
+
+## Languages
+- English
+- Cantonese
+- Mandarin
