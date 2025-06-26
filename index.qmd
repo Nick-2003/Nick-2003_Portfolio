@@ -1,7 +1,15 @@
 ---
-title: "Nick-2003_Portfolio"
+title: "Tsun Li Nicholas Tam"
+# image: assets/img/headshot.jpeg # replace with the link to your headshot
+# about:
+#   template: jolla # see additional templates here https://quarto.org/docs/websites/website-about.html
+#   links:  # add links to your various social profiles
+#     - icon: linkedin
+#       text: LinkedIn
+#       href: https://www.linkedin.com/in/nicholas-tam-613048196/
+#     - icon: github
+#       text: Github
+#       href: https://github.com/Nick-2003
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Enter your biography blurb here.
