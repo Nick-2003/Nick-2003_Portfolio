@@ -1,23 +1,99 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Recent graduate at the University of British Columbia with a Bachelors in Mathematics and a Minor in Data Science. Seeking to enter the field of data analytics and product analysis."
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Tsun Li Nicholas Tam",
     "section": "",
-    "text": "Enter your biography blurb here."
+    "text": "Recent graduate at the University of British Columbia with a Bachelors in Mathematics and a Minor in Data Science. Seeking to enter the field of data analytics and product analysis."
+  },
+  {
+    "objectID": "index.html#tools",
+    "href": "index.html#tools",
+    "title": "Tsun Li Nicholas Tam",
+    "section": "Tools",
+    "text": "Tools\n\nLanguage: Python, R, SQL\nDatabase: MySQL, MongoDB\nVisualization: Power BI, Python (Altair)\nPlatforms and Interfaces: GitHub, Jupyter, Kaggle, R (Quarto)"
+  },
+  {
+    "objectID": "index.html#data-analytics-techniques",
+    "href": "index.html#data-analytics-techniques",
+    "title": "Tsun Li Nicholas Tam",
+    "section": "Data Analytics Techniques",
+    "text": "Data Analytics Techniques\n\nBootstrap sampling\nCentral limit theorem\nTwo-sample t-test for mean differences\nTwo-sample F-test for differences in standard deviation\nLinear regression\nData visualisation\nHypothesis testing\nReproducible workflows"
+  },
+  {
+    "objectID": "index.html#languages",
+    "href": "index.html#languages",
+    "title": "Tsun Li Nicholas Tam",
+    "section": "Languages",
+    "text": "Languages\n\nEnglish\nCantonese\nMandarin"
   },
   {
     "objectID": "education.html",
     "href": "education.html",
     "title": "Education",
     "section": "",
-    "text": "University of British Columbia Vancouver, Canada\nMajor: B.Sc. Mathematics, Minor: Data Science\nGPA: 3.315/4.3, GRE: 158V, 165Q\nSep 2021 - Apr 2025\nRelevant coursework: Calculus III and IV, Mathematical Proof, Matrix Algebra, Differential Equations I, Applied Linear Algebra, Linear Programming, Models of Computation, Software Construction, Statistics for Applications, Statistical Inference for Data Science, Statistical Modelling for Data Science, Applied Machine Learning, Data Relationships"
+    "text": "GPA: 3.315/4.3, GRE: 158V, 165Q\nSep 2021 - Apr 2025\nRelevant coursework: Calculus III and IV, Mathematical Proof, Matrix Algebra, Differential Equations I, Applied Linear Algebra, Linear Programming, Models of Computation, Software Construction, Statistics for Applications, Statistical Inference for Data Science, Statistical Modelling for Data Science, Applied Machine Learning, Data Relationships"
+  },
+  {
+    "objectID": "education.html#major-b.sc.-mathematics-minor-data-science",
+    "href": "education.html#major-b.sc.-mathematics-minor-data-science",
+    "title": "Education",
+    "section": "",
+    "text": "GPA: 3.315/4.3, GRE: 158V, 165Q\nSep 2021 - Apr 2025\nRelevant coursework: Calculus III and IV, Mathematical Proof, Matrix Algebra, Differential Equations I, Applied Linear Algebra, Linear Programming, Models of Computation, Software Construction, Statistics for Applications, Statistical Inference for Data Science, Statistical Modelling for Data Science, Applied Machine Learning, Data Relationships"
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#project-goals-and-objectives",
+    "href": "technical_projects/inventory_system.html#project-goals-and-objectives",
+    "title": "inventory_system",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "inventory_system"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#process-and-approach",
+    "href": "technical_projects/inventory_system.html#process-and-approach",
+    "title": "inventory_system",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "inventory_system"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#results",
+    "href": "technical_projects/inventory_system.html#results",
+    "title": "inventory_system",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "inventory_system"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#impact-and-reflection",
+    "href": "technical_projects/inventory_system.html#impact-and-reflection",
+    "title": "inventory_system",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "inventory_system"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#future-improvements",
+    "href": "technical_projects/inventory_system.html#future-improvements",
+    "title": "inventory_system",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "inventory_system"
+    ]
   }
 ]
