@@ -19,14 +19,16 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
       - href: education.qmd
         text: Education
       - href: professional_experience.qmd
         text: Professional Experience
       - href: technical_projects.qmd
         text: Technical Projects
+    
+    right:
+      - href: "assets/documents/Tsun Li Nicholas Tam Resume (2025) (V9).docx.pdf"
+        text: Resume
         
   sidebar:
     - title: Professional Experience

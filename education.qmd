@@ -2,9 +2,9 @@
 title: "Education"
 ---
 
-University of British Columbia	Vancouver, Canada
+# University of British Columbia	Vancouver, Canada
 
-Major: B.Sc. Mathematics, Minor: Data Science
+## Major: B.Sc. Mathematics, Minor: Data Science
 
 GPA: 3.315/4.3, GRE: 158V, 165Q	
 
