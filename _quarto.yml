@@ -7,10 +7,8 @@ project:
     #  List index.qmd first so that / redirects to it
     - /index.qmd
     - /*.qmd
-    # - individual_assignment
-    # - tutorials
-    # - project
-    # - install_instructions
+    - professional_experience
+    - technical_projects
 
 website:
   title: "Nick-2003_Portfolio"
@@ -24,6 +22,40 @@ website:
         text: About
       - href: education.qmd
         text: Education
+      - href: professional_experience.qmd
+        text: Professional Experience
+      - href: technical_projects.qmd
+        text: Technical Projects
+        
+  sidebar:
+    - title: Professional Experience
+      contents:
+        - professional_experience.qmd
+        - text: "---"
+        - professional_experience/luk_fook-2020.qmd
+        - professional_experience/sharp_point_limited-2022.qmd
+        - professional_experience/sharp_point_limited-2023.qmd
+
+    - title: Technical Projects
+      contents:
+        - technical_projects.qmd
+        - text: "---"
+        - technical_projects/inventory_system.qmd
+        - technical_projects/stat_inference_pm25.qmd
+        - technical_projects/stat_model_coronary.qmd
+        - technical_projects/url_to_sql.qmd
+        - technical_projects/data_viz_coronary.qmd
+        - technical_projects/jpmorgan_quantitative-forage.qmd
+        - technical_projects/bcg_genai-forage.qmd
+        - technical_projects/stat_relationships_breast_cancer.qmd
+        - technical_projects/urban_forest_viz.qmd
+        - technical_projects/insurance_sql.qmd
+        - technical_projects/diabetes_risk_report_workflow.qmd
+        - technical_projects/ea_software_eng-forage.qmd
+        - technical_projects/datacom_cloud-forage.qmd
+        - technical_projects/quantium_analytics-forage.qmd
+        - technical_projects/bcg_datasci-forage.qmd
+        - technical_projects/lloyds_datasci-forage.qmd
 
 format:
   html:
