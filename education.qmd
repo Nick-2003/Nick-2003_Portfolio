@@ -3,7 +3,11 @@ title: "Education"
 ---
 
 University of British Columbia	Vancouver, Canada
-Major: B.Sc. Mathematics, Minor: Data Science, 
+
+Major: B.Sc. Mathematics, Minor: Data Science
+
 GPA: 3.315/4.3, GRE: 158V, 165Q	
+
 Sep 2021 - Apr 2025
+
 Relevant coursework: Calculus III and IV, Mathematical Proof, Matrix Algebra, Differential Equations I, Applied Linear Algebra, Linear Programming, Models of Computation, Software Construction, Statistics for Applications, Statistical Inference for Data Science, Statistical Modelling for Data Science, Applied Machine Learning, Data Relationships
