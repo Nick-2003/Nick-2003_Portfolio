@@ -1,14 +1,29 @@
 project:
   type: website
   output-dir: docs
+  preview:
+    port: 3100
+  render:
+    #  List index.qmd first so that / redirects to it
+    - /index.qmd
+    - /*.qmd
+    # - individual_assignment
+    # - tutorials
+    # - project
+    # - install_instructions
 
 website:
   title: "Nick-2003_Portfolio"
+  page-navigation: true
+  repo-url: https://github.com/Nick-2003/Nick-2003_Portfolio
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
+      - href: education.qmd
+        text: Education
 
 format:
   html:
