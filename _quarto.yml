@@ -14,6 +14,7 @@ website:
   title: "Nick-2003_Portfolio"
   page-navigation: true
   repo-url: https://github.com/Nick-2003/Nick-2003_Portfolio
+  repo-actions: [edit, source, issue]
   navbar:
     left:
       - href: index.qmd
