@@ -2,7 +2,7 @@
 title: "Tsun Li Nicholas Tam"
 image: assets/images/tsun_li_nicholas_tam.jpg # replace with the link to your headshot
 about:
-  template: trestles # see additional templates here https://quarto.org/docs/websites/website-about.html
+  template: jolla # see additional templates here https://quarto.org/docs/websites/website-about.html
   links:  # add links to your various social profiles
     - icon: linkedin
       text: LinkedIn
