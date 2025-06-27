@@ -1,5 +1,11 @@
 ---
-title: "stat_model_coronary"
+title: "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/STAT-301-Group_4-Project_Final
 ---
 
 ## Problem Statement
