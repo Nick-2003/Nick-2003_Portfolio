@@ -2,3 +2,14 @@
 title: "diabetes_risk_report_workflow"
 ---
 
+## Problem Statement
+
+## Project Goals and Objectives
+
+## Process and Approach
+
+## Results
+
+## Impact and Reflection
+
+## Future Improvements
