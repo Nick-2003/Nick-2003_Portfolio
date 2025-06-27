@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>stat_inference_pm25 – Nick-2003_Portfolio</title>
+<title>Statistical Inference of PM2.5 Concentrations Report – Nick-2003_Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -124,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../technical_projects/stat_inference_pm25.html">stat_inference_pm25</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../technical_projects/stat_inference_pm25.html">Statistical Inference of PM2.5 Concentrations Report</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -152,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../technical_projects/stat_inference_pm25.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">stat_inference_pm25</span></a>
+ <span class="menu-text">Statistical Inference of PM2.5 Concentrations Report</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,21 +278,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link active" data-scroll-target="#problem-statement">Problem Statement</a></li>
-  <li><a href="#project-goals-and-objectives" id="toc-project-goals-and-objectives" class="nav-link" data-scroll-target="#project-goals-and-objectives">Project Goals and Objectives</a></li>
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link active" data-scroll-target="#problem-statement"><embed src="https://ubc-stat.github.io/stat-201/group-project.html" class="img-fluid"></a></li>
+  <li><a href="#goals-and-objectives" id="toc-goals-and-objectives" class="nav-link" data-scroll-target="#goals-and-objectives">Goals and Objectives</a></li>
   <li><a href="#process-and-approach" id="toc-process-and-approach" class="nav-link" data-scroll-target="#process-and-approach">Process and Approach</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#impact-and-reflection" id="toc-impact-and-reflection" class="nav-link" data-scroll-target="#impact-and-reflection">Impact and Reflection</a></li>
-  <li><a href="#future-improvements" id="toc-future-improvements" class="nav-link" data-scroll-target="#future-improvements">Future Improvements</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/stat_inference_pm25.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/stat_inference_pm25.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/stat_inference_pm25.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/stat_inference_pm25.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/Nick-2003/STAT-201-Group-46-Project"><i class="bi bi-github"></i>Project Code</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">stat_inference_pm25</h1>
+<h1 class="title">Statistical Inference of PM2.5 Concentrations Report</h1>
 </div>
 
 
@@ -281,22 +310,53 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
+<h2 class="anchored" data-anchor-id="problem-statement"><embed src="https://ubc-stat.github.io/stat-201/group-project.html" class="img-fluid"></h2>
+<p>Sourced from UBC STAT 201 website:</p>
+<p>“As in DSCI 100, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). However, this time, your project will focus on statistical inference. Remember, a fundamental theme in this course is that, in addition to drawing conclusions (such as computing an estimate), it’s critical to communicate the evidence and uncertainty associated with the conclusion. The latter is the main focus of this project and will manifest in an electronic report.</p>
+<p>The electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as appropriately answer an inferential question. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.</p>
+<p>For this project, you will need to formulate and answer an inferential question about a dataset of your choice. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team.”</p>
 </section>
-<section id="project-goals-and-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="project-goals-and-objectives">Project Goals and Objectives</h2>
+<section id="goals-and-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="goals-and-objectives">Goals and Objectives</h2>
+<p>For our research project, we have selected datasets of hourly observations of PM2.5 concentrations in Beijing, Shanghai, Guangzhou, Chengdu and Shenyang, along with other meteorological data for each city,from 1-1-2013 to 12-31-2015. These datasets were retrieved from the <a href="https://archive.ics.uci.edu/dataset/394/pm2+5+data+of+five+chinese+cities">PM2.5 Data of Five Chinese Cities Data Set</a> from UCI machine learning repository, and converted from a singular RAR file to CSV files online.</p>
+<p>Our project question is: #### “Given the sample data for cities in China, is there a significant decrease in PM2.5 concentration in the cities in China between 2013 and 2015?”</p>
+<p>Given the project question, let <span class="math inline">\(\mu_{2013}\)</span> and <span class="math inline">\(\mu_{2015}\)</span> be the mean PM2.5 concentration in 2013 and 2015 respectively for each location, and let <span class="math inline">\(\sigma_{2013}\)</span> and <span class="math inline">\(\sigma_{2015}\)</span> be the standard deviation of the PM2.5 concentration in 2013 and 2015 respectively for each location, with all values measured in <span class="math inline">\(g/m^3\)</span>. The following hypothesis tests will be conducted:</p>
+<p>Hypothesis test 1: - <span class="math inline">\(H_0: \mu_{2013} = \mu_{2015}\)</span> - <span class="math inline">\(H_1: \mu_{2013} &gt; \mu_{2015}\)</span></p>
+<p>Hypothesis test 2: - <span class="math inline">\(H_0: \sigma_{2013} = \sigma_{2015}\)</span> - <span class="math inline">\(H_1: \sigma_{2013} \neq \sigma_{2015}\)</span></p>
+<p>The differences in standard deviation for each location are tested to inform us of whether or not comparing the differences in means for each location is a reliable method for our investigation. For instance, if there is a significant difference in both the mean and standard deviation of PM2.5 concentrations, then the comparison of PM2.5 concentrations may be difficult due to differing distributions of data.</p>
 </section>
 <section id="process-and-approach" class="level2">
 <h2 class="anchored" data-anchor-id="process-and-approach">Process and Approach</h2>
+<ul>
+<li>Developed a team contract with my peers to reach an understanding of how we would conduct ourselves over the course of the project.</li>
+<li>Selected a group of datasets to conduct statistical inference analysis on variations in PM2.5 concentrations across 5 cities, and demonstrated that the datasets can be read from the web into R.</li>
+<li>Cleaned and wrangled the data into a tidy format by merging them into a single dataframe.</li>
+<li>Modelled histograms and boxplots to perform exploratory data analysis on the merged dataset to glean a better understanding of what results are to be expected.</li>
+<li>Conducted hypothesis tests for the statistical significance of differences in PM2.5 concentrations between 2013 and 2015, and their identified implications.</li>
+</ul>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>We conducted 2 hypothesis tests that were meant to give us a greater context for our analysis. As stated in the introduction, the differences in standard deviation for each location are tested to inform us of whether comparing the differences in means for each location would be a reliable method for our investigation.</p>
+<p>For hypothesis test 1, <span class="math inline">\(H_0\)</span> claims that mean PM2.5 concentrations between 2013 and 2015 are the same. From section 3.3, we reject <span class="math inline">\(H_0\)</span> for Chengdu, Guangzhou, and Shanghai, as they all have extremely small p-values (&lt; 0.05), and fail to reject it in Beijing and Shenyang. The differences in means shown by the 3 locations where we reject the <span class="math inline">\(H_0\)</span> are significant as exposure to as little as 35<span class="math inline">\(\mu g /m^{3}\)</span> may cause serious health issues for people. (Devadmin, 2021)</p>
+<p>Thus, <span class="math inline">\(H_0\)</span> is rejected in 3 out of 5 cities, suggesting that in hypothesis test 1, our data favours <span class="math inline">\(H_1\)</span>, that the PM2.5 concentration in 2013 is greater than in 2015. This goes hand in hand with our expectations. As explained in the ‘Methods and Results’ section, we would consider the policy effective if we encountered a substantial improvement in the air quality of at least three out of the five cities in our study.</p>
+<p>To ensure our results are reliable, we still need to review our results for hypothesis test 2, where <span class="math inline">\(H_0: \sigma_{2013} = \sigma_{2015}\)</span>. From section 3.4, we reject <span class="math inline">\(H_0\)</span> in all 5 cities, due to their extremely small p-values (&lt; 0.05). Thus, our data favours <span class="math inline">\(H_1\)</span>, that the PM2.5 concentration standard deviation between 2013 and 2015 are not equal, indicating that our tests may not be completely reliable. This is, however, beyond the scope of this project, and further and more in-depth analysis would be required to confirm such.</p>
+<p>We found that there was a significant difference in levels of PM2.5 concentration in Chengdu, Guangzhou, and Shanghai from 2013 to 2015. External research suggests that there are many factors that point to why the levels of PM2.5 concentration decreased, such as government policies targeted at shutting down high-pollution factories and power plants, as well as technological advancements in pollution control.</p>
 </section>
 <section id="impact-and-reflection" class="level2">
 <h2 class="anchored" data-anchor-id="impact-and-reflection">Impact and Reflection</h2>
+<p>Our findings can help guide policy changes targeted at lowering PM2.5 concentrations in China. The data can be used by policymakers to find areas that need more focus (such as Beijing and Shenyang) and to create policies that are more suited to the unique conditions of each location. The results may also aid in researchers’ understanding of the variables influencing PM2.5 concentrations in various geographic areas.</p>
+<p>This project could lead to extremely relevant future questions, such as: - What are the long-term health effects of PM2.5 pollution on vulnerable populations, and how can policymakers mitigate these effects? - How can we ensure that the policy remains effective? - What are the most effective strategies for reducing pollution and addressing climate change, and how can policymakers encourage widespread adoption of these strategies? - How can the policy analysed in this paper be replicated in other countries?</p>
 </section>
-<section id="future-improvements" class="level2">
-<h2 class="anchored" data-anchor-id="future-improvements">Future Improvements</h2>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Liang, X. (2016). PM 2.5 data reliability, consistency, and air quality assessment in five chinese cities CONSISTENCY IN CHINA’S PM 2.5 DATA doi:10.1002/2016JD024877</li>
+<li>“California Air Resources Board.” Inhalable Particulate Matter and Health (PM2.5 and PM10) | California Air Resources Board, https://ww2.arb.ca.gov/resources/inhalable-particulate-matter-and-health#:~:text=For%20PM2.,symptoms%2C%20and%20restricted%20activity%20days.</li>
+<li>Andrews-Speed, P., Shobert., B. A., Zhidong, L., &amp; Herberg, M. E. (2015). China’s energy crossroads: Forging a new energy and environmental balance. Project Muse.</li>
+<li>Non Normal Distribution. Statistics How To. (2023, February 8). Retrieved March 29, 2023, from https://www.statisticshowto.com/probability-and-statistics/non-normal-distributions/</li>
+<li>Devadmin. (2021, April 22). PM2.5 explained. Indoor Air Hygiene Institute. Retrieved April 4, 2023, from https://www.indoorairhygiene.org/pm2-5-explained/</li>
+</ul>
 
 
 </section>

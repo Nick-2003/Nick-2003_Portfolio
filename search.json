@@ -592,58 +592,80 @@
     ]
   },
   {
-    "objectID": "technical_projects/stat_inference_pm25.html#project-goals-and-objectives",
-    "href": "technical_projects/stat_inference_pm25.html#project-goals-and-objectives",
-    "title": "stat_inference_pm25",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
+    "objectID": "technical_projects/stat_inference_pm25.html",
+    "href": "technical_projects/stat_inference_pm25.html",
+    "title": "Statistical Inference of PM2.5 Concentrations Report",
+    "section": "",
+    "text": "Sourced from UBC STAT 201 website:\n“As in DSCI 100, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). However, this time, your project will focus on statistical inference. Remember, a fundamental theme in this course is that, in addition to drawing conclusions (such as computing an estimate), it’s critical to communicate the evidence and uncertainty associated with the conclusion. The latter is the main focus of this project and will manifest in an electronic report.\nThe electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as appropriately answer an inferential question. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.\nFor this project, you will need to formulate and answer an inferential question about a dataset of your choice. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team.”",
     "crumbs": [
       "Technical Projects",
-      "stat_inference_pm25"
+      "Statistical Inference of PM2.5 Concentrations Report"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_inference_pm25.html#problem-statement",
+    "href": "technical_projects/stat_inference_pm25.html#problem-statement",
+    "title": "Statistical Inference of PM2.5 Concentrations Report",
+    "section": "",
+    "text": "Sourced from UBC STAT 201 website:\n“As in DSCI 100, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). However, this time, your project will focus on statistical inference. Remember, a fundamental theme in this course is that, in addition to drawing conclusions (such as computing an estimate), it’s critical to communicate the evidence and uncertainty associated with the conclusion. The latter is the main focus of this project and will manifest in an electronic report.\nThe electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as appropriately answer an inferential question. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.\nFor this project, you will need to formulate and answer an inferential question about a dataset of your choice. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team.”",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Inference of PM2.5 Concentrations Report"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_inference_pm25.html#goals-and-objectives",
+    "href": "technical_projects/stat_inference_pm25.html#goals-and-objectives",
+    "title": "Statistical Inference of PM2.5 Concentrations Report",
+    "section": "Goals and Objectives",
+    "text": "Goals and Objectives\nFor our research project, we have selected datasets of hourly observations of PM2.5 concentrations in Beijing, Shanghai, Guangzhou, Chengdu and Shenyang, along with other meteorological data for each city,from 1-1-2013 to 12-31-2015. These datasets were retrieved from the PM2.5 Data of Five Chinese Cities Data Set from UCI machine learning repository, and converted from a singular RAR file to CSV files online.\nOur project question is: #### “Given the sample data for cities in China, is there a significant decrease in PM2.5 concentration in the cities in China between 2013 and 2015?”\nGiven the project question, let \\(\\mu_{2013}\\) and \\(\\mu_{2015}\\) be the mean PM2.5 concentration in 2013 and 2015 respectively for each location, and let \\(\\sigma_{2013}\\) and \\(\\sigma_{2015}\\) be the standard deviation of the PM2.5 concentration in 2013 and 2015 respectively for each location, with all values measured in \\(g/m^3\\). The following hypothesis tests will be conducted:\nHypothesis test 1: - \\(H_0: \\mu_{2013} = \\mu_{2015}\\) - \\(H_1: \\mu_{2013} &gt; \\mu_{2015}\\)\nHypothesis test 2: - \\(H_0: \\sigma_{2013} = \\sigma_{2015}\\) - \\(H_1: \\sigma_{2013} \\neq \\sigma_{2015}\\)\nThe differences in standard deviation for each location are tested to inform us of whether or not comparing the differences in means for each location is a reliable method for our investigation. For instance, if there is a significant difference in both the mean and standard deviation of PM2.5 concentrations, then the comparison of PM2.5 concentrations may be difficult due to differing distributions of data.",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Inference of PM2.5 Concentrations Report"
     ]
   },
   {
     "objectID": "technical_projects/stat_inference_pm25.html#process-and-approach",
     "href": "technical_projects/stat_inference_pm25.html#process-and-approach",
-    "title": "stat_inference_pm25",
+    "title": "Statistical Inference of PM2.5 Concentrations Report",
     "section": "Process and Approach",
-    "text": "Process and Approach",
+    "text": "Process and Approach\n\nDeveloped a team contract with my peers to reach an understanding of how we would conduct ourselves over the course of the project.\nSelected a group of datasets to conduct statistical inference analysis on variations in PM2.5 concentrations across 5 cities, and demonstrated that the datasets can be read from the web into R.\nCleaned and wrangled the data into a tidy format by merging them into a single dataframe.\nModelled histograms and boxplots to perform exploratory data analysis on the merged dataset to glean a better understanding of what results are to be expected.\nConducted hypothesis tests for the statistical significance of differences in PM2.5 concentrations between 2013 and 2015, and their identified implications.",
     "crumbs": [
       "Technical Projects",
-      "stat_inference_pm25"
+      "Statistical Inference of PM2.5 Concentrations Report"
     ]
   },
   {
     "objectID": "technical_projects/stat_inference_pm25.html#results",
     "href": "technical_projects/stat_inference_pm25.html#results",
-    "title": "stat_inference_pm25",
+    "title": "Statistical Inference of PM2.5 Concentrations Report",
     "section": "Results",
-    "text": "Results",
+    "text": "Results\nWe conducted 2 hypothesis tests that were meant to give us a greater context for our analysis. As stated in the introduction, the differences in standard deviation for each location are tested to inform us of whether comparing the differences in means for each location would be a reliable method for our investigation.\nFor hypothesis test 1, \\(H_0\\) claims that mean PM2.5 concentrations between 2013 and 2015 are the same. From section 3.3, we reject \\(H_0\\) for Chengdu, Guangzhou, and Shanghai, as they all have extremely small p-values (&lt; 0.05), and fail to reject it in Beijing and Shenyang. The differences in means shown by the 3 locations where we reject the \\(H_0\\) are significant as exposure to as little as 35\\(\\mu g /m^{3}\\) may cause serious health issues for people. (Devadmin, 2021)\nThus, \\(H_0\\) is rejected in 3 out of 5 cities, suggesting that in hypothesis test 1, our data favours \\(H_1\\), that the PM2.5 concentration in 2013 is greater than in 2015. This goes hand in hand with our expectations. As explained in the ‘Methods and Results’ section, we would consider the policy effective if we encountered a substantial improvement in the air quality of at least three out of the five cities in our study.\nTo ensure our results are reliable, we still need to review our results for hypothesis test 2, where \\(H_0: \\sigma_{2013} = \\sigma_{2015}\\). From section 3.4, we reject \\(H_0\\) in all 5 cities, due to their extremely small p-values (&lt; 0.05). Thus, our data favours \\(H_1\\), that the PM2.5 concentration standard deviation between 2013 and 2015 are not equal, indicating that our tests may not be completely reliable. This is, however, beyond the scope of this project, and further and more in-depth analysis would be required to confirm such.\nWe found that there was a significant difference in levels of PM2.5 concentration in Chengdu, Guangzhou, and Shanghai from 2013 to 2015. External research suggests that there are many factors that point to why the levels of PM2.5 concentration decreased, such as government policies targeted at shutting down high-pollution factories and power plants, as well as technological advancements in pollution control.",
     "crumbs": [
       "Technical Projects",
-      "stat_inference_pm25"
+      "Statistical Inference of PM2.5 Concentrations Report"
     ]
   },
   {
     "objectID": "technical_projects/stat_inference_pm25.html#impact-and-reflection",
     "href": "technical_projects/stat_inference_pm25.html#impact-and-reflection",
-    "title": "stat_inference_pm25",
+    "title": "Statistical Inference of PM2.5 Concentrations Report",
     "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
+    "text": "Impact and Reflection\nOur findings can help guide policy changes targeted at lowering PM2.5 concentrations in China. The data can be used by policymakers to find areas that need more focus (such as Beijing and Shenyang) and to create policies that are more suited to the unique conditions of each location. The results may also aid in researchers’ understanding of the variables influencing PM2.5 concentrations in various geographic areas.\nThis project could lead to extremely relevant future questions, such as: - What are the long-term health effects of PM2.5 pollution on vulnerable populations, and how can policymakers mitigate these effects? - How can we ensure that the policy remains effective? - What are the most effective strategies for reducing pollution and addressing climate change, and how can policymakers encourage widespread adoption of these strategies? - How can the policy analysed in this paper be replicated in other countries?",
     "crumbs": [
       "Technical Projects",
-      "stat_inference_pm25"
+      "Statistical Inference of PM2.5 Concentrations Report"
     ]
   },
   {
-    "objectID": "technical_projects/stat_inference_pm25.html#future-improvements",
-    "href": "technical_projects/stat_inference_pm25.html#future-improvements",
-    "title": "stat_inference_pm25",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
+    "objectID": "technical_projects/stat_inference_pm25.html#references",
+    "href": "technical_projects/stat_inference_pm25.html#references",
+    "title": "Statistical Inference of PM2.5 Concentrations Report",
+    "section": "References",
+    "text": "References\n\nLiang, X. (2016). PM 2.5 data reliability, consistency, and air quality assessment in five chinese cities CONSISTENCY IN CHINA’S PM 2.5 DATA doi:10.1002/2016JD024877\n“California Air Resources Board.” Inhalable Particulate Matter and Health (PM2.5 and PM10) | California Air Resources Board, https://ww2.arb.ca.gov/resources/inhalable-particulate-matter-and-health#:~:text=For%20PM2.,symptoms%2C%20and%20restricted%20activity%20days.\nAndrews-Speed, P., Shobert., B. A., Zhidong, L., & Herberg, M. E. (2015). China’s energy crossroads: Forging a new energy and environmental balance. Project Muse.\nNon Normal Distribution. Statistics How To. (2023, February 8). Retrieved March 29, 2023, from https://www.statisticshowto.com/probability-and-statistics/non-normal-distributions/\nDevadmin. (2021, April 22). PM2.5 explained. Indoor Air Hygiene Institute. Retrieved April 4, 2023, from https://www.indoorairhygiene.org/pm2-5-explained/",
     "crumbs": [
       "Technical Projects",
-      "stat_inference_pm25"
+      "Statistical Inference of PM2.5 Concentrations Report"
     ]
   },
   {
@@ -684,7 +706,7 @@
     "href": "technical_projects/inventory_system.html#process-and-approach",
     "title": "Inventory System",
     "section": "Process and Approach",
-    "text": "Process and Approach\n\nSelect a project idea to work with; I selected an inventory system, as described in the project goals\nCreate user stories and implement them\nCreate folders for various data objects and develop the items accordingly:\n\nThe main user GUI\nmodel objects such as Item and ItemList\nui functionalities, including models to contain item lists, tools to modify said lists\npersistance tools to save and load item lists\nexceptions to be thrown under circumstances specific to the system, such as negative or insufficient item numbers\n\nImplement tests for the various system attributes\nDevelop and test interface usage\nDevelop UML design diagram\nProvide samples and further improvements",
+    "text": "Process and Approach\n\nSelect a project idea to work with; I selected an inventory system, as described in the project goals.\nCreate user stories and implement them.\nCreate folders for various data objects and develop the items accordingly:\n\nThe main user GUI\nmodel objects such as Item and ItemList\nui functionalities, including models to contain item lists, and features to modify item properties and access item lists\npersistance tools to save and reload item lists using JSON\nexceptions to be thrown under circumstances specific to the system, such as negative or insufficient item numbers\n\nImplement tests for the various system attributes.\nDevelop and test interface usage.\nDesigned UML diagram to illustrate connections within user interface, system variables, and corresponding tools.\nProvide samples and further improvements.",
     "crumbs": [
       "Technical Projects",
       "Inventory System"
@@ -695,7 +717,7 @@
     "href": "technical_projects/inventory_system.html#future-improvements",
     "title": "Inventory System",
     "section": "Future Improvements",
-    "text": "Future Improvements\n\nCould have changed the loading function to not rely on the putIntoList method, which would minimise confusion from the EventLog\nMore efficient way to create tool functions in system\nReformat the panel creation in StoreAppGUI to allow changes in screen size (Currently only works with fixed size)",
+    "text": "Future Improvements\n\nCould have changed the loading function to not rely on the putIntoList method, which would minimise confusion from the EventLog.\nMore efficient way to create tool functions in system.\nReformat the panel creation in StoreAppGUI to allow changes in screen size (Currently only works with fixed size).",
     "crumbs": [
       "Technical Projects",
       "Inventory System"
