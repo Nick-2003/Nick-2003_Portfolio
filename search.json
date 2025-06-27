@@ -1,5 +1,445 @@
 [
   {
+    "objectID": "technical_projects/urban_forest_viz.html#project-goals-and-objectives",
+    "href": "technical_projects/urban_forest_viz.html#project-goals-and-objectives",
+    "title": "urban_forest_viz",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "urban_forest_viz"
+    ]
+  },
+  {
+    "objectID": "technical_projects/urban_forest_viz.html#process-and-approach",
+    "href": "technical_projects/urban_forest_viz.html#process-and-approach",
+    "title": "urban_forest_viz",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "urban_forest_viz"
+    ]
+  },
+  {
+    "objectID": "technical_projects/urban_forest_viz.html#results",
+    "href": "technical_projects/urban_forest_viz.html#results",
+    "title": "urban_forest_viz",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "urban_forest_viz"
+    ]
+  },
+  {
+    "objectID": "technical_projects/urban_forest_viz.html#impact-and-reflection",
+    "href": "technical_projects/urban_forest_viz.html#impact-and-reflection",
+    "title": "urban_forest_viz",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "urban_forest_viz"
+    ]
+  },
+  {
+    "objectID": "technical_projects/urban_forest_viz.html#future-improvements",
+    "href": "technical_projects/urban_forest_viz.html#future-improvements",
+    "title": "urban_forest_viz",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "urban_forest_viz"
+    ]
+  },
+  {
+    "objectID": "technical_projects/quantium_analytics-forage.html#project-goals-and-objectives",
+    "href": "technical_projects/quantium_analytics-forage.html#project-goals-and-objectives",
+    "title": "quantium_analytics-forage",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "quantium_analytics-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/quantium_analytics-forage.html#process-and-approach",
+    "href": "technical_projects/quantium_analytics-forage.html#process-and-approach",
+    "title": "quantium_analytics-forage",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "quantium_analytics-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/quantium_analytics-forage.html#results",
+    "href": "technical_projects/quantium_analytics-forage.html#results",
+    "title": "quantium_analytics-forage",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "quantium_analytics-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/quantium_analytics-forage.html#impact-and-reflection",
+    "href": "technical_projects/quantium_analytics-forage.html#impact-and-reflection",
+    "title": "quantium_analytics-forage",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "quantium_analytics-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/quantium_analytics-forage.html#future-improvements",
+    "href": "technical_projects/quantium_analytics-forage.html#future-improvements",
+    "title": "quantium_analytics-forage",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "quantium_analytics-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_genai-forage.html#project-goals-and-objectives",
+    "href": "technical_projects/bcg_genai-forage.html#project-goals-and-objectives",
+    "title": "bcg_genai-forage",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_genai-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_genai-forage.html#process-and-approach",
+    "href": "technical_projects/bcg_genai-forage.html#process-and-approach",
+    "title": "bcg_genai-forage",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_genai-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_genai-forage.html#results",
+    "href": "technical_projects/bcg_genai-forage.html#results",
+    "title": "bcg_genai-forage",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_genai-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_genai-forage.html#impact-and-reflection",
+    "href": "technical_projects/bcg_genai-forage.html#impact-and-reflection",
+    "title": "bcg_genai-forage",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_genai-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_genai-forage.html#future-improvements",
+    "href": "technical_projects/bcg_genai-forage.html#future-improvements",
+    "title": "bcg_genai-forage",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_genai-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_model_coronary.html#project-goals-and-objectives",
+    "href": "technical_projects/stat_model_coronary.html#project-goals-and-objectives",
+    "title": "stat_model_coronary",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "stat_model_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_model_coronary.html#process-and-approach",
+    "href": "technical_projects/stat_model_coronary.html#process-and-approach",
+    "title": "stat_model_coronary",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "stat_model_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_model_coronary.html#results",
+    "href": "technical_projects/stat_model_coronary.html#results",
+    "title": "stat_model_coronary",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "stat_model_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_model_coronary.html#impact-and-reflection",
+    "href": "technical_projects/stat_model_coronary.html#impact-and-reflection",
+    "title": "stat_model_coronary",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "stat_model_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_model_coronary.html#future-improvements",
+    "href": "technical_projects/stat_model_coronary.html#future-improvements",
+    "title": "stat_model_coronary",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "stat_model_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/url_to_sql.html#project-goals-and-objectives",
+    "href": "technical_projects/url_to_sql.html#project-goals-and-objectives",
+    "title": "url_to_sql",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "url_to_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/url_to_sql.html#process-and-approach",
+    "href": "technical_projects/url_to_sql.html#process-and-approach",
+    "title": "url_to_sql",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "url_to_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/url_to_sql.html#results",
+    "href": "technical_projects/url_to_sql.html#results",
+    "title": "url_to_sql",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "url_to_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/url_to_sql.html#impact-and-reflection",
+    "href": "technical_projects/url_to_sql.html#impact-and-reflection",
+    "title": "url_to_sql",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "url_to_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/url_to_sql.html#future-improvements",
+    "href": "technical_projects/url_to_sql.html#future-improvements",
+    "title": "url_to_sql",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "url_to_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#project-goals-and-objectives",
+    "href": "technical_projects/insurance_sql.html#project-goals-and-objectives",
+    "title": "insurance_sql",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "insurance_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#process-and-approach",
+    "href": "technical_projects/insurance_sql.html#process-and-approach",
+    "title": "insurance_sql",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "insurance_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#results",
+    "href": "technical_projects/insurance_sql.html#results",
+    "title": "insurance_sql",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "insurance_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#impact-and-reflection",
+    "href": "technical_projects/insurance_sql.html#impact-and-reflection",
+    "title": "insurance_sql",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "insurance_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#future-improvements",
+    "href": "technical_projects/insurance_sql.html#future-improvements",
+    "title": "insurance_sql",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "insurance_sql"
+    ]
+  },
+  {
+    "objectID": "technical_projects/ea_software_eng-forage.html#project-goals-and-objectives",
+    "href": "technical_projects/ea_software_eng-forage.html#project-goals-and-objectives",
+    "title": "ea_software_eng-forage",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "ea_software_eng-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/ea_software_eng-forage.html#process-and-approach",
+    "href": "technical_projects/ea_software_eng-forage.html#process-and-approach",
+    "title": "ea_software_eng-forage",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "ea_software_eng-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/ea_software_eng-forage.html#results",
+    "href": "technical_projects/ea_software_eng-forage.html#results",
+    "title": "ea_software_eng-forage",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "ea_software_eng-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/ea_software_eng-forage.html#impact-and-reflection",
+    "href": "technical_projects/ea_software_eng-forage.html#impact-and-reflection",
+    "title": "ea_software_eng-forage",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "ea_software_eng-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/ea_software_eng-forage.html#future-improvements",
+    "href": "technical_projects/ea_software_eng-forage.html#future-improvements",
+    "title": "ea_software_eng-forage",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "ea_software_eng-forage"
+    ]
+  },
+  {
+    "objectID": "professional_experience/luk_fook-2020.html#project-goals-and-objectives",
+    "href": "professional_experience/luk_fook-2020.html#project-goals-and-objectives",
+    "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Professional Experience",
+      "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
+    ]
+  },
+  {
+    "objectID": "professional_experience/luk_fook-2020.html#process-and-approach",
+    "href": "professional_experience/luk_fook-2020.html#process-and-approach",
+    "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Professional Experience",
+      "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
+    ]
+  },
+  {
+    "objectID": "professional_experience/luk_fook-2020.html#results",
+    "href": "professional_experience/luk_fook-2020.html#results",
+    "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Professional Experience",
+      "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
+    ]
+  },
+  {
+    "objectID": "professional_experience/luk_fook-2020.html#impact-and-reflection",
+    "href": "professional_experience/luk_fook-2020.html#impact-and-reflection",
+    "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Professional Experience",
+      "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
+    ]
+  },
+  {
+    "objectID": "professional_experience/luk_fook-2020.html#future-improvements",
+    "href": "professional_experience/luk_fook-2020.html#future-improvements",
+    "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Professional Experience",
+      "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Tsun Li Nicholas Tam",
@@ -42,58 +482,443 @@
     "text": "GPA: 3.315/4.3, GRE: 158V, 165Q\nSep 2021 - Apr 2025\nRelevant coursework: Calculus III and IV, Mathematical Proof, Matrix Algebra, Differential Equations I, Applied Linear Algebra, Linear Programming, Models of Computation, Software Construction, Statistics for Applications, Statistical Inference for Data Science, Statistical Modelling for Data Science, Applied Machine Learning, Data Relationships"
   },
   {
-    "objectID": "technical_projects/inventory_system.html#project-goals-and-objectives",
-    "href": "technical_projects/inventory_system.html#project-goals-and-objectives",
-    "title": "inventory_system",
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#project-goals-and-objectives",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#project-goals-and-objectives",
+    "title": "stat_relationships_breast_cancer",
     "section": "Project Goals and Objectives",
     "text": "Project Goals and Objectives",
     "crumbs": [
       "Technical Projects",
-      "inventory_system"
+      "stat_relationships_breast_cancer"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#process-and-approach",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#process-and-approach",
+    "title": "stat_relationships_breast_cancer",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "stat_relationships_breast_cancer"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#results",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#results",
+    "title": "stat_relationships_breast_cancer",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "stat_relationships_breast_cancer"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#impact-and-reflection",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#impact-and-reflection",
+    "title": "stat_relationships_breast_cancer",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "stat_relationships_breast_cancer"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#future-improvements",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#future-improvements",
+    "title": "stat_relationships_breast_cancer",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "stat_relationships_breast_cancer"
+    ]
+  },
+  {
+    "objectID": "technical_projects/data_viz_coronary.html#project-goals-and-objectives",
+    "href": "technical_projects/data_viz_coronary.html#project-goals-and-objectives",
+    "title": "data_viz_coronary",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "data_viz_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/data_viz_coronary.html#process-and-approach",
+    "href": "technical_projects/data_viz_coronary.html#process-and-approach",
+    "title": "data_viz_coronary",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "data_viz_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/data_viz_coronary.html#results",
+    "href": "technical_projects/data_viz_coronary.html#results",
+    "title": "data_viz_coronary",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "data_viz_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/data_viz_coronary.html#impact-and-reflection",
+    "href": "technical_projects/data_viz_coronary.html#impact-and-reflection",
+    "title": "data_viz_coronary",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "data_viz_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/data_viz_coronary.html#future-improvements",
+    "href": "technical_projects/data_viz_coronary.html#future-improvements",
+    "title": "data_viz_coronary",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "data_viz_coronary"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_inference_pm25.html#project-goals-and-objectives",
+    "href": "technical_projects/stat_inference_pm25.html#project-goals-and-objectives",
+    "title": "stat_inference_pm25",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "stat_inference_pm25"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_inference_pm25.html#process-and-approach",
+    "href": "technical_projects/stat_inference_pm25.html#process-and-approach",
+    "title": "stat_inference_pm25",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "stat_inference_pm25"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_inference_pm25.html#results",
+    "href": "technical_projects/stat_inference_pm25.html#results",
+    "title": "stat_inference_pm25",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "stat_inference_pm25"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_inference_pm25.html#impact-and-reflection",
+    "href": "technical_projects/stat_inference_pm25.html#impact-and-reflection",
+    "title": "stat_inference_pm25",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "stat_inference_pm25"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_inference_pm25.html#future-improvements",
+    "href": "technical_projects/stat_inference_pm25.html#future-improvements",
+    "title": "stat_inference_pm25",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "stat_inference_pm25"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html",
+    "href": "technical_projects/inventory_system.html",
+    "title": "Inventory System",
+    "section": "",
+    "text": "Develop a software construction project with a GUI interface. Include user stories, instructions on its use, a sample of its usage, and how the project could have been further improved.",
+    "crumbs": [
+      "Technical Projects",
+      "Inventory System"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#problem-statement",
+    "href": "technical_projects/inventory_system.html#problem-statement",
+    "title": "Inventory System",
+    "section": "",
+    "text": "Develop a software construction project with a GUI interface. Include user stories, instructions on its use, a sample of its usage, and how the project could have been further improved.",
+    "crumbs": [
+      "Technical Projects",
+      "Inventory System"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#project-goals-and-objectives",
+    "href": "technical_projects/inventory_system.html#project-goals-and-objectives",
+    "title": "Inventory System",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives\nThis project is intended to be used as an inventory system for shopkeepers and cashiers to keep track of items in a convenience store. It will contain most of the general operations to allow the system to function, such as creating a receipt, keep track of the availability of items, search for specific items, and so on.",
+    "crumbs": [
+      "Technical Projects",
+      "Inventory System"
     ]
   },
   {
     "objectID": "technical_projects/inventory_system.html#process-and-approach",
     "href": "technical_projects/inventory_system.html#process-and-approach",
-    "title": "inventory_system",
+    "title": "Inventory System",
     "section": "Process and Approach",
-    "text": "Process and Approach",
+    "text": "Process and Approach\n\nSelect a project idea to work with; I selected an inventory system, as described in the project goals\nCreate user stories and implement them\nCreate folders for various data objects and develop the items accordingly:\n\nThe main user GUI\nmodel objects such as Item and ItemList\nui functionalities, including models to contain item lists, tools to modify said lists\npersistance tools to save and load item lists\nexceptions to be thrown under circumstances specific to the system, such as negative or insufficient item numbers\n\nImplement tests for the various system attributes\nDevelop and test interface usage\nDevelop UML design diagram\nProvide samples and further improvements",
     "crumbs": [
       "Technical Projects",
-      "inventory_system"
-    ]
-  },
-  {
-    "objectID": "technical_projects/inventory_system.html#results",
-    "href": "technical_projects/inventory_system.html#results",
-    "title": "inventory_system",
-    "section": "Results",
-    "text": "Results",
-    "crumbs": [
-      "Technical Projects",
-      "inventory_system"
-    ]
-  },
-  {
-    "objectID": "technical_projects/inventory_system.html#impact-and-reflection",
-    "href": "technical_projects/inventory_system.html#impact-and-reflection",
-    "title": "inventory_system",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Technical Projects",
-      "inventory_system"
+      "Inventory System"
     ]
   },
   {
     "objectID": "technical_projects/inventory_system.html#future-improvements",
     "href": "technical_projects/inventory_system.html#future-improvements",
-    "title": "inventory_system",
+    "title": "Inventory System",
+    "section": "Future Improvements",
+    "text": "Future Improvements\n\nCould have changed the loading function to not rely on the putIntoList method, which would minimise confusion from the EventLog\nMore efficient way to create tool functions in system\nReformat the panel creation in StoreAppGUI to allow changes in screen size (Currently only works with fixed size)",
+    "crumbs": [
+      "Technical Projects",
+      "Inventory System"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#project-goals-and-objectives",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#project-goals-and-objectives",
+    "title": "jpmorgan_quantitative-forage",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "jpmorgan_quantitative-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#process-and-approach",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#process-and-approach",
+    "title": "jpmorgan_quantitative-forage",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "jpmorgan_quantitative-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#results",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#results",
+    "title": "jpmorgan_quantitative-forage",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "jpmorgan_quantitative-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#impact-and-reflection",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#impact-and-reflection",
+    "title": "jpmorgan_quantitative-forage",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "jpmorgan_quantitative-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#future-improvements",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#future-improvements",
+    "title": "jpmorgan_quantitative-forage",
     "section": "Future Improvements",
     "text": "Future Improvements",
     "crumbs": [
       "Technical Projects",
-      "inventory_system"
+      "jpmorgan_quantitative-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/datacom_cloud-forage.html#project-goals-and-objectives",
+    "href": "technical_projects/datacom_cloud-forage.html#project-goals-and-objectives",
+    "title": "datacom_cloud-forage",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "datacom_cloud-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/datacom_cloud-forage.html#process-and-approach",
+    "href": "technical_projects/datacom_cloud-forage.html#process-and-approach",
+    "title": "datacom_cloud-forage",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "datacom_cloud-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/datacom_cloud-forage.html#results",
+    "href": "technical_projects/datacom_cloud-forage.html#results",
+    "title": "datacom_cloud-forage",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "datacom_cloud-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/datacom_cloud-forage.html#impact-and-reflection",
+    "href": "technical_projects/datacom_cloud-forage.html#impact-and-reflection",
+    "title": "datacom_cloud-forage",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "datacom_cloud-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/datacom_cloud-forage.html#future-improvements",
+    "href": "technical_projects/datacom_cloud-forage.html#future-improvements",
+    "title": "datacom_cloud-forage",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "datacom_cloud-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/diabetes_risk_report_workflow.html#project-goals-and-objectives",
+    "href": "technical_projects/diabetes_risk_report_workflow.html#project-goals-and-objectives",
+    "title": "diabetes_risk_report_workflow",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "diabetes_risk_report_workflow"
+    ]
+  },
+  {
+    "objectID": "technical_projects/diabetes_risk_report_workflow.html#process-and-approach",
+    "href": "technical_projects/diabetes_risk_report_workflow.html#process-and-approach",
+    "title": "diabetes_risk_report_workflow",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "diabetes_risk_report_workflow"
+    ]
+  },
+  {
+    "objectID": "technical_projects/diabetes_risk_report_workflow.html#results",
+    "href": "technical_projects/diabetes_risk_report_workflow.html#results",
+    "title": "diabetes_risk_report_workflow",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "diabetes_risk_report_workflow"
+    ]
+  },
+  {
+    "objectID": "technical_projects/diabetes_risk_report_workflow.html#impact-and-reflection",
+    "href": "technical_projects/diabetes_risk_report_workflow.html#impact-and-reflection",
+    "title": "diabetes_risk_report_workflow",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "diabetes_risk_report_workflow"
+    ]
+  },
+  {
+    "objectID": "technical_projects/diabetes_risk_report_workflow.html#future-improvements",
+    "href": "technical_projects/diabetes_risk_report_workflow.html#future-improvements",
+    "title": "diabetes_risk_report_workflow",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "diabetes_risk_report_workflow"
+    ]
+  },
+  {
+    "objectID": "technical_projects/lloyds_datasci-forage.html#project-goals-and-objectives",
+    "href": "technical_projects/lloyds_datasci-forage.html#project-goals-and-objectives",
+    "title": "lloyds_datasci-forage",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "lloyds_datasci-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/lloyds_datasci-forage.html#process-and-approach",
+    "href": "technical_projects/lloyds_datasci-forage.html#process-and-approach",
+    "title": "lloyds_datasci-forage",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "lloyds_datasci-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/lloyds_datasci-forage.html#results",
+    "href": "technical_projects/lloyds_datasci-forage.html#results",
+    "title": "lloyds_datasci-forage",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "lloyds_datasci-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/lloyds_datasci-forage.html#impact-and-reflection",
+    "href": "technical_projects/lloyds_datasci-forage.html#impact-and-reflection",
+    "title": "lloyds_datasci-forage",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "lloyds_datasci-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/lloyds_datasci-forage.html#future-improvements",
+    "href": "technical_projects/lloyds_datasci-forage.html#future-improvements",
+    "title": "lloyds_datasci-forage",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "lloyds_datasci-forage"
     ]
   }
 ]
