@@ -1,15 +1,34 @@
 ---
-title: "data_viz_coronary"
+title: "Data Visualisation of Coronary Heart Disease Diagnosis Report"
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/COMM-335-Group-Assignment-Group-13-/tree/master/Data%20Viz
 ---
 
 ## Problem Statement
 
-## Project Goals and Objectives
+Develop a final visualisation product to answer a specific question. We have selected the question: "What set of factors leads to high serum cholesterol levels within male patients in Cleveland?"
 
 ## Process and Approach
 
+The data used are datasets for patients undergoing angiography tests within the Cleveland Clinic in Cleveland, Ohio, the Hungarian Institute of Cardiology in Budapest, Hungary, and the V eterans Administration Medical Center in Long Beach, California. (Detrano, Janosi, Steinbrunn, Pfisterer, Schmid, Sandhu, Guppy, Lee, Froelicher, 1989) These datasets were retrieved from the Heart Disease dataset from the UCI machine learning repository and converted from .data files to Excel files, then CSV files.
+
+Within R, each CSV file is read separately, then merged into a single dataframe, with a "location" column added for each clinic’s dataset. Specific columns are missing the majority of their data and thus have been removed under the assumption that they are irrelevant. Any patients with `"?"` for any variables, `trestbps = 0` or `chol = 0`, are assumed to be invalid and have been removed. Any values of `num ≥ 1` provide the same result and thus have been converted to 1. The updated data frame is converted to an Excel spreadsheet with their respective definitions to be uploaded into Power BI.
+
+To answer our question, we selected the median serum cholesterol level as our test statistic. The
+proportions for each variable category may differ, and prior exploratory data analysis indicates that serum cholesterol levels contain many outliers that are not representative of the data. As the diagnosis of heart disease was a result produced by a predictive model based on the Cleveland dataset, it has been ignored.
+
 ## Results
 
-## Impact and Reflection
+Across all patients, the presence of asymptomatic chest pain left ventricular hypertrophy from ECG results, as well as the presence of exercise-induced angina, leads to higher median serum cholesterol levels. Both resting blood pressure and maximum heart rate produce a trend line with median serum cholesterol level with positive gradients close to 0. Male patients in Cleveland with the ECG result of ST-T wave abnormality have the highest median serum cholesterol, as well as a stronger correlation between resting blood pressure and serum cholesterol, but otherwise produce similar results.
 
-## Future Improvements
+In conclusion, the set of factors that relate to high serum cholesterol levels within male patients in Cleveland are ST-T wave abnormality, exercise-induced angina, high resting blood pressure and high maximum heart rate.
+
+![Visualisation]("assets/images/COMM 335 Data Viz Dashboard V1 (Group 13).pdf")
+
+## References
+- Janosi,Andras, Steinbrunn,William, Pfisterer,Matthias, and Detrano,Robert. (1988). Heart Disease. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X
+- Detrano, R., Janosi, A., Steinbrunn, W., Pfisterer, M., Schmid, J. J., Sandhu, S., Guppy, K. H., Lee, S., & Froelicher, V . (1989). International application of a new probability algorithm for the diagnosis of coronary artery disease. The American journal of cardiology, 64(5), 304–310. https://doi.org/10.1016/0002-9149(89)90524-9 (Detrano, Janosi, Steinbrunn, Pfisterer, Schmid, Sandhu, Guppy, Lee, Froelicher, 1989)

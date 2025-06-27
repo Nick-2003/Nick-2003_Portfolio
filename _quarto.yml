@@ -46,7 +46,6 @@ website:
         - technical_projects/inventory_system.qmd
         - technical_projects/stat_inference_pm25.qmd
         - technical_projects/stat_model_coronary.qmd
-        - technical_projects/url_to_sql.qmd
         - technical_projects/data_viz_coronary.qmd
         - technical_projects/jpmorgan_quantitative-forage.qmd
         - technical_projects/bcg_genai-forage.qmd
