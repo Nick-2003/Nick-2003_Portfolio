@@ -1,15 +1,76 @@
 ---
-title: "stat_inference_pm25"
+title: "Statistical Inference of PM2.5 Concentrations Report"
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/STAT-201-Group-46-Project
 ---
 
-## Problem Statement
+## ![Problem Statement](https://ubc-stat.github.io/stat-201/group-project.html)
 
-## Project Goals and Objectives
+Sourced from UBC STAT 201 website:
+
+"As in DSCI 100, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). However, this time, your project will focus on statistical inference. Remember, a fundamental theme in this course is that, in addition to drawing conclusions (such as computing an estimate), it’s critical to communicate the evidence and uncertainty associated with the conclusion. The latter is the main focus of this project and will manifest in an electronic report.
+
+The electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as appropriately answer an inferential question. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.
+
+For this project, you will need to formulate and answer an inferential question about a dataset of your choice. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team."
+
+## Goals and Objectives
+
+For our research project, we have selected datasets of hourly observations of PM2.5 concentrations in Beijing, Shanghai, Guangzhou, Chengdu and Shenyang, along with other meteorological data for each city,from 1-1-2013 to 12-31-2015. These datasets were retrieved from the [PM2.5 Data of Five Chinese Cities Data Set](https://archive.ics.uci.edu/dataset/394/pm2+5+data+of+five+chinese+cities) from UCI machine learning repository, and converted from a singular RAR file to CSV files online. 
+
+Our project question is: 
+#### "Given the sample data for cities in China, is there a significant decrease in PM2.5 concentration in the cities in China between 2013 and 2015?" 
+
+Given the project question, let $\mu_{2013}$ and $\mu_{2015}$ be the mean PM2.5 concentration in 2013 and 2015 respectively for each location, and let $\sigma_{2013}$ and $\sigma_{2015}$ be the standard deviation of the PM2.5 concentration in 2013 and 2015 respectively for each location, with all values measured in $g/m^3$. The following hypothesis tests will be conducted: 
+
+Hypothesis test 1:
+- $H_0: \mu_{2013} = \mu_{2015}$ 
+- $H_1: \mu_{2013} > \mu_{2015}$
+
+Hypothesis test 2:
+- $H_0: \sigma_{2013} = \sigma_{2015}$ 
+- $H_1: \sigma_{2013} \neq \sigma_{2015}$ 
+
+The differences in standard deviation for each location are tested to inform us of whether or not comparing the differences in means for each location is a reliable method for our investigation. For instance, if there is a significant difference in both the mean and standard deviation of PM2.5 concentrations, then the comparison of PM2.5 concentrations may be difficult due to differing distributions of data.
 
 ## Process and Approach
 
+- Developed a team contract with my peers to reach an understanding of how we would conduct ourselves over the course of the project.
+- Selected a group of datasets to conduct statistical inference analysis on variations in PM2.5 concentrations across 5 cities, and demonstrated that the datasets can be read from the web into R.
+- Cleaned and wrangled the data into a tidy format by merging them into a single dataframe.
+- Modelled histograms and boxplots to perform exploratory data analysis on the merged dataset to glean a better understanding of what results are to be expected.
+- Conducted hypothesis tests for the statistical significance of differences in PM2.5 concentrations between 2013 and 2015, and their identified implications.
+
 ## Results
+
+We conducted 2 hypothesis tests that were meant to give us a greater context for our analysis. As stated in the introduction, the differences in standard deviation for each location are tested to inform us of whether comparing the differences in means for each location would be a reliable method for our investigation.
+
+For hypothesis test 1, $H_0$ claims that mean PM2.5 concentrations between 2013 and 2015 are the same. From section 3.3, we reject $H_0$ for Chengdu, Guangzhou, and Shanghai, as they all have extremely small p-values (< 0.05), and fail to reject it in Beijing and Shenyang. The differences in means shown by the 3 locations where we reject the $H_0$ are significant as exposure to as little as 35$\mu g /m^{3}$ may cause serious health issues for people. (Devadmin, 2021)
+
+Thus, $H_0$ is rejected in 3 out of 5 cities, suggesting that in hypothesis test 1, our data favours $H_1$, that the PM2.5 concentration in 2013 is greater than in 2015. This goes hand in hand with our expectations. As explained in the ‘Methods and Results’ section, we would consider the policy effective if we encountered a substantial improvement in the air quality of at least three out of the five cities in our study.
+ 
+To ensure our results are reliable, we still need to review our results for hypothesis test 2, where $H_0: \sigma_{2013} = \sigma_{2015}$. From section 3.4, we reject $H_0$ in all 5 cities, due to their extremely small p-values (< 0.05). Thus, our data favours $H_1$, that the PM2.5 concentration standard deviation between 2013 and 2015 are not equal, indicating that our tests may not be completely reliable. This is, however, beyond the scope of this project, and further and more in-depth analysis would be required to confirm such.
+
+We found that there was a significant difference in levels of PM2.5 concentration in Chengdu, Guangzhou, and Shanghai from 2013 to 2015. External research suggests that there are many factors that point to why the levels of PM2.5 concentration decreased, such as government policies targeted at shutting down high-pollution factories and power plants, as well as technological advancements in pollution control.
 
 ## Impact and Reflection
 
-## Future Improvements
+Our findings can help guide policy changes targeted at lowering PM2.5 concentrations in China. The data can be used by policymakers to find areas that need more focus (such as Beijing and Shenyang) and to create policies that are more suited to the unique conditions of each location. The results may also aid in researchers' understanding of the variables influencing PM2.5 concentrations in various geographic areas.
+
+This project could lead to extremely relevant future questions, such as:
+- What are the long-term health effects of PM2.5 pollution on vulnerable populations, and how can policymakers mitigate these effects?
+- How can we ensure that the policy remains effective?
+- What are the most effective strategies for reducing pollution and addressing climate change, and how can policymakers encourage widespread adoption of these strategies?
+- How can the policy analysed in this paper be replicated in other countries?
+
+## References
+
+- Liang, X. (2016). PM 2.5 data reliability, consistency, and air quality assessment in five chinese cities CONSISTENCY IN CHINA'S PM 2.5 DATA doi:10.1002/2016JD024877
+- “California Air Resources Board.” Inhalable Particulate Matter and Health (PM2.5 and PM10) | California Air Resources Board, https://ww2.arb.ca.gov/resources/inhalable-particulate-matter-and-health#:~:text=For%20PM2.,symptoms%2C%20and%20restricted%20activity%20days.
+- Andrews-Speed, P., Shobert., B. A., Zhidong, L., &amp; Herberg, M. E. (2015). China's energy crossroads: Forging a new energy and environmental balance. Project Muse. 
+- Non Normal Distribution. Statistics How To. (2023, February 8). Retrieved March 29, 2023, from https://www.statisticshowto.com/probability-and-statistics/non-normal-distributions/ 
+- Devadmin. (2021, April 22). PM2.5 explained. Indoor Air Hygiene Institute. Retrieved April 4, 2023, from https://www.indoorairhygiene.org/pm2-5-explained/ 

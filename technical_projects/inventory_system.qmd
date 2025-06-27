@@ -18,20 +18,20 @@ This project is intended to be used as an inventory system for shopkeepers and c
 
 ## Process and Approach
 
-- Select a project idea to work with; I selected an inventory system, as described in the project goals
-- Create user stories and implement them
+- Select a project idea to work with; I selected an inventory system, as described in the project goals.
+- Create user stories and implement them.
 - Create folders for various `data` objects and develop the items accordingly:
   - The main user GUI
   - `model` objects such as `Item` and `ItemList`
-  - `ui` functionalities, including models to contain item lists, tools to modify said lists
-  - `persistance` tools to save and load item lists
+  - `ui` functionalities, including models to contain item lists, and features to modify item properties and access item lists
+  - `persistance` tools to save and reload item lists using JSON
   - `exceptions` to be thrown under circumstances specific to the system, such as negative or insufficient item numbers
-- Implement tests for the various system attributes
-- Develop and test interface usage
-- Develop UML design diagram
-- Provide samples and further improvements
+- Implement tests for the various system attributes.
+- Develop and test interface usage.
+- Designed UML diagram to illustrate connections within user interface, system variables, and corresponding tools.
+- Provide samples and further improvements.
 
 ## Future Improvements
-- Could have changed the loading function to not rely on the `putIntoList` method, which would minimise confusion from the `EventLog`
-- More efficient way to create tool functions in system
-- Reformat the panel creation in `StoreAppGUI` to allow changes in screen size (Currently only works with fixed size)
+- Could have changed the loading function to not rely on the `putIntoList` method, which would minimise confusion from the `EventLog`.
+- More efficient way to create tool functions in system.
+- Reformat the panel creation in `StoreAppGUI` to allow changes in screen size (Currently only works with fixed size).
