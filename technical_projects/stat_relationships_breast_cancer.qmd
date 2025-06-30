@@ -41,35 +41,35 @@ Our analysis will involve the inference of covariates within linear models, as w
 -   Forward and backward AIC selection with the same full model was attempted, but only backward selection produced the same model, while forward selection produced a less optimal model.
 | Variable | Estimate | Std. Error | t value | Pr(>|t|) |
 |---------|---------|---------|---------|---------|
-| `(Intercept)` | 5.947000 | 0.214458 | 27.730 | < 2e-16 |
-| `age_at_diagnosis` | -0.014682 | 0.003806 | -3.857 | 0.000124 |
-| `chemotherapy1` | -0.701659 | 0.294312 | -2.384 | 0.017348 |
-| `hormone_therapy1` | -0.622362 | 0.266825 | -2.332 | 0.019915 |
-| `tumor_stage2` | -0.238917 | 0.093835 | -2.546 | 0.011073 |
-| `tumor_stage3` | -0.815091 | 0.166351 | -4.900 | 1.15e-06 |
-| `death_from_cancerDied of Disease` | -0.857453 | 0.054094 | -15.851 | < 2e-16 |
-| `age_at_diagnosis:chemotherapy1` | 0.009678 | 0.005384 | 1.797 | 0.072624 |
-| `age_at_diagnosis:hormone_therapy1` | 0.009458 | 0.004510 | 2.097 | 0.036273 |
-| `hormone_therapy1:tumor_stage2` | 0.216084 | 0.117380 | 1.841 | 0.065997 |
-| `hormone_therapy1:tumor_stage3` | 0.711055 | 0.203734 | 3.490 | 0.000508 |
-: `finalmod_both`
+| (Intercept) | 5.947000 | 0.214458 | 27.730 | < 2e-16 |
+| age_at_diagnosis | -0.014682 | 0.003806 | -3.857 | 0.000124 |
+| chemotherapy1 | -0.701659 | 0.294312 | -2.384 | 0.017348 |
+| hormone_therapy1 | -0.622362 | 0.266825 | -2.332 | 0.019915 |
+| tumor_stage2 | -0.238917 | 0.093835 | -2.546 | 0.011073 |
+| tumor_stage3 | -0.815091 | 0.166351 | -4.900 | 1.15e-06 |
+| death_from_cancerDied of Disease | -0.857453 | 0.054094 | -15.851 | < 2e-16 |
+| age_at_diagnosis:chemotherapy1 | 0.009678 | 0.005384 | 1.797 | 0.072624 |
+| age_at_diagnosis:hormone_therapy1 | 0.009458 | 0.004510 | 2.097 | 0.036273 |
+| hormone_therapy1:tumor_stage2 | 0.216084 | 0.117380 | 1.841 | 0.065997 |
+| hormone_therapy1:tumor_stage3 | 0.711055 | 0.203734 | 3.490 | 0.000508 |
+: finalmod_both
 
 -   Full model for `finalmod_both_1`: `log(overall_survival_months) \~ age_at_diagnosis + chemotherapy + hormone_therapy + tumor_stage + death_from_cancer + age_at_diagnosis:hormone_therapy + hormone_therapy:tumor_stage`
   - Version of the model `finalmod_both` without the interaction term `age_at_diagnosis:chemotherapy1` 
   - Has all terms to be statistically significant on the 5% level.
 | Variable | Estimate | Std. Error | t value | Pr(>|t|) |
 |---------|---------|---------|---------|---------|
-| `(Intercept)` | 5.773782 | 0.191845 | 30.096 | < 2e-16 |
-| `age_at_diagnosis` | -0.011469 | 0.003365 | -3.408 | 0.000685 |
-| `chemotherapy1` | -0.189144 | 0.073044 | -2.589 | 0.009782 |
-| `hormone_therapy1` | -0.570923 | 0.265644 | -2.149 | 0.031908 |
-| `tumor_stage2` | -0.271223 | 0.092222 | -2.941 | 0.003363 |
-| `tumor_stage3` | -0.830862 | 0.166344 | -4.995 | 7.19e-07 |
-| `death_from_cancerDied of Disease` | -0.857409 | 0.054167 | -15.829 | < 2e-16 |
-| `age_at_diagnosis:hormone_therapy1` | 0.008276 | 0.004467 | 1.852 | 0.064316 |
-| `hormone_therapy1:tumor_stage2` | 0.240445 | 0.116753 | 2.059 | 0.039766 |
-| `hormone_therapy1:tumor_stage3` | 0.726981 | 0.203816 | 3.567 | 0.000382 |
-: `finalmod_both_1`
+| (Intercept) | 5.773782 | 0.191845 | 30.096 | < 2e-16 |
+| age_at_diagnosis | -0.011469 | 0.003365 | -3.408 | 0.000685 |
+| chemotherapy1 | -0.189144 | 0.073044 | -2.589 | 0.009782 |
+| hormone_therapy1 | -0.570923 | 0.265644 | -2.149 | 0.031908 |
+| tumor_stage2 | -0.271223 | 0.092222 | -2.941 | 0.003363 |
+| tumor_stage3 | -0.830862 | 0.166344 | -4.995 | 7.19e-07 |
+| death_from_cancerDied of Disease | -0.857409 | 0.054167 | -15.829 | < 2e-16 |
+| age_at_diagnosis:hormone_therapy1 | 0.008276 | 0.004467 | 1.852 | 0.064316 |
+| hormone_therapy1:tumor_stage2 | 0.240445 | 0.116753 | 2.059 | 0.039766 |
+| hormone_therapy1:tumor_stage3 | 0.726981 | 0.203816 | 3.567 | 0.000382 |
+: finalmod_both_1
 
 ## Results
 
