@@ -1,16 +1,80 @@
 ---
 title: "Urban Forest Visualisations"
-format: html
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/project-team_kbn
 ---
 
-## Problem Statement
+[Project Website](https://ubc-dsci320-2024w2.github.io/project-team_kbn/)
 
 ## Project Goals and Objectives
 
-## Process and Approach
+The [Public Tree Dataset](https://opendata.vancouver.ca/explore/dataset/public-trees/information/?disjunctive.neighbourhood_name&disjunctive.on_street&disjunctive.species_name&disjunctive.common_name), maintained by the Vancouver Board of Parks and Recreation, provides detailed information on public trees across Vancouver, including their location, species, size, planting date, and geographic coordinates. Updated daily on weekdays, the dataset supports the city’s Healthy City Strategy by managing the urban forest to improve physical and mental well-being while delivering environmental benefits such as cleaner air, carbon sequestration, and climate resilience. For this analysis, we used data last modified on March 4th, 2025, and enriched it by integrating external databases. We added the **FAMILY_NAME** column, mapping tree genera to their families using the [Global Biodiversity Information Facility (GBIF)](https://www.gbif.org/), and the **HAS_POLLEN** column, indicating pollen production based on the [Palynological Database (PalDat)](https://www.paldat.org/). To address missing neighborhood data, we utilized the [Overpass API](https://www.openstreetmap.org), an open-source tool developed by Geofabrik GmbH, to retrieve geographical boundaries for areas like Stanley Park and West Point Grey. Additionally, we incorporated the [Local Area Boundary dataset](https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name) from the City of Vancouver’s Open Data Portal to refine neighborhood assignments further. All external data usage complies with licensing terms (CC BY for GBIF and non-commercial use for PalDat), ensuring proper attribution and adherence to non-commercial purposes.
 
-## Results
+Our goal is to optimize tree placement and management in Vancouver to enhance sustainability and recreational benefits. The primary focus is on understanding how tree species' growth patterns, physical traits, and spatial distribution affect their sustainability in urban environments. 
 
-## Impact and Reflection
+For sustainability, we examine the relationship between tree height, diameter, and their suitability for urban spaces, as well as how these traits vary across different neighborhoods and urban settings. From a recreational perspective, the Vancouver tree dataset helps identify ideal locations for spring picnics. We look at tree density for shaded picnic spots, the diversity of tree species for visually engaging environments, and the pollen levels to accommodate those with allergies. These factors are crucial for planning picnic-friendly areas that maximize comfort and enjoyment. Lastly, in terms of planting, we focus on tree species' distribution across neighborhoods, comparing planted trees to naturally grown ones to assess urban planting practices. We also investigate the age distribution of trees to ensure future tree coverage and healthy ecosystem regeneration, aiding better long-term environmental planning.
 
-## Future Improvements
+## Process and Results
+
+- Collaborated with the group on selecting the dataset of focus and outlining the type of information we should focus on, and analysed the data attributes to determine the types of inquiries our visualisations could answer.
+  - We selected the Public tree Dataset maintained by the Vancouver Board of Parks and Recreation.
+  - My visualisations focused on the following question: **Given the tree dataset, how would we want to arrange the types of trees to be planted in certain locations, such that they could survive and significantly improve the ecosystem?**
+    - *Which planted species exist in many different locations within each neighbourhood?* Understanding this could help identify species that are well-suited to multiple environments, ensuring biodiversity and better ecosystem health across different areas of the city.
+    - *How do trees that have been planted directly compare in terms of diameter to those that have grown naturally?* Knowing this could highlight how urban planting practices affect tree growth. Planted trees may face more limitations, such as space or soil conditions, which could influence their growth compared to naturally occurring trees.
+    - *What is the distribution of ages for specific tree species?* This could reveal whether the neighbourhoods are planting enough young trees to sustain long-term tree coverage and whether certain species need more attention for regeneration or maintenance.
+    - Data abstraction:
+
+| Attribute Name | Attribute Type | Data Semantics | Cardinality |
+| -------- | ------- | ------- | ------- |
+| TREE_ID | Categorical | Tree identification number; primary key | 181476 |
+| CIVIC_NUMBER | Categorical | Street address of the site at which the tree is associated with  | 8338 |
+| STD_STREET | Categorical | Street name of the site at which the tree is associated with  | 814 |
+| GENUS_NAME | Categorical | Genus name of the tree | 169 |
+| SPECIES_NAME | Categorical | Species name of the tree | 539 |
+| CULTIVAR_NAME | Categorical | Cultivar name of the tree | 1070 |
+| COMMON_NAME | Categorical | Common name of the tree | 1297 |
+| ON_STREET_BLOCK | Categorical | The street block at which the tree is physically located on | 189 |
+| ON_STREET | Categorical | The name of the street on which the tree is physically located | 822 |
+| NEIGHBOURHOOD_NAME | Categorical | City’s defined local area in which the tree is located | 23 |
+| STREET_SIDE_NAME | Categorical | The street side on which the tree is physically located | 6 |
+| HEIGHT_RANGE_ID | Ordinal | Height range of the tree for every 10 feet | 9 |
+| HEIGHT_RANGE | Ordinal | Height range of the tree measured in feet | 9 |
+| DIAMETER | Quantitative | Diameter of tree at breast height in inches | 490 |
+| DATE_PLANTED | Date | Planted date of new tree | 4571 |
+| Geom | Geographic point | Spatial representation indicating the location of the tree | 181348 |
+| geo_point_2d | Categorical | Location of the tree in 2D | 181348 |
+| LATITUDE | Quantitative | Latitude of a tree’s location | 181344 |
+| LONGITUDE | Quantitative | Longitude of a tree’s location | 181343 |
+| NOMENCLATURE | Categorical | Combination of GENUS_NAME and SPECIES_NAME | 701 |
+| ON_ADDRESS | Categorical | Combination of ON_STREET_BLOCK, ON_STREET, NEIGHBOURHOOD_NAME, STREET_SIDE_NAME | 19267 |
+| FAMILY_NAME | Categorical | Family name of the tree | 57 |
+| HAS_POLLEN | Boolean | Whether tree is known to produce pollen | 2 |
+
+- Independently conducted exploratory data analysis and task analysis on the data based on our question of focus.
+  - [Exploratory Data Analysis](https://ubc-dsci320-2024w2.github.io/project-team_kbn/03_eda/)
+    - Count of each `SPECIES_NAME` that have been planted
+    - Scatterplot of `LATITUDE` against `LONGITUDE`
+    - Boxplots of `DIAMETER` grouped by `HEIGHT_RANGE`
+    - Number of `ON_STREET` grouped by `NEIGHBOURHOOD_NAME`
+    - Proportions of `HEIGHT_RANGE` for each `NEIGHBOURHOOD_NAME`
+  - Task analysis
+    - Compute: Compute the average percentage differences in `DIAMETER` between planted and non-planted trees, and the ages by the number of days between `DATE_PLANTED` and March 5 2025.
+    - Filter: Filter out `SPECIES_NAME` such that there are plenty of both planted and non-planted trees.
+    - Characterise distribution: Find the distribution of ages for planted tree `SPECIES_NAME`?
+    - Sort: Rank `SPECIES_NAME` for appearing in the greatest number of `NEIGHBOURHOOD_NAME` and having large proportions of each corresponding `ON_STREET` containing them.
+    - Retrieve value: Retrieve the number of trees that have been planted, separated by `SPECIES_NAME.`
+- Created preliminary sketches and informative visualisations for each sub-question using the Python library `altair`. 
+  - [Planting Visualisations](https://ubc-dsci320-2024w2.github.io/project-team_kbn/07_planting_focus_viz/)
+
+## References
+
+- City of Vancouver. (2025). Public trees [Data set]. City of Vancouver Open Data Portal. Retrieved March 4, 2025, from <https://opendata.vancouver.ca/explore/dataset/public-trees/information/?disjunctive.neighbourhood_name&disjunctive.on_street&disjunctive.species_name&disjunctive.common_name>
+- City of Vancouver. (2025). Local area boundary [Data set]. City of Vancouver Open Data Portal. Retrieved March 17, 2025, from
+<https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name>
+- GBIF.org. (2025). Global Biodiversity Information Facility [Data set]. GBIF Secretariat. <https://www.gbif.org>
+- OpenStreetMap contributors. (2025). Overpass API [Software]. OpenStreetMap Foundation. <https://www.openstreetmap.org>
+- PalDat. (n.d.). Palynological database [Database]. <https://www.paldat.org>
