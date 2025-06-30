@@ -312,11 +312,200 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Due to not being significant parts of the question of interest and the indeterminate interaction between them and the therapies, interaction terms for <code>type_of_breast_surgery</code> and <code>death_from_cancer</code> are ignored for the full model.</p></li>
 <li><p>We had attempted to fit linear models without the log transformation, and the resulting residual plots had demonstrated heteroscedasticity; this is discouraged as it would lead to inconsistent results.</p></li>
 <li><p>Full model for <code>finalmod_both</code>: <code>log(overall_survival_months) \~ age_at_diagnosis + chemotherapy \* hormone_therapy \* radio_therapy + age_at_diagnosis:chemotherapy + age_at_diagnosis:hormone_therapy + age_at_diagnosis:radio_therapy + tumor_stage + tumor_stage:chemotherapy + tumor_stage:hormone_therapy + tumor_stage:radio_therapy + type_of_breast_surgery + death_from_cancer</code></p></li>
-<li><p>Forward and backward AIC selection with the same full model was attempted, but only backward selection produced the same model, while forward selection produced a less optimal model. | Variable | Estimate | Std. Error | t value | Pr(&gt;|t|) | |———|———|———|———|———| | (Intercept) | 5.947000 | 0.214458 | 27.730 | &lt; 2e-16 | | age_at_diagnosis | -0.014682 | 0.003806 | -3.857 | 0.000124 | | chemotherapy1 | -0.701659 | 0.294312 | -2.384 | 0.017348 | | hormone_therapy1 | -0.622362 | 0.266825 | -2.332 | 0.019915 | | tumor_stage2 | -0.238917 | 0.093835 | -2.546 | 0.011073 | | tumor_stage3 | -0.815091 | 0.166351 | -4.900 | 1.15e-06 | | death_from_cancerDied of Disease | -0.857453 | 0.054094 | -15.851 | &lt; 2e-16 | | age_at_diagnosis:chemotherapy1 | 0.009678 | 0.005384 | 1.797 | 0.072624 | | age_at_diagnosis:hormone_therapy1 | 0.009458 | 0.004510 | 2.097 | 0.036273 | | hormone_therapy1:tumor_stage2 | 0.216084 | 0.117380 | 1.841 | 0.065997 | | hormone_therapy1:tumor_stage3 | 0.711055 | 0.203734 | 3.490 | 0.000508 | : finalmod_both</p></li>
-<li><p>Full model for <code>finalmod_both_1</code>: <code>log(overall_survival_months) \~ age_at_diagnosis + chemotherapy + hormone_therapy + tumor_stage + death_from_cancer + age_at_diagnosis:hormone_therapy + hormone_therapy:tumor_stage</code></p></li>
-<li><p>Version of the model <code>finalmod_both</code> without the interaction term <code>age_at_diagnosis:chemotherapy1</code></p></li>
-<li><p>Has all terms to be statistically significant on the 5% level. | Variable | Estimate | Std. Error | t value | Pr(&gt;|t|) | |———|———|———|———|———| | (Intercept) | 5.773782 | 0.191845 | 30.096 | &lt; 2e-16 | | age_at_diagnosis | -0.011469 | 0.003365 | -3.408 | 0.000685 | | chemotherapy1 | -0.189144 | 0.073044 | -2.589 | 0.009782 | | hormone_therapy1 | -0.570923 | 0.265644 | -2.149 | 0.031908 | | tumor_stage2 | -0.271223 | 0.092222 | -2.941 | 0.003363 | | tumor_stage3 | -0.830862 | 0.166344 | -4.995 | 7.19e-07 | | death_from_cancerDied of Disease | -0.857409 | 0.054167 | -15.829 | &lt; 2e-16 | | age_at_diagnosis:hormone_therapy1 | 0.008276 | 0.004467 | 1.852 | 0.064316 | | hormone_therapy1:tumor_stage2 | 0.240445 | 0.116753 | 2.059 | 0.039766 | | hormone_therapy1:tumor_stage3 | 0.726981 | 0.203816 | 3.567 | 0.000382 | : finalmod_both_1</p></li>
+<li><p>Forward and backward AIC selection with the same full model was attempted, but only backward selection produced the same model, while forward selection produced a less optimal model.</p></li>
 </ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Estimate</th>
+<th>Std. Error</th>
+<th>t value</th>
+<th><code>Pr(|t|)</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>(Intercept)</code></td>
+<td>5.947000</td>
+<td>0.214458</td>
+<td>27.730</td>
+<td>2e-16</td>
+</tr>
+<tr class="even">
+<td><code>age_at_diagnosis</code></td>
+<td>-0.014682</td>
+<td>0.003806</td>
+<td>-3.857</td>
+<td>0.000124</td>
+</tr>
+<tr class="odd">
+<td><code>chemotherapy1</code></td>
+<td>-0.701659</td>
+<td>0.294312</td>
+<td>-2.384</td>
+<td>0.017348</td>
+</tr>
+<tr class="even">
+<td><code>hormone_therapy1</code></td>
+<td>-0.622362</td>
+<td>0.266825</td>
+<td>-2.332</td>
+<td>0.019915</td>
+</tr>
+<tr class="odd">
+<td><code>tumor_stage2</code></td>
+<td>-0.238917</td>
+<td>0.093835</td>
+<td>-2.546</td>
+<td>0.011073</td>
+</tr>
+<tr class="even">
+<td><code>tumor_stage3</code></td>
+<td>-0.815091</td>
+<td>0.166351</td>
+<td>-4.900</td>
+<td>1.15e-06</td>
+</tr>
+<tr class="odd">
+<td><code>death_from_cancerDied of Disease</code></td>
+<td>-0.857453</td>
+<td>0.054094</td>
+<td>-15.851</td>
+<td>&lt; 2e-16</td>
+</tr>
+<tr class="even">
+<td><code>age_at_diagnosis:chemotherapy1</code></td>
+<td>0.009678</td>
+<td>0.005384</td>
+<td>1.797</td>
+<td>0.072624</td>
+</tr>
+<tr class="odd">
+<td><code>age_at_diagnosis:hormone_therapy1</code></td>
+<td>0.009458</td>
+<td>0.004510</td>
+<td>2.097</td>
+<td>0.036273</td>
+</tr>
+<tr class="even">
+<td><code>hormone_therapy1:tumor_stage2</code></td>
+<td>0.216084</td>
+<td>0.117380</td>
+<td>1.841</td>
+<td>0.065997</td>
+</tr>
+<tr class="odd">
+<td><code>hormone_therapy1:tumor_stage3</code></td>
+<td>0.711055</td>
+<td>0.203734</td>
+<td>3.490</td>
+<td>0.000508</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Full model for <code>finalmod_both_1</code>: <code>log(overall_survival_months) ~ age_at_diagnosis + chemotherapy + hormone_therapy + tumor_stage + death_from_cancer + age_at_diagnosis:hormone_therapy + hormone_therapy:tumor_stage</code></p></li>
+<li><p>Version of the model <code>finalmod_both</code> without the interaction term <code>age_at_diagnosis:chemotherapy1</code></p></li>
+<li><p>Has all terms to be statistically significant on the 5% level.</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Estimate</th>
+<th>Std. Error</th>
+<th>t value</th>
+<th><code>Pr(|t|)</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>(Intercept)</code></td>
+<td>5.773782</td>
+<td>0.191845</td>
+<td>30.096</td>
+<td>2e-16</td>
+</tr>
+<tr class="even">
+<td><code>age_at_diagnosis</code></td>
+<td>-0.011469</td>
+<td>0.003365</td>
+<td>-3.408</td>
+<td>0.000685</td>
+</tr>
+<tr class="odd">
+<td><code>chemotherapy1</code></td>
+<td>-0.189144</td>
+<td>0.073044</td>
+<td>-2.589</td>
+<td>0.009782</td>
+</tr>
+<tr class="even">
+<td><code>hormone_therapy1</code></td>
+<td>-0.570923</td>
+<td>0.265644</td>
+<td>-2.149</td>
+<td>0.031908</td>
+</tr>
+<tr class="odd">
+<td><code>tumor_stage2</code></td>
+<td>-0.271223</td>
+<td>0.092222</td>
+<td>-2.941</td>
+<td>0.003363</td>
+</tr>
+<tr class="even">
+<td><code>tumor_stage3</code></td>
+<td>-0.830862</td>
+<td>0.166344</td>
+<td>-4.995</td>
+<td>7.19e-07</td>
+</tr>
+<tr class="odd">
+<td><code>death_from_cancerDied of Disease</code></td>
+<td>-0.857409</td>
+<td>0.054167</td>
+<td>-15.829</td>
+<td>&lt; 2e-16</td>
+</tr>
+<tr class="even">
+<td><code>age_at_diagnosis:hormone_therapy1</code></td>
+<td>0.008276</td>
+<td>0.004467</td>
+<td>1.852</td>
+<td>0.064316</td>
+</tr>
+<tr class="odd">
+<td><code>hormone_therapy1:tumor_stage2</code></td>
+<td>0.240445</td>
+<td>0.116753</td>
+<td>2.059</td>
+<td>0.039766</td>
+</tr>
+<tr class="even">
+<td><code>hormone_therapy1:tumor_stage3</code></td>
+<td>0.726981</td>
+<td>0.203816</td>
+<td>3.567</td>
+<td>0.000382</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="results" class="level2">
