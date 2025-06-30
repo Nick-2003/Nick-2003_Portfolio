@@ -27,7 +27,7 @@ Across all patients, the presence of asymptomatic chest pain left ventricular hy
 
 In conclusion, the set of factors that relate to high serum cholesterol levels within male patients in Cleveland are ST-T wave abnormality, exercise-induced angina, high resting blood pressure and high maximum heart rate.
 
-![Visualisation](assets/images/COMM 335 Data Viz Dashboard V1 (Group 13).pdf)
+[Visualisation](assets/images/COMM%20335%20Data%20Viz%20Dashboard%20V1%20(Group%2013).pdf)
 
 ## References
 - Janosi,Andras, Steinbrunn,William, Pfisterer,Matthias, and Detrano,Robert. (1988). Heart Disease. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X
