@@ -249,14 +249,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link active" data-scroll-target="#problem-statement">Problem Statement</a></li>
-  <li><a href="#project-goals-and-objectives" id="toc-project-goals-and-objectives" class="nav-link" data-scroll-target="#project-goals-and-objectives">Project Goals and Objectives</a></li>
-  <li><a href="#process-and-approach" id="toc-process-and-approach" class="nav-link" data-scroll-target="#process-and-approach">Process and Approach</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#impact-and-reflection" id="toc-impact-and-reflection" class="nav-link" data-scroll-target="#impact-and-reflection">Impact and Reflection</a></li>
-  <li><a href="#future-improvements" id="toc-future-improvements" class="nav-link" data-scroll-target="#future-improvements">Future Improvements</a></li>
+  <li><a href="#project-goals-and-objectives" id="toc-project-goals-and-objectives" class="nav-link active" data-scroll-target="#project-goals-and-objectives">Project Goals and Objectives</a></li>
+  <li><a href="#process-and-results" id="toc-process-and-results" class="nav-link" data-scroll-target="#process-and-results">Process and Results</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/urban_forest_viz.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/urban_forest_viz.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/urban_forest_viz.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/urban_forest_viz.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/Nick-2003/project-team_kbn"><i class="bi bi-github"></i>Project Code</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -280,23 +277,219 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
-</section>
+<p><a href="https://ubc-dsci320-2024w2.github.io/project-team_kbn/">Project Website</a></p>
 <section id="project-goals-and-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="project-goals-and-objectives">Project Goals and Objectives</h2>
+<p>The <a href="https://opendata.vancouver.ca/explore/dataset/public-trees/information/?disjunctive.neighbourhood_name&amp;disjunctive.on_street&amp;disjunctive.species_name&amp;disjunctive.common_name">Public Tree Dataset</a>, maintained by the Vancouver Board of Parks and Recreation, provides detailed information on public trees across Vancouver, including their location, species, size, planting date, and geographic coordinates. Updated daily on weekdays, the dataset supports the city’s Healthy City Strategy by managing the urban forest to improve physical and mental well-being while delivering environmental benefits such as cleaner air, carbon sequestration, and climate resilience. For this analysis, we used data last modified on March 4th, 2025, and enriched it by integrating external databases. We added the <strong>FAMILY_NAME</strong> column, mapping tree genera to their families using the <a href="https://www.gbif.org/">Global Biodiversity Information Facility (GBIF)</a>, and the <strong>HAS_POLLEN</strong> column, indicating pollen production based on the <a href="https://www.paldat.org/">Palynological Database (PalDat)</a>. To address missing neighborhood data, we utilized the <a href="https://www.openstreetmap.org">Overpass API</a>, an open-source tool developed by Geofabrik GmbH, to retrieve geographical boundaries for areas like Stanley Park and West Point Grey. Additionally, we incorporated the <a href="https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name">Local Area Boundary dataset</a> from the City of Vancouver’s Open Data Portal to refine neighborhood assignments further. All external data usage complies with licensing terms (CC BY for GBIF and non-commercial use for PalDat), ensuring proper attribution and adherence to non-commercial purposes.</p>
+<p>Our goal is to optimize tree placement and management in Vancouver to enhance sustainability and recreational benefits. The primary focus is on understanding how tree species’ growth patterns, physical traits, and spatial distribution affect their sustainability in urban environments.</p>
+<p>For sustainability, we examine the relationship between tree height, diameter, and their suitability for urban spaces, as well as how these traits vary across different neighborhoods and urban settings. From a recreational perspective, the Vancouver tree dataset helps identify ideal locations for spring picnics. We look at tree density for shaded picnic spots, the diversity of tree species for visually engaging environments, and the pollen levels to accommodate those with allergies. These factors are crucial for planning picnic-friendly areas that maximize comfort and enjoyment. Lastly, in terms of planting, we focus on tree species’ distribution across neighborhoods, comparing planted trees to naturally grown ones to assess urban planting practices. We also investigate the age distribution of trees to ensure future tree coverage and healthy ecosystem regeneration, aiding better long-term environmental planning.</p>
 </section>
-<section id="process-and-approach" class="level2">
-<h2 class="anchored" data-anchor-id="process-and-approach">Process and Approach</h2>
+<section id="process-and-results" class="level2">
+<h2 class="anchored" data-anchor-id="process-and-results">Process and Results</h2>
+<ul>
+<li>Collaborated with the group on selecting the dataset of focus and outlining the type of information we should focus on, and analysed the data attributes to determine the types of inquiries our visualisations could answer.
+<ul>
+<li>We selected the Public tree Dataset maintained by the Vancouver Board of Parks and Recreation.</li>
+<li>My visualisations focused on the following question: <strong>Given the tree dataset, how would we want to arrange the types of trees to be planted in certain locations, such that they could survive and significantly improve the ecosystem?</strong>
+<ul>
+<li><em>Which planted species exist in many different locations within each neighbourhood?</em> Understanding this could help identify species that are well-suited to multiple environments, ensuring biodiversity and better ecosystem health across different areas of the city.</li>
+<li><em>How do trees that have been planted directly compare in terms of diameter to those that have grown naturally?</em> Knowing this could highlight how urban planting practices affect tree growth. Planted trees may face more limitations, such as space or soil conditions, which could influence their growth compared to naturally occurring trees.</li>
+<li><em>What is the distribution of ages for specific tree species?</em> This could reveal whether the neighbourhoods are planting enough young trees to sustain long-term tree coverage and whether certain species need more attention for regeneration or maintenance.</li>
+<li>Data abstraction:</li>
+</ul></li>
+</ul></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Attribute Name</th>
+<th>Attribute Type</th>
+<th>Data Semantics</th>
+<th>Cardinality</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TREE_ID</td>
+<td>Categorical</td>
+<td>Tree identification number; primary key</td>
+<td>181476</td>
+</tr>
+<tr class="even">
+<td>CIVIC_NUMBER</td>
+<td>Categorical</td>
+<td>Street address of the site at which the tree is associated with</td>
+<td>8338</td>
+</tr>
+<tr class="odd">
+<td>STD_STREET</td>
+<td>Categorical</td>
+<td>Street name of the site at which the tree is associated with</td>
+<td>814</td>
+</tr>
+<tr class="even">
+<td>GENUS_NAME</td>
+<td>Categorical</td>
+<td>Genus name of the tree</td>
+<td>169</td>
+</tr>
+<tr class="odd">
+<td>SPECIES_NAME</td>
+<td>Categorical</td>
+<td>Species name of the tree</td>
+<td>539</td>
+</tr>
+<tr class="even">
+<td>CULTIVAR_NAME</td>
+<td>Categorical</td>
+<td>Cultivar name of the tree</td>
+<td>1070</td>
+</tr>
+<tr class="odd">
+<td>COMMON_NAME</td>
+<td>Categorical</td>
+<td>Common name of the tree</td>
+<td>1297</td>
+</tr>
+<tr class="even">
+<td>ON_STREET_BLOCK</td>
+<td>Categorical</td>
+<td>The street block at which the tree is physically located on</td>
+<td>189</td>
+</tr>
+<tr class="odd">
+<td>ON_STREET</td>
+<td>Categorical</td>
+<td>The name of the street on which the tree is physically located</td>
+<td>822</td>
+</tr>
+<tr class="even">
+<td>NEIGHBOURHOOD_NAME</td>
+<td>Categorical</td>
+<td>City’s defined local area in which the tree is located</td>
+<td>23</td>
+</tr>
+<tr class="odd">
+<td>STREET_SIDE_NAME</td>
+<td>Categorical</td>
+<td>The street side on which the tree is physically located</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>HEIGHT_RANGE_ID</td>
+<td>Ordinal</td>
+<td>Height range of the tree for every 10 feet</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>HEIGHT_RANGE</td>
+<td>Ordinal</td>
+<td>Height range of the tree measured in feet</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>DIAMETER</td>
+<td>Quantitative</td>
+<td>Diameter of tree at breast height in inches</td>
+<td>490</td>
+</tr>
+<tr class="odd">
+<td>DATE_PLANTED</td>
+<td>Date</td>
+<td>Planted date of new tree</td>
+<td>4571</td>
+</tr>
+<tr class="even">
+<td>Geom</td>
+<td>Geographic point</td>
+<td>Spatial representation indicating the location of the tree</td>
+<td>181348</td>
+</tr>
+<tr class="odd">
+<td>geo_point_2d</td>
+<td>Categorical</td>
+<td>Location of the tree in 2D</td>
+<td>181348</td>
+</tr>
+<tr class="even">
+<td>LATITUDE</td>
+<td>Quantitative</td>
+<td>Latitude of a tree’s location</td>
+<td>181344</td>
+</tr>
+<tr class="odd">
+<td>LONGITUDE</td>
+<td>Quantitative</td>
+<td>Longitude of a tree’s location</td>
+<td>181343</td>
+</tr>
+<tr class="even">
+<td>NOMENCLATURE</td>
+<td>Categorical</td>
+<td>Combination of GENUS_NAME and SPECIES_NAME</td>
+<td>701</td>
+</tr>
+<tr class="odd">
+<td>ON_ADDRESS</td>
+<td>Categorical</td>
+<td>Combination of ON_STREET_BLOCK, ON_STREET, NEIGHBOURHOOD_NAME, STREET_SIDE_NAME</td>
+<td>19267</td>
+</tr>
+<tr class="even">
+<td>FAMILY_NAME</td>
+<td>Categorical</td>
+<td>Family name of the tree</td>
+<td>57</td>
+</tr>
+<tr class="odd">
+<td>HAS_POLLEN</td>
+<td>Boolean</td>
+<td>Whether tree is known to produce pollen</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Independently conducted exploratory data analysis and task analysis on the data based on our question of focus.
+<ul>
+<li><a href="https://ubc-dsci320-2024w2.github.io/project-team_kbn/03_eda/">Exploratory Data Analysis</a>
+<ul>
+<li>Count of each <code>SPECIES_NAME</code> that have been planted</li>
+<li>Scatterplot of <code>LATITUDE</code> against <code>LONGITUDE</code></li>
+<li>Boxplots of <code>DIAMETER</code> grouped by <code>HEIGHT_RANGE</code></li>
+<li>Number of <code>ON_STREET</code> grouped by <code>NEIGHBOURHOOD_NAME</code></li>
+<li>Proportions of <code>HEIGHT_RANGE</code> for each <code>NEIGHBOURHOOD_NAME</code></li>
+</ul></li>
+<li>Task analysis
+<ul>
+<li>Compute: Compute the average percentage differences in <code>DIAMETER</code> between planted and non-planted trees, and the ages by the number of days between <code>DATE_PLANTED</code> and March 5 2025.</li>
+<li>Filter: Filter out <code>SPECIES_NAME</code> such that there are plenty of both planted and non-planted trees.</li>
+<li>Characterise distribution: Find the distribution of ages for planted tree <code>SPECIES_NAME</code>?</li>
+<li>Sort: Rank <code>SPECIES_NAME</code> for appearing in the greatest number of <code>NEIGHBOURHOOD_NAME</code> and having large proportions of each corresponding <code>ON_STREET</code> containing them.</li>
+<li>Retrieve value: Retrieve the number of trees that have been planted, separated by <code>SPECIES_NAME.</code></li>
+</ul></li>
+</ul></li>
+<li>Created preliminary sketches and informative visualisations for each sub-question using the Python library <code>altair</code>.
+<ul>
+<li><a href="https://ubc-dsci320-2024w2.github.io/project-team_kbn/07_planting_focus_viz/">Planting Visualisations</a></li>
+</ul></li>
+</ul>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-</section>
-<section id="impact-and-reflection" class="level2">
-<h2 class="anchored" data-anchor-id="impact-and-reflection">Impact and Reflection</h2>
-</section>
-<section id="future-improvements" class="level2">
-<h2 class="anchored" data-anchor-id="future-improvements">Future Improvements</h2>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>City of Vancouver. (2025). Public trees [Data set]. City of Vancouver Open Data Portal. Retrieved March 4, 2025, from <a href="https://opendata.vancouver.ca/explore/dataset/public-trees/information/?disjunctive.neighbourhood_name&amp;disjunctive.on_street&amp;disjunctive.species_name&amp;disjunctive.common_name" class="uri">https://opendata.vancouver.ca/explore/dataset/public-trees/information/?disjunctive.neighbourhood_name&amp;disjunctive.on_street&amp;disjunctive.species_name&amp;disjunctive.common_name</a></li>
+<li>City of Vancouver. (2025). Local area boundary [Data set]. City of Vancouver Open Data Portal. Retrieved March 17, 2025, from <a href="https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name" class="uri">https://opendata.vancouver.ca/explore/dataset/local-area-boundary/information/?disjunctive.name</a></li>
+<li>GBIF.org. (2025). Global Biodiversity Information Facility [Data set]. GBIF Secretariat. <a href="https://www.gbif.org" class="uri">https://www.gbif.org</a></li>
+<li>OpenStreetMap contributors. (2025). Overpass API [Software]. OpenStreetMap Foundation. <a href="https://www.openstreetmap.org" class="uri">https://www.openstreetmap.org</a></li>
+<li>PalDat. (n.d.). Palynological database [Database]. <a href="https://www.paldat.org" class="uri">https://www.paldat.org</a></li>
+</ul>
 
 
 </section>
