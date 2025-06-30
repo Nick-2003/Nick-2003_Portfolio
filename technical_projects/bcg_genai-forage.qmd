@@ -1,6 +1,11 @@
 ---
 title: "BCG GenAI Job Simulation"
-format: html
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/BGC-X-GenAI
 ---
 
 ## [Task 1](https://github.com/Nick-2003/BGC-X-GenAI/blob/master/BGC%20X%20GenAI%20Task%201/BGC%20X%20GenAI%20Task%201.ipynb)
