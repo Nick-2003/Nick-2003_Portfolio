@@ -1,5 +1,5 @@
 ---
-title: "jpmorgan_quantitative-forage"
+title: "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
 format:
   html:
     code-links:
@@ -8,19 +8,52 @@ format:
         href: https://github.com/Nick-2003/JP-Morgan-Quantitative-Research
 ---
 
-## Tasks and Results
-
-### Task 1
+## [Task 1](https://github.com/Nick-2003/JP-Morgan-Quantitative-Research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%201%20(V2).ipynb)
 
 -   Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their $R^{2}$ score for both the train and test data.
 -   Utilised a linear model `lr_regressor_nolag()` that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.
 
-![lr_regressor_nolag](../assets/images/jpmorgan_quantitative_1.png)
+![lr_regressor_nolag](../assets/images/jpmorgan_quantitative_predict.png)
 
-![line_plot](../assets/images/jpmorgan_quantitative_2.png)
+![Line Plot of Dates and Prices](../assets/images/jpmorgan_quantitative_future.png)
 
-### Task 2
+## [Task 2](https://github.com/Nick-2003/JP-Morgan-Quantitative-Research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%202%20(V1).ipynb)
 
-### Task 3
+-   Create a prototype pricing model that can go through further validation and testing before being put into production.
+-   Inputs
+    -   Dictionary of injection and withdrawal dates (in the form %Y-%m-%d) and amounts
+    -   List of prices at which the commodity can be purchased/sold on those dates
+    -   Rate at which the gas can be injected/withdrawn
+    -   Maximum volume that can be stored
+    -   Fixed fees per month for storing
+-   Output: Predicted contract price
 
-### Task 4
+## [Task 3](https://github.com/Nick-2003/JP-Morgan-Quantitative-Research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%203%20(V1).ipynb)
+
+-   Assessed a right-censored loan book using survival analysis models (e.g. Kaplan-Meier Survival Curve) to estimate a customer's probability of default, and by proxy the expected loss
+-   Equation: $EL = PD * (1 - RR) * EAD$
+    -   $EL$ = Expected loss
+    -   $PD$ = Probability of default (`KM_estimate`)
+    -   $RR$ = Recovery rate (Provided as 10%)
+    -   $EAD$ = Exposure at default (Due to lack of provided information, assume this is `total_debt_outstanding`)
+
+## [Task 4](https://github.com/Nick-2003/JP-Morgan-Quantitative-Research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%204%20(V1).ipynb)
+
+- Utilised dynamic programming to convert FICO scores into categorical data to predict defaults
+
+![FICO distributions](../assets/images/jpmorgan_quantitative_fico_dist.png)
+
+- Options considered:
+  - Use mean and standard distribution as intervals for data.
+  - Use quartiles and boxplot whiskers.
+  - `KMeans` to create intervals.
+
+![Mean and Standard Distribution](../assets/images/jpmorgan_quantitative_sdev_dist.png)
+
+![Boxplot](../assets/images/jpmorgan_quantitative_boxplot.png)
+
+- `KMeans` was selected due to allowing any number of buckets to be created by the user's choosing.
+  - None of the labels overlap in terms of specific values.
+  - Provided example uses 10 buckets
+
+![FICO Labelling](../assets/images/jpmorgan_quantitative_fico_labelling.png)
