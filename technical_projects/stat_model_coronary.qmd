@@ -10,12 +10,69 @@ format:
 
 ## Problem Statement
 
+Sourced from [UBC STAT 301 website](https://ubc-stat.github.io/stat-301/group-project.html):
+
+"As in DSCI 100 and STAT 201, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). The electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as fitting and selecting a model. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.
+
+For this project, you will need to formulate formulate a research question of your choice, and then identify and use a dataset to answer to the question. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team."
+
 ## Project Goals and Objectives
+
+For our research project, we have selected datasets containing processed angiography data on patients in various clinics in 1988, applying a probability model derived from test results of 303 patients at the Cleveland Clinic in Cleveland, Ohio to generate and estimate results for the diagnosis of coronary heart disease (Janosi, Steinbrunn, Pfisterer, Detrano, 1989). The datasets include the following patients undergoing angiography: - 303 patients at the Cleveland Clinic in Cleveland, Ohio (Original dataset for model) - 425 patients at the Hungarian Institute of Cardiology in Budapest, Hungary - 200 patients at the Veterans Administration Medical Center in Long Beach, California - 143 patients from the University Hospitals in Zurich and Basel, Switzerland
+
+These datasets were retrieved from the [Heart Disease](https://archive.ics.uci.edu/dataset/45/heart+disease) dataset from UCI machine learning repository, and converted from .data files to CSV files with Excel. The dataset obtained contains the following 14 attributes out of 76 attributes from the initial dataset for each patient:
+
+```{r}
+myTable <- data.frame(
+  Variable = c("age", "sex", "cp", "trestbps", "chol", "fbs", "restecg", "thalach", "exang", "oldpeak", "slope", "ca", "thal", "num"),
+  Definition = c("Age", "Sex", "Chest pain type", "Resting blood pressure on admission to hospital", "Serum cholesterol", "Presence of high blood sugar", "Resting electrocardiographic results", "Maximum heart rate achieved", "Exercise induced angina", "ST depression induced by exercise relative to rest", "Slope of the peak exercise ST segment", "Number of major vessels coloured by fluoroscopy", "Presence of defect", "Diagnosis of heart disease"),
+  Type = c("Numerical", "Categorical", "Categorical", "Numerical", "Numerical", "Categorical", "Categorical", "Numerical", "Categorical", "Numerical", "Categorical", "Numerical", "Categorical", "Categorical"),
+  Unit = c("Years", "N/A", "N/A", "mmHg", "mg/dl", "N/A", "N/A", "BPM", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A"),
+  Categories = c("N/A", "0: Female; 1: Male", "1: Typical angina; 2: Atypical angina; 3: Non-anginal pain; 4: Asymptomatic", "N/A", "N/A", "0: False; 1: True", "0: Normal; 1: Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV); 2: Showing probable or definite left ventricular hypertrophy by Estes' criteria", "N/A", "0: No; 1: Yes", "N/A", "1: Upsloping; 2: Flat; 3: Downsloping", "Range from 1-3", "3: Normal; 6: Fixed defect; 7: Reversible defect", "0: < 50% diameter narrowing; 1+: > 50% diameter narrowing"),
+  AnyMissingValues = c("No", "No", "No", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "No")
+)
+myTable
+```
+
+Our project question is:
+
+#### “Given the sample data for angiography patients, what model would be most effective in predicting each patient’s diagnosis?”
+
+Our analysis will involve the development of a predictive model to estimate the likelihood of angiographic coronary disease based on these variables. This research question is primarily focused on predictions, as we seek to generate a predictive model given the provided data to estimate diagnoses of new observations. Inference will also be required to a lesser extent, to gain insights into factors influencing the likelihood of coronary disease diagnosis in different demographic groups.
 
 ## Process and Approach
 
-## Results
+-   Developed a team contract with my peers to reach an understanding of how we would conduct ourselves and what goals we would seek to accomplish over the course of the project.
+-   Selected a group of datasets on the diagnosis on coronary heart disease across 4 hospitals in distinct locations, and demonstrated that the datasets can be read from the web into R.
+-   Cleaned and wrangled the data into a tidy format by converting them from `.data` files to `.csv` files and merging them into a single dataframe.
+-   Each of us created independent reports on the dataset, and organised our results to compose a cohesive final report.
+    -   Wrote a brief description of the dataset indicating how the data had been collected and where it came from.
+    -   Performed exploratory data analysis; in my case, I obtained the VIFs for each variable to test for multicollinearity between independent variables, along with summary statistics on each independent quantitative variable.
+    -   Conducted hypothesis tests for the continuous variable coefficients $\beta_{j}$ and the statistical significance in the mean number of patients with coronary heart disease between categorical variable groups, based on a provided reference level.
+-   Independently attempted stepwise Akaike Information Criterion (AIC), ridge regression and LASSO regression, and compared the models produced from each method to identify the most effective model for the given datasets on predicting coronary heart disease diagnosis.
 
-## Impact and Reflection
+## Results (From `Discussion` in the final report)
 
-## Future Improvements
+###  Logistic Regression Models with Stepwise Akaike Information Criterion (AIC) 
+The confusion matrix of our logistic regression model with `num` as response and all other variables as input generated an 84.24% accuracy, with a Kappa value of 0.685. The result of the `stepAIC()` method applied to find models which explain the most variation in data included the terms `age`, `sex`, `cp`, `trestbps`, `thalach`, and `exang`, with an AIC of 454.78. After `stepAIC()`, the out-of-sample error rate became smaller with value 0.5222 compared with the regular model’s training error rate of 0.5369, implying that the new model fits the testing data set better. However, the `stepAIC()` model becomes less accurate as a consequence, with an accuracy of 82.76% and Kappa value of 0.6554.
+
+### Logistic Regression Models with Regularisation methods 
+The ordinary regression model performs better in distinguishing between positive and negative classes compared to the regularised models, with the largest AUC value at 0.8417. This suggests that the regularised methods may have excessively shrunken the coefficients, leading to underfitting. The LASSO regression model has also been selected such that it would be significantly simpler, leading to a lower AUC value.
+
+## Conclusion
+In conclusion, the model most effective in predicting each patient’s diagnosis would be the one obtained through `stepAIC()`, with the variables `age`, `sex`, `cp`, `trestbps`, `thalach`, and `exang`, and without regularised regression models applied.
+
+Quadratic or interaction terms to the logistic regression model could be added to account for the possibility that the explanatory variables are not independent and the relationship between log odds of the response variable and explanatory variables may not be linear. We could also optimise regularisation parameters through techniques such as cross-validation to find the best model, which can access model performance using techniques like k-folds to ensure robustness.
+
+This project could lead to several relevant future questions, such as: 
+- How do lifestyle and environment factors affect the diagnosis of coronary heart disease?
+- How can big data and predictive analytics be employed to improve the accuracy of the logistic regression model?
+- How to use this logistic regression model to predict an individual’s risk of coronary heart disease?
+
+## References 
+- Lloyd-Jones, D. M., Larson, M. G., Beiser, A., & Levy, D. (1999, February 19). Lifetime risk of developing coronary heart disease. The Lancet. https://www.sciencedirect.com/science/article/pii/S0140673698102799?via%3Dihub 
+- Lawes, C. M. M., Bennett, D. A., Lewington, S., & Rodgers, A. (2003, January 22). Blood pressure and coronary heart disease: A review of the evidence. Seminars in Vascular Medicine. https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2002-36765 
+- Law, M. R., Wald, N. J., & Thompson, S. G. (1994, February 5). By how much and how quickly does reduction in serum cholesterol concentration lower risk of ischaemic heart disease?. The BMJ. https://www.bmj.com/content/308/6925/367.full 
+- Beckett, N., Nunes, M., & Bulpitt, C. (2000). Is it advantageous to lower cholesterol in the elderly hypertensive?. Cardiovascular drugs and therapy, 14(4), 397–405. https://doi.org/10.1023/a:1007812232328 
+- Hajar R. (2017). Risk Factors for Coronary Artery Disease: Historical Perspectives. Heart views : the official journal of the Gulf Heart Association, 18(3), 109–114. https://doi.org/10.4103/HEARTVIEWS.HEARTVIEWS_106_17 
+- Schell, A. (n.d.). Empirical logit plots for logistic regression specification search - Alex Schell. https://alexschell.github.io/emplogit.html 
