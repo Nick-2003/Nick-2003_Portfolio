@@ -1,5 +1,5 @@
 ---
-title: "diabetes_risk_report_workflow"
+title: "Statistical Modelling of Diabetes Risk Report and Workflow"
 ---
 
 ## Problem Statement

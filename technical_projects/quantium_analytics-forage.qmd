@@ -1,5 +1,5 @@
 ---
-title: "quantium_analytics-forage"
+title: "Quantium Data Analytics Job Simulation"
 ---
 
 ## Problem Statement

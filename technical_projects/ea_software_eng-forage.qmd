@@ -1,5 +1,5 @@
 ---
-title: "ea_software_eng-forage"
+title: "Electronic Arts Software Engineering Virtual Experience Program"
 ---
 
 ## Problem Statement
