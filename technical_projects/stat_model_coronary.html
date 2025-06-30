@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -70,6 +105,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -246,9 +310,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link active" data-scroll-target="#problem-statement">Problem Statement</a></li>
   <li><a href="#project-goals-and-objectives" id="toc-project-goals-and-objectives" class="nav-link" data-scroll-target="#project-goals-and-objectives">Project Goals and Objectives</a></li>
   <li><a href="#process-and-approach" id="toc-process-and-approach" class="nav-link" data-scroll-target="#process-and-approach">Process and Approach</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#impact-and-reflection" id="toc-impact-and-reflection" class="nav-link" data-scroll-target="#impact-and-reflection">Impact and Reflection</a></li>
-  <li><a href="#future-improvements" id="toc-future-improvements" class="nav-link" data-scroll-target="#future-improvements">Future Improvements</a></li>
+  <li><a href="#results-from-discussion-in-the-final-report" id="toc-results-from-discussion-in-the-final-report" class="nav-link" data-scroll-target="#results-from-discussion-in-the-final-report">Results (From <code>Discussion</code> in the final report)</a>
+  <ul class="collapse">
+  <li><a href="#logistic-regression-models-with-stepwise-akaike-information-criterion-aic" id="toc-logistic-regression-models-with-stepwise-akaike-information-criterion-aic" class="nav-link" data-scroll-target="#logistic-regression-models-with-stepwise-akaike-information-criterion-aic">Logistic Regression Models with Stepwise Akaike Information Criterion (AIC)</a></li>
+  <li><a href="#logistic-regression-models-with-regularisation-methods" id="toc-logistic-regression-models-with-regularisation-methods" class="nav-link" data-scroll-target="#logistic-regression-models-with-regularisation-methods">Logistic Regression Models with Regularisation methods</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/stat_model_coronary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/stat_model_coronary.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/Nick-2003/STAT-301-Group_4-Project_Final"><i class="bi bi-github"></i>Project Code</a></li></ul></div></nav>
     </div>
@@ -276,21 +344,135 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="problem-statement" class="level2">
 <h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
+<p>Sourced from <a href="https://ubc-stat.github.io/stat-301/group-project.html">UBC STAT 301 website</a>:</p>
+<p>“As in DSCI 100 and STAT 201, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). The electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as fitting and selecting a model. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.</p>
+<p>For this project, you will need to formulate formulate a research question of your choice, and then identify and use a dataset to answer to the question. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team.”</p>
 </section>
 <section id="project-goals-and-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="project-goals-and-objectives">Project Goals and Objectives</h2>
+<p>For our research project, we have selected datasets containing processed angiography data on patients in various clinics in 1988, applying a probability model derived from test results of 303 patients at the Cleveland Clinic in Cleveland, Ohio to generate and estimate results for the diagnosis of coronary heart disease (Janosi, Steinbrunn, Pfisterer, Detrano, 1989). The datasets include the following patients undergoing angiography: - 303 patients at the Cleveland Clinic in Cleveland, Ohio (Original dataset for model) - 425 patients at the Hungarian Institute of Cardiology in Budapest, Hungary - 200 patients at the Veterans Administration Medical Center in Long Beach, California - 143 patients from the University Hospitals in Zurich and Basel, Switzerland</p>
+<p>These datasets were retrieved from the <a href="https://archive.ics.uci.edu/dataset/45/heart+disease">Heart Disease</a> dataset from UCI machine learning repository, and converted from .data files to CSV files with Excel. The dataset obtained contains the following 14 attributes out of 76 attributes from the initial dataset for each patient:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myTable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">c</span>(<span class="st">"age"</span>, <span class="st">"sex"</span>, <span class="st">"cp"</span>, <span class="st">"trestbps"</span>, <span class="st">"chol"</span>, <span class="st">"fbs"</span>, <span class="st">"restecg"</span>, <span class="st">"thalach"</span>, <span class="st">"exang"</span>, <span class="st">"oldpeak"</span>, <span class="st">"slope"</span>, <span class="st">"ca"</span>, <span class="st">"thal"</span>, <span class="st">"num"</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Definition =</span> <span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"Sex"</span>, <span class="st">"Chest pain type"</span>, <span class="st">"Resting blood pressure on admission to hospital"</span>, <span class="st">"Serum cholesterol"</span>, <span class="st">"Presence of high blood sugar"</span>, <span class="st">"Resting electrocardiographic results"</span>, <span class="st">"Maximum heart rate achieved"</span>, <span class="st">"Exercise induced angina"</span>, <span class="st">"ST depression induced by exercise relative to rest"</span>, <span class="st">"Slope of the peak exercise ST segment"</span>, <span class="st">"Number of major vessels coloured by fluoroscopy"</span>, <span class="st">"Presence of defect"</span>, <span class="st">"Diagnosis of heart disease"</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Type =</span> <span class="fu">c</span>(<span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Categorical"</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Unit =</span> <span class="fu">c</span>(<span class="st">"Years"</span>, <span class="st">"N/A"</span>, <span class="st">"N/A"</span>, <span class="st">"mmHg"</span>, <span class="st">"mg/dl"</span>, <span class="st">"N/A"</span>, <span class="st">"N/A"</span>, <span class="st">"BPM"</span>, <span class="st">"N/A"</span>, <span class="st">"N/A"</span>, <span class="st">"N/A"</span>, <span class="st">"N/A"</span>, <span class="st">"N/A"</span>, <span class="st">"N/A"</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Categories =</span> <span class="fu">c</span>(<span class="st">"N/A"</span>, <span class="st">"0: Female; 1: Male"</span>, <span class="st">"1: Typical angina; 2: Atypical angina; 3: Non-anginal pain; 4: Asymptomatic"</span>, <span class="st">"N/A"</span>, <span class="st">"N/A"</span>, <span class="st">"0: False; 1: True"</span>, <span class="st">"0: Normal; 1: Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV); 2: Showing probable or definite left ventricular hypertrophy by Estes' criteria"</span>, <span class="st">"N/A"</span>, <span class="st">"0: No; 1: Yes"</span>, <span class="st">"N/A"</span>, <span class="st">"1: Upsloping; 2: Flat; 3: Downsloping"</span>, <span class="st">"Range from 1-3"</span>, <span class="st">"3: Normal; 6: Fixed defect; 7: Reversible defect"</span>, <span class="st">"0: &lt; 50% diameter narrowing; 1+: &gt; 50% diameter narrowing"</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">AnyMissingValues =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"No"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>myTable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Variable                                         Definition        Type
+1       age                                                Age   Numerical
+2       sex                                                Sex Categorical
+3        cp                                    Chest pain type Categorical
+4  trestbps    Resting blood pressure on admission to hospital   Numerical
+5      chol                                  Serum cholesterol   Numerical
+6       fbs                       Presence of high blood sugar Categorical
+7   restecg               Resting electrocardiographic results Categorical
+8   thalach                        Maximum heart rate achieved   Numerical
+9     exang                            Exercise induced angina Categorical
+10  oldpeak ST depression induced by exercise relative to rest   Numerical
+11    slope              Slope of the peak exercise ST segment Categorical
+12       ca    Number of major vessels coloured by fluoroscopy   Numerical
+13     thal                                 Presence of defect Categorical
+14      num                         Diagnosis of heart disease Categorical
+    Unit
+1  Years
+2    N/A
+3    N/A
+4   mmHg
+5  mg/dl
+6    N/A
+7    N/A
+8    BPM
+9    N/A
+10   N/A
+11   N/A
+12   N/A
+13   N/A
+14   N/A
+                                                                                                                                                                                       Categories
+1                                                                                                                                                                                             N/A
+2                                                                                                                                                                              0: Female; 1: Male
+3                                                                                                                     1: Typical angina; 2: Atypical angina; 3: Non-anginal pain; 4: Asymptomatic
+4                                                                                                                                                                                             N/A
+5                                                                                                                                                                                             N/A
+6                                                                                                                                                                               0: False; 1: True
+7  0: Normal; 1: Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV); 2: Showing probable or definite left ventricular hypertrophy by Estes' criteria
+8                                                                                                                                                                                             N/A
+9                                                                                                                                                                                   0: No; 1: Yes
+10                                                                                                                                                                                            N/A
+11                                                                                                                                                          1: Upsloping; 2: Flat; 3: Downsloping
+12                                                                                                                                                                                 Range from 1-3
+13                                                                                                                                               3: Normal; 6: Fixed defect; 7: Reversible defect
+14                                                                                                                                      0: &lt; 50% diameter narrowing; 1+: &gt; 50% diameter narrowing
+   AnyMissingValues
+1                No
+2                No
+3                No
+4               Yes
+5               Yes
+6               Yes
+7               Yes
+8               Yes
+9               Yes
+10              Yes
+11              Yes
+12              Yes
+13              Yes
+14               No</code></pre>
+</div>
+</div>
+<p>Our project question is:</p>
+<section id="given-the-sample-data-for-angiography-patients-what-model-would-be-most-effective-in-predicting-each-patients-diagnosis" class="level4">
+<h4 class="anchored" data-anchor-id="given-the-sample-data-for-angiography-patients-what-model-would-be-most-effective-in-predicting-each-patients-diagnosis">“Given the sample data for angiography patients, what model would be most effective in predicting each patient’s diagnosis?”</h4>
+<p>Our analysis will involve the development of a predictive model to estimate the likelihood of angiographic coronary disease based on these variables. This research question is primarily focused on predictions, as we seek to generate a predictive model given the provided data to estimate diagnoses of new observations. Inference will also be required to a lesser extent, to gain insights into factors influencing the likelihood of coronary disease diagnosis in different demographic groups.</p>
+</section>
 </section>
 <section id="process-and-approach" class="level2">
 <h2 class="anchored" data-anchor-id="process-and-approach">Process and Approach</h2>
+<ul>
+<li>Developed a team contract with my peers to reach an understanding of how we would conduct ourselves and what goals we would seek to accomplish over the course of the project.</li>
+<li>Selected a group of datasets on the diagnosis on coronary heart disease across 4 hospitals in distinct locations, and demonstrated that the datasets can be read from the web into R.</li>
+<li>Cleaned and wrangled the data into a tidy format by converting them from <code>.data</code> files to <code>.csv</code> files and merging them into a single dataframe.</li>
+<li>Each of us created independent reports on the dataset, and organised our results to compose a cohesive final report.
+<ul>
+<li>Wrote a brief description of the dataset indicating how the data had been collected and where it came from.</li>
+<li>Performed exploratory data analysis; in my case, I obtained the VIFs for each variable to test for multicollinearity between independent variables, along with summary statistics on each independent quantitative variable.</li>
+<li>Conducted hypothesis tests for the continuous variable coefficients <span class="math inline">\(\beta_{j}\)</span> and the statistical significance in the mean number of patients with coronary heart disease between categorical variable groups, based on a provided reference level.</li>
+</ul></li>
+<li>Independently attempted stepwise Akaike Information Criterion (AIC), ridge regression and LASSO regression, and compared the models produced from each method to identify the most effective model for the given datasets on predicting coronary heart disease diagnosis.</li>
+</ul>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="results-from-discussion-in-the-final-report" class="level2">
+<h2 class="anchored" data-anchor-id="results-from-discussion-in-the-final-report">Results (From <code>Discussion</code> in the final report)</h2>
+<section id="logistic-regression-models-with-stepwise-akaike-information-criterion-aic" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-regression-models-with-stepwise-akaike-information-criterion-aic">Logistic Regression Models with Stepwise Akaike Information Criterion (AIC)</h3>
+<p>The confusion matrix of our logistic regression model with <code>num</code> as response and all other variables as input generated an 84.24% accuracy, with a Kappa value of 0.685. The result of the <code>stepAIC()</code> method applied to find models which explain the most variation in data included the terms <code>age</code>, <code>sex</code>, <code>cp</code>, <code>trestbps</code>, <code>thalach</code>, and <code>exang</code>, with an AIC of 454.78. After <code>stepAIC()</code>, the out-of-sample error rate became smaller with value 0.5222 compared with the regular model’s training error rate of 0.5369, implying that the new model fits the testing data set better. However, the <code>stepAIC()</code> model becomes less accurate as a consequence, with an accuracy of 82.76% and Kappa value of 0.6554.</p>
 </section>
-<section id="impact-and-reflection" class="level2">
-<h2 class="anchored" data-anchor-id="impact-and-reflection">Impact and Reflection</h2>
+<section id="logistic-regression-models-with-regularisation-methods" class="level3">
+<h3 class="anchored" data-anchor-id="logistic-regression-models-with-regularisation-methods">Logistic Regression Models with Regularisation methods</h3>
+<p>The ordinary regression model performs better in distinguishing between positive and negative classes compared to the regularised models, with the largest AUC value at 0.8417. This suggests that the regularised methods may have excessively shrunken the coefficients, leading to underfitting. The LASSO regression model has also been selected such that it would be significantly simpler, leading to a lower AUC value.</p>
 </section>
-<section id="future-improvements" class="level2">
-<h2 class="anchored" data-anchor-id="future-improvements">Future Improvements</h2>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>In conclusion, the model most effective in predicting each patient’s diagnosis would be the one obtained through <code>stepAIC()</code>, with the variables <code>age</code>, <code>sex</code>, <code>cp</code>, <code>trestbps</code>, <code>thalach</code>, and <code>exang</code>, and without regularised regression models applied.</p>
+<p>Quadratic or interaction terms to the logistic regression model could be added to account for the possibility that the explanatory variables are not independent and the relationship between log odds of the response variable and explanatory variables may not be linear. We could also optimise regularisation parameters through techniques such as cross-validation to find the best model, which can access model performance using techniques like k-folds to ensure robustness.</p>
+<p>This project could lead to several relevant future questions, such as: - How do lifestyle and environment factors affect the diagnosis of coronary heart disease? - How can big data and predictive analytics be employed to improve the accuracy of the logistic regression model? - How to use this logistic regression model to predict an individual’s risk of coronary heart disease?</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Lloyd-Jones, D. M., Larson, M. G., Beiser, A., &amp; Levy, D. (1999, February 19). Lifetime risk of developing coronary heart disease. The Lancet. https://www.sciencedirect.com/science/article/pii/S0140673698102799?via%3Dihub</li>
+<li>Lawes, C. M. M., Bennett, D. A., Lewington, S., &amp; Rodgers, A. (2003, January 22). Blood pressure and coronary heart disease: A review of the evidence. Seminars in Vascular Medicine. https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2002-36765</li>
+<li>Law, M. R., Wald, N. J., &amp; Thompson, S. G. (1994, February 5). By how much and how quickly does reduction in serum cholesterol concentration lower risk of ischaemic heart disease?. The BMJ. https://www.bmj.com/content/308/6925/367.full</li>
+<li>Beckett, N., Nunes, M., &amp; Bulpitt, C. (2000). Is it advantageous to lower cholesterol in the elderly hypertensive?. Cardiovascular drugs and therapy, 14(4), 397–405. https://doi.org/10.1023/a:1007812232328</li>
+<li>Hajar R. (2017). Risk Factors for Coronary Artery Disease: Historical Perspectives. Heart views : the official journal of the Gulf Heart Association, 18(3), 109–114. https://doi.org/10.4103/HEARTVIEWS.HEARTVIEWS_106_17</li>
+<li>Schell, A. (n.d.). Empirical logit plots for logistic regression specification search - Alex Schell. https://alexschell.github.io/emplogit.html</li>
+</ul>
 
 
 </section>
