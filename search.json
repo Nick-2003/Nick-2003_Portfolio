@@ -691,55 +691,22 @@
     ]
   },
   {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#project-goals-and-objectives",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#project-goals-and-objectives",
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html",
     "title": "jpmorgan_quantitative-forage",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
+    "section": "",
+    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nline_plot",
     "crumbs": [
       "Technical Projects",
       "jpmorgan_quantitative-forage"
     ]
   },
   {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#process-and-approach",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#process-and-approach",
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#tasks-and-results",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#tasks-and-results",
     "title": "jpmorgan_quantitative-forage",
-    "section": "Process and Approach",
-    "text": "Process and Approach",
-    "crumbs": [
-      "Technical Projects",
-      "jpmorgan_quantitative-forage"
-    ]
-  },
-  {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#results",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#results",
-    "title": "jpmorgan_quantitative-forage",
-    "section": "Results",
-    "text": "Results",
-    "crumbs": [
-      "Technical Projects",
-      "jpmorgan_quantitative-forage"
-    ]
-  },
-  {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#impact-and-reflection",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#impact-and-reflection",
-    "title": "jpmorgan_quantitative-forage",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Technical Projects",
-      "jpmorgan_quantitative-forage"
-    ]
-  },
-  {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#future-improvements",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#future-improvements",
-    "title": "jpmorgan_quantitative-forage",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
+    "section": "",
+    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nline_plot",
     "crumbs": [
       "Technical Projects",
       "jpmorgan_quantitative-forage"
