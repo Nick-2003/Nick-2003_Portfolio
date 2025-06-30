@@ -693,23 +693,56 @@
   {
     "objectID": "technical_projects/jpmorgan_quantitative-forage.html",
     "href": "technical_projects/jpmorgan_quantitative-forage.html",
-    "title": "jpmorgan_quantitative-forage",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
     "section": "",
-    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nline_plot",
+    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nLine Plot of Dates and Prices",
     "crumbs": [
       "Technical Projects",
-      "jpmorgan_quantitative-forage"
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
     ]
   },
   {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#tasks-and-results",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#tasks-and-results",
-    "title": "jpmorgan_quantitative-forage",
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-1",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-1",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
     "section": "",
-    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nline_plot",
+    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nLine Plot of Dates and Prices",
     "crumbs": [
       "Technical Projects",
-      "jpmorgan_quantitative-forage"
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-2",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-2",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "section": "Task 2",
+    "text": "Task 2\n\nCreate a prototype pricing model that can go through further validation and testing before being put into production.\nInputs\n\nDictionary of injection and withdrawal dates (in the form %Y-%m-%d) and amounts\nList of prices at which the commodity can be purchased/sold on those dates\nRate at which the gas can be injected/withdrawn\nMaximum volume that can be stored\nFixed fees per month for storing\n\nOutput: Predicted contract price",
+    "crumbs": [
+      "Technical Projects",
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-3",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-3",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "section": "Task 3",
+    "text": "Task 3\n\nAssessed a right-censored loan book using survival analysis models (e.g. Kaplan-Meier Survival Curve) to estimate a customer’s probability of default, and by proxy the expected loss\nEquation: \\(EL = PD * (1 - RR) * EAD\\)\n\n\\(EL\\) = Expected loss\n\\(PD\\) = Probability of default (KM_estimate)\n\\(RR\\) = Recovery rate (Provided as 10%)\n\\(EAD\\) = Exposure at default (Due to lack of provided information, assume this is total_debt_outstanding)",
+    "crumbs": [
+      "Technical Projects",
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-4",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-4",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "section": "Task 4",
+    "text": "Task 4\n\nUtilised dynamic programming to convert FICO scores into categorical data to predict defaults\n\n\n\n\nFICO distributions\n\n\n\nOptions considered:\n\nUse mean and standard distribution as intervals for data.\nUse quartiles and boxplot whiskers.\nKMeans to create intervals.\n\n\n\n\n\nMean and Standard Distribution\n\n\n\n\n\nBoxplot\n\n\n\nKMeans was selected due to allowing any number of buckets to be created by the user’s choosing.\n\nNone of the labels overlap in terms of specific values.\nProvided example uses 10 buckets\n\n\n\n\n\nFICO Labelling",
+    "crumbs": [
+      "Technical Projects",
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
     ]
   },
   {
