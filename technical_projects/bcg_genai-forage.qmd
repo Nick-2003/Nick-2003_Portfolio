@@ -1,5 +1,5 @@
 ---
-title: "bcg_genai-forage"
+title: "BCG GenAI Job Simulation"
 format: html
 ---
 
