@@ -69,8 +69,8 @@ This project could lead to extremely relevant future questions, such as:
 
 ## References
 
-- Liang, X. (2016). PM 2.5 data reliability, consistency, and air quality assessment in five chinese cities CONSISTENCY IN CHINA'S PM 2.5 DATA doi:10.1002/2016JD024877
-- “California Air Resources Board.” Inhalable Particulate Matter and Health (PM2.5 and PM10) | California Air Resources Board, https://ww2.arb.ca.gov/resources/inhalable-particulate-matter-and-health#:~:text=For%20PM2.,symptoms%2C%20and%20restricted%20activity%20days.
+- Liang, X. (2016). PM 2.5 data reliability, consistency, and air quality assessment in five chinese cities CONSISTENCY IN CHINA'S PM 2.5 DATA <https://doi:10.1002/2016JD024877>
+- “California Air Resources Board.” Inhalable Particulate Matter and Health (PM2.5 and PM10) | California Air Resources Board, <https://ww2.arb.ca.gov/resources/inhalable-particulate-matter-and-health#:~:text=For%20PM2.,symptoms%2C%20and%20restricted%20activity%20days.>
 - Andrews-Speed, P., Shobert., B. A., Zhidong, L., &amp; Herberg, M. E. (2015). China's energy crossroads: Forging a new energy and environmental balance. Project Muse. 
-- Non Normal Distribution. Statistics How To. (2023, February 8). Retrieved March 29, 2023, from https://www.statisticshowto.com/probability-and-statistics/non-normal-distributions/ 
-- Devadmin. (2021, April 22). PM2.5 explained. Indoor Air Hygiene Institute. Retrieved April 4, 2023, from https://www.indoorairhygiene.org/pm2-5-explained/ 
+- Non Normal Distribution. Statistics How To. (2023, February 8). Retrieved March 29, 2023, from <https://www.statisticshowto.com/probability-and-statistics/non-normal-distributions/>
+- Devadmin. (2021, April 22). PM2.5 explained. Indoor Air Hygiene Institute. Retrieved April 4, 2023, from <https://www.indoorairhygiene.org/pm2-5-explained/>

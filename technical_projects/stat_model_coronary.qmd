@@ -70,9 +70,9 @@ This project could lead to several relevant future questions, such as:
 - How to use this logistic regression model to predict an individual’s risk of coronary heart disease?
 
 ## References 
-- Lloyd-Jones, D. M., Larson, M. G., Beiser, A., & Levy, D. (1999, February 19). Lifetime risk of developing coronary heart disease. The Lancet. https://www.sciencedirect.com/science/article/pii/S0140673698102799?via%3Dihub 
-- Lawes, C. M. M., Bennett, D. A., Lewington, S., & Rodgers, A. (2003, January 22). Blood pressure and coronary heart disease: A review of the evidence. Seminars in Vascular Medicine. https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2002-36765 
-- Law, M. R., Wald, N. J., & Thompson, S. G. (1994, February 5). By how much and how quickly does reduction in serum cholesterol concentration lower risk of ischaemic heart disease?. The BMJ. https://www.bmj.com/content/308/6925/367.full 
-- Beckett, N., Nunes, M., & Bulpitt, C. (2000). Is it advantageous to lower cholesterol in the elderly hypertensive?. Cardiovascular drugs and therapy, 14(4), 397–405. https://doi.org/10.1023/a:1007812232328 
-- Hajar R. (2017). Risk Factors for Coronary Artery Disease: Historical Perspectives. Heart views : the official journal of the Gulf Heart Association, 18(3), 109–114. https://doi.org/10.4103/HEARTVIEWS.HEARTVIEWS_106_17 
-- Schell, A. (n.d.). Empirical logit plots for logistic regression specification search - Alex Schell. https://alexschell.github.io/emplogit.html 
+- Lloyd-Jones, D. M., Larson, M. G., Beiser, A., & Levy, D. (1999, February 19). Lifetime risk of developing coronary heart disease. The Lancet. <https://www.sciencedirect.com/science/article/pii/S0140673698102799?via%3Dihub> 
+- Lawes, C. M. M., Bennett, D. A., Lewington, S., & Rodgers, A. (2003, January 22). Blood pressure and coronary heart disease: A review of the evidence. Seminars in Vascular Medicine. <https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2002-36765> 
+- Law, M. R., Wald, N. J., & Thompson, S. G. (1994, February 5). By how much and how quickly does reduction in serum cholesterol concentration lower risk of ischaemic heart disease?. The BMJ. <https://www.bmj.com/content/308/6925/367.full> 
+- Beckett, N., Nunes, M., & Bulpitt, C. (2000). Is it advantageous to lower cholesterol in the elderly hypertensive?. Cardiovascular drugs and therapy, 14(4), 397–405. <https://doi.org/10.1023/a:1007812232328>
+- Hajar R. (2017). Risk Factors for Coronary Artery Disease: Historical Perspectives. Heart views : the official journal of the Gulf Heart Association, 18(3), 109–114. <https://doi.org/10.4103/HEARTVIEWS.HEARTVIEWS_106_17>
+- Schell, A. (n.d.). Empirical logit plots for logistic regression specification search - Alex Schell. <https://alexschell.github.io/emplogit.html>
