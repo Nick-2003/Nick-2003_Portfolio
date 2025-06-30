@@ -1,16 +1,26 @@
 ---
 title: "jpmorgan_quantitative-forage"
-format: html
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/JP-Morgan-Quantitative-Research
 ---
 
-## Problem Statement
+## Tasks and Results
 
-## Project Goals and Objectives
+### Task 1
 
-## Process and Approach
+-   Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their $R^{2}$ score for both the train and test data.
+-   Utilised a linear model `lr_regressor_nolag()` that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.
 
-## Results
+![lr_regressor_nolag](assets/images/jpmorgan_quantitative_1.png)
 
-## Impact and Reflection
+![line_plot](assets/images/jpmorgan_quantitative_2.png)
 
-## Future Improvements
+### Task 2
+
+### Task 3
+
+### Task 4
