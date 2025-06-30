@@ -1,5 +1,5 @@
 ---
-title: "insurance_sql"
+title: "Health Insurance Database Management"
 format: html
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "stat_relationships_breast_cancer"
+title: "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
 format: html
 ---
 
