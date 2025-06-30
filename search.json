@@ -1,5 +1,60 @@
 [
   {
+    "objectID": "technical_projects/bcg_datasci-forage.html#project-goals-and-objectives",
+    "href": "technical_projects/bcg_datasci-forage.html#project-goals-and-objectives",
+    "title": "bcg_datasci-forage",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_datasci-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_datasci-forage.html#process-and-approach",
+    "href": "technical_projects/bcg_datasci-forage.html#process-and-approach",
+    "title": "bcg_datasci-forage",
+    "section": "Process and Approach",
+    "text": "Process and Approach",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_datasci-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_datasci-forage.html#results",
+    "href": "technical_projects/bcg_datasci-forage.html#results",
+    "title": "bcg_datasci-forage",
+    "section": "Results",
+    "text": "Results",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_datasci-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_datasci-forage.html#impact-and-reflection",
+    "href": "technical_projects/bcg_datasci-forage.html#impact-and-reflection",
+    "title": "bcg_datasci-forage",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_datasci-forage"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_datasci-forage.html#future-improvements",
+    "href": "technical_projects/bcg_datasci-forage.html#future-improvements",
+    "title": "bcg_datasci-forage",
+    "section": "Future Improvements",
+    "text": "Future Improvements",
+    "crumbs": [
+      "Technical Projects",
+      "bcg_datasci-forage"
+    ]
+  },
+  {
     "objectID": "technical_projects/urban_forest_viz.html#project-goals-and-objectives",
     "href": "technical_projects/urban_forest_viz.html#project-goals-and-objectives",
     "title": "urban_forest_viz",
@@ -110,55 +165,33 @@
     ]
   },
   {
-    "objectID": "technical_projects/bcg_genai-forage.html#project-goals-and-objectives",
-    "href": "technical_projects/bcg_genai-forage.html#project-goals-and-objectives",
+    "objectID": "technical_projects/bcg_genai-forage.html",
+    "href": "technical_projects/bcg_genai-forage.html",
     "title": "bcg_genai-forage",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
+    "section": "",
+    "text": "Extracted key financial data for the last three fiscal years from the 10-K and 10-Q reports of Microsoft, Tesla, and Apple.\n\nGrowth columns created to analyse year-over-year changes in financial metrics.\nProfit margin as measure of profitability of business.\n\n\\(\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Total Revenue}}\\)\n\nReturn on assets as measure of business asset utilisation.\n\n\\(\\text{Return on Assets} = \\frac{\\text{Net Income}}{\\text{Total Assets}}\\)\n\nOperating cash flow ratio as measure of operational efficiency.\n\n\\(\\text{Operating Cash Flow Ratio} = \\frac{\\text{Operating Cash Flow}}{\\text{Total Revenue}}\\) \n\n\nConducted exploratory data analysis by comparing boxplots of financial data metrics for each company grouped by year.\nConclusions:\n\nGiven the growths and ratios of the provided metrics, Tesla consistently has the highest growth and the lowest cash flows among the given companies, implying potential sustainability issues and liquidity risks.\nApple consistently demonstrates high cash flows, but low or even negative growths compared to the other companies, suggesting great financial stability along with lack of long-term potential.\nMicrosoft often hits the middle ground in terms of cash flows and growths, along with often attaining relatively high metric ratios, which implies that it is relatively stable in terms of both the short term and the long term, though with likely lower returns than Apple or Tesla.",
     "crumbs": [
       "Technical Projects",
       "bcg_genai-forage"
     ]
   },
   {
-    "objectID": "technical_projects/bcg_genai-forage.html#process-and-approach",
-    "href": "technical_projects/bcg_genai-forage.html#process-and-approach",
+    "objectID": "technical_projects/bcg_genai-forage.html#task-1",
+    "href": "technical_projects/bcg_genai-forage.html#task-1",
     "title": "bcg_genai-forage",
-    "section": "Process and Approach",
-    "text": "Process and Approach",
+    "section": "",
+    "text": "Extracted key financial data for the last three fiscal years from the 10-K and 10-Q reports of Microsoft, Tesla, and Apple.\n\nGrowth columns created to analyse year-over-year changes in financial metrics.\nProfit margin as measure of profitability of business.\n\n\\(\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Total Revenue}}\\)\n\nReturn on assets as measure of business asset utilisation.\n\n\\(\\text{Return on Assets} = \\frac{\\text{Net Income}}{\\text{Total Assets}}\\)\n\nOperating cash flow ratio as measure of operational efficiency.\n\n\\(\\text{Operating Cash Flow Ratio} = \\frac{\\text{Operating Cash Flow}}{\\text{Total Revenue}}\\) \n\n\nConducted exploratory data analysis by comparing boxplots of financial data metrics for each company grouped by year.\nConclusions:\n\nGiven the growths and ratios of the provided metrics, Tesla consistently has the highest growth and the lowest cash flows among the given companies, implying potential sustainability issues and liquidity risks.\nApple consistently demonstrates high cash flows, but low or even negative growths compared to the other companies, suggesting great financial stability along with lack of long-term potential.\nMicrosoft often hits the middle ground in terms of cash flows and growths, along with often attaining relatively high metric ratios, which implies that it is relatively stable in terms of both the short term and the long term, though with likely lower returns than Apple or Tesla.",
     "crumbs": [
       "Technical Projects",
       "bcg_genai-forage"
     ]
   },
   {
-    "objectID": "technical_projects/bcg_genai-forage.html#results",
-    "href": "technical_projects/bcg_genai-forage.html#results",
+    "objectID": "technical_projects/bcg_genai-forage.html#task-2",
+    "href": "technical_projects/bcg_genai-forage.html#task-2",
     "title": "bcg_genai-forage",
-    "section": "Results",
-    "text": "Results",
-    "crumbs": [
-      "Technical Projects",
-      "bcg_genai-forage"
-    ]
-  },
-  {
-    "objectID": "technical_projects/bcg_genai-forage.html#impact-and-reflection",
-    "href": "technical_projects/bcg_genai-forage.html#impact-and-reflection",
-    "title": "bcg_genai-forage",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Technical Projects",
-      "bcg_genai-forage"
-    ]
-  },
-  {
-    "objectID": "technical_projects/bcg_genai-forage.html#future-improvements",
-    "href": "technical_projects/bcg_genai-forage.html#future-improvements",
-    "title": "bcg_genai-forage",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
+    "section": "Task 2",
+    "text": "Task 2\n\nApplied rule-based logic for financial chatbot development to provide user-friendly financial insights and analysis.\nChatbot has 2 major queries it can respond to:\n\n1: Insert company, year and property to find the corresponding value.\n2: Find the greatest/least value within each company or year.\nq: Exit the chatbot.\n\nThe chatbot will consider any other input as invalid responses.\nIt can only take very limited forms of input, which heavily restricts the types of queries it can answer.\n\n```{python}\ndef companyinput():\n    print(\"List of companies:\")\n    for x in df.Company.unique():\n        print(\"* \" + str(x))\n    c1 = input(\"From above, input company of interest: \")\n    while c1 not in df.Company.unique(): \n        c1 = input(\"Invalid input, try again:\")\n    return c1\n\ndef yearinput(): \n    print(\"List of years:\")\n    yearlist = [str(x) for x in df.Year.unique()]\n    for x in yearlist:\n        print(\"* \" + str(x))\n    y1 = input(\"From above, input year of interest: \")\n    while y1 not in yearlist: \n        y1 = input(\"Invalid input, try again:\")\n    return y1\n\ndef propertyinput(): \n    print(\"List of properties:\")\n    categorical = [\"Company\", \"Year\"]\n    growths = [\"Revenue Growth (%)\", \"Net Income Growth (%)\", \"Asset Growth (%)\", \"Liability Growth (%)\", \"Cash Flow Growth (%)\"]\n    propertylist = [x for x in list(df.columns) if x not in categorical] \n    for x in propertylist: \n        print(\"* \" + str(x))\n    p1 = input(\"From above, input property of interest: \")\n    while p1 not in propertylist: \n        p1 = input(\"Invalid input, try again:\")\n    return p1 \n```\n```{python}\ndef chatbot_v2(): \n    option = input('Enter option: \\n1: Value of property given year and company \\n2: Greatest/least value of property given year/company \\nq: Quit \\n')\n    while option not in [\"1\", \"2\", \"q\"]: \n        option = input(\"Invalid input, try again:\")\n    \n    if option == \"1\": \n        c1 = companyinput()\n        y1 = yearinput()\n        p1 = propertyinput()\n\n        try: \n            interestvals = df.loc[(df[\"Company\"] == c1) & (df[\"Year\"] == float(y1))][p1].values\n            interestvals = interestvals[~np.isnan(interestvals)] \n            interestval = interestvals[0]\n            print(\"Value of \" + p1 + \" for \" + c1 + \" in \" + y1 + \": \" + str(interestval))\n        except IndexError: \n            print(\"Value of \" + p1 + \" for \" + c1 + \" in \" + y1 + \" is not available in the dataset.\")\n    \n    elif option == \"2\": \n        updown = input(\"Greatest or Least? \")\n        while updown not in [\"Greatest\", \"Least\"]: \n            updown = input(\"Invalid input, try again:\")\n\n        p1 = propertyinput()\n\n        compyear = input(\"Company or Year? \")\n        while compyear not in [\"Company\", \"Year\"]: \n            compyear = input(\"Invalid input, try again:\")\n        if compyear == \"Company\": \n            cy2 = companyinput()\n            interestvals = df.loc[df[\"Company\"] == cy2][p1]\n            interestvals = interestvals[~np.isnan(interestvals)]\n            if updown == \"Greatest\": \n                interestval = max(interestvals)\n                print(\"Maximum value of \" + p1 + \" for all years in \" + cy2 + \": \" + str(interestval))\n            else: \n                interestval = min(interestvals)\n                print(\"Minimum value of \" + p1 + \" for all years in \" + cy2 + \": \" + str(interestval))\n        else: \n            cy2 = yearinput()\n            interestvals = df.loc[df[\"Year\"] == float(cy2)][p1].tolist()\n            # interestvals = interestvals[~np.isnan(interestvals)]\n            # print(interestvals)\n            if updown == \"Greatest\": \n                interestval = max(interestvals)\n                print(\"Maximum value of \" + p1 + \" for all companies in \" + cy2 + \": \" + str(interestval))\n            else: \n                interestval = min(interestvals)\n                print(\"Minimum value of \" + p1 + \" for all companies in \" + cy2 + \": \" + str(interestval))\n    \n    else: \n        print(\"Good day.\")\n```",
     "crumbs": [
       "Technical Projects",
       "bcg_genai-forage"
@@ -717,7 +750,7 @@
     "href": "technical_projects/jpmorgan_quantitative-forage.html#task-2",
     "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
     "section": "Task 2",
-    "text": "Task 2\n\nCreate a prototype pricing model that can go through further validation and testing before being put into production.\nInputs\n\nDictionary of injection and withdrawal dates (in the form %Y-%m-%d) and amounts\nList of prices at which the commodity can be purchased/sold on those dates\nRate at which the gas can be injected/withdrawn\nMaximum volume that can be stored\nFixed fees per month for storing\n\nOutput: Predicted contract price",
+    "text": "Task 2\n\nCreate a prototype pricing model that can go through further validation and testing before being put into production.\nInputs\n\nDictionary of injection and withdrawal dates (in the form %Y-%m-%d) and amounts\nList of prices at which the commodity can be purchased/sold on those dates\nRate at which the gas can be injected/withdrawn\nMaximum volume that can be stored\nFixed fees per month for storing\n\nOutput: Predicted contract price\n\n```{python}\ndef contractprice(injewithdates, pricelist, gasrate, maxvol, storagecost):\n    \"\"\"\n    Given existing price data and input parameters, produce contract price. \n    Assumes that injection and withdrawal involve buying and selling of fuel respectively.\n    \n    Parameters:\n    -----------\n        \n    injewithdates: dictionary\n        Dictionary of injection and withdrawal dates (in the form %Y-%m-%d) and amounts.\n        Injections are positive, withdrawals are negative.\n        \n    pricelist: dataframe \n        Prices at which the commodity can be purchased/sold on those dates.\n\n    gasrate: float \n        Rate at which the gas can be injected/withdrawn.\n        \n    maxvol: float \n        Maximum volume that can be stored.\n        \n    storagecost: float\n        Fixed fees per month for storing.\n\n    Returns:\n    --------\n    Contract price. \n    \"\"\" \n\n    amount = 0\n    dict1 = {pd.to_datetime(key): value for key, value in injewithdates.items()}\n    dict2 = pricelist.to_dict()[\"Prices\"]\n    sumcosts = {key: None for key in dict1.keys()}\n    for k, v in dict1.items(): \n        if (v &lt; 0) and (amount &gt;= abs(v)): \n            amount -= v\n        elif ((amount + v) &lt;= maxvol): \n            amount += v\n        else: \n            raise Exception(\"Invalid storage amount\")\n        \n        if k in df_exist_dict: \n            sumcosts[k] = v * dict2[k]\n        else: \n            sumcosts[k] = v * pricepredict([k])[\"Prices\"][0]\n\n    display(sumcosts)\n    finalexchanges = sum(sumcosts.values())\n    date1 = min(dict1.keys())\n    date2 = max(dict1.keys())\n    nummonths = 12 * relativedelta(date2, date1).years + relativedelta(date2, date1).months\n    \n    totalgasprice = gasrate * sum(abs(number) for number in dict1.values())\n    total_storagecost = storagecost * nummonths\n    \n    final_price = finalexchanges - totalgasprice - total_storagecost\n    return final_price\n```",
     "crumbs": [
       "Technical Projects",
       "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
@@ -728,7 +761,7 @@
     "href": "technical_projects/jpmorgan_quantitative-forage.html#task-3",
     "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
     "section": "Task 3",
-    "text": "Task 3\n\nAssessed a right-censored loan book using survival analysis models (e.g. Kaplan-Meier Survival Curve) to estimate a customer’s probability of default, and by proxy the expected loss\nEquation: \\(EL = PD * (1 - RR) * EAD\\)\n\n\\(EL\\) = Expected loss\n\\(PD\\) = Probability of default (KM_estimate)\n\\(RR\\) = Recovery rate (Provided as 10%)\n\\(EAD\\) = Exposure at default (Due to lack of provided information, assume this is total_debt_outstanding)",
+    "text": "Task 3\n\nAssessed a right-censored loan book using survival analysis models (e.g. Kaplan-Meier Survival Curve) to estimate a customer’s probability of default, and by proxy the expected loss\nEquation: \\(EL = PD * (1 - RR) * EAD\\)\n\n\\(EL\\) = Expected loss\n\\(PD\\) = Probability of default (KM_estimate)\n\\(RR\\) = Recovery rate (Provided as 10%)\n\\(EAD\\) = Exposure at default (Due to lack of provided information, assume this is total_debt_outstanding)\n\n\n```{python}\nkmf = lifelines.KaplanMeierFitter()\nkmf.fit(train_df_surv[\"years_employed\"], train_df_surv[\"default\"]);\npdestimates = kmf.survival_function_.to_dict()[\"KM_estimate\"]\n\ndef expectedloss(total_debt_outstanding, years_employed, recovery_rate = 0.1, default = 0, survival_estimates = pdestimates): \n    \"\"\"\n    Returns expected losses given loan properties. \n    \n    Parameters:\n    -----------\n        \n    total_debt_outstanding: float\n        Total outstanding debt. \n\n    years_employed: int\n        Number of years individual has been employed. \n\n    recovery_rate: float\n        Amount recovered when a loan defaults.\n\n    default: bool\n        Whether or not the individual has defaulted by this point or not. \n        Already defaulted individuals will assume probability of 1, non-defaulted individuals will assume survival_estimates.\n\n    survival_estimates: dictionary \n        Dictionary of survival probabilities corresponding to the number of years individual has been employed.\n        \n    Returns:\n    --------\n    Corresponding expected loss given \n    \"\"\" \n    km_estimate = 1 \n    if default == 0: \n        km_estimate = survival_estimates.get(years_employed)\n    expected_loss = km_estimate * (1 - recovery_rate) * total_debt_outstanding\n    return expected_loss \n```",
     "crumbs": [
       "Technical Projects",
       "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
