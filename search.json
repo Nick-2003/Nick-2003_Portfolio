@@ -57,56 +57,56 @@
   {
     "objectID": "technical_projects/urban_forest_viz.html#project-goals-and-objectives",
     "href": "technical_projects/urban_forest_viz.html#project-goals-and-objectives",
-    "title": "urban_forest_viz",
+    "title": "Urban Forest Visualisations",
     "section": "Project Goals and Objectives",
     "text": "Project Goals and Objectives",
     "crumbs": [
       "Technical Projects",
-      "urban_forest_viz"
+      "Urban Forest Visualisations"
     ]
   },
   {
     "objectID": "technical_projects/urban_forest_viz.html#process-and-approach",
     "href": "technical_projects/urban_forest_viz.html#process-and-approach",
-    "title": "urban_forest_viz",
+    "title": "Urban Forest Visualisations",
     "section": "Process and Approach",
     "text": "Process and Approach",
     "crumbs": [
       "Technical Projects",
-      "urban_forest_viz"
+      "Urban Forest Visualisations"
     ]
   },
   {
     "objectID": "technical_projects/urban_forest_viz.html#results",
     "href": "technical_projects/urban_forest_viz.html#results",
-    "title": "urban_forest_viz",
+    "title": "Urban Forest Visualisations",
     "section": "Results",
     "text": "Results",
     "crumbs": [
       "Technical Projects",
-      "urban_forest_viz"
+      "Urban Forest Visualisations"
     ]
   },
   {
     "objectID": "technical_projects/urban_forest_viz.html#impact-and-reflection",
     "href": "technical_projects/urban_forest_viz.html#impact-and-reflection",
-    "title": "urban_forest_viz",
+    "title": "Urban Forest Visualisations",
     "section": "Impact and Reflection",
     "text": "Impact and Reflection",
     "crumbs": [
       "Technical Projects",
-      "urban_forest_viz"
+      "Urban Forest Visualisations"
     ]
   },
   {
     "objectID": "technical_projects/urban_forest_viz.html#future-improvements",
     "href": "technical_projects/urban_forest_viz.html#future-improvements",
-    "title": "urban_forest_viz",
+    "title": "Urban Forest Visualisations",
     "section": "Future Improvements",
     "text": "Future Improvements",
     "crumbs": [
       "Technical Projects",
-      "urban_forest_viz"
+      "Urban Forest Visualisations"
     ]
   },
   {
@@ -167,34 +167,34 @@
   {
     "objectID": "technical_projects/bcg_genai-forage.html",
     "href": "technical_projects/bcg_genai-forage.html",
-    "title": "bcg_genai-forage",
+    "title": "BCG GenAI Job Simulation",
     "section": "",
     "text": "Extracted key financial data for the last three fiscal years from the 10-K and 10-Q reports of Microsoft, Tesla, and Apple.\n\nGrowth columns created to analyse year-over-year changes in financial metrics.\nProfit margin as measure of profitability of business.\n\n\\(\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Total Revenue}}\\)\n\nReturn on assets as measure of business asset utilisation.\n\n\\(\\text{Return on Assets} = \\frac{\\text{Net Income}}{\\text{Total Assets}}\\)\n\nOperating cash flow ratio as measure of operational efficiency.\n\n\\(\\text{Operating Cash Flow Ratio} = \\frac{\\text{Operating Cash Flow}}{\\text{Total Revenue}}\\) \n\n\nConducted exploratory data analysis by comparing boxplots of financial data metrics for each company grouped by year.\nConclusions:\n\nGiven the growths and ratios of the provided metrics, Tesla consistently has the highest growth and the lowest cash flows among the given companies, implying potential sustainability issues and liquidity risks.\nApple consistently demonstrates high cash flows, but low or even negative growths compared to the other companies, suggesting great financial stability along with lack of long-term potential.\nMicrosoft often hits the middle ground in terms of cash flows and growths, along with often attaining relatively high metric ratios, which implies that it is relatively stable in terms of both the short term and the long term, though with likely lower returns than Apple or Tesla.",
     "crumbs": [
       "Technical Projects",
-      "bcg_genai-forage"
+      "BCG GenAI Job Simulation"
     ]
   },
   {
     "objectID": "technical_projects/bcg_genai-forage.html#task-1",
     "href": "technical_projects/bcg_genai-forage.html#task-1",
-    "title": "bcg_genai-forage",
+    "title": "BCG GenAI Job Simulation",
     "section": "",
     "text": "Extracted key financial data for the last three fiscal years from the 10-K and 10-Q reports of Microsoft, Tesla, and Apple.\n\nGrowth columns created to analyse year-over-year changes in financial metrics.\nProfit margin as measure of profitability of business.\n\n\\(\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Total Revenue}}\\)\n\nReturn on assets as measure of business asset utilisation.\n\n\\(\\text{Return on Assets} = \\frac{\\text{Net Income}}{\\text{Total Assets}}\\)\n\nOperating cash flow ratio as measure of operational efficiency.\n\n\\(\\text{Operating Cash Flow Ratio} = \\frac{\\text{Operating Cash Flow}}{\\text{Total Revenue}}\\) \n\n\nConducted exploratory data analysis by comparing boxplots of financial data metrics for each company grouped by year.\nConclusions:\n\nGiven the growths and ratios of the provided metrics, Tesla consistently has the highest growth and the lowest cash flows among the given companies, implying potential sustainability issues and liquidity risks.\nApple consistently demonstrates high cash flows, but low or even negative growths compared to the other companies, suggesting great financial stability along with lack of long-term potential.\nMicrosoft often hits the middle ground in terms of cash flows and growths, along with often attaining relatively high metric ratios, which implies that it is relatively stable in terms of both the short term and the long term, though with likely lower returns than Apple or Tesla.",
     "crumbs": [
       "Technical Projects",
-      "bcg_genai-forage"
+      "BCG GenAI Job Simulation"
     ]
   },
   {
     "objectID": "technical_projects/bcg_genai-forage.html#task-2",
     "href": "technical_projects/bcg_genai-forage.html#task-2",
-    "title": "bcg_genai-forage",
+    "title": "BCG GenAI Job Simulation",
     "section": "Task 2",
     "text": "Task 2\n\nApplied rule-based logic for financial chatbot development to provide user-friendly financial insights and analysis.\nChatbot has 2 major queries it can respond to:\n\n1: Insert company, year and property to find the corresponding value.\n2: Find the greatest/least value within each company or year.\nq: Exit the chatbot.\n\nThe chatbot will consider any other input as invalid responses.\nIt can only take very limited forms of input, which heavily restricts the types of queries it can answer.\n\n```{python}\ndef companyinput():\n    print(\"List of companies:\")\n    for x in df.Company.unique():\n        print(\"* \" + str(x))\n    c1 = input(\"From above, input company of interest: \")\n    while c1 not in df.Company.unique(): \n        c1 = input(\"Invalid input, try again:\")\n    return c1\n\ndef yearinput(): \n    print(\"List of years:\")\n    yearlist = [str(x) for x in df.Year.unique()]\n    for x in yearlist:\n        print(\"* \" + str(x))\n    y1 = input(\"From above, input year of interest: \")\n    while y1 not in yearlist: \n        y1 = input(\"Invalid input, try again:\")\n    return y1\n\ndef propertyinput(): \n    print(\"List of properties:\")\n    categorical = [\"Company\", \"Year\"]\n    growths = [\"Revenue Growth (%)\", \"Net Income Growth (%)\", \"Asset Growth (%)\", \"Liability Growth (%)\", \"Cash Flow Growth (%)\"]\n    propertylist = [x for x in list(df.columns) if x not in categorical] \n    for x in propertylist: \n        print(\"* \" + str(x))\n    p1 = input(\"From above, input property of interest: \")\n    while p1 not in propertylist: \n        p1 = input(\"Invalid input, try again:\")\n    return p1 \n```\n```{python}\ndef chatbot_v2(): \n    option = input('Enter option: \\n1: Value of property given year and company \\n2: Greatest/least value of property given year/company \\nq: Quit \\n')\n    while option not in [\"1\", \"2\", \"q\"]: \n        option = input(\"Invalid input, try again:\")\n    \n    if option == \"1\": \n        c1 = companyinput()\n        y1 = yearinput()\n        p1 = propertyinput()\n\n        try: \n            interestvals = df.loc[(df[\"Company\"] == c1) & (df[\"Year\"] == float(y1))][p1].values\n            interestvals = interestvals[~np.isnan(interestvals)] \n            interestval = interestvals[0]\n            print(\"Value of \" + p1 + \" for \" + c1 + \" in \" + y1 + \": \" + str(interestval))\n        except IndexError: \n            print(\"Value of \" + p1 + \" for \" + c1 + \" in \" + y1 + \" is not available in the dataset.\")\n    \n    elif option == \"2\": \n        updown = input(\"Greatest or Least? \")\n        while updown not in [\"Greatest\", \"Least\"]: \n            updown = input(\"Invalid input, try again:\")\n\n        p1 = propertyinput()\n\n        compyear = input(\"Company or Year? \")\n        while compyear not in [\"Company\", \"Year\"]: \n            compyear = input(\"Invalid input, try again:\")\n        if compyear == \"Company\": \n            cy2 = companyinput()\n            interestvals = df.loc[df[\"Company\"] == cy2][p1]\n            interestvals = interestvals[~np.isnan(interestvals)]\n            if updown == \"Greatest\": \n                interestval = max(interestvals)\n                print(\"Maximum value of \" + p1 + \" for all years in \" + cy2 + \": \" + str(interestval))\n            else: \n                interestval = min(interestvals)\n                print(\"Minimum value of \" + p1 + \" for all years in \" + cy2 + \": \" + str(interestval))\n        else: \n            cy2 = yearinput()\n            interestvals = df.loc[df[\"Year\"] == float(cy2)][p1].tolist()\n            # interestvals = interestvals[~np.isnan(interestvals)]\n            # print(interestvals)\n            if updown == \"Greatest\": \n                interestval = max(interestvals)\n                print(\"Maximum value of \" + p1 + \" for all companies in \" + cy2 + \": \" + str(interestval))\n            else: \n                interestval = min(interestvals)\n                print(\"Minimum value of \" + p1 + \" for all companies in \" + cy2 + \": \" + str(interestval))\n    \n    else: \n        print(\"Good day.\")\n```",
     "crumbs": [
       "Technical Projects",
-      "bcg_genai-forage"
+      "BCG GenAI Job Simulation"
     ]
   },
   {
@@ -409,56 +409,56 @@
   {
     "objectID": "technical_projects/stat_relationships_breast_cancer.html#project-goals-and-objectives",
     "href": "technical_projects/stat_relationships_breast_cancer.html#project-goals-and-objectives",
-    "title": "stat_relationships_breast_cancer",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
     "section": "Project Goals and Objectives",
     "text": "Project Goals and Objectives",
     "crumbs": [
       "Technical Projects",
-      "stat_relationships_breast_cancer"
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
     ]
   },
   {
     "objectID": "technical_projects/stat_relationships_breast_cancer.html#process-and-approach",
     "href": "technical_projects/stat_relationships_breast_cancer.html#process-and-approach",
-    "title": "stat_relationships_breast_cancer",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
     "section": "Process and Approach",
     "text": "Process and Approach",
     "crumbs": [
       "Technical Projects",
-      "stat_relationships_breast_cancer"
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
     ]
   },
   {
     "objectID": "technical_projects/stat_relationships_breast_cancer.html#results",
     "href": "technical_projects/stat_relationships_breast_cancer.html#results",
-    "title": "stat_relationships_breast_cancer",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
     "section": "Results",
     "text": "Results",
     "crumbs": [
       "Technical Projects",
-      "stat_relationships_breast_cancer"
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
     ]
   },
   {
     "objectID": "technical_projects/stat_relationships_breast_cancer.html#impact-and-reflection",
     "href": "technical_projects/stat_relationships_breast_cancer.html#impact-and-reflection",
-    "title": "stat_relationships_breast_cancer",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
     "section": "Impact and Reflection",
     "text": "Impact and Reflection",
     "crumbs": [
       "Technical Projects",
-      "stat_relationships_breast_cancer"
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
     ]
   },
   {
     "objectID": "technical_projects/stat_relationships_breast_cancer.html#future-improvements",
     "href": "technical_projects/stat_relationships_breast_cancer.html#future-improvements",
-    "title": "stat_relationships_breast_cancer",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
     "section": "Future Improvements",
     "text": "Future Improvements",
     "crumbs": [
       "Technical Projects",
-      "stat_relationships_breast_cancer"
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
     ]
   },
   {
@@ -616,56 +616,56 @@
   {
     "objectID": "technical_projects/insurance_sql.html#project-goals-and-objectives",
     "href": "technical_projects/insurance_sql.html#project-goals-and-objectives",
-    "title": "insurance_sql",
+    "title": "Health Insurance Database Management",
     "section": "Project Goals and Objectives",
     "text": "Project Goals and Objectives",
     "crumbs": [
       "Technical Projects",
-      "insurance_sql"
+      "Health Insurance Database Management"
     ]
   },
   {
     "objectID": "technical_projects/insurance_sql.html#process-and-approach",
     "href": "technical_projects/insurance_sql.html#process-and-approach",
-    "title": "insurance_sql",
+    "title": "Health Insurance Database Management",
     "section": "Process and Approach",
     "text": "Process and Approach",
     "crumbs": [
       "Technical Projects",
-      "insurance_sql"
+      "Health Insurance Database Management"
     ]
   },
   {
     "objectID": "technical_projects/insurance_sql.html#results",
     "href": "technical_projects/insurance_sql.html#results",
-    "title": "insurance_sql",
+    "title": "Health Insurance Database Management",
     "section": "Results",
     "text": "Results",
     "crumbs": [
       "Technical Projects",
-      "insurance_sql"
+      "Health Insurance Database Management"
     ]
   },
   {
     "objectID": "technical_projects/insurance_sql.html#impact-and-reflection",
     "href": "technical_projects/insurance_sql.html#impact-and-reflection",
-    "title": "insurance_sql",
+    "title": "Health Insurance Database Management",
     "section": "Impact and Reflection",
     "text": "Impact and Reflection",
     "crumbs": [
       "Technical Projects",
-      "insurance_sql"
+      "Health Insurance Database Management"
     ]
   },
   {
     "objectID": "technical_projects/insurance_sql.html#future-improvements",
     "href": "technical_projects/insurance_sql.html#future-improvements",
-    "title": "insurance_sql",
+    "title": "Health Insurance Database Management",
     "section": "Future Improvements",
     "text": "Future Improvements",
     "crumbs": [
       "Technical Projects",
-      "insurance_sql"
+      "Health Insurance Database Management"
     ]
   },
   {
