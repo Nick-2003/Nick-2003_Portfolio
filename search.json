@@ -669,11 +669,22 @@
     ]
   },
   {
-    "objectID": "technical_projects/insurance_sql.html#project-goals-and-objectives",
-    "href": "technical_projects/insurance_sql.html#project-goals-and-objectives",
+    "objectID": "technical_projects/insurance_sql.html",
+    "href": "technical_projects/insurance_sql.html",
     "title": "Health Insurance Database Management",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
+    "section": "",
+    "text": "Final Research Paper",
+    "crumbs": [
+      "Technical Projects",
+      "Health Insurance Database Management"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#problem-statement",
+    "href": "technical_projects/insurance_sql.html#problem-statement",
+    "title": "Health Insurance Database Management",
+    "section": "Problem Statement",
+    "text": "Problem Statement\nModern technologies have improved our quality of life, making everything more convenient than ever by reducing workload and stress from various sources. This allows people to focus on their health more efficiently. With modern health information technologies, users can receive immediate feedback on their physical condition anytime, anywhere (Li et al., 2019). Health insurance is essential and beneficial, as uninsured individuals often experience poorer health and receive less medical care, often with delays (Bovbjerg, Hadley, 2006).\nHowever, the extent to which health insurance impacts health remains debatable. As Levy and Meltzer suggest, determining whether health insurance significantly influences health will require substantial investment in social experiments (Levy, Meltzer, 2008). According to the Institute of Medicine (US) Committee on the Consequences of Uninsurance, there have been various studies and examinations across the past several decades on both the relationship between health insurance and health outcomes, and the mechanisms used to measure and determine that relationship (Institute of Medicine (US) Committee on the Consequences of Uninsurance, 1970). Across a body of studies that use a variety of data sources and different analytic approaches, researchers have determined a consistent, positive relationship between health insurance coverage and health-related outcomes, with the best evidence suggesting that health insurance is associated with more appropriate use of health care services and better health outcomes for adults (Institute of Medicine (US) Committee on the Consequences of Uninsurance, 1970a).\nAlthough this paper does not directly answer the ultimate question or fill the gap, it contributes by presenting significant findings that serve as supporting evidence, aiming to attract attention in the healthcare and health insurance fields. Specifically, we explore how health insurance coverage impacts health outcomes among U.S. adults. The impact of health insurance will be measured in three ways: (1) by sex (male and female), focusing on coronary heart disease mortality by sex; (2) by state, examining coronary heart disease mortality across different states; and (3) by disease, comparing coronary heart disease mortality with various cancer mortalities.",
     "crumbs": [
       "Technical Projects",
       "Health Insurance Database Management"
@@ -684,29 +695,18 @@
     "href": "technical_projects/insurance_sql.html#process-and-approach",
     "title": "Health Insurance Database Management",
     "section": "Process and Approach",
-    "text": "Process and Approach",
+    "text": "Process and Approach\n\nIterated on the research questions that could be studied given sufficiently effective and available data.\n\nFind prior work that can supplement the research questions and their purpose.\n\nObtained and clean a group of datasets to be approved by the instructor on whether or not they can provide sufficient analysis and fit the theme selected, as well as explain how the datasets could be combined to provide detailed information.\n\nThe theme selected was “Healthcare”.\nIn our case, we selected the table ‘U.S. Chronic Disease Indicators’ in HealthData.gov from U.S. Chronic Disease Indicators (Centers for Disease Control and Prevention) and ‘Health Insurance Coverage of Adults Ages 19-64’ from the Kaiser Family Foundation (KFF) respectively.\n\nDetermined the evaluation methods used for our queries.\n\nWe have split our evaluations on the data by differing types of segregation: Impact by sex, impact by state and impact by disease.\n\nConducted exploratory data analysis by creating visualisations to spot trends in the data.\nCreated an outlined SQL formatting for the datasets obtained, and produced an SQL script to load data into the database.\n\nSQL script\n\nWrote conclusion, discussed the results and how this investigation could be developed further.",
     "crumbs": [
       "Technical Projects",
       "Health Insurance Database Management"
     ]
   },
   {
-    "objectID": "technical_projects/insurance_sql.html#results",
-    "href": "technical_projects/insurance_sql.html#results",
+    "objectID": "technical_projects/insurance_sql.html#conclusion-reflection",
+    "href": "technical_projects/insurance_sql.html#conclusion-reflection",
     "title": "Health Insurance Database Management",
-    "section": "Results",
-    "text": "Results",
-    "crumbs": [
-      "Technical Projects",
-      "Health Insurance Database Management"
-    ]
-  },
-  {
-    "objectID": "technical_projects/insurance_sql.html#impact-and-reflection",
-    "href": "technical_projects/insurance_sql.html#impact-and-reflection",
-    "title": "Health Insurance Database Management",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
+    "section": "Conclusion, Reflection",
+    "text": "Conclusion, Reflection\nIn Massachusetts, the estimated CHD deaths were 16 for females and 36 for males, yielding higher mortality rates in males when adjusted per 100,000 population. Similarly, the CHD deaths are estimated at 29 for females and 57 for males in Texas. This indicates that males exhibit higher mortality rates. Additionally, the uninsured rate was higher among males in both states.\nThe analysis of different cancer types revealed that lung cancer exhibits the highest mortality rate in both states, followed by breast, prostate, colorectal, and cervical cancers. Massachusetts showed a higher mortality rate overall compared to Texas, specifically, higher mortality rates for breast, colorectal, lung, and prostate cancers. Notably, CHD mortality rates were 84.0 per 100,000 in Massachusetts and 88.3 per 100,000 in Texas. Despite the significantly higher uninsured rate in Texas compared to Massachusetts, the average mortality outcomes for CHD and cancer were similar between the two states. Regression plots indicated a positive relationship between uninsured rates and CHD mortality rates, which supports the fact that the CHD mortality rate is higher in Texas compared to Massachusetts. However, this behaviour diminished in the 65+ age group. SVR models further suggested that geographic location, represented by state-specific support vectors, had limited predictive power for younger age groups but was more influential among older adults. Rhode Island emerged as a notable support vector across all age groups.\nThis paper comprehensively analyzes the impact of insurance rates from three perspectives: by sex, by disease, and by state, addressing three core research questions. This study presents key findings that provide supporting evidence intended to inform and engage stakeholders in the healthcare and health insurance sectors.",
     "crumbs": [
       "Technical Projects",
       "Health Insurance Database Management"
@@ -717,7 +717,18 @@
     "href": "technical_projects/insurance_sql.html#future-improvements",
     "title": "Health Insurance Database Management",
     "section": "Future Improvements",
-    "text": "Future Improvements",
+    "text": "Future Improvements\n\nDue to resource limitations, some of the observed outcomes may be attributable to random variation; future research could benefit from expanding the geographic scope, thereby generating a more comprehensive dataset suitable for deeper statistical analysis and more refined age stratifications (e.g., five- or ten-year intervals).\nStudy does not account for potential confounding factors that may influence the results, representing a limitation; incorporating other confounding factors, such as income and educational attainment, would enable more precise differentiation between the effects of insurance coverage and broader social determinants of health, and different types of insurance (e.g., private versus public) could also be investigated.\nAnalysis primarily addresses the surface-level aspects of the topic; a more in-depth investigation could improve the accuracy and reliability of the findings.",
+    "crumbs": [
+      "Technical Projects",
+      "Health Insurance Database Management"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#references",
+    "href": "technical_projects/insurance_sql.html#references",
+    "title": "Health Insurance Database Management",
+    "section": "References",
+    "text": "References\n\nNicholas Tam, Kevin Shiao, and Minghao Wang. 2025. cpsc368_knm_project. (February 2025). Retrieved April 3, 2025 from https://github.com/Nick-2003/cpsc368_knm_project\nCenters for Disease Control and Prevention. 2024. U.S. Chronic Disease Indicators. (March 2024). Retrieved February 9, 2025 from https://healthdata.gov/dataset/U-S-Chronic-Disease-Indicators/dhcp-wb3k/about_data\nKFF. 2024. (October 2024). Retrieved February 10, 2025 from https://www.kff.org/other/state-indicator/adults-19-64/\nHHS Office of the Secretary and Office of Budget (OB). 2019. Centers for Disease Control and Prevention. (November 2019). Retrieved February 9, 2025 from https://web.archive.org/web/20200410150453/https://www.hhs.gov/about/budget/fy-2020-cdc-contingency-staffing-plan/index.html\nWonkblog Team. 2013. Presenting the third annual WONKY Awards - The Washington Post. (December 2013). Retrieved February 9, 2025 from https://www.washingtonpost.com/news/wonk/wp/2013/12/31/presenting-the-third-annual-wonky-awards/\nKFF. 2024. (October 2024). Retrieved February 10, 2025 from https://www.kff.org/other/state-indicator/health-insurance-coverage-of-women-19-64/\nKFF. 2024. (October 2024). Retrieved February 10, 2025 from https://www.kff.org/other/state-indicator/health-insurance-coverage-of-men-19-64/\nCenters for Disease Control and Prevention. 2024a. Indicator Data Sources. (June 2024). Retrieved February 10, 2025 from https://www.cdc.gov/cdi/about/indicator-data-sources.html\nJunde Li, Qi Ma, Alan HS. Chan, and S.S. Man. 2019. Health monitoring through wearable technologies for older adults: Smart wearables acceptance model. Applied Ergonomics 75 (February 2019), 162–169. DOI: http://dx.doi.org/10.1016/j.apergo.2018.10.006\nRandall R. Bovbjerg and J. Hadley. “Why Health Insurance Is Important,” Urban Institute, 2006. [Online]. Available: https://www.urban.org/sites/default/files/publication/46826/411569-Why-Health-Insurance-Is-Important.PDF. [Accessed: 10-Feb-2025].\nHelen Levy and David Meltzer. 2008. The impact of health insurance on Health. Annual Review of Public Health 29, 1 (April 2008), 399–409. DOI: http://dx.doi.org/10.1146/annurev.publhealth.28.021406.144042\nLerner, D. J., & Kannel, W. B. (1986). Patterns of coronary heart disease morbidity and mortality in the sexes: a 26-year follow-up of the Framingham population. American Heart Journal, 111(2), 383–390. DOI: https://doi.org/10.1016/0002-8703(86)90155-9\nInstitute of Medicine (US) Committee on the Consequences of Uninsurance. 1970. Mechanisms and methods: Looking at the impact of health insurance on Health. (January 1970). Retrieved March 31, 2025 from https://www.ncbi.nlm.nih.gov/books/NBK220631/\nInstitute of Medicine (US) Committee on the Consequences of Uninsurance. 1970a. Effects of health insurance on Health. (January 1970). Retrieved March 31, 2025 from https://www.ncbi.nlm.nih.gov/books/NBK220636/\nU.S. Census Bureau. 2025. Massachusetts QuickFacts. Retrieved April 2, 2025 from https://www.census.gov/quickfacts/fact/table/MA/SEX255223#SEX255223\nU.S. Census Bureau. 2025. Texas QuickFacts. Retrieved April 2, 2025 from https://www.census.gov/quickfacts/fact/table/TX/PST045224",
     "crumbs": [
       "Technical Projects",
       "Health Insurance Database Management"
