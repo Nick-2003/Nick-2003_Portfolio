@@ -8,7 +8,7 @@ format:
         href: https://github.com/Nick-2003/STAT-306-Project-Group-10
 ---
 
-[Final Paper](../assets/images/STAT%20306%20Project%20(Group%2010).pdf)
+[Final Paper](../assets/documents/STAT%20306%20Project%20(Group%2010).pdf)
 
 ## Goals and Objectives
 
