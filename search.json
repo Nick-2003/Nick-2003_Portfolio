@@ -900,11 +900,33 @@
     ]
   },
   {
+    "objectID": "technical_projects/diabetes_risk_report_workflow.html",
+    "href": "technical_projects/diabetes_risk_report_workflow.html",
+    "title": "Statistical Modelling of Diabetes Risk Report and Workflow",
+    "section": "",
+    "text": "Sourced from UBC STAT 310 website:\n“In this course you will work in assigned teams of three or four to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.\nYour data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:\n\nA well documented and modularized software package and scripts written in R and/or Python,\nA data analysis pipeline automated with GNU Make,\nA reproducible report powered by either Jupyter book or R Markdown,\nA containerized computational environment created and made shareable by Docker, and\nA remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.”",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Modelling of Diabetes Risk Report and Workflow"
+    ]
+  },
+  {
+    "objectID": "technical_projects/diabetes_risk_report_workflow.html#problem-statement",
+    "href": "technical_projects/diabetes_risk_report_workflow.html#problem-statement",
+    "title": "Statistical Modelling of Diabetes Risk Report and Workflow",
+    "section": "",
+    "text": "Sourced from UBC STAT 310 website:\n“In this course you will work in assigned teams of three or four to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.\nYour data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:\n\nA well documented and modularized software package and scripts written in R and/or Python,\nA data analysis pipeline automated with GNU Make,\nA reproducible report powered by either Jupyter book or R Markdown,\nA containerized computational environment created and made shareable by Docker, and\nA remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.”",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Modelling of Diabetes Risk Report and Workflow"
+    ]
+  },
+  {
     "objectID": "technical_projects/diabetes_risk_report_workflow.html#project-goals-and-objectives",
     "href": "technical_projects/diabetes_risk_report_workflow.html#project-goals-and-objectives",
     "title": "Statistical Modelling of Diabetes Risk Report and Workflow",
     "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives\nWe attempted to develop a logistic regression model to predict whether a patient has diabetes or not using the Diabetes Health Indicators dataset sourced from the UCI machine learning repository (Centers for Disease Control and Prevention 2023). We employed Random Over-Sampling Examples (ROSE) to balance the data and a tuned Least Absolute Shrinkage and Selection Operator (LASSO) regression model to classify patients who are at high risk of developing diabetes using a subset of the 21 risk factors provided in the dataset.\nFeature selection was performed via Cramér’s V statistical tests and Information Gain analysis. Recall was used to measure the classifier’s performance, as the consequences of false negatives would be more severe than false positives for this task. The area under the receiver operating characteristic (ROC) curve (AUC) was also chosen to evaluate the model’s effectiveness in distinguishing between the two classes compared to random guessing.",
     "crumbs": [
       "Technical Projects",
       "Statistical Modelling of Diabetes Risk Report and Workflow"
@@ -915,7 +937,7 @@
     "href": "technical_projects/diabetes_risk_report_workflow.html#process-and-approach",
     "title": "Statistical Modelling of Diabetes Risk Report and Workflow",
     "section": "Process and Approach",
-    "text": "Process and Approach",
+    "text": "Process and Approach\n\nDrafted a teamwork contract on how the group would conduct and organise ourselves throughout the course of the project.\nSet-up and organised Github repository\n\nOutlined code of conduct, contribution and license files based on existing documents for similar purposes.\nGithub Issues and Milestones were used to keep track of tasks and persistent issues with the system.\n\nSelected a data analysis project and corresponding dataset to create a narrated analysis that asks and answers a predictive question using a classification method.\n\nDataset used: Diabetes Health Indicators\nData was initially extracted by running a Python file for ucimlrepo\n\nConstructed report for predicting whether a patient has diabetes or not\n\nLoading extracted data and perform exploratory data analysis by obtaining counts of distinct and NA values for each column, the initial data types of each column, and the class imbalance in the target variable Diabetes_binary.\nApplied Random Over-Sampling Examples (ROSE) technique to undersample the majority class Diabetes_binary == 0 and oversample the minority class Diabetes_binary == 1.\nBinning numerical BMI into discrete categories\nPerformed feature selection by finding the distributions of Diabetes_binary by various variables, and employing the Cramér’s V and Information Gain metrics alongside chi-squared tests to narrow down relevant variables.\nDeveloped LASSO regression workflow model and determined how its features contribute to the final prediction.\n\nCreated Dockerfile to provide specifications for a Docker image that provides a computational environment for the analysis.\n\nUsed jupyter/r-notebook:x86_64-ubuntu-22.04 as base Docker image in release 0.0.1.\nChanged base Docker image to rocker/verse:4.2.1 in later releases.\n\nAbstracted code within the report as individual scripts\n\n01-load_clean.R: Loading and cleaning data\n02-eda.R: Exploratory data analysis\n03-model.R: Constructing LASSO classification analysis model\n04-analysis.R: Applying model onto test set and producing analysis\n\nApplied Quarto formatting to report:\n\nTable of contents\nBibtex references\nLabelling, cross-referencing and automatic numbering for figures and tables\nRemoval of code chunks for easier viewing\n\nCreated Makefile to proving functions to automate the process of running all required scripts in the correct order, and for scripts to acquire consistent inputs and provide consistent outputs.\nAbstracted code within the scripts as individual functions and relocated them into a new package predictdiabetes.\nReviewed data validation checks from the provided checklist into the analysis pipeline as 01-validate_rawdf.R using the pointblank library.",
     "crumbs": [
       "Technical Projects",
       "Statistical Modelling of Diabetes Risk Report and Workflow"
@@ -926,7 +948,7 @@
     "href": "technical_projects/diabetes_risk_report_workflow.html#results",
     "title": "Statistical Modelling of Diabetes Risk Report and Workflow",
     "section": "Results",
-    "text": "Results",
+    "text": "Results\nOur model achieved a recall score of r recall_value (7 s.f.) on the test set, implying that about r recall_percent% of all positive instances of diabetes were correctly classified by the LASSO regression model (?@tbl-diabetes10). This suggests that the model is relatively effective at identifying individuals who are at risk of developing diabetes. Additionally, the model achieved an area under the ROC curve of r auc_value (7 s.f.) on the test set (?@tbl-diabetes10). Since the AUC is above 0.5, this indicates that the model can discriminate between diabetic and non-diabetic cases better than random guessing (?@fig-cm3).\nWe expected the model to perform better than random guessing, which it did achieve. Additionally, we aimed to minimize false negatives which is particularly important in healthcare diagnoses where a false negative case can have serious consequences. For example, a false negative would indicate that the model predicts the patient to not develop diabetes even though they do. This may lead to the patient not getting the treatment or care they need, potentially resulting in health complications and even death. The model had a false negative rate around r fnr_percent% which is concerning as it indicates a significant risk for missing positive cases leading to unfavourable patient outcomes.",
     "crumbs": [
       "Technical Projects",
       "Statistical Modelling of Diabetes Risk Report and Workflow"
@@ -937,18 +959,7 @@
     "href": "technical_projects/diabetes_risk_report_workflow.html#impact-and-reflection",
     "title": "Statistical Modelling of Diabetes Risk Report and Workflow",
     "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Modelling of Diabetes Risk Report and Workflow"
-    ]
-  },
-  {
-    "objectID": "technical_projects/diabetes_risk_report_workflow.html#future-improvements",
-    "href": "technical_projects/diabetes_risk_report_workflow.html#future-improvements",
-    "title": "Statistical Modelling of Diabetes Risk Report and Workflow",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
+    "text": "Impact and Reflection\nOur model was optimized for recall through hyperparameter tuning, with cross-validation used to evaluate model performance during the process. However, despite our results, the model falls short of what is expected in clinical applications. For example, more complex models in the literature which incorporate advanced feature selection techniques (Alhussan et al. 2023) or Generative Adversarial Networks (GANs) (Feng, Cai, and Xin 2023) can achieve recall and AUC scores upwards of 97%. Our findings serve as a proof of concept for the feasibility of classification models to predict the risk of diabetes based on publicly available health data. Since our model did relatively well compared to random guessing, this indicates potential correlations between health indicators and the likelihood of developing diabetes. With this information, people might be more aware of their health and lifestyle choices. They may be inclined to work harder to reduce cholesterol levels, manage high blood pressure, keep alcohol consumption under control and maintain a healthy lifestyle. Thus, this may help decrease the global mortality rate from diabetes through early interventions and lifestyle changes.\nFuture directions could include how we can improve our classification method to more accurately predict the risk of diabetes in patients. We can explore more rigorous feature selection techniques or implement other machine learning models such as boosted trees to improve our classification performance. In the context of the healthcare system, we can look to integrate classification models into the diagnosis process to help detect diabetes early to improve patient outcomes.",
     "crumbs": [
       "Technical Projects",
       "Statistical Modelling of Diabetes Risk Report and Workflow"

@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -254,9 +274,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#process-and-approach" id="toc-process-and-approach" class="nav-link" data-scroll-target="#process-and-approach">Process and Approach</a></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
   <li><a href="#impact-and-reflection" id="toc-impact-and-reflection" class="nav-link" data-scroll-target="#impact-and-reflection">Impact and Reflection</a></li>
-  <li><a href="#future-improvements" id="toc-future-improvements" class="nav-link" data-scroll-target="#future-improvements">Future Improvements</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/diabetes_risk_report_workflow.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/diabetes_risk_report_workflow.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/diabetes_risk_report_workflow.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/diabetes_risk_report_workflow.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/DSCI-310-2025/dsci-310-group-06"><i class="bi bi-github"></i>Project Code</a></li><li><a href="https://github.com/DSCI-310-2025/predictdiabetes"><i class="bi bi-github"></i>Supplementary Library</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -282,26 +302,96 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="problem-statement" class="level2">
 <h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
+<p>Sourced from <a href="https://ubc-dsci.github.io/dsci-310-student/project/m1.html">UBC STAT 310 website</a>:</p>
+<p>“In this course you will work in assigned teams of three or four to answer a predictive question using a publicly available data set that will allow you to answer that question. To answer this question, you will perform a complete data analysis in R and/or Python, from data import to communication of results, while placing significant emphasis on reproducible and trustworthy workflows.</p>
+<p>Your data analysis project will evolve throughout the course from a single, monolithic Jupyter notebook, to a fully reproducible and robust data data analysis project, comprised of:</p>
+<ul>
+<li>A well documented and modularized software package and scripts written in R and/or Python,</li>
+<li>A data analysis pipeline automated with GNU Make,</li>
+<li>A reproducible report powered by either Jupyter book or R Markdown,</li>
+<li>A containerized computational environment created and made shareable by Docker, and</li>
+<li>A remote version control repository on GitHub for project collaboration and sharing, as well as automation of test suite execution and documentation and software deployment.”</li>
+</ul>
 </section>
 <section id="project-goals-and-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="project-goals-and-objectives">Project Goals and Objectives</h2>
+<p>We attempted to develop a logistic regression model to predict whether a patient has diabetes or not using the <a href="https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators">Diabetes Health Indicators</a> dataset sourced from the UCI machine learning repository <span class="citation" data-cites="CDC2023">(<a href="#ref-CDC2023" role="doc-biblioref">Centers for Disease Control and Prevention 2023</a>)</span>. We employed Random Over-Sampling Examples (ROSE) to balance the data and a tuned Least Absolute Shrinkage and Selection Operator (LASSO) regression model to classify patients who are at high risk of developing diabetes using a subset of the 21 risk factors provided in the dataset.</p>
+<p>Feature selection was performed via Cramér’s V statistical tests and Information Gain analysis. Recall was used to measure the classifier’s performance, as the consequences of false negatives would be more severe than false positives for this task. The area under the receiver operating characteristic (ROC) curve (AUC) was also chosen to evaluate the model’s effectiveness in distinguishing between the two classes compared to random guessing.</p>
 </section>
 <section id="process-and-approach" class="level2">
 <h2 class="anchored" data-anchor-id="process-and-approach">Process and Approach</h2>
+<ul>
+<li>Drafted a teamwork contract on how the group would conduct and organise ourselves throughout the course of the project.</li>
+<li>Set-up and organised Github repository
+<ul>
+<li>Outlined code of conduct, contribution and license files based on existing documents for similar purposes.</li>
+<li>Github Issues and Milestones were used to keep track of tasks and persistent issues with the system.</li>
+</ul></li>
+<li>Selected a data analysis project and corresponding dataset to create a narrated analysis that asks and answers a predictive question using a classification method.
+<ul>
+<li>Dataset used: <a href="https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators">Diabetes Health Indicators</a></li>
+<li>Data was initially extracted by running a Python file for <code>ucimlrepo</code></li>
+</ul></li>
+<li>Constructed report for predicting whether a patient has diabetes or not
+<ul>
+<li>Loading extracted data and perform exploratory data analysis by obtaining counts of distinct and <code>NA</code> values for each column, the initial data types of each column, and the class imbalance in the target variable <code>Diabetes_binary</code>.</li>
+<li>Applied Random Over-Sampling Examples (ROSE) technique to undersample the majority class <code>Diabetes_binary == 0</code> and oversample the minority class <code>Diabetes_binary == 1</code>.</li>
+<li>Binning numerical BMI into discrete categories</li>
+<li>Performed feature selection by finding the distributions of <code>Diabetes_binary</code> by various variables, and employing the Cramér’s V and Information Gain metrics alongside chi-squared tests to narrow down relevant variables.</li>
+<li>Developed LASSO regression workflow model and determined how its features contribute to the final prediction.</li>
+</ul></li>
+<li>Created <code>Dockerfile</code> to provide specifications for a Docker image that provides a computational environment for the analysis.
+<ul>
+<li>Used <code>jupyter/r-notebook:x86_64-ubuntu-22.04</code> as base Docker image in release <code>0.0.1</code>.</li>
+<li>Changed base Docker image to <code>rocker/verse:4.2.1</code> in later releases.</li>
+</ul></li>
+<li>Abstracted code within the report as individual scripts
+<ul>
+<li><code>01-load_clean.R</code>: Loading and cleaning data</li>
+<li><code>02-eda.R</code>: Exploratory data analysis</li>
+<li><code>03-model.R</code>: Constructing LASSO classification analysis model</li>
+<li><code>04-analysis.R</code>: Applying model onto test set and producing analysis</li>
+</ul></li>
+<li>Applied Quarto formatting to report:
+<ul>
+<li>Table of contents</li>
+<li>Bibtex references</li>
+<li>Labelling, cross-referencing and automatic numbering for figures and tables</li>
+<li>Removal of code chunks for easier viewing</li>
+</ul></li>
+<li>Created <code>Makefile</code> to proving functions to automate the process of running all required scripts in the correct order, and for scripts to acquire consistent inputs and provide consistent outputs.</li>
+<li>Abstracted code within the scripts as individual functions and relocated them into a new package <a href="https://github.com/DSCI-310-2025/predictdiabetes"><code>predictdiabetes</code></a>.</li>
+<li>Reviewed data validation checks from <a href="https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/130-data-validation.html#data-validation-checklist">the provided checklist</a> into the analysis pipeline as <code>01-validate_rawdf.R</code> using the <code>pointblank</code> library.</li>
+</ul>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>Our model achieved a recall score of <code>r recall_value</code> (7 s.f.) on the test set, implying that about <code>r recall_percent</code>% of all positive instances of diabetes were correctly classified by the LASSO regression model (<strong>?@tbl-diabetes10</strong>). This suggests that the model is relatively effective at identifying individuals who are at risk of developing diabetes. Additionally, the model achieved an area under the ROC curve of <code>r auc_value</code> (7 s.f.) on the test set (<strong>?@tbl-diabetes10</strong>). Since the AUC is above 0.5, this indicates that the model can discriminate between diabetic and non-diabetic cases better than random guessing (<strong>?@fig-cm3</strong>).</p>
+<p>We expected the model to perform better than random guessing, which it did achieve. Additionally, we aimed to minimize false negatives which is particularly important in healthcare diagnoses where a false negative case can have serious consequences. For example, a false negative would indicate that the model predicts the patient to not develop diabetes even though they do. This may lead to the patient not getting the treatment or care they need, potentially resulting in health complications and even death. The model had a false negative rate around <code>r fnr_percent</code>% which is concerning as it indicates a significant risk for missing positive cases leading to unfavourable patient outcomes.</p>
 </section>
 <section id="impact-and-reflection" class="level2">
 <h2 class="anchored" data-anchor-id="impact-and-reflection">Impact and Reflection</h2>
+<p>Our model was optimized for recall through hyperparameter tuning, with cross-validation used to evaluate model performance during the process. However, despite our results, the model falls short of what is expected in clinical applications. For example, more complex models in the literature which incorporate advanced feature selection techniques <span class="citation" data-cites="Alhussan2023">(<a href="#ref-Alhussan2023" role="doc-biblioref">Alhussan et al. 2023</a>)</span> or Generative Adversarial Networks (GANs) <span class="citation" data-cites="Feng2023">(<a href="#ref-Feng2023" role="doc-biblioref">Feng, Cai, and Xin 2023</a>)</span> can achieve recall and AUC scores upwards of 97%. Our findings serve as a proof of concept for the feasibility of classification models to predict the risk of diabetes based on publicly available health data. Since our model did relatively well compared to random guessing, this indicates potential correlations between health indicators and the likelihood of developing diabetes. With this information, people might be more aware of their health and lifestyle choices. They may be inclined to work harder to reduce cholesterol levels, manage high blood pressure, keep alcohol consumption under control and maintain a healthy lifestyle. Thus, this may help decrease the global mortality rate from diabetes through early interventions and lifestyle changes.</p>
+<p>Future directions could include how we can improve our classification method to more accurately predict the risk of diabetes in patients. We can explore more rigorous feature selection techniques or implement other machine learning models such as boosted trees to improve our classification performance. In the context of the healthcare system, we can look to integrate classification models into the diagnosis process to help detect diabetes early to improve patient outcomes.</p>
 </section>
-<section id="future-improvements" class="level2">
-<h2 class="anchored" data-anchor-id="future-improvements">Future Improvements</h2>
+<section id="references" class="level2">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Alhussan2023" class="csl-entry" role="listitem">
+Alhussan, A. A., A. A. Abdelhamid, S. K. Towfek, A. Ibrahim, M. M. Eid, D. S. Khafaga, and M. S. Saraya. 2023. <span>“Classification of Diabetes Using Feature Selection and Hybrid Al-Biruni Earth Radius and Dipper Throated Optimization.”</span> <em>Diagnostics</em> 13 (12): 2038. <a href="https://doi.org/10.3390/diagnostics13122038">https://doi.org/10.3390/diagnostics13122038</a>.
+</div>
+<div id="ref-CDC2023" class="csl-entry" role="listitem">
+Centers for Disease Control and Prevention. 2023. <span>“CDC Diabetes Health Indicators [Data Set].”</span> UCI Machine Learning Repository. <a href="https://doi.org/10.24432/C53919">https://doi.org/10.24432/C53919</a>.
+</div>
+<div id="ref-Feng2023" class="csl-entry" role="listitem">
+Feng, X., Y. Cai, and R. Xin. 2023. <span>“Optimizing Diabetes Classification with a Machine Learning-Based Framework.”</span> <em>BMC Bioinformatics</em> 24 (1). <a href="https://doi.org/10.1186/s12859-023-05467-x">https://doi.org/10.1186/s12859-023-05467-x</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
