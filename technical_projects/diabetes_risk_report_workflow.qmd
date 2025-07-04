@@ -6,7 +6,6 @@ format:
       - text: Project Code
         icon: github
         href: https://github.com/DSCI-310-2025/dsci-310-group-06
-    code-links:
       - text: Supplementary Library
         icon: github
         href: https://github.com/DSCI-310-2025/predictdiabetes
