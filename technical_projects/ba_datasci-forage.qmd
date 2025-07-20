@@ -1,0 +1,43 @@
+---
+title: "British Airways Data Science Job Simulation"
+format: html
+---
+
+## [Task 1](https://github.com/Nick-2003/British-Ariways-Data-Science/tree/master/British%20Ariways%20Data%20Science%20Task%201)
+
+- Extracted and cleaned review data for British Airways from [Airline Quality](https://www.airlinequality.com/airline-reviews/british-airways)
+  - Used `BeautifulSoup` from `bs4` to scrape review data, to be saved into a `.csv` file.
+  - Extracted verification status of trip from review text
+- `SentimentIntensityAnalyzer()` to acquire the sentiments of the text for data analysis.
+- Visualised the distributions of `compound` sentiment, grouped by `verified_trip`.
+  - In general, there are greater proportions of people with more extreme values of `compound` sentiment than of those with `compound` sentiment of 0, with slightly greater proportion of negative sentiment values compared to positive ones.
+  - Both charts demonstrate that between people with verified trips and those without, those with verified trips have slightly more extreme sentiments, but otherwise the distributions of `compound` sentiment are relatively similar.
+  
+## [Task 1 (V2)](https://github.com/Nick-2003/forage-british_airways-data_science/tree/master/British%20Ariways%20Data%20Science%20Task%201%20(V2))
+
+- Conducted exploratory data analysis on the given flight schedule to determine how to categorise and measure demand for lounge eligibility.
+  - Flight types and departure times often influence customer profiles and lounge usage behaviours, so `TIME_OF_DAY` was used as a category. 
+  - Different types of aircrafts have different proportions of each type of seating, and thus may impact the accessibility for lounge usages, such as Tier 1 permitting all First Class customers, so `AIRCRAFT_TYPE` was used as a category.
+- Proportions of eligible customers for each tier per flight calculated using `TIER1_ELIGIBLE_PAX`, `TIER2_ELIGIBLE_PAX`, `TIER3_ELIGIBLE_PAX` divided by the total number of passengers in their corresponding flights.
+
+## [Task 2](https://github.com/Nick-2003/British-Ariways-Data-Science/tree/master/British%20Ariways%20Data%20Science%20Task%202)
+
+- Conducted exploratory data analysis on the customer booking data
+  - `.info()` to determine the data types and number of `null` values for each column.
+  - `.describe()` for distribution metrics for numerical columns.
+
+- Trained multiple machine learning models and compared their effectiveness.
+  - All ML models included a preprocessing pipeline for the data before training and usage; all numeric columns have `StandardScaler()` applied to them, all ordinal columns have `OrdinalEncoder()` applied to them, and the remaining non-numeric columns have their data type converted to categories with `FunctionTransformer()`, followed by one-hot encoding.
+  - Models compared: `LogisticRegression()`, `DecisionTreeClassifier()`, `RandomForestClassifier()`, `HistGradientBoostingClassifier()`.
+  - Models optimised for f1-score with randomised search through `RandomizedSearchCV()`.
+  - Models evaluated with mean and standard deviation of cross-validation scores, with `test_f1` as metric of focus.
+  - The optimised pipelines for `LogisticRegression()` and `HistGradientBoostingClassifier()` provided the most effective results.
+
+- Findings compiled into [presentation slide](../assets/documents/British Airways Prediction Model (V2).pptx)
+  - Optimised `HistGradientBoostingClassifier()`:
+    - Tree-based ensemble model can only provide permutation importance in place of feature importances.
+    - `booking_origin` has greatest feature importance, followed by the various customer wants, with emphasis on extra baggage.
+![Permutation Importance](../assets/images/ba_datasci_permutation.png)
+  - Optimised `LogisticRegression()`:
+    - All the given extreme coefficients are encoded `route` variables.
+    - Various routes appear to provide consistently most extreme coefficients for predicting person’s customer buying behaviour; questionable given that majority of variables created from transformations are from `route`.

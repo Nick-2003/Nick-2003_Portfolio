@@ -53,9 +53,9 @@ website:
         - technical_projects/urban_forest_viz.qmd
         - technical_projects/insurance_sql.qmd
         - technical_projects/diabetes_risk_report_workflow.qmd
-        - technical_projects/ba_datasci.qmd
+        - technical_projects/ba_datasci-forage.qmd
         - technical_projects/ea_software_eng-forage.qmd
-        - technical_projects/datacom_cloud-forage.qmd
+        # - technical_projects/datacom_cloud-forage.qmd
         - technical_projects/quantium_analytics-forage.qmd
         - technical_projects/bcg_datasci-forage.qmd
         - technical_projects/lloyds_datasci-forage.qmd
