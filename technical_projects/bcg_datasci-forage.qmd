@@ -2,10 +2,98 @@
 title: "BCG Data Science Job Simulation"
 ---
 
-## Task 1
+## [Task 3](https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%202%20-%20eda_starter.ipynb)
 
-## [Task 2](https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%202%20-%20eda_starter.ipynb)
+- Acquired descriptive statistics on the initial pricing and client datasets.
+  - Data types.
+  - Distributions of numerical variables.
+  - Checks for null values and counts of unique values for each variable.
+- Created visualisations for variables in the datasets.
+  - Bar plots for categorical variables in the client dataset.
+  - Histograms and box plots for numerical variables in the client and pricing datasets; used to identify data ranges that could potentially indicate outliers.
 
-## [Task 3](https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%203%20-%20feature_engineering.ipynb)
+## [Task 4](https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%203%20-%20feature_engineering.ipynb)
 
-## [Task 4](https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%204%20-%20modeling_starter.ipynb)
+- Undergone feature engineering to improve machine learning training in Task 5.
+  - Acquired difference between off-peak prices in December and preceding January.
+  - Handling instances with `null` or `'MISSING'` in at least 1 column.
+  - Extracted `date_activ`, `date_end`, `date_modif_prod`, `date_renewal` to acquire time client has stayed with the service upon time of record.
+  - `forecast_cons_year` dropped in favour of existing variable `forecast_cons_12m`.
+  - Used difference between `margin_gross_pow_ele` and `margin_net_pow_ele` to calculate `operating_expenses`.
+  - `price_date` modified to be an ordinal attribute based on month.
+  - `has_gas` converted into a binary variable.
+
+## [Task 5](https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%204%20-%20modeling_starter.ipynb)
+
+### Preprocessing pipeline
+- To handle various data types in the dataset to allow for more effective model training.
+- Feature types:
+  - Binary: `has_gas`
+  - Categorical: `channel`, `origin_up`
+  - Target: `churn`
+  - Numeric: All other variables provided
+- `StandardScaler()` to standardise all numeric variables.
+- Forcibly converted all non-numeric variables to categorical with a function provided [here](https://stackoverflow.com/questions/59476179/is-it-possible-to-change-pandas-column-data-type-within-a-sklearn-pipeline)
+- For ordinal variables, use `OrdinalEncoder(categories=<ORDER>)` with given `<ORDER>` as list or list of lists.
+- For categorical variables, use `OneHotEncoder()` for automatic encoding in pipeline.
+  - For binary variables, use `OneHotEncoder(..., drop = "if_binary")` to ensure that there are no redundant columns.
+
+### Training `RandomForestClassifier()` models
+- One with the initial parameter, another with hyperparameter optimisation.
+- To predict `churn` of clients.
+- Given parameter grid param_grid_rf, used `RandomizedSearchCV() `to optimise the `RandomForestClassifier()` based on f1-score.
+- Best parameters are obtained, then applied into an optimised model.
+- f1-score used due to imbalance of `churn`, so using it as a metric of measurement mitigates the issue of class imbalance.
+- From the initial model to the optimised model, the optimised model has lower test accuracy and precision, and greater test recall and f1-score.
+
+### Evaluation of trained model
+- Mean accuracy of 0.7740963855421686.
+- Cross-validation scores relatively low except for accuracy.
+- Model generally has very poor precision-recall ratio.
+- Model performance is not satisfactory due to low f1-score for all instances.
+- Alternative models that could be considered for this classification problem include `LogisticRegression()`, `DecisionTreeClassifier()` and `HistGradientBoostingClassifier()`.
+- Survival analysis based on the number of days clients remained in the service could also have been considered for classification.
+
+### Feature Importances (Optimised Model)
+- Initial `.feature_importances_`
+    - `margin_net_pow_ele` and `margin_gross_pow_ele` have extremely high feature importance with at least 0.1 importance
+    - Feature importance for `months_activ`, `cons_12m`, `cons_last_month` are relatively high at approximately 0.0375.
+    - Two `origin` values `origin_up_kamkkxfxxuwbdslkwifmmcsiusiuosws` and `origin_up_lxidpiddsbxsbosboudacockeimpuepw` have particularly high feature importance.
+- `permutation_importance`
+    - Used to account for feature interactions and bias.
+    - `months_to_end`, `months_renewal`, `var_year_price_off_peak`, `margin_net_pow_ele`, `var_year_price_off_peak_fix`, `net_margin`, and `off_peak_peak_var_mean_diff` have particularly strong positive permutation feature importance.
+    - `margin_gross_pow_ele` and `months_activ` have particularly strong negative permutation feature importance, along with the two `origin` values `origin_up_kamkkxfxxuwbdslkwifmmcsiusiuosws` and `origin_up_lxidpiddsbxsbosboudacockeimpuepw`, which were also provided in `.feature_importances_` graph.
+- `margin_net_pow_ele`, `cons_12m`, `cons_last_month` are the only features found in both that may significantly improve the model.
+
+### Feature Importances (Regular Model)
+- Initial `.feature_importances_`
+  - `net_margin`, `cons_12m`, `forecast_meter_rent_12m`, `forecast_cons_12m`, `margin_net_pow_ele` and `margin_gross_pow_ele` have extremely high feature importance with at least 0.04 importance.
+- `permutation_importance`
+  - Used to account for feature interactions and bias.
+  - `margin_net_pow_ele`, `margin_gross_pow_ele`, `origin_up_lxidpiddsbxsbosboudacockeimpuepw`, `months_activ` and `forecast_meter_rent_12m` all have relatively high permutation importance at above 0.015.
+- `margin_net_pow_ele`, `margin_gross_pow_ele`, `months_activ` and `forecast_meter_rent_12m` are shared between both feature importance models as particularly important features.
+
+### [Executive summary](../assets/documents/Executive Summary Best Practices (Nicholas Tam).pptx.pdf)
+- Situation
+  - Prediction models for whether or not a client will churn made.
+  - Important features: Gross and net margins on power subscriptions,
+past electricity consumption, the timespan the client has been with
+the service, forecasted bill of meter rental.
+- Complication
+  - Cannot determine how likelihood of client churning will change with
+given important features.
+  - Customers that first subscribed to the electricity campaigns
+`"kamkkxfxxuwbdslkwifmmcsiusiuosws"` and
+`"lxidpiddsbxsbosboudacockeimpuepw"` are of particular note in terms
+of client churning.
+- Question
+  - Client likelihood of churning is increased by higher margins on power
+subscriptions, shorter timespans and higher forecasted bills.
+  - Electricity consumption influencing churn likely due to people
+considering the current pricing options as unfair relative to their usage.
+- Answer
+  - Investigate prices that competition uses as frame of reference for
+  bills, margins on power subscriptions, and pricing options based on
+  electricity consumption; adjust accordingly to ensure potential profits.
+  - Give benefits for clients that have recently joined so that they are
+  inclined to staying longer.
