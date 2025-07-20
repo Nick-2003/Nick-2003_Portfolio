@@ -243,10 +243,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#task-1" id="toc-task-1" class="nav-link active" data-scroll-target="#task-1">Task 1</a></li>
-  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
-  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link active" data-scroll-target="#task-3">Task 3</a></li>
   <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4">Task 4</a></li>
+  <li><a href="#task-5" id="toc-task-5" class="nav-link" data-scroll-target="#task-5">Task 5</a>
+  <ul class="collapse">
+  <li><a href="#preprocessing-pipeline" id="toc-preprocessing-pipeline" class="nav-link" data-scroll-target="#preprocessing-pipeline">Preprocessing pipeline</a></li>
+  <li><a href="#training-randomforestclassifier-models" id="toc-training-randomforestclassifier-models" class="nav-link" data-scroll-target="#training-randomforestclassifier-models">Training <code>RandomForestClassifier()</code> models</a></li>
+  <li><a href="#evaluation-of-trained-model" id="toc-evaluation-of-trained-model" class="nav-link" data-scroll-target="#evaluation-of-trained-model">Evaluation of trained model</a></li>
+  <li><a href="#feature-importances-optimised-model" id="toc-feature-importances-optimised-model" class="nav-link" data-scroll-target="#feature-importances-optimised-model">Feature Importances (Optimised Model)</a></li>
+  <li><a href="#feature-importances-regular-model" id="toc-feature-importances-regular-model" class="nav-link" data-scroll-target="#feature-importances-regular-model">Feature Importances (Regular Model)</a></li>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link" data-scroll-target="#executive-summary">Executive summary</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/bcg_datasci-forage.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/bcg_datasci-forage.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -272,19 +279,141 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="task-1" class="level2">
-<h2 class="anchored" data-anchor-id="task-1">Task 1</h2>
-</section>
-<section id="task-2" class="level2">
-<h2 class="anchored" data-anchor-id="task-2"><a href="https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%202%20-%20eda_starter.ipynb">Task 2</a></h2>
-</section>
 <section id="task-3" class="level2">
-<h2 class="anchored" data-anchor-id="task-3"><a href="https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%203%20-%20feature_engineering.ipynb">Task 3</a></h2>
+<h2 class="anchored" data-anchor-id="task-3"><a href="https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%202%20-%20eda_starter.ipynb">Task 3</a></h2>
+<ul>
+<li>Acquired descriptive statistics on the initial pricing and client datasets.
+<ul>
+<li>Data types.</li>
+<li>Distributions of numerical variables.</li>
+<li>Checks for null values and counts of unique values for each variable.</li>
+</ul></li>
+<li>Created visualisations for variables in the datasets.
+<ul>
+<li>Bar plots for categorical variables in the client dataset.</li>
+<li>Histograms and box plots for numerical variables in the client and pricing datasets; used to identify data ranges that could potentially indicate outliers.</li>
+</ul></li>
+</ul>
 </section>
 <section id="task-4" class="level2">
-<h2 class="anchored" data-anchor-id="task-4"><a href="https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%204%20-%20modeling_starter.ipynb">Task 4</a></h2>
+<h2 class="anchored" data-anchor-id="task-4"><a href="https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%203%20-%20feature_engineering.ipynb">Task 4</a></h2>
+<ul>
+<li>Undergone feature engineering to improve machine learning training in Task 5.
+<ul>
+<li>Acquired difference between off-peak prices in December and preceding January.</li>
+<li>Handling instances with <code>null</code> or <code>'MISSING'</code> in at least 1 column.</li>
+<li>Extracted <code>date_activ</code>, <code>date_end</code>, <code>date_modif_prod</code>, <code>date_renewal</code> to acquire time client has stayed with the service upon time of record.</li>
+<li><code>forecast_cons_year</code> dropped in favour of existing variable <code>forecast_cons_12m</code>.</li>
+<li>Used difference between <code>margin_gross_pow_ele</code> and <code>margin_net_pow_ele</code> to calculate <code>operating_expenses</code>.</li>
+<li><code>price_date</code> modified to be an ordinal attribute based on month.</li>
+<li><code>has_gas</code> converted into a binary variable.</li>
+</ul></li>
+</ul>
+</section>
+<section id="task-5" class="level2">
+<h2 class="anchored" data-anchor-id="task-5"><a href="https://github.com/Nick-2003/forage-bcg_x-data_science/blob/master/Task%204%20-%20modeling_starter.ipynb">Task 5</a></h2>
+<section id="preprocessing-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="preprocessing-pipeline">Preprocessing pipeline</h3>
+<ul>
+<li>To handle various data types in the dataset to allow for more effective model training.</li>
+<li>Feature types:
+<ul>
+<li>Binary: <code>has_gas</code></li>
+<li>Categorical: <code>channel</code>, <code>origin_up</code></li>
+<li>Target: <code>churn</code></li>
+<li>Numeric: All other variables provided</li>
+</ul></li>
+<li><code>StandardScaler()</code> to standardise all numeric variables.</li>
+<li>Forcibly converted all non-numeric variables to categorical with a function provided <a href="https://stackoverflow.com/questions/59476179/is-it-possible-to-change-pandas-column-data-type-within-a-sklearn-pipeline">here</a></li>
+<li>For ordinal variables, use <code>OrdinalEncoder(categories=&lt;ORDER&gt;)</code> with given <code>&lt;ORDER&gt;</code> as list or list of lists.</li>
+<li>For categorical variables, use <code>OneHotEncoder()</code> for automatic encoding in pipeline.
+<ul>
+<li>For binary variables, use <code>OneHotEncoder(..., drop = "if_binary")</code> to ensure that there are no redundant columns.</li>
+</ul></li>
+</ul>
+</section>
+<section id="training-randomforestclassifier-models" class="level3">
+<h3 class="anchored" data-anchor-id="training-randomforestclassifier-models">Training <code>RandomForestClassifier()</code> models</h3>
+<ul>
+<li>One with the initial parameter, another with hyperparameter optimisation.</li>
+<li>To predict <code>churn</code> of clients.</li>
+<li>Given parameter grid param_grid_rf, used <code>RandomizedSearchCV()</code>to optimise the <code>RandomForestClassifier()</code> based on f1-score.</li>
+<li>Best parameters are obtained, then applied into an optimised model.</li>
+<li>f1-score used due to imbalance of <code>churn</code>, so using it as a metric of measurement mitigates the issue of class imbalance.</li>
+<li>From the initial model to the optimised model, the optimised model has lower test accuracy and precision, and greater test recall and f1-score.</li>
+</ul>
+</section>
+<section id="evaluation-of-trained-model" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation-of-trained-model">Evaluation of trained model</h3>
+<ul>
+<li>Mean accuracy of 0.7740963855421686.</li>
+<li>Cross-validation scores relatively low except for accuracy.</li>
+<li>Model generally has very poor precision-recall ratio.</li>
+<li>Model performance is not satisfactory due to low f1-score for all instances.</li>
+<li>Alternative models that could be considered for this classification problem include <code>LogisticRegression()</code>, <code>DecisionTreeClassifier()</code> and <code>HistGradientBoostingClassifier()</code>.</li>
+<li>Survival analysis based on the number of days clients remained in the service could also have been considered for classification.</li>
+</ul>
+</section>
+<section id="feature-importances-optimised-model" class="level3">
+<h3 class="anchored" data-anchor-id="feature-importances-optimised-model">Feature Importances (Optimised Model)</h3>
+<ul>
+<li>Initial <code>.feature_importances_</code>
+<ul>
+<li><code>margin_net_pow_ele</code> and <code>margin_gross_pow_ele</code> have extremely high feature importance with at least 0.1 importance</li>
+<li>Feature importance for <code>months_activ</code>, <code>cons_12m</code>, <code>cons_last_month</code> are relatively high at approximately 0.0375.</li>
+<li>Two <code>origin</code> values <code>origin_up_kamkkxfxxuwbdslkwifmmcsiusiuosws</code> and <code>origin_up_lxidpiddsbxsbosboudacockeimpuepw</code> have particularly high feature importance.</li>
+</ul></li>
+<li><code>permutation_importance</code>
+<ul>
+<li>Used to account for feature interactions and bias.</li>
+<li><code>months_to_end</code>, <code>months_renewal</code>, <code>var_year_price_off_peak</code>, <code>margin_net_pow_ele</code>, <code>var_year_price_off_peak_fix</code>, <code>net_margin</code>, and <code>off_peak_peak_var_mean_diff</code> have particularly strong positive permutation feature importance.</li>
+<li><code>margin_gross_pow_ele</code> and <code>months_activ</code> have particularly strong negative permutation feature importance, along with the two <code>origin</code> values <code>origin_up_kamkkxfxxuwbdslkwifmmcsiusiuosws</code> and <code>origin_up_lxidpiddsbxsbosboudacockeimpuepw</code>, which were also provided in <code>.feature_importances_</code> graph.</li>
+</ul></li>
+<li><code>margin_net_pow_ele</code>, <code>cons_12m</code>, <code>cons_last_month</code> are the only features found in both that may significantly improve the model.</li>
+</ul>
+</section>
+<section id="feature-importances-regular-model" class="level3">
+<h3 class="anchored" data-anchor-id="feature-importances-regular-model">Feature Importances (Regular Model)</h3>
+<ul>
+<li>Initial <code>.feature_importances_</code>
+<ul>
+<li><code>net_margin</code>, <code>cons_12m</code>, <code>forecast_meter_rent_12m</code>, <code>forecast_cons_12m</code>, <code>margin_net_pow_ele</code> and <code>margin_gross_pow_ele</code> have extremely high feature importance with at least 0.04 importance.</li>
+</ul></li>
+<li><code>permutation_importance</code>
+<ul>
+<li>Used to account for feature interactions and bias.</li>
+<li><code>margin_net_pow_ele</code>, <code>margin_gross_pow_ele</code>, <code>origin_up_lxidpiddsbxsbosboudacockeimpuepw</code>, <code>months_activ</code> and <code>forecast_meter_rent_12m</code> all have relatively high permutation importance at above 0.015.</li>
+</ul></li>
+<li><code>margin_net_pow_ele</code>, <code>margin_gross_pow_ele</code>, <code>months_activ</code> and <code>forecast_meter_rent_12m</code> are shared between both feature importance models as particularly important features.</li>
+</ul>
+</section>
+<section id="executive-summary" class="level3">
+<h3 class="anchored" data-anchor-id="executive-summary"><a href="../assets/documents/Executive Summary Best Practices (Nicholas Tam).pptx.pdf">Executive summary</a></h3>
+<ul>
+<li>Situation
+<ul>
+<li>Prediction models for whether or not a client will churn made.</li>
+<li>Important features: Gross and net margins on power subscriptions, past electricity consumption, the timespan the client has been with the service, forecasted bill of meter rental.</li>
+</ul></li>
+<li>Complication
+<ul>
+<li>Cannot determine how likelihood of client churning will change with given important features.</li>
+<li>Customers that first subscribed to the electricity campaigns <code>"kamkkxfxxuwbdslkwifmmcsiusiuosws"</code> and <code>"lxidpiddsbxsbosboudacockeimpuepw"</code> are of particular note in terms of client churning.</li>
+</ul></li>
+<li>Question
+<ul>
+<li>Client likelihood of churning is increased by higher margins on power subscriptions, shorter timespans and higher forecasted bills.</li>
+<li>Electricity consumption influencing churn likely due to people considering the current pricing options as unfair relative to their usage.</li>
+</ul></li>
+<li>Answer
+<ul>
+<li>Investigate prices that competition uses as frame of reference for bills, margins on power subscriptions, and pricing options based on electricity consumption; adjust accordingly to ensure potential profits.</li>
+<li>Give benefits for clients that have recently joined so that they are inclined to staying longer.</li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

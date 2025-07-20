@@ -304,11 +304,11 @@
     ]
   },
   {
-    "objectID": "technical_projects/bcg_datasci-forage.html#task-2",
-    "href": "technical_projects/bcg_datasci-forage.html#task-2",
+    "objectID": "technical_projects/bcg_datasci-forage.html",
+    "href": "technical_projects/bcg_datasci-forage.html",
     "title": "BCG Data Science Job Simulation",
-    "section": "Task 2",
-    "text": "Task 2",
+    "section": "",
+    "text": "Acquired descriptive statistics on the initial pricing and client datasets.\n\nData types.\nDistributions of numerical variables.\nChecks for null values and counts of unique values for each variable.\n\nCreated visualisations for variables in the datasets.\n\nBar plots for categorical variables in the client dataset.\nHistograms and box plots for numerical variables in the client and pricing datasets; used to identify data ranges that could potentially indicate outliers.",
     "crumbs": [
       "Technical Projects",
       "BCG Data Science Job Simulation"
@@ -318,8 +318,8 @@
     "objectID": "technical_projects/bcg_datasci-forage.html#task-3",
     "href": "technical_projects/bcg_datasci-forage.html#task-3",
     "title": "BCG Data Science Job Simulation",
-    "section": "Task 3",
-    "text": "Task 3",
+    "section": "",
+    "text": "Acquired descriptive statistics on the initial pricing and client datasets.\n\nData types.\nDistributions of numerical variables.\nChecks for null values and counts of unique values for each variable.\n\nCreated visualisations for variables in the datasets.\n\nBar plots for categorical variables in the client dataset.\nHistograms and box plots for numerical variables in the client and pricing datasets; used to identify data ranges that could potentially indicate outliers.",
     "crumbs": [
       "Technical Projects",
       "BCG Data Science Job Simulation"
@@ -330,7 +330,18 @@
     "href": "technical_projects/bcg_datasci-forage.html#task-4",
     "title": "BCG Data Science Job Simulation",
     "section": "Task 4",
-    "text": "Task 4",
+    "text": "Task 4\n\nUndergone feature engineering to improve machine learning training in Task 5.\n\nAcquired difference between off-peak prices in December and preceding January.\nHandling instances with null or 'MISSING' in at least 1 column.\nExtracted date_activ, date_end, date_modif_prod, date_renewal to acquire time client has stayed with the service upon time of record.\nforecast_cons_year dropped in favour of existing variable forecast_cons_12m.\nUsed difference between margin_gross_pow_ele and margin_net_pow_ele to calculate operating_expenses.\nprice_date modified to be an ordinal attribute based on month.\nhas_gas converted into a binary variable.",
+    "crumbs": [
+      "Technical Projects",
+      "BCG Data Science Job Simulation"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_datasci-forage.html#task-5",
+    "href": "technical_projects/bcg_datasci-forage.html#task-5",
+    "title": "BCG Data Science Job Simulation",
+    "section": "Task 5",
+    "text": "Task 5\n\nPreprocessing pipeline\n\nTo handle various data types in the dataset to allow for more effective model training.\nFeature types:\n\nBinary: has_gas\nCategorical: channel, origin_up\nTarget: churn\nNumeric: All other variables provided\n\nStandardScaler() to standardise all numeric variables.\nForcibly converted all non-numeric variables to categorical with a function provided here\nFor ordinal variables, use OrdinalEncoder(categories=&lt;ORDER&gt;) with given &lt;ORDER&gt; as list or list of lists.\nFor categorical variables, use OneHotEncoder() for automatic encoding in pipeline.\n\nFor binary variables, use OneHotEncoder(..., drop = \"if_binary\") to ensure that there are no redundant columns.\n\n\n\n\nTraining RandomForestClassifier() models\n\nOne with the initial parameter, another with hyperparameter optimisation.\nTo predict churn of clients.\nGiven parameter grid param_grid_rf, used RandomizedSearchCV()to optimise the RandomForestClassifier() based on f1-score.\nBest parameters are obtained, then applied into an optimised model.\nf1-score used due to imbalance of churn, so using it as a metric of measurement mitigates the issue of class imbalance.\nFrom the initial model to the optimised model, the optimised model has lower test accuracy and precision, and greater test recall and f1-score.\n\n\n\nEvaluation of trained model\n\nMean accuracy of 0.7740963855421686.\nCross-validation scores relatively low except for accuracy.\nModel generally has very poor precision-recall ratio.\nModel performance is not satisfactory due to low f1-score for all instances.\nAlternative models that could be considered for this classification problem include LogisticRegression(), DecisionTreeClassifier() and HistGradientBoostingClassifier().\nSurvival analysis based on the number of days clients remained in the service could also have been considered for classification.\n\n\n\nFeature Importances (Optimised Model)\n\nInitial .feature_importances_\n\nmargin_net_pow_ele and margin_gross_pow_ele have extremely high feature importance with at least 0.1 importance\nFeature importance for months_activ, cons_12m, cons_last_month are relatively high at approximately 0.0375.\nTwo origin values origin_up_kamkkxfxxuwbdslkwifmmcsiusiuosws and origin_up_lxidpiddsbxsbosboudacockeimpuepw have particularly high feature importance.\n\npermutation_importance\n\nUsed to account for feature interactions and bias.\nmonths_to_end, months_renewal, var_year_price_off_peak, margin_net_pow_ele, var_year_price_off_peak_fix, net_margin, and off_peak_peak_var_mean_diff have particularly strong positive permutation feature importance.\nmargin_gross_pow_ele and months_activ have particularly strong negative permutation feature importance, along with the two origin values origin_up_kamkkxfxxuwbdslkwifmmcsiusiuosws and origin_up_lxidpiddsbxsbosboudacockeimpuepw, which were also provided in .feature_importances_ graph.\n\nmargin_net_pow_ele, cons_12m, cons_last_month are the only features found in both that may significantly improve the model.\n\n\n\nFeature Importances (Regular Model)\n\nInitial .feature_importances_\n\nnet_margin, cons_12m, forecast_meter_rent_12m, forecast_cons_12m, margin_net_pow_ele and margin_gross_pow_ele have extremely high feature importance with at least 0.04 importance.\n\npermutation_importance\n\nUsed to account for feature interactions and bias.\nmargin_net_pow_ele, margin_gross_pow_ele, origin_up_lxidpiddsbxsbosboudacockeimpuepw, months_activ and forecast_meter_rent_12m all have relatively high permutation importance at above 0.015.\n\nmargin_net_pow_ele, margin_gross_pow_ele, months_activ and forecast_meter_rent_12m are shared between both feature importance models as particularly important features.\n\n\n\nExecutive summary\n\nSituation\n\nPrediction models for whether or not a client will churn made.\nImportant features: Gross and net margins on power subscriptions, past electricity consumption, the timespan the client has been with the service, forecasted bill of meter rental.\n\nComplication\n\nCannot determine how likelihood of client churning will change with given important features.\nCustomers that first subscribed to the electricity campaigns \"kamkkxfxxuwbdslkwifmmcsiusiuosws\" and \"lxidpiddsbxsbosboudacockeimpuepw\" are of particular note in terms of client churning.\n\nQuestion\n\nClient likelihood of churning is increased by higher margins on power subscriptions, shorter timespans and higher forecasted bills.\nElectricity consumption influencing churn likely due to people considering the current pricing options as unfair relative to their usage.\n\nAnswer\n\nInvestigate prices that competition uses as frame of reference for bills, margins on power subscriptions, and pricing options based on electricity consumption; adjust accordingly to ensure potential profits.\nGive benefits for clients that have recently joined so that they are inclined to staying longer.",
     "crumbs": [
       "Technical Projects",
       "BCG Data Science Job Simulation"
