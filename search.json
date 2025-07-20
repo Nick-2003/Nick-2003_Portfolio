@@ -1,57 +1,185 @@
 [
   {
-    "objectID": "technical_projects/bcg_datasci-forage.html#project-goals-and-objectives",
-    "href": "technical_projects/bcg_datasci-forage.html#project-goals-and-objectives",
-    "title": "BCG Data Science Job Simulation",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
+    "objectID": "technical_projects/ba_datasci-forage.html",
+    "href": "technical_projects/ba_datasci-forage.html",
+    "title": "British Airways Data Science Job Simulation",
+    "section": "",
+    "text": "Extracted and cleaned review data for British Airways from Airline Quality\n\nUsed BeautifulSoup from bs4 to scrape review data, to be saved into a .csv file.\nExtracted verification status of trip from review text\n\nSentimentIntensityAnalyzer() to acquire the sentiments of the text for data analysis.\nVisualised the distributions of compound sentiment, grouped by verified_trip.\n\nIn general, there are greater proportions of people with more extreme values of compound sentiment than of those with compound sentiment of 0, with slightly greater proportion of negative sentiment values compared to positive ones.\nBoth charts demonstrate that between people with verified trips and those without, those with verified trips have slightly more extreme sentiments, but otherwise the distributions of compound sentiment are relatively similar.",
     "crumbs": [
       "Technical Projects",
-      "BCG Data Science Job Simulation"
+      "British Airways Data Science Job Simulation"
     ]
   },
   {
-    "objectID": "technical_projects/bcg_datasci-forage.html#process-and-approach",
-    "href": "technical_projects/bcg_datasci-forage.html#process-and-approach",
-    "title": "BCG Data Science Job Simulation",
+    "objectID": "technical_projects/ba_datasci-forage.html#task-1",
+    "href": "technical_projects/ba_datasci-forage.html#task-1",
+    "title": "British Airways Data Science Job Simulation",
+    "section": "",
+    "text": "Extracted and cleaned review data for British Airways from Airline Quality\n\nUsed BeautifulSoup from bs4 to scrape review data, to be saved into a .csv file.\nExtracted verification status of trip from review text\n\nSentimentIntensityAnalyzer() to acquire the sentiments of the text for data analysis.\nVisualised the distributions of compound sentiment, grouped by verified_trip.\n\nIn general, there are greater proportions of people with more extreme values of compound sentiment than of those with compound sentiment of 0, with slightly greater proportion of negative sentiment values compared to positive ones.\nBoth charts demonstrate that between people with verified trips and those without, those with verified trips have slightly more extreme sentiments, but otherwise the distributions of compound sentiment are relatively similar.",
+    "crumbs": [
+      "Technical Projects",
+      "British Airways Data Science Job Simulation"
+    ]
+  },
+  {
+    "objectID": "technical_projects/ba_datasci-forage.html#task-1-v2",
+    "href": "technical_projects/ba_datasci-forage.html#task-1-v2",
+    "title": "British Airways Data Science Job Simulation",
+    "section": "Task 1 (V2)",
+    "text": "Task 1 (V2)\n\nConducted exploratory data analysis on the given flight schedule to determine how to categorise and measure demand for lounge eligibility.\n\nFlight types and departure times often influence customer profiles and lounge usage behaviours, so TIME_OF_DAY was used as a category.\nDifferent types of aircrafts have different proportions of each type of seating, and thus may impact the accessibility for lounge usages, such as Tier 1 permitting all First Class customers, so AIRCRAFT_TYPE was used as a category.\n\nProportions of eligible customers for each tier per flight calculated using TIER1_ELIGIBLE_PAX, TIER2_ELIGIBLE_PAX, TIER3_ELIGIBLE_PAX divided by the total number of passengers in their corresponding flights.",
+    "crumbs": [
+      "Technical Projects",
+      "British Airways Data Science Job Simulation"
+    ]
+  },
+  {
+    "objectID": "technical_projects/ba_datasci-forage.html#task-2",
+    "href": "technical_projects/ba_datasci-forage.html#task-2",
+    "title": "British Airways Data Science Job Simulation",
+    "section": "Task 2",
+    "text": "Task 2\n\nConducted exploratory data analysis on the customer booking data\n\n.info() to determine the data types and number of null values for each column.\n.describe() for distribution metrics for numerical columns.\n\nTrained multiple machine learning models and compared their effectiveness.\n\nAll ML models included a preprocessing pipeline for the data before training and usage; all numeric columns have StandardScaler() applied to them, all ordinal columns have OrdinalEncoder() applied to them, and the remaining non-numeric columns have their data type converted to categories with FunctionTransformer(), followed by one-hot encoding.\nModels compared: LogisticRegression(), DecisionTreeClassifier(), RandomForestClassifier(), HistGradientBoostingClassifier().\nModels optimised for f1-score with randomised search through RandomizedSearchCV().\nModels evaluated with mean and standard deviation of cross-validation scores, with test_f1 as metric of focus.\nThe optimised pipelines for LogisticRegression() and HistGradientBoostingClassifier() provided the most effective results.\n\nFindings compiled into presentation slide\n\nOptimised HistGradientBoostingClassifier():\n\nTree-based ensemble model can only provide permutation importance in place of feature importances.\nbooking_origin has greatest feature importance, followed by the various customer wants, with emphasis on extra baggage. \n\nOptimised LogisticRegression():\n\nAll the given extreme coefficients are encoded route variables.\nVarious routes appear to provide consistently most extreme coefficients for predicting person’s customer buying behaviour; questionable given that majority of variables created from transformations are from route.",
+    "crumbs": [
+      "Technical Projects",
+      "British Airways Data Science Job Simulation"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html",
+    "href": "technical_projects/insurance_sql.html",
+    "title": "Health Insurance Database Management",
+    "section": "",
+    "text": "Final Research Paper",
+    "crumbs": [
+      "Technical Projects",
+      "Health Insurance Database Management"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#problem-statement",
+    "href": "technical_projects/insurance_sql.html#problem-statement",
+    "title": "Health Insurance Database Management",
+    "section": "Problem Statement",
+    "text": "Problem Statement\nModern technologies have improved our quality of life, making everything more convenient than ever by reducing workload and stress from various sources. This allows people to focus on their health more efficiently. With modern health information technologies, users can receive immediate feedback on their physical condition anytime, anywhere (Li et al., 2019). Health insurance is essential and beneficial, as uninsured individuals often experience poorer health and receive less medical care, often with delays (Bovbjerg, Hadley, 2006).\nHowever, the extent to which health insurance impacts health remains debatable. As Levy and Meltzer suggest, determining whether health insurance significantly influences health will require substantial investment in social experiments (Levy, Meltzer, 2008). According to the Institute of Medicine (US) Committee on the Consequences of Uninsurance, there have been various studies and examinations across the past several decades on both the relationship between health insurance and health outcomes, and the mechanisms used to measure and determine that relationship (Institute of Medicine (US) Committee on the Consequences of Uninsurance, 1970). Across a body of studies that use a variety of data sources and different analytic approaches, researchers have determined a consistent, positive relationship between health insurance coverage and health-related outcomes, with the best evidence suggesting that health insurance is associated with more appropriate use of health care services and better health outcomes for adults (Institute of Medicine (US) Committee on the Consequences of Uninsurance, 1970a).\nAlthough this paper does not directly answer the ultimate question or fill the gap, it contributes by presenting significant findings that serve as supporting evidence, aiming to attract attention in the healthcare and health insurance fields. Specifically, we explore how health insurance coverage impacts health outcomes among U.S. adults. The impact of health insurance will be measured in three ways: (1) by sex (male and female), focusing on coronary heart disease mortality by sex; (2) by state, examining coronary heart disease mortality across different states; and (3) by disease, comparing coronary heart disease mortality with various cancer mortalities.",
+    "crumbs": [
+      "Technical Projects",
+      "Health Insurance Database Management"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#process-and-approach",
+    "href": "technical_projects/insurance_sql.html#process-and-approach",
+    "title": "Health Insurance Database Management",
     "section": "Process and Approach",
-    "text": "Process and Approach",
+    "text": "Process and Approach\n\nIterated on the research questions that could be studied given sufficiently effective and available data.\n\nFind prior work that can supplement the research questions and their purpose.\n\nObtained and clean a group of datasets to be approved by the instructor on whether or not they can provide sufficient analysis and fit the theme selected, as well as explain how the datasets could be combined to provide detailed information.\n\nThe theme selected was “Healthcare”.\nIn our case, we selected the table ‘U.S. Chronic Disease Indicators’ in HealthData.gov from U.S. Chronic Disease Indicators (Centers for Disease Control and Prevention) and ‘Health Insurance Coverage of Adults Ages 19-64’ from the Kaiser Family Foundation (KFF) respectively.\n\nDetermined the evaluation methods used for our queries.\n\nWe have split our evaluations on the data by differing types of segregation: Impact by sex, impact by state and impact by disease.\n\nConducted exploratory data analysis by creating visualisations to spot trends in the data.\nCreated an outlined SQL formatting for the datasets obtained, and produced an SQL script to load data into the database.\n\nSQL script\n\nWrote conclusion, discussed the results and how this investigation could be developed further.",
     "crumbs": [
       "Technical Projects",
-      "BCG Data Science Job Simulation"
+      "Health Insurance Database Management"
     ]
   },
   {
-    "objectID": "technical_projects/bcg_datasci-forage.html#results",
-    "href": "technical_projects/bcg_datasci-forage.html#results",
-    "title": "BCG Data Science Job Simulation",
-    "section": "Results",
-    "text": "Results",
+    "objectID": "technical_projects/insurance_sql.html#conclusion-reflection",
+    "href": "technical_projects/insurance_sql.html#conclusion-reflection",
+    "title": "Health Insurance Database Management",
+    "section": "Conclusion, Reflection",
+    "text": "Conclusion, Reflection\nIn Massachusetts, the estimated CHD deaths were 16 for females and 36 for males, yielding higher mortality rates in males when adjusted per 100,000 population. Similarly, the CHD deaths are estimated at 29 for females and 57 for males in Texas. This indicates that males exhibit higher mortality rates. Additionally, the uninsured rate was higher among males in both states.\nThe analysis of different cancer types revealed that lung cancer exhibits the highest mortality rate in both states, followed by breast, prostate, colorectal, and cervical cancers. Massachusetts showed a higher mortality rate overall compared to Texas, specifically, higher mortality rates for breast, colorectal, lung, and prostate cancers. Notably, CHD mortality rates were 84.0 per 100,000 in Massachusetts and 88.3 per 100,000 in Texas. Despite the significantly higher uninsured rate in Texas compared to Massachusetts, the average mortality outcomes for CHD and cancer were similar between the two states. Regression plots indicated a positive relationship between uninsured rates and CHD mortality rates, which supports the fact that the CHD mortality rate is higher in Texas compared to Massachusetts. However, this behaviour diminished in the 65+ age group. SVR models further suggested that geographic location, represented by state-specific support vectors, had limited predictive power for younger age groups but was more influential among older adults. Rhode Island emerged as a notable support vector across all age groups.\nThis paper comprehensively analyzes the impact of insurance rates from three perspectives: by sex, by disease, and by state, addressing three core research questions. This study presents key findings that provide supporting evidence intended to inform and engage stakeholders in the healthcare and health insurance sectors.",
     "crumbs": [
       "Technical Projects",
-      "BCG Data Science Job Simulation"
+      "Health Insurance Database Management"
     ]
   },
   {
-    "objectID": "technical_projects/bcg_datasci-forage.html#impact-and-reflection",
-    "href": "technical_projects/bcg_datasci-forage.html#impact-and-reflection",
-    "title": "BCG Data Science Job Simulation",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Technical Projects",
-      "BCG Data Science Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/bcg_datasci-forage.html#future-improvements",
-    "href": "technical_projects/bcg_datasci-forage.html#future-improvements",
-    "title": "BCG Data Science Job Simulation",
+    "objectID": "technical_projects/insurance_sql.html#future-improvements",
+    "href": "technical_projects/insurance_sql.html#future-improvements",
+    "title": "Health Insurance Database Management",
     "section": "Future Improvements",
-    "text": "Future Improvements",
+    "text": "Future Improvements\n\nDue to resource limitations, some of the observed outcomes may be attributable to random variation; future research could benefit from expanding the geographic scope, thereby generating a more comprehensive dataset suitable for deeper statistical analysis and more refined age stratifications (e.g., five- or ten-year intervals).\nStudy does not account for potential confounding factors that may influence the results, representing a limitation; incorporating other confounding factors, such as income and educational attainment, would enable more precise differentiation between the effects of insurance coverage and broader social determinants of health, and different types of insurance (e.g., private versus public) could also be investigated.\nAnalysis primarily addresses the surface-level aspects of the topic; a more in-depth investigation could improve the accuracy and reliability of the findings.",
     "crumbs": [
       "Technical Projects",
-      "BCG Data Science Job Simulation"
+      "Health Insurance Database Management"
+    ]
+  },
+  {
+    "objectID": "technical_projects/insurance_sql.html#references",
+    "href": "technical_projects/insurance_sql.html#references",
+    "title": "Health Insurance Database Management",
+    "section": "References",
+    "text": "References\n\nNicholas Tam, Kevin Shiao, and Minghao Wang. 2025. cpsc368_knm_project. (February 2025). Retrieved April 3, 2025 from https://github.com/Nick-2003/cpsc368_knm_project\nCenters for Disease Control and Prevention. 2024. U.S. Chronic Disease Indicators. (March 2024). Retrieved February 9, 2025 from https://healthdata.gov/dataset/U-S-Chronic-Disease-Indicators/dhcp-wb3k/about_data\nKFF. 2024. (October 2024). Retrieved February 10, 2025 from https://www.kff.org/other/state-indicator/adults-19-64/\nHHS Office of the Secretary and Office of Budget (OB). 2019. Centers for Disease Control and Prevention. (November 2019). Retrieved February 9, 2025 from https://web.archive.org/web/20200410150453/https://www.hhs.gov/about/budget/fy-2020-cdc-contingency-staffing-plan/index.html\nWonkblog Team. 2013. Presenting the third annual WONKY Awards - The Washington Post. (December 2013). Retrieved February 9, 2025 from https://www.washingtonpost.com/news/wonk/wp/2013/12/31/presenting-the-third-annual-wonky-awards/\nKFF. 2024. (October 2024). Retrieved February 10, 2025 from https://www.kff.org/other/state-indicator/health-insurance-coverage-of-women-19-64/\nKFF. 2024. (October 2024). Retrieved February 10, 2025 from https://www.kff.org/other/state-indicator/health-insurance-coverage-of-men-19-64/\nCenters for Disease Control and Prevention. 2024a. Indicator Data Sources. (June 2024). Retrieved February 10, 2025 from https://www.cdc.gov/cdi/about/indicator-data-sources.html\nJunde Li, Qi Ma, Alan HS. Chan, and S.S. Man. 2019. Health monitoring through wearable technologies for older adults: Smart wearables acceptance model. Applied Ergonomics 75 (February 2019), 162–169. DOI: http://dx.doi.org/10.1016/j.apergo.2018.10.006\nRandall R. Bovbjerg and J. Hadley. “Why Health Insurance Is Important,” Urban Institute, 2006. [Online]. Available: https://www.urban.org/sites/default/files/publication/46826/411569-Why-Health-Insurance-Is-Important.PDF. [Accessed: 10-Feb-2025].\nHelen Levy and David Meltzer. 2008. The impact of health insurance on Health. Annual Review of Public Health 29, 1 (April 2008), 399–409. DOI: http://dx.doi.org/10.1146/annurev.publhealth.28.021406.144042\nLerner, D. J., & Kannel, W. B. (1986). Patterns of coronary heart disease morbidity and mortality in the sexes: a 26-year follow-up of the Framingham population. American Heart Journal, 111(2), 383–390. DOI: https://doi.org/10.1016/0002-8703(86)90155-9\nInstitute of Medicine (US) Committee on the Consequences of Uninsurance. 1970. Mechanisms and methods: Looking at the impact of health insurance on Health. (January 1970). Retrieved March 31, 2025 from https://www.ncbi.nlm.nih.gov/books/NBK220631/\nInstitute of Medicine (US) Committee on the Consequences of Uninsurance. 1970a. Effects of health insurance on Health. (January 1970). Retrieved March 31, 2025 from https://www.ncbi.nlm.nih.gov/books/NBK220636/\nU.S. Census Bureau. 2025. Massachusetts QuickFacts. Retrieved April 2, 2025 from https://www.census.gov/quickfacts/fact/table/MA/SEX255223#SEX255223\nU.S. Census Bureau. 2025. Texas QuickFacts. Retrieved April 2, 2025 from https://www.census.gov/quickfacts/fact/table/TX/PST045224",
+    "crumbs": [
+      "Technical Projects",
+      "Health Insurance Database Management"
+    ]
+  },
+  {
+    "objectID": "technical_projects/datacom_cloud-forage.html#task-2",
+    "href": "technical_projects/datacom_cloud-forage.html#task-2",
+    "title": "Datacom Introduction to Cloud Job Simulation",
+    "section": "Task 2",
+    "text": "Task 2"
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html",
+    "href": "technical_projects/stat_relationships_breast_cancer.html",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
+    "section": "",
+    "text": "Final Paper",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#goals-and-objectives",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#goals-and-objectives",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
+    "section": "Goals and Objectives",
+    "text": "Goals and Objectives\nBreast invasive ductal carcinoma (IDC) is the most common type of breast cancer, with about 80% of all forms of breast cancer being IDC, according to the American Cancer Society (DePolo, 2024). There are numerous nonsurgical treatments of IDC, such as radiotherapy, chemotherapy, and hormone therapy (Wright, 2023), and each of their effectiveness is partly determined by the patient’s condition, such as age and tumor stage. For instance, due to interactions between other treatments or conditions as a consequence of aging (e.g. Diabetes, liver disease, metabolism), more optimal doses of chemotherapy are generally discouraged for older patients due to potentially toxic side effects, implying a smaller difference in survival between older patients with or without chemotherapy (Given, Given, 2008). However, it is unclear how combinations of treatments can interact in a model to predict a patient’s survival until death.\nFor our research project, we have selected a dataset of approximately 1900 primary breast cancer samples, obtained from the Molecular Taxonomy of Breast Cancer International Consortium (METABRIC) database through cBioPortal for Cancer Genomics.\nOur project question is: “How do radiotherapy, chemotherapy, and hormone therapy influence the length of time a patient with IDC will survive, given control variables age, surgery type, tumor stage, and their present survival status?”\nOur analysis will involve the inference of covariates within linear models, as we seek to determine the interaction of cancer therapies on allowing patients to survive longer from IDC.\n\nVariables from columns 32 to 693 consist of genetic attributes containing m-RNA levels z-score for 331 genes, and mutation for 175 genes; they have been omitted due to being difficult to interpret.\nDue to the distribution of “cancer_type_detailed” categories and for ease of computation, we will be filtering the dataset for IDC patients that are either alive or dead from disease, as IDC consists of the majority of the dataset, and the patients that have died from other causes are irrelevant to the project question and not specific enough (e.g. Accident, non-cancer diseases).",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#process-and-approach",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#process-and-approach",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
+    "section": "Process and Approach",
+    "text": "Process and Approach\n\nDeveloped a team contract with my peers to summarise our data overview and reach an understanding of how we would allocate our later work.\nSelected a dataset from METABRIC for IDC patients, and demonstrated that the datasets can be read from the web into R.\nCleaned and wrangled the data into a tidy format.\nModelled residual and QQ-plots, boxplots, scatterplots, histograms, and VIF of covariates to perform exploratory data analysis on the cleaned dataset to glean a better understanding of what results are to be expected.\nCompared 2 prediction models that differ on the presence of an interaction term age_at_diagnosis:chemotherapy1 to determine if the term led to both models providing different statistically significant coefficients.\n\n\nModel selection\n\nAs our goal is to determine how the various forms of therapy influence a patient’s survival until death, interaction terms regarding all combinations of therapies are considered, since it is unclear if the effect of one therapy will influence the effect of another (e.g. Chemotherapy and hormone therapy in similar timeframe).\nInteraction terms for age and each type of therapy are included, as prior studies have indicated varying degrees of influence between age and treatment method (Given, Given 2008; Cleveland Clinic, 2024; U.S. National Library of Medicine; Steinfeld, Diamond, Hanks, Coia, Kramer, 1989).\nInteraction terms for tumor_stage and each type of therapy are also included since prior studies have indicated that the type of treatment a patient receives is influenced by the stage, size of tumor and the spread of cancer cells. (“Invasive Ductal Carcinoma”, 2024; “Treatment of breast cancer”, 2024)\nDue to not being significant parts of the question of interest and the indeterminate interaction between them and the therapies, interaction terms for type_of_breast_surgery and death_from_cancer are ignored for the full model.\nWe had attempted to fit linear models without the log transformation, and the resulting residual plots had demonstrated heteroscedasticity; this is discouraged as it would lead to inconsistent results.\nFull model for finalmod_both: log(overall_survival_months) \\~ age_at_diagnosis + chemotherapy \\* hormone_therapy \\* radio_therapy + age_at_diagnosis:chemotherapy + age_at_diagnosis:hormone_therapy + age_at_diagnosis:radio_therapy + tumor_stage + tumor_stage:chemotherapy + tumor_stage:hormone_therapy + tumor_stage:radio_therapy + type_of_breast_surgery + death_from_cancer\nForward and backward AIC selection with the same full model was attempted, but only backward selection produced the same model, while forward selection produced a less optimal model.\n\n\n\n\n\n\n\n\n\n\n\nVariable\nEstimate\nStd. Error\nt value\nPr(|t|)\n\n\n\n\n(Intercept)\n5.947000\n0.214458\n27.730\n2e-16\n\n\nage_at_diagnosis\n-0.014682\n0.003806\n-3.857\n0.000124\n\n\nchemotherapy1\n-0.701659\n0.294312\n-2.384\n0.017348\n\n\nhormone_therapy1\n-0.622362\n0.266825\n-2.332\n0.019915\n\n\ntumor_stage2\n-0.238917\n0.093835\n-2.546\n0.011073\n\n\ntumor_stage3\n-0.815091\n0.166351\n-4.900\n1.15e-06\n\n\ndeath_from_cancerDied of Disease\n-0.857453\n0.054094\n-15.851\n&lt; 2e-16\n\n\nage_at_diagnosis:chemotherapy1\n0.009678\n0.005384\n1.797\n0.072624\n\n\nage_at_diagnosis:hormone_therapy1\n0.009458\n0.004510\n2.097\n0.036273\n\n\nhormone_therapy1:tumor_stage2\n0.216084\n0.117380\n1.841\n0.065997\n\n\nhormone_therapy1:tumor_stage3\n0.711055\n0.203734\n3.490\n0.000508\n\n\n\n\nFull model for finalmod_both_1: log(overall_survival_months) ~ age_at_diagnosis + chemotherapy + hormone_therapy + tumor_stage + death_from_cancer + age_at_diagnosis:hormone_therapy + hormone_therapy:tumor_stage\nVersion of the model finalmod_both without the interaction term age_at_diagnosis:chemotherapy1\nHas all terms to be statistically significant on the 5% level.\n\n\n\n\n\n\n\n\n\n\n\nVariable\nEstimate\nStd. Error\nt value\nPr(|t|)\n\n\n\n\n(Intercept)\n5.773782\n0.191845\n30.096\n2e-16\n\n\nage_at_diagnosis\n-0.011469\n0.003365\n-3.408\n0.000685\n\n\nchemotherapy1\n-0.189144\n0.073044\n-2.589\n0.009782\n\n\nhormone_therapy1\n-0.570923\n0.265644\n-2.149\n0.031908\n\n\ntumor_stage2\n-0.271223\n0.092222\n-2.941\n0.003363\n\n\ntumor_stage3\n-0.830862\n0.166344\n-4.995\n7.19e-07\n\n\ndeath_from_cancerDied of Disease\n-0.857409\n0.054167\n-15.829\n&lt; 2e-16\n\n\nage_at_diagnosis:hormone_therapy1\n0.008276\n0.004467\n1.852\n0.064316\n\n\nhormone_therapy1:tumor_stage2\n0.240445\n0.116753\n2.059\n0.039766\n\n\nhormone_therapy1:tumor_stage3\n0.726981\n0.203816\n3.567\n0.000382",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#results",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#results",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
+    "section": "Results",
+    "text": "Results\nThe final regression model includes the following key variables: age, chemotherapy, hormone therapy, and tumor stage (specifically stages 2 and 3). It also accounts for the outcome of death from cancer (death from cancer and death from other causes) and incorporates interaction terms between age and hormone therapy, as well as hormone therapy and tumor stage (for stages 2 and 3).\nThe results from bidirectional selection and backward selection consistently provided the same set of covariates, but the results from forward selection did not, possibly due to it missing covariates that are only significant in combination with other covariates. The covariates of the final regression model are all statistically significant on the 5% significance level, with the exception of the interaction term between age and hormone therapy. This consistency between bidirectional and backward selection enhances the credibility of the findings, indicating that the observed relationships are relatively robust and not due to random chance.\nIn the model selection, we discarded radiotherapy, indicating that it doesn’t provide a significant influence on the log survival period of patients. For chemotherapy, regardless of tumor stage, the log survival period is decreased by 0.189144. This indicates that chemotherapy consistently reduces survival periods, and its negative effects on survival do not change significantly at higher tumor stages.\nFor hormone therapy, it initially reduces the log survival period by 0.570923 at tumor stage 1, but its effect decreases to a reduction of 0.330478 in log survival at stage 2, and it even leads to an increase in log survival by 0.156058 in stage 3. From tumor stage 1 to stage 3, the impact of hormone therapy changes from harmful to beneficial, ultimately improving survival chances. This highlights the importance of carefully considering the use of hormone therapy based on tumor stage.\nThe model shows a negative correlation between age_at_diagnosis and overall_survival_months, indicating that for each year of age (at the time of diagnosis), the patient’s log months of survival is decreased by 0.011469. This indicates that younger cancer patients will have a higher chance of recovering from IDC (higher overall survival months). The presence of hormone therapy increases change in survival to 0.003193, implying that the impact of age on survival months becomes less severe with hormone therapy.\nThe final model shows that the intercept for patients who have died from disease is lower by 0.857409 compared to living patients. This is consistent with the scatterplot between age/living condition from the exploratory analysis, where the overall survival was significantly lower for deceased patients compared to living ones. The scatterplot does not show the two slopes to be parallel, which would have been accounted for by the interaction term between death_from_cancer and age_at_diagnosis; however, this term was removed during model selection due to low significance.\nTo further validate the reliability of the model, the plot of fitted values versus residuals shows a good fit with residuals centered around zero, demonstrating homoscedasticity. Additionally, the residuals are randomly scattered without any discernible pattern beyond being centered around 0, suggesting that the errors are independent and that the relationship between the independent variables and the dependent variable is assumed to be linear. Furthermore, the points in the QQ plot align closely along the diagonal line, indicating that the residuals are approximately normally distributed. These observations confirm that the regression model does not violate the key assumptions of regression analysis, thereby minimizing the risk of drawing incorrect conclusions.",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#impact-and-reflection",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#impact-and-reflection",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
+    "section": "Impact and Reflection",
+    "text": "Impact and Reflection\nTo address our initial research question, our model suggests that chemotherapy and hormone therapy have varying influences on survival time before death, depending on the initial tumor stage, while radiotherapy does not have a significant association with survival time before death. In general, our model suggests that chemotherapy has a negative association with survival time before death, regardless of tumor stage leve,l while hormone therapy has a negative association for patients with an initial tumor stage of 1 and 2, while it has a positive association when the patient’s original tumor stage was 3. Our model does not align with prior research, as prior research suggests that chemotherapy is generally effective and increases the survival time before death. Similarly, prior research suggests that hormone therapy and radiotherapy are generally effective at treating patients with IDC. However, our model aligns with prior research suggesting chemotherapy is most effective for later stages of cancer (Penn Medicine, n.d.).\nOur model likely differs from prior research due to several limitations in our model. One limitation is our variable selection method, a bidirectional stepwise selection starting with a full model. While bidirectional model selection allows for better flexibility and model fit to the data, there is also the risk of the final model being overfitted to the existing data. Our response variable, being the log of overall_survival_months to maintain homoscedasticity, also makes our model estimates rather difficult to interpret. Moreover, our results may have been skewed by using tumor stage 1 as our baseline, since we did not have enough data points for tumor stage 0. Lastly, our model could not account for the context of the patients undergoing such treatments, such as the patients that took the treatment likely already being in poorer health than those that did not, or the side effects of such treatments impacting health, such as organ damage from chemotherapy (“Side effects of chemotherapy”, Canadian Cancer Society, 2024), osteoporosis from hormone therapy (“Side effects of hormone therapy”, Canadian Cancer Society, 2017) and low blood cell counts from radiation therapy (“Side effects of radiation therapy”, Canadian Cancer Society, 2017). Overall, the limitations of our model are reflected by the relatively low adjusted R2 of 0.3103432 (7 s.f.), which indicates our model only accounts for around 31.03% (2 d.p.) of the variability in survival time before death for IDC patients.",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_relationships_breast_cancer.html#resources",
+    "href": "technical_projects/stat_relationships_breast_cancer.html#resources",
+    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
+    "section": "Resources",
+    "text": "Resources\n\nBreast cancer gene expression profiles (METABRIC). Kaggle. (2016, May 10). https://www.kaggle.com/datasets/raghadalharbi/breast-cancer-gene-expression-profiles-metabric\nCBioPortal for Cancer Genomics. (n.d.). https://www.cbioportal.org/study/summary?id=brca_metabric\nDePolo, J. (2024, October 2). Invasive ductal carcinoma (IDC). Breastcancer.org - Breast Cancer Information and Support. https://www.breastcancer.org/types/invasive-ductal-carcinoma\n\nWright , P. (2023, March 21). Invasive ductal carcinoma (IDC). Johns Hopkins Medicine. https://www.hopkinsmedicine.org/health/conditions-and-diseases/breast-cancer/invasive-ductal-carcinoma-idc#:~:text=Radiation%20therapy%20might%20be%20part,lymph%20nodes%2C%E2%80%9D%20Wright%20says.\nTumor size and staging. Susan G. Komen®. (2024, May 2). https://www.komen.org/breast-cancer/diagnosis/stages-staging/tumor-size/#:~:text=Tumor%20size%20is%20related%20to,the%20size%20of%20the%20tumor.\nGiven, B., & Given, C. W. (2008, December 15). Older adults and cancer treatment. Cancer. https://pmc.ncbi.nlm.nih.gov/articles/PMC2606910/#S10\nHormone therapy for cancer. Cleveland Clinic. (2024, May 1).https://my.clevelandclinic.org/health/treatments/17108-hormone-therapy-to-treat-cancer\nU.S. National Library of Medicine. (n.d.). Aging changes in hormone production: Medlineplus medical encyclopedia. MedlinePlus.https://medlineplus.gov/ency/article/004000.htm#:~:text=In%20women%2C%20estrogen%20and%20prolactin,Cortisol\nSteinfeld, A. D., Diamond, J. J., Hanks, G. E., Coia, L. R., & Kramer, S. (1989). Patient age as a factor in radiotherapy. Data from the patterns of care study. Journal of the American Geriatrics Society, 37(4), 335–338.https://doi.org/10.1111/j.1532-5415.1989.tb05501.x\nInvasive Ductal Carcinoma. Cleveland Clinic (June 27, 2024) https://my.clevelandclinic.org/health/diseases/22117-invasive-ductal-carcinoma-idc\nPenn Medicine. (n.d.). Invasive Ductal Carcinoma (IDC). Pennmedicine.org. https://www.pennmedicine.org/cancer/types-of-cancer/breast-cancer/types-of-breast-cancer/invasive-ductal-carcinoma#:~:text=The%20IDC%20treatment%20your%20physician,focuses%20only%20on%20breast%20cancer\n\n“Treatment of breast cancer stages I-III”. (2024, September 22). Treatment of breast cancer stages I-III. American Cancer Society. https://www.cancer.org/cancer/types/breast-cancer/treatment/treatment-of-breast-cancer-by-stage/treatment-of-breast-cancer-stages-i-iii.html#:~:text=The%20stage%20of%20your%20breast,gone%20through%20menopause%20or%20not\nSide effects of chemotherapy. Canadian Cancer Society. (2024, May). https://cancer.ca/en/treatments/treatment-types/chemotherapy/side-effects-of-chemotherapy\nSide effects of hormone therapy. Canadian Cancer Society. (2017). https://cancer.ca/en/treatments/treatment-types/hormone-therapy/side-effects-of-hormone-therapy\nSide effects of radiation therapy. Canadian Cancer Society. (2017b). https://cancer.ca/en/treatments/treatment-types/radiation-therapy/side-effects-of-radiation-therapy",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
     ]
   },
   {
@@ -96,171 +224,6 @@
     "crumbs": [
       "Technical Projects",
       "Urban Forest Visualisations"
-    ]
-  },
-  {
-    "objectID": "technical_projects/quantium_analytics-forage.html#project-goals-and-objectives",
-    "href": "technical_projects/quantium_analytics-forage.html#project-goals-and-objectives",
-    "title": "Quantium Data Analytics Job Simulation",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
-    "crumbs": [
-      "Technical Projects",
-      "Quantium Data Analytics Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/quantium_analytics-forage.html#process-and-approach",
-    "href": "technical_projects/quantium_analytics-forage.html#process-and-approach",
-    "title": "Quantium Data Analytics Job Simulation",
-    "section": "Process and Approach",
-    "text": "Process and Approach",
-    "crumbs": [
-      "Technical Projects",
-      "Quantium Data Analytics Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/quantium_analytics-forage.html#results",
-    "href": "technical_projects/quantium_analytics-forage.html#results",
-    "title": "Quantium Data Analytics Job Simulation",
-    "section": "Results",
-    "text": "Results",
-    "crumbs": [
-      "Technical Projects",
-      "Quantium Data Analytics Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/quantium_analytics-forage.html#impact-and-reflection",
-    "href": "technical_projects/quantium_analytics-forage.html#impact-and-reflection",
-    "title": "Quantium Data Analytics Job Simulation",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Technical Projects",
-      "Quantium Data Analytics Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/quantium_analytics-forage.html#future-improvements",
-    "href": "technical_projects/quantium_analytics-forage.html#future-improvements",
-    "title": "Quantium Data Analytics Job Simulation",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
-    "crumbs": [
-      "Technical Projects",
-      "Quantium Data Analytics Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/bcg_genai-forage.html",
-    "href": "technical_projects/bcg_genai-forage.html",
-    "title": "BCG GenAI Job Simulation",
-    "section": "",
-    "text": "Extracted key financial data for the last three fiscal years from the 10-K and 10-Q reports of Microsoft, Tesla, and Apple.\n\nGrowth columns created to analyse year-over-year changes in financial metrics.\nProfit margin as measure of profitability of business.\n\n\\(\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Total Revenue}}\\)\n\nReturn on assets as measure of business asset utilisation.\n\n\\(\\text{Return on Assets} = \\frac{\\text{Net Income}}{\\text{Total Assets}}\\)\n\nOperating cash flow ratio as measure of operational efficiency.\n\n\\(\\text{Operating Cash Flow Ratio} = \\frac{\\text{Operating Cash Flow}}{\\text{Total Revenue}}\\) \n\n\nConducted exploratory data analysis by comparing boxplots of financial data metrics for each company grouped by year.\nConclusions:\n\nGiven the growths and ratios of the provided metrics, Tesla consistently has the highest growth and the lowest cash flows among the given companies, implying potential sustainability issues and liquidity risks.\nApple consistently demonstrates high cash flows, but low or even negative growths compared to the other companies, suggesting great financial stability along with lack of long-term potential.\nMicrosoft often hits the middle ground in terms of cash flows and growths, along with often attaining relatively high metric ratios, which implies that it is relatively stable in terms of both the short term and the long term, though with likely lower returns than Apple or Tesla.",
-    "crumbs": [
-      "Technical Projects",
-      "BCG GenAI Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/bcg_genai-forage.html#task-1",
-    "href": "technical_projects/bcg_genai-forage.html#task-1",
-    "title": "BCG GenAI Job Simulation",
-    "section": "",
-    "text": "Extracted key financial data for the last three fiscal years from the 10-K and 10-Q reports of Microsoft, Tesla, and Apple.\n\nGrowth columns created to analyse year-over-year changes in financial metrics.\nProfit margin as measure of profitability of business.\n\n\\(\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Total Revenue}}\\)\n\nReturn on assets as measure of business asset utilisation.\n\n\\(\\text{Return on Assets} = \\frac{\\text{Net Income}}{\\text{Total Assets}}\\)\n\nOperating cash flow ratio as measure of operational efficiency.\n\n\\(\\text{Operating Cash Flow Ratio} = \\frac{\\text{Operating Cash Flow}}{\\text{Total Revenue}}\\) \n\n\nConducted exploratory data analysis by comparing boxplots of financial data metrics for each company grouped by year.\nConclusions:\n\nGiven the growths and ratios of the provided metrics, Tesla consistently has the highest growth and the lowest cash flows among the given companies, implying potential sustainability issues and liquidity risks.\nApple consistently demonstrates high cash flows, but low or even negative growths compared to the other companies, suggesting great financial stability along with lack of long-term potential.\nMicrosoft often hits the middle ground in terms of cash flows and growths, along with often attaining relatively high metric ratios, which implies that it is relatively stable in terms of both the short term and the long term, though with likely lower returns than Apple or Tesla.",
-    "crumbs": [
-      "Technical Projects",
-      "BCG GenAI Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/bcg_genai-forage.html#task-2",
-    "href": "technical_projects/bcg_genai-forage.html#task-2",
-    "title": "BCG GenAI Job Simulation",
-    "section": "Task 2",
-    "text": "Task 2\n\nApplied rule-based logic for financial chatbot development to provide user-friendly financial insights and analysis.\nChatbot has 2 major queries it can respond to:\n\n1: Insert company, year and property to find the corresponding value.\n2: Find the greatest/least value within each company or year.\nq: Exit the chatbot.\n\nThe chatbot will consider any other input as invalid responses.\nIt can only take very limited forms of input, which heavily restricts the types of queries it can answer.\n\n```{python}\ndef companyinput():\n    print(\"List of companies:\")\n    for x in df.Company.unique():\n        print(\"* \" + str(x))\n    c1 = input(\"From above, input company of interest: \")\n    while c1 not in df.Company.unique(): \n        c1 = input(\"Invalid input, try again:\")\n    return c1\n\ndef yearinput(): \n    print(\"List of years:\")\n    yearlist = [str(x) for x in df.Year.unique()]\n    for x in yearlist:\n        print(\"* \" + str(x))\n    y1 = input(\"From above, input year of interest: \")\n    while y1 not in yearlist: \n        y1 = input(\"Invalid input, try again:\")\n    return y1\n\ndef propertyinput(): \n    print(\"List of properties:\")\n    categorical = [\"Company\", \"Year\"]\n    growths = [\"Revenue Growth (%)\", \"Net Income Growth (%)\", \"Asset Growth (%)\", \"Liability Growth (%)\", \"Cash Flow Growth (%)\"]\n    propertylist = [x for x in list(df.columns) if x not in categorical] \n    for x in propertylist: \n        print(\"* \" + str(x))\n    p1 = input(\"From above, input property of interest: \")\n    while p1 not in propertylist: \n        p1 = input(\"Invalid input, try again:\")\n    return p1 \n```\n```{python}\ndef chatbot_v2(): \n    option = input('Enter option: \\n1: Value of property given year and company \\n2: Greatest/least value of property given year/company \\nq: Quit \\n')\n    while option not in [\"1\", \"2\", \"q\"]: \n        option = input(\"Invalid input, try again:\")\n    \n    if option == \"1\": \n        c1 = companyinput()\n        y1 = yearinput()\n        p1 = propertyinput()\n\n        try: \n            interestvals = df.loc[(df[\"Company\"] == c1) & (df[\"Year\"] == float(y1))][p1].values\n            interestvals = interestvals[~np.isnan(interestvals)] \n            interestval = interestvals[0]\n            print(\"Value of \" + p1 + \" for \" + c1 + \" in \" + y1 + \": \" + str(interestval))\n        except IndexError: \n            print(\"Value of \" + p1 + \" for \" + c1 + \" in \" + y1 + \" is not available in the dataset.\")\n    \n    elif option == \"2\": \n        updown = input(\"Greatest or Least? \")\n        while updown not in [\"Greatest\", \"Least\"]: \n            updown = input(\"Invalid input, try again:\")\n\n        p1 = propertyinput()\n\n        compyear = input(\"Company or Year? \")\n        while compyear not in [\"Company\", \"Year\"]: \n            compyear = input(\"Invalid input, try again:\")\n        if compyear == \"Company\": \n            cy2 = companyinput()\n            interestvals = df.loc[df[\"Company\"] == cy2][p1]\n            interestvals = interestvals[~np.isnan(interestvals)]\n            if updown == \"Greatest\": \n                interestval = max(interestvals)\n                print(\"Maximum value of \" + p1 + \" for all years in \" + cy2 + \": \" + str(interestval))\n            else: \n                interestval = min(interestvals)\n                print(\"Minimum value of \" + p1 + \" for all years in \" + cy2 + \": \" + str(interestval))\n        else: \n            cy2 = yearinput()\n            interestvals = df.loc[df[\"Year\"] == float(cy2)][p1].tolist()\n            # interestvals = interestvals[~np.isnan(interestvals)]\n            # print(interestvals)\n            if updown == \"Greatest\": \n                interestval = max(interestvals)\n                print(\"Maximum value of \" + p1 + \" for all companies in \" + cy2 + \": \" + str(interestval))\n            else: \n                interestval = min(interestvals)\n                print(\"Minimum value of \" + p1 + \" for all companies in \" + cy2 + \": \" + str(interestval))\n    \n    else: \n        print(\"Good day.\")\n```",
-    "crumbs": [
-      "Technical Projects",
-      "BCG GenAI Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_model_coronary.html",
-    "href": "technical_projects/stat_model_coronary.html",
-    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
-    "section": "",
-    "text": "Sourced from UBC STAT 301 website:\n“As in DSCI 100 and STAT 201, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). The electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as fitting and selecting a model. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.\nFor this project, you will need to formulate formulate a research question of your choice, and then identify and use a dataset to answer to the question. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team.”",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_model_coronary.html#problem-statement",
-    "href": "technical_projects/stat_model_coronary.html#problem-statement",
-    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
-    "section": "",
-    "text": "Sourced from UBC STAT 301 website:\n“As in DSCI 100 and STAT 201, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). The electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as fitting and selecting a model. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.\nFor this project, you will need to formulate formulate a research question of your choice, and then identify and use a dataset to answer to the question. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team.”",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_model_coronary.html#project-goals-and-objectives",
-    "href": "technical_projects/stat_model_coronary.html#project-goals-and-objectives",
-    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives\nFor our research project, we have selected datasets containing processed angiography data on patients in various clinics in 1988, applying a probability model derived from test results of 303 patients at the Cleveland Clinic in Cleveland, Ohio to generate and estimate results for the diagnosis of coronary heart disease (Janosi, Steinbrunn, Pfisterer, Detrano, 1989). The datasets include the following patients undergoing angiography: - 303 patients at the Cleveland Clinic in Cleveland, Ohio (Original dataset for model) - 425 patients at the Hungarian Institute of Cardiology in Budapest, Hungary - 200 patients at the Veterans Administration Medical Center in Long Beach, California - 143 patients from the University Hospitals in Zurich and Basel, Switzerland\nThese datasets were retrieved from the Heart Disease dataset from UCI machine learning repository, and converted from .data files to CSV files with Excel. The dataset obtained contains the following 14 attributes out of 76 attributes from the initial dataset for each patient:\n\nmyTable &lt;- data.frame(\n  Variable = c(\"age\", \"sex\", \"cp\", \"trestbps\", \"chol\", \"fbs\", \"restecg\", \"thalach\", \"exang\", \"oldpeak\", \"slope\", \"ca\", \"thal\", \"num\"),\n  Definition = c(\"Age\", \"Sex\", \"Chest pain type\", \"Resting blood pressure on admission to hospital\", \"Serum cholesterol\", \"Presence of high blood sugar\", \"Resting electrocardiographic results\", \"Maximum heart rate achieved\", \"Exercise induced angina\", \"ST depression induced by exercise relative to rest\", \"Slope of the peak exercise ST segment\", \"Number of major vessels coloured by fluoroscopy\", \"Presence of defect\", \"Diagnosis of heart disease\"),\n  Type = c(\"Numerical\", \"Categorical\", \"Categorical\", \"Numerical\", \"Numerical\", \"Categorical\", \"Categorical\", \"Numerical\", \"Categorical\", \"Numerical\", \"Categorical\", \"Numerical\", \"Categorical\", \"Categorical\"),\n  Unit = c(\"Years\", \"N/A\", \"N/A\", \"mmHg\", \"mg/dl\", \"N/A\", \"N/A\", \"BPM\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\"),\n  Categories = c(\"N/A\", \"0: Female; 1: Male\", \"1: Typical angina; 2: Atypical angina; 3: Non-anginal pain; 4: Asymptomatic\", \"N/A\", \"N/A\", \"0: False; 1: True\", \"0: Normal; 1: Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV); 2: Showing probable or definite left ventricular hypertrophy by Estes' criteria\", \"N/A\", \"0: No; 1: Yes\", \"N/A\", \"1: Upsloping; 2: Flat; 3: Downsloping\", \"Range from 1-3\", \"3: Normal; 6: Fixed defect; 7: Reversible defect\", \"0: &lt; 50% diameter narrowing; 1+: &gt; 50% diameter narrowing\"),\n  AnyMissingValues = c(\"No\", \"No\", \"No\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"No\")\n)\nmyTable\n\n   Variable                                         Definition        Type\n1       age                                                Age   Numerical\n2       sex                                                Sex Categorical\n3        cp                                    Chest pain type Categorical\n4  trestbps    Resting blood pressure on admission to hospital   Numerical\n5      chol                                  Serum cholesterol   Numerical\n6       fbs                       Presence of high blood sugar Categorical\n7   restecg               Resting electrocardiographic results Categorical\n8   thalach                        Maximum heart rate achieved   Numerical\n9     exang                            Exercise induced angina Categorical\n10  oldpeak ST depression induced by exercise relative to rest   Numerical\n11    slope              Slope of the peak exercise ST segment Categorical\n12       ca    Number of major vessels coloured by fluoroscopy   Numerical\n13     thal                                 Presence of defect Categorical\n14      num                         Diagnosis of heart disease Categorical\n    Unit\n1  Years\n2    N/A\n3    N/A\n4   mmHg\n5  mg/dl\n6    N/A\n7    N/A\n8    BPM\n9    N/A\n10   N/A\n11   N/A\n12   N/A\n13   N/A\n14   N/A\n                                                                                                                                                                                       Categories\n1                                                                                                                                                                                             N/A\n2                                                                                                                                                                              0: Female; 1: Male\n3                                                                                                                     1: Typical angina; 2: Atypical angina; 3: Non-anginal pain; 4: Asymptomatic\n4                                                                                                                                                                                             N/A\n5                                                                                                                                                                                             N/A\n6                                                                                                                                                                               0: False; 1: True\n7  0: Normal; 1: Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV); 2: Showing probable or definite left ventricular hypertrophy by Estes' criteria\n8                                                                                                                                                                                             N/A\n9                                                                                                                                                                                   0: No; 1: Yes\n10                                                                                                                                                                                            N/A\n11                                                                                                                                                          1: Upsloping; 2: Flat; 3: Downsloping\n12                                                                                                                                                                                 Range from 1-3\n13                                                                                                                                               3: Normal; 6: Fixed defect; 7: Reversible defect\n14                                                                                                                                      0: &lt; 50% diameter narrowing; 1+: &gt; 50% diameter narrowing\n   AnyMissingValues\n1                No\n2                No\n3                No\n4               Yes\n5               Yes\n6               Yes\n7               Yes\n8               Yes\n9               Yes\n10              Yes\n11              Yes\n12              Yes\n13              Yes\n14               No\n\n\nOur project question is:\n\n“Given the sample data for angiography patients, what model would be most effective in predicting each patient’s diagnosis?”\nOur analysis will involve the development of a predictive model to estimate the likelihood of angiographic coronary disease based on these variables. This research question is primarily focused on predictions, as we seek to generate a predictive model given the provided data to estimate diagnoses of new observations. Inference will also be required to a lesser extent, to gain insights into factors influencing the likelihood of coronary disease diagnosis in different demographic groups.",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_model_coronary.html#process-and-approach",
-    "href": "technical_projects/stat_model_coronary.html#process-and-approach",
-    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
-    "section": "Process and Approach",
-    "text": "Process and Approach\n\nDeveloped a team contract with my peers to reach an understanding of how we would conduct ourselves and what goals we would seek to accomplish over the course of the project.\nSelected a group of datasets on the diagnosis on coronary heart disease across 4 hospitals in distinct locations, and demonstrated that the datasets can be read from the web into R.\nCleaned and wrangled the data into a tidy format by converting them from .data files to .csv files and merging them into a single dataframe.\nEach of us created independent reports on the dataset, and organised our results to compose a cohesive final report.\n\nWrote a brief description of the dataset indicating how the data had been collected and where it came from.\nPerformed exploratory data analysis; in my case, I obtained the VIFs for each variable to test for multicollinearity between independent variables, along with summary statistics on each independent quantitative variable.\nConducted hypothesis tests for the continuous variable coefficients \\(\\beta_{j}\\) and the statistical significance in the mean number of patients with coronary heart disease between categorical variable groups, based on a provided reference level.\n\nIndependently attempted stepwise Akaike Information Criterion (AIC), ridge regression and LASSO regression, and compared the models produced from each method to identify the most effective model for the given datasets on predicting coronary heart disease diagnosis.",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_model_coronary.html#results-from-discussion-in-the-final-report",
-    "href": "technical_projects/stat_model_coronary.html#results-from-discussion-in-the-final-report",
-    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
-    "section": "Results (From Discussion in the final report)",
-    "text": "Results (From Discussion in the final report)\n\nLogistic Regression Models with Stepwise Akaike Information Criterion (AIC)\nThe confusion matrix of our logistic regression model with num as response and all other variables as input generated an 84.24% accuracy, with a Kappa value of 0.685. The result of the stepAIC() method applied to find models which explain the most variation in data included the terms age, sex, cp, trestbps, thalach, and exang, with an AIC of 454.78. After stepAIC(), the out-of-sample error rate became smaller with value 0.5222 compared with the regular model’s training error rate of 0.5369, implying that the new model fits the testing data set better. However, the stepAIC() model becomes less accurate as a consequence, with an accuracy of 82.76% and Kappa value of 0.6554.\n\n\nLogistic Regression Models with Regularisation methods\nThe ordinary regression model performs better in distinguishing between positive and negative classes compared to the regularised models, with the largest AUC value at 0.8417. This suggests that the regularised methods may have excessively shrunken the coefficients, leading to underfitting. The LASSO regression model has also been selected such that it would be significantly simpler, leading to a lower AUC value.",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_model_coronary.html#conclusion",
-    "href": "technical_projects/stat_model_coronary.html#conclusion",
-    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
-    "section": "Conclusion",
-    "text": "Conclusion\nIn conclusion, the model most effective in predicting each patient’s diagnosis would be the one obtained through stepAIC(), with the variables age, sex, cp, trestbps, thalach, and exang, and without regularised regression models applied.\nQuadratic or interaction terms to the logistic regression model could be added to account for the possibility that the explanatory variables are not independent and the relationship between log odds of the response variable and explanatory variables may not be linear. We could also optimise regularisation parameters through techniques such as cross-validation to find the best model, which can access model performance using techniques like k-folds to ensure robustness.\nThis project could lead to several relevant future questions, such as: - How do lifestyle and environment factors affect the diagnosis of coronary heart disease? - How can big data and predictive analytics be employed to improve the accuracy of the logistic regression model? - How to use this logistic regression model to predict an individual’s risk of coronary heart disease?",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_model_coronary.html#references",
-    "href": "technical_projects/stat_model_coronary.html#references",
-    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
-    "section": "References",
-    "text": "References\n\nLloyd-Jones, D. M., Larson, M. G., Beiser, A., & Levy, D. (1999, February 19). Lifetime risk of developing coronary heart disease. The Lancet. https://www.sciencedirect.com/science/article/pii/S0140673698102799?via%3Dihub\nLawes, C. M. M., Bennett, D. A., Lewington, S., & Rodgers, A. (2003, January 22). Blood pressure and coronary heart disease: A review of the evidence. Seminars in Vascular Medicine. https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2002-36765\nLaw, M. R., Wald, N. J., & Thompson, S. G. (1994, February 5). By how much and how quickly does reduction in serum cholesterol concentration lower risk of ischaemic heart disease?. The BMJ. https://www.bmj.com/content/308/6925/367.full\nBeckett, N., Nunes, M., & Bulpitt, C. (2000). Is it advantageous to lower cholesterol in the elderly hypertensive?. Cardiovascular drugs and therapy, 14(4), 397–405. https://doi.org/10.1023/a:1007812232328\nHajar R. (2017). Risk Factors for Coronary Artery Disease: Historical Perspectives. Heart views : the official journal of the Gulf Heart Association, 18(3), 109–114. https://doi.org/10.4103/HEARTVIEWS.HEARTVIEWS_106_17\nSchell, A. (n.d.). Empirical logit plots for logistic regression specification search - Alex Schell. https://alexschell.github.io/emplogit.html",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
@@ -341,124 +304,69 @@
     ]
   },
   {
-    "objectID": "technical_projects/data_viz_coronary.html",
-    "href": "technical_projects/data_viz_coronary.html",
-    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
+    "objectID": "technical_projects/bcg_datasci-forage.html#task-2",
+    "href": "technical_projects/bcg_datasci-forage.html#task-2",
+    "title": "BCG Data Science Job Simulation",
+    "section": "Task 2",
+    "text": "Task 2",
+    "crumbs": [
+      "Technical Projects",
+      "BCG Data Science Job Simulation"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_datasci-forage.html#task-3",
+    "href": "technical_projects/bcg_datasci-forage.html#task-3",
+    "title": "BCG Data Science Job Simulation",
+    "section": "Task 3",
+    "text": "Task 3",
+    "crumbs": [
+      "Technical Projects",
+      "BCG Data Science Job Simulation"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_datasci-forage.html#task-4",
+    "href": "technical_projects/bcg_datasci-forage.html#task-4",
+    "title": "BCG Data Science Job Simulation",
+    "section": "Task 4",
+    "text": "Task 4",
+    "crumbs": [
+      "Technical Projects",
+      "BCG Data Science Job Simulation"
+    ]
+  },
+  {
+    "objectID": "technical_projects/bcg_genai-forage.html",
+    "href": "technical_projects/bcg_genai-forage.html",
+    "title": "BCG GenAI Job Simulation",
     "section": "",
-    "text": "Develop a final visualisation product to answer a specific question. We have selected the question: “What set of factors leads to high serum cholesterol levels within male patients in Cleveland?”",
+    "text": "Extracted key financial data for the last three fiscal years from the 10-K and 10-Q reports of Microsoft, Tesla, and Apple.\n\nGrowth columns created to analyse year-over-year changes in financial metrics.\nProfit margin as measure of profitability of business.\n\n\\(\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Total Revenue}}\\)\n\nReturn on assets as measure of business asset utilisation.\n\n\\(\\text{Return on Assets} = \\frac{\\text{Net Income}}{\\text{Total Assets}}\\)\n\nOperating cash flow ratio as measure of operational efficiency.\n\n\\(\\text{Operating Cash Flow Ratio} = \\frac{\\text{Operating Cash Flow}}{\\text{Total Revenue}}\\) \n\n\nConducted exploratory data analysis by comparing boxplots of financial data metrics for each company grouped by year.\nConclusions:\n\nGiven the growths and ratios of the provided metrics, Tesla consistently has the highest growth and the lowest cash flows among the given companies, implying potential sustainability issues and liquidity risks.\nApple consistently demonstrates high cash flows, but low or even negative growths compared to the other companies, suggesting great financial stability along with lack of long-term potential.\nMicrosoft often hits the middle ground in terms of cash flows and growths, along with often attaining relatively high metric ratios, which implies that it is relatively stable in terms of both the short term and the long term, though with likely lower returns than Apple or Tesla.",
     "crumbs": [
       "Technical Projects",
-      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
+      "BCG GenAI Job Simulation"
     ]
   },
   {
-    "objectID": "technical_projects/data_viz_coronary.html#problem-statement",
-    "href": "technical_projects/data_viz_coronary.html#problem-statement",
-    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
+    "objectID": "technical_projects/bcg_genai-forage.html#task-1",
+    "href": "technical_projects/bcg_genai-forage.html#task-1",
+    "title": "BCG GenAI Job Simulation",
     "section": "",
-    "text": "Develop a final visualisation product to answer a specific question. We have selected the question: “What set of factors leads to high serum cholesterol levels within male patients in Cleveland?”",
+    "text": "Extracted key financial data for the last three fiscal years from the 10-K and 10-Q reports of Microsoft, Tesla, and Apple.\n\nGrowth columns created to analyse year-over-year changes in financial metrics.\nProfit margin as measure of profitability of business.\n\n\\(\\text{Profit Margin} = \\frac{\\text{Net Income}}{\\text{Total Revenue}}\\)\n\nReturn on assets as measure of business asset utilisation.\n\n\\(\\text{Return on Assets} = \\frac{\\text{Net Income}}{\\text{Total Assets}}\\)\n\nOperating cash flow ratio as measure of operational efficiency.\n\n\\(\\text{Operating Cash Flow Ratio} = \\frac{\\text{Operating Cash Flow}}{\\text{Total Revenue}}\\) \n\n\nConducted exploratory data analysis by comparing boxplots of financial data metrics for each company grouped by year.\nConclusions:\n\nGiven the growths and ratios of the provided metrics, Tesla consistently has the highest growth and the lowest cash flows among the given companies, implying potential sustainability issues and liquidity risks.\nApple consistently demonstrates high cash flows, but low or even negative growths compared to the other companies, suggesting great financial stability along with lack of long-term potential.\nMicrosoft often hits the middle ground in terms of cash flows and growths, along with often attaining relatively high metric ratios, which implies that it is relatively stable in terms of both the short term and the long term, though with likely lower returns than Apple or Tesla.",
     "crumbs": [
       "Technical Projects",
-      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
+      "BCG GenAI Job Simulation"
     ]
   },
   {
-    "objectID": "technical_projects/data_viz_coronary.html#process-and-approach",
-    "href": "technical_projects/data_viz_coronary.html#process-and-approach",
-    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
-    "section": "Process and Approach",
-    "text": "Process and Approach\nThe data used are datasets for patients undergoing angiography tests within the Cleveland Clinic in Cleveland, Ohio, the Hungarian Institute of Cardiology in Budapest, Hungary, and the V eterans Administration Medical Center in Long Beach, California. (Detrano, Janosi, Steinbrunn, Pfisterer, Schmid, Sandhu, Guppy, Lee, Froelicher, 1989) These datasets were retrieved from the Heart Disease dataset from the UCI machine learning repository and converted from .data files to Excel files, then CSV files.\nWithin R, each CSV file is read separately, then merged into a single dataframe, with a “location” column added for each clinic’s dataset. Specific columns are missing the majority of their data and thus have been removed under the assumption that they are irrelevant. Any patients with \"?\" for any variables, trestbps = 0 or chol = 0, are assumed to be invalid and have been removed. Any values of num ≥ 1 provide the same result and thus have been converted to 1. The updated data frame is converted to an Excel spreadsheet with their respective definitions to be uploaded into Power BI.\nTo answer our question, we selected the median serum cholesterol level as our test statistic. The proportions for each variable category may differ, and prior exploratory data analysis indicates that serum cholesterol levels contain many outliers that are not representative of the data. As the diagnosis of heart disease was a result produced by a predictive model based on the Cleveland dataset, it has been ignored.",
+    "objectID": "technical_projects/bcg_genai-forage.html#task-2",
+    "href": "technical_projects/bcg_genai-forage.html#task-2",
+    "title": "BCG GenAI Job Simulation",
+    "section": "Task 2",
+    "text": "Task 2\n\nApplied rule-based logic for financial chatbot development to provide user-friendly financial insights and analysis.\nChatbot has 2 major queries it can respond to:\n\n1: Insert company, year and property to find the corresponding value.\n2: Find the greatest/least value within each company or year.\nq: Exit the chatbot.\n\nThe chatbot will consider any other input as invalid responses.\nIt can only take very limited forms of input, which heavily restricts the types of queries it can answer.\n\n```{python}\ndef companyinput():\n    print(\"List of companies:\")\n    for x in df.Company.unique():\n        print(\"* \" + str(x))\n    c1 = input(\"From above, input company of interest: \")\n    while c1 not in df.Company.unique(): \n        c1 = input(\"Invalid input, try again:\")\n    return c1\n\ndef yearinput(): \n    print(\"List of years:\")\n    yearlist = [str(x) for x in df.Year.unique()]\n    for x in yearlist:\n        print(\"* \" + str(x))\n    y1 = input(\"From above, input year of interest: \")\n    while y1 not in yearlist: \n        y1 = input(\"Invalid input, try again:\")\n    return y1\n\ndef propertyinput(): \n    print(\"List of properties:\")\n    categorical = [\"Company\", \"Year\"]\n    growths = [\"Revenue Growth (%)\", \"Net Income Growth (%)\", \"Asset Growth (%)\", \"Liability Growth (%)\", \"Cash Flow Growth (%)\"]\n    propertylist = [x for x in list(df.columns) if x not in categorical] \n    for x in propertylist: \n        print(\"* \" + str(x))\n    p1 = input(\"From above, input property of interest: \")\n    while p1 not in propertylist: \n        p1 = input(\"Invalid input, try again:\")\n    return p1 \n```\n```{python}\ndef chatbot_v2(): \n    option = input('Enter option: \\n1: Value of property given year and company \\n2: Greatest/least value of property given year/company \\nq: Quit \\n')\n    while option not in [\"1\", \"2\", \"q\"]: \n        option = input(\"Invalid input, try again:\")\n    \n    if option == \"1\": \n        c1 = companyinput()\n        y1 = yearinput()\n        p1 = propertyinput()\n\n        try: \n            interestvals = df.loc[(df[\"Company\"] == c1) & (df[\"Year\"] == float(y1))][p1].values\n            interestvals = interestvals[~np.isnan(interestvals)] \n            interestval = interestvals[0]\n            print(\"Value of \" + p1 + \" for \" + c1 + \" in \" + y1 + \": \" + str(interestval))\n        except IndexError: \n            print(\"Value of \" + p1 + \" for \" + c1 + \" in \" + y1 + \" is not available in the dataset.\")\n    \n    elif option == \"2\": \n        updown = input(\"Greatest or Least? \")\n        while updown not in [\"Greatest\", \"Least\"]: \n            updown = input(\"Invalid input, try again:\")\n\n        p1 = propertyinput()\n\n        compyear = input(\"Company or Year? \")\n        while compyear not in [\"Company\", \"Year\"]: \n            compyear = input(\"Invalid input, try again:\")\n        if compyear == \"Company\": \n            cy2 = companyinput()\n            interestvals = df.loc[df[\"Company\"] == cy2][p1]\n            interestvals = interestvals[~np.isnan(interestvals)]\n            if updown == \"Greatest\": \n                interestval = max(interestvals)\n                print(\"Maximum value of \" + p1 + \" for all years in \" + cy2 + \": \" + str(interestval))\n            else: \n                interestval = min(interestvals)\n                print(\"Minimum value of \" + p1 + \" for all years in \" + cy2 + \": \" + str(interestval))\n        else: \n            cy2 = yearinput()\n            interestvals = df.loc[df[\"Year\"] == float(cy2)][p1].tolist()\n            # interestvals = interestvals[~np.isnan(interestvals)]\n            # print(interestvals)\n            if updown == \"Greatest\": \n                interestval = max(interestvals)\n                print(\"Maximum value of \" + p1 + \" for all companies in \" + cy2 + \": \" + str(interestval))\n            else: \n                interestval = min(interestvals)\n                print(\"Minimum value of \" + p1 + \" for all companies in \" + cy2 + \": \" + str(interestval))\n    \n    else: \n        print(\"Good day.\")\n```",
     "crumbs": [
       "Technical Projects",
-      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
-    ]
-  },
-  {
-    "objectID": "technical_projects/data_viz_coronary.html#results",
-    "href": "technical_projects/data_viz_coronary.html#results",
-    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
-    "section": "Results",
-    "text": "Results\nAcross all patients, the presence of asymptomatic chest pain left ventricular hypertrophy from ECG results, as well as the presence of exercise-induced angina, leads to higher median serum cholesterol levels. Both resting blood pressure and maximum heart rate produce a trend line with median serum cholesterol level with positive gradients close to 0. Male patients in Cleveland with the ECG result of ST-T wave abnormality have the highest median serum cholesterol, as well as a stronger correlation between resting blood pressure and serum cholesterol, but otherwise produce similar results.\nIn conclusion, the set of factors that relate to high serum cholesterol levels within male patients in Cleveland are ST-T wave abnormality, exercise-induced angina, high resting blood pressure and high maximum heart rate.\nVisualisation",
-    "crumbs": [
-      "Technical Projects",
-      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
-    ]
-  },
-  {
-    "objectID": "technical_projects/data_viz_coronary.html#references",
-    "href": "technical_projects/data_viz_coronary.html#references",
-    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
-    "section": "References",
-    "text": "References\n\nJanosi,Andras, Steinbrunn,William, Pfisterer,Matthias, and Detrano,Robert. (1988). Heart Disease. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X\nDetrano, R., Janosi, A., Steinbrunn, W., Pfisterer, M., Schmid, J. J., Sandhu, S., Guppy, K. H., Lee, S., & Froelicher, V . (1989). International application of a new probability algorithm for the diagnosis of coronary artery disease. The American journal of cardiology, 64(5), 304–310. https://doi.org/10.1016/0002-9149(89)90524-9 (Detrano, Janosi, Steinbrunn, Pfisterer, Schmid, Sandhu, Guppy, Lee, Froelicher, 1989)",
-    "crumbs": [
-      "Technical Projects",
-      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_relationships_breast_cancer.html",
-    "href": "technical_projects/stat_relationships_breast_cancer.html",
-    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
-    "section": "",
-    "text": "Final Paper",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_relationships_breast_cancer.html#goals-and-objectives",
-    "href": "technical_projects/stat_relationships_breast_cancer.html#goals-and-objectives",
-    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
-    "section": "Goals and Objectives",
-    "text": "Goals and Objectives\nBreast invasive ductal carcinoma (IDC) is the most common type of breast cancer, with about 80% of all forms of breast cancer being IDC, according to the American Cancer Society (DePolo, 2024). There are numerous nonsurgical treatments of IDC, such as radiotherapy, chemotherapy, and hormone therapy (Wright, 2023), and each of their effectiveness is partly determined by the patient’s condition, such as age and tumor stage. For instance, due to interactions between other treatments or conditions as a consequence of aging (e.g. Diabetes, liver disease, metabolism), more optimal doses of chemotherapy are generally discouraged for older patients due to potentially toxic side effects, implying a smaller difference in survival between older patients with or without chemotherapy (Given, Given, 2008). However, it is unclear how combinations of treatments can interact in a model to predict a patient’s survival until death.\nFor our research project, we have selected a dataset of approximately 1900 primary breast cancer samples, obtained from the Molecular Taxonomy of Breast Cancer International Consortium (METABRIC) database through cBioPortal for Cancer Genomics.\nOur project question is: “How do radiotherapy, chemotherapy, and hormone therapy influence the length of time a patient with IDC will survive, given control variables age, surgery type, tumor stage, and their present survival status?”\nOur analysis will involve the inference of covariates within linear models, as we seek to determine the interaction of cancer therapies on allowing patients to survive longer from IDC.\n\nVariables from columns 32 to 693 consist of genetic attributes containing m-RNA levels z-score for 331 genes, and mutation for 175 genes; they have been omitted due to being difficult to interpret.\nDue to the distribution of “cancer_type_detailed” categories and for ease of computation, we will be filtering the dataset for IDC patients that are either alive or dead from disease, as IDC consists of the majority of the dataset, and the patients that have died from other causes are irrelevant to the project question and not specific enough (e.g. Accident, non-cancer diseases).",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_relationships_breast_cancer.html#process-and-approach",
-    "href": "technical_projects/stat_relationships_breast_cancer.html#process-and-approach",
-    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
-    "section": "Process and Approach",
-    "text": "Process and Approach\n\nDeveloped a team contract with my peers to summarise our data overview and reach an understanding of how we would allocate our later work.\nSelected a dataset from METABRIC for IDC patients, and demonstrated that the datasets can be read from the web into R.\nCleaned and wrangled the data into a tidy format.\nModelled residual and QQ-plots, boxplots, scatterplots, histograms, and VIF of covariates to perform exploratory data analysis on the cleaned dataset to glean a better understanding of what results are to be expected.\nCompared 2 prediction models that differ on the presence of an interaction term age_at_diagnosis:chemotherapy1 to determine if the term led to both models providing different statistically significant coefficients.\n\n\nModel selection\n\nAs our goal is to determine how the various forms of therapy influence a patient’s survival until death, interaction terms regarding all combinations of therapies are considered, since it is unclear if the effect of one therapy will influence the effect of another (e.g. Chemotherapy and hormone therapy in similar timeframe).\nInteraction terms for age and each type of therapy are included, as prior studies have indicated varying degrees of influence between age and treatment method (Given, Given 2008; Cleveland Clinic, 2024; U.S. National Library of Medicine; Steinfeld, Diamond, Hanks, Coia, Kramer, 1989).\nInteraction terms for tumor_stage and each type of therapy are also included since prior studies have indicated that the type of treatment a patient receives is influenced by the stage, size of tumor and the spread of cancer cells. (“Invasive Ductal Carcinoma”, 2024; “Treatment of breast cancer”, 2024)\nDue to not being significant parts of the question of interest and the indeterminate interaction between them and the therapies, interaction terms for type_of_breast_surgery and death_from_cancer are ignored for the full model.\nWe had attempted to fit linear models without the log transformation, and the resulting residual plots had demonstrated heteroscedasticity; this is discouraged as it would lead to inconsistent results.\nFull model for finalmod_both: log(overall_survival_months) \\~ age_at_diagnosis + chemotherapy \\* hormone_therapy \\* radio_therapy + age_at_diagnosis:chemotherapy + age_at_diagnosis:hormone_therapy + age_at_diagnosis:radio_therapy + tumor_stage + tumor_stage:chemotherapy + tumor_stage:hormone_therapy + tumor_stage:radio_therapy + type_of_breast_surgery + death_from_cancer\nForward and backward AIC selection with the same full model was attempted, but only backward selection produced the same model, while forward selection produced a less optimal model.\n\n\n\n\n\n\n\n\n\n\n\nVariable\nEstimate\nStd. Error\nt value\nPr(|t|)\n\n\n\n\n(Intercept)\n5.947000\n0.214458\n27.730\n2e-16\n\n\nage_at_diagnosis\n-0.014682\n0.003806\n-3.857\n0.000124\n\n\nchemotherapy1\n-0.701659\n0.294312\n-2.384\n0.017348\n\n\nhormone_therapy1\n-0.622362\n0.266825\n-2.332\n0.019915\n\n\ntumor_stage2\n-0.238917\n0.093835\n-2.546\n0.011073\n\n\ntumor_stage3\n-0.815091\n0.166351\n-4.900\n1.15e-06\n\n\ndeath_from_cancerDied of Disease\n-0.857453\n0.054094\n-15.851\n&lt; 2e-16\n\n\nage_at_diagnosis:chemotherapy1\n0.009678\n0.005384\n1.797\n0.072624\n\n\nage_at_diagnosis:hormone_therapy1\n0.009458\n0.004510\n2.097\n0.036273\n\n\nhormone_therapy1:tumor_stage2\n0.216084\n0.117380\n1.841\n0.065997\n\n\nhormone_therapy1:tumor_stage3\n0.711055\n0.203734\n3.490\n0.000508\n\n\n\n\nFull model for finalmod_both_1: log(overall_survival_months) ~ age_at_diagnosis + chemotherapy + hormone_therapy + tumor_stage + death_from_cancer + age_at_diagnosis:hormone_therapy + hormone_therapy:tumor_stage\nVersion of the model finalmod_both without the interaction term age_at_diagnosis:chemotherapy1\nHas all terms to be statistically significant on the 5% level.\n\n\n\n\n\n\n\n\n\n\n\nVariable\nEstimate\nStd. Error\nt value\nPr(|t|)\n\n\n\n\n(Intercept)\n5.773782\n0.191845\n30.096\n2e-16\n\n\nage_at_diagnosis\n-0.011469\n0.003365\n-3.408\n0.000685\n\n\nchemotherapy1\n-0.189144\n0.073044\n-2.589\n0.009782\n\n\nhormone_therapy1\n-0.570923\n0.265644\n-2.149\n0.031908\n\n\ntumor_stage2\n-0.271223\n0.092222\n-2.941\n0.003363\n\n\ntumor_stage3\n-0.830862\n0.166344\n-4.995\n7.19e-07\n\n\ndeath_from_cancerDied of Disease\n-0.857409\n0.054167\n-15.829\n&lt; 2e-16\n\n\nage_at_diagnosis:hormone_therapy1\n0.008276\n0.004467\n1.852\n0.064316\n\n\nhormone_therapy1:tumor_stage2\n0.240445\n0.116753\n2.059\n0.039766\n\n\nhormone_therapy1:tumor_stage3\n0.726981\n0.203816\n3.567\n0.000382",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_relationships_breast_cancer.html#results",
-    "href": "technical_projects/stat_relationships_breast_cancer.html#results",
-    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
-    "section": "Results",
-    "text": "Results\nThe final regression model includes the following key variables: age, chemotherapy, hormone therapy, and tumor stage (specifically stages 2 and 3). It also accounts for the outcome of death from cancer (death from cancer and death from other causes) and incorporates interaction terms between age and hormone therapy, as well as hormone therapy and tumor stage (for stages 2 and 3).\nThe results from bidirectional selection and backward selection consistently provided the same set of covariates, but the results from forward selection did not, possibly due to it missing covariates that are only significant in combination with other covariates. The covariates of the final regression model are all statistically significant on the 5% significance level, with the exception of the interaction term between age and hormone therapy. This consistency between bidirectional and backward selection enhances the credibility of the findings, indicating that the observed relationships are relatively robust and not due to random chance.\nIn the model selection, we discarded radiotherapy, indicating that it doesn’t provide a significant influence on the log survival period of patients. For chemotherapy, regardless of tumor stage, the log survival period is decreased by 0.189144. This indicates that chemotherapy consistently reduces survival periods, and its negative effects on survival do not change significantly at higher tumor stages.\nFor hormone therapy, it initially reduces the log survival period by 0.570923 at tumor stage 1, but its effect decreases to a reduction of 0.330478 in log survival at stage 2, and it even leads to an increase in log survival by 0.156058 in stage 3. From tumor stage 1 to stage 3, the impact of hormone therapy changes from harmful to beneficial, ultimately improving survival chances. This highlights the importance of carefully considering the use of hormone therapy based on tumor stage.\nThe model shows a negative correlation between age_at_diagnosis and overall_survival_months, indicating that for each year of age (at the time of diagnosis), the patient’s log months of survival is decreased by 0.011469. This indicates that younger cancer patients will have a higher chance of recovering from IDC (higher overall survival months). The presence of hormone therapy increases change in survival to 0.003193, implying that the impact of age on survival months becomes less severe with hormone therapy.\nThe final model shows that the intercept for patients who have died from disease is lower by 0.857409 compared to living patients. This is consistent with the scatterplot between age/living condition from the exploratory analysis, where the overall survival was significantly lower for deceased patients compared to living ones. The scatterplot does not show the two slopes to be parallel, which would have been accounted for by the interaction term between death_from_cancer and age_at_diagnosis; however, this term was removed during model selection due to low significance.\nTo further validate the reliability of the model, the plot of fitted values versus residuals shows a good fit with residuals centered around zero, demonstrating homoscedasticity. Additionally, the residuals are randomly scattered without any discernible pattern beyond being centered around 0, suggesting that the errors are independent and that the relationship between the independent variables and the dependent variable is assumed to be linear. Furthermore, the points in the QQ plot align closely along the diagonal line, indicating that the residuals are approximately normally distributed. These observations confirm that the regression model does not violate the key assumptions of regression analysis, thereby minimizing the risk of drawing incorrect conclusions.",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_relationships_breast_cancer.html#impact-and-reflection",
-    "href": "technical_projects/stat_relationships_breast_cancer.html#impact-and-reflection",
-    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection\nTo address our initial research question, our model suggests that chemotherapy and hormone therapy have varying influences on survival time before death, depending on the initial tumor stage, while radiotherapy does not have a significant association with survival time before death. In general, our model suggests that chemotherapy has a negative association with survival time before death, regardless of tumor stage leve,l while hormone therapy has a negative association for patients with an initial tumor stage of 1 and 2, while it has a positive association when the patient’s original tumor stage was 3. Our model does not align with prior research, as prior research suggests that chemotherapy is generally effective and increases the survival time before death. Similarly, prior research suggests that hormone therapy and radiotherapy are generally effective at treating patients with IDC. However, our model aligns with prior research suggesting chemotherapy is most effective for later stages of cancer (Penn Medicine, n.d.).\nOur model likely differs from prior research due to several limitations in our model. One limitation is our variable selection method, a bidirectional stepwise selection starting with a full model. While bidirectional model selection allows for better flexibility and model fit to the data, there is also the risk of the final model being overfitted to the existing data. Our response variable, being the log of overall_survival_months to maintain homoscedasticity, also makes our model estimates rather difficult to interpret. Moreover, our results may have been skewed by using tumor stage 1 as our baseline, since we did not have enough data points for tumor stage 0. Lastly, our model could not account for the context of the patients undergoing such treatments, such as the patients that took the treatment likely already being in poorer health than those that did not, or the side effects of such treatments impacting health, such as organ damage from chemotherapy (“Side effects of chemotherapy”, Canadian Cancer Society, 2024), osteoporosis from hormone therapy (“Side effects of hormone therapy”, Canadian Cancer Society, 2017) and low blood cell counts from radiation therapy (“Side effects of radiation therapy”, Canadian Cancer Society, 2017). Overall, the limitations of our model are reflected by the relatively low adjusted R2 of 0.3103432 (7 s.f.), which indicates our model only accounts for around 31.03% (2 d.p.) of the variability in survival time before death for IDC patients.",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
-    ]
-  },
-  {
-    "objectID": "technical_projects/stat_relationships_breast_cancer.html#resources",
-    "href": "technical_projects/stat_relationships_breast_cancer.html#resources",
-    "title": "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments",
-    "section": "Resources",
-    "text": "Resources\n\nBreast cancer gene expression profiles (METABRIC). Kaggle. (2016, May 10). https://www.kaggle.com/datasets/raghadalharbi/breast-cancer-gene-expression-profiles-metabric\nCBioPortal for Cancer Genomics. (n.d.). https://www.cbioportal.org/study/summary?id=brca_metabric\nDePolo, J. (2024, October 2). Invasive ductal carcinoma (IDC). Breastcancer.org - Breast Cancer Information and Support. https://www.breastcancer.org/types/invasive-ductal-carcinoma\n\nWright , P. (2023, March 21). Invasive ductal carcinoma (IDC). Johns Hopkins Medicine. https://www.hopkinsmedicine.org/health/conditions-and-diseases/breast-cancer/invasive-ductal-carcinoma-idc#:~:text=Radiation%20therapy%20might%20be%20part,lymph%20nodes%2C%E2%80%9D%20Wright%20says.\nTumor size and staging. Susan G. Komen®. (2024, May 2). https://www.komen.org/breast-cancer/diagnosis/stages-staging/tumor-size/#:~:text=Tumor%20size%20is%20related%20to,the%20size%20of%20the%20tumor.\nGiven, B., & Given, C. W. (2008, December 15). Older adults and cancer treatment. Cancer. https://pmc.ncbi.nlm.nih.gov/articles/PMC2606910/#S10\nHormone therapy for cancer. Cleveland Clinic. (2024, May 1).https://my.clevelandclinic.org/health/treatments/17108-hormone-therapy-to-treat-cancer\nU.S. National Library of Medicine. (n.d.). Aging changes in hormone production: Medlineplus medical encyclopedia. MedlinePlus.https://medlineplus.gov/ency/article/004000.htm#:~:text=In%20women%2C%20estrogen%20and%20prolactin,Cortisol\nSteinfeld, A. D., Diamond, J. J., Hanks, G. E., Coia, L. R., & Kramer, S. (1989). Patient age as a factor in radiotherapy. Data from the patterns of care study. Journal of the American Geriatrics Society, 37(4), 335–338.https://doi.org/10.1111/j.1532-5415.1989.tb05501.x\nInvasive Ductal Carcinoma. Cleveland Clinic (June 27, 2024) https://my.clevelandclinic.org/health/diseases/22117-invasive-ductal-carcinoma-idc\nPenn Medicine. (n.d.). Invasive Ductal Carcinoma (IDC). Pennmedicine.org. https://www.pennmedicine.org/cancer/types-of-cancer/breast-cancer/types-of-breast-cancer/invasive-ductal-carcinoma#:~:text=The%20IDC%20treatment%20your%20physician,focuses%20only%20on%20breast%20cancer\n\n“Treatment of breast cancer stages I-III”. (2024, September 22). Treatment of breast cancer stages I-III. American Cancer Society. https://www.cancer.org/cancer/types/breast-cancer/treatment/treatment-of-breast-cancer-by-stage/treatment-of-breast-cancer-stages-i-iii.html#:~:text=The%20stage%20of%20your%20breast,gone%20through%20menopause%20or%20not\nSide effects of chemotherapy. Canadian Cancer Society. (2024, May). https://cancer.ca/en/treatments/treatment-types/chemotherapy/side-effects-of-chemotherapy\nSide effects of hormone therapy. Canadian Cancer Society. (2017). https://cancer.ca/en/treatments/treatment-types/hormone-therapy/side-effects-of-hormone-therapy\nSide effects of radiation therapy. Canadian Cancer Society. (2017b). https://cancer.ca/en/treatments/treatment-types/radiation-therapy/side-effects-of-radiation-therapy",
-    "crumbs": [
-      "Technical Projects",
-      "Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments"
+      "BCG GenAI Job Simulation"
     ]
   },
   {
@@ -559,344 +467,234 @@
     "text": "GPA: 3.315/4.3, GRE: 158V, 165Q\nSep 2021 - Apr 2025\nRelevant coursework: Calculus III and IV, Mathematical Proof, Matrix Algebra, Differential Equations I, Applied Linear Algebra, Linear Programming, Models of Computation, Software Construction, Statistics for Applications, Statistical Inference for Data Science, Statistical Modelling for Data Science, Applied Machine Learning, Data Relationships"
   },
   {
-    "objectID": "technical_projects/ba_datasci.html#project-goals-and-objectives",
-    "href": "technical_projects/ba_datasci.html#project-goals-and-objectives",
-    "title": "British Airways Data Science Job Simulation",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
-    "crumbs": [
-      "Technical Projects",
-      "British Airways Data Science Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/ba_datasci.html#process-and-approach",
-    "href": "technical_projects/ba_datasci.html#process-and-approach",
-    "title": "British Airways Data Science Job Simulation",
-    "section": "Process and Approach",
-    "text": "Process and Approach",
-    "crumbs": [
-      "Technical Projects",
-      "British Airways Data Science Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/ba_datasci.html#results",
-    "href": "technical_projects/ba_datasci.html#results",
-    "title": "British Airways Data Science Job Simulation",
-    "section": "Results",
-    "text": "Results",
-    "crumbs": [
-      "Technical Projects",
-      "British Airways Data Science Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/ba_datasci.html#impact-and-reflection",
-    "href": "technical_projects/ba_datasci.html#impact-and-reflection",
-    "title": "British Airways Data Science Job Simulation",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Technical Projects",
-      "British Airways Data Science Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/ba_datasci.html#future-improvements",
-    "href": "technical_projects/ba_datasci.html#future-improvements",
-    "title": "British Airways Data Science Job Simulation",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
-    "crumbs": [
-      "Technical Projects",
-      "British Airways Data Science Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/ea_software_eng-forage.html#project-goals-and-objectives",
-    "href": "technical_projects/ea_software_eng-forage.html#project-goals-and-objectives",
-    "title": "Electronic Arts Software Engineering Virtual Experience Program",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
-    "crumbs": [
-      "Technical Projects",
-      "Electronic Arts Software Engineering Virtual Experience Program"
-    ]
-  },
-  {
-    "objectID": "technical_projects/ea_software_eng-forage.html#process-and-approach",
-    "href": "technical_projects/ea_software_eng-forage.html#process-and-approach",
-    "title": "Electronic Arts Software Engineering Virtual Experience Program",
-    "section": "Process and Approach",
-    "text": "Process and Approach",
-    "crumbs": [
-      "Technical Projects",
-      "Electronic Arts Software Engineering Virtual Experience Program"
-    ]
-  },
-  {
-    "objectID": "technical_projects/ea_software_eng-forage.html#results",
-    "href": "technical_projects/ea_software_eng-forage.html#results",
-    "title": "Electronic Arts Software Engineering Virtual Experience Program",
-    "section": "Results",
-    "text": "Results",
-    "crumbs": [
-      "Technical Projects",
-      "Electronic Arts Software Engineering Virtual Experience Program"
-    ]
-  },
-  {
-    "objectID": "technical_projects/ea_software_eng-forage.html#impact-and-reflection",
-    "href": "technical_projects/ea_software_eng-forage.html#impact-and-reflection",
-    "title": "Electronic Arts Software Engineering Virtual Experience Program",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Technical Projects",
-      "Electronic Arts Software Engineering Virtual Experience Program"
-    ]
-  },
-  {
-    "objectID": "technical_projects/ea_software_eng-forage.html#future-improvements",
-    "href": "technical_projects/ea_software_eng-forage.html#future-improvements",
-    "title": "Electronic Arts Software Engineering Virtual Experience Program",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
-    "crumbs": [
-      "Technical Projects",
-      "Electronic Arts Software Engineering Virtual Experience Program"
-    ]
-  },
-  {
-    "objectID": "technical_projects/insurance_sql.html",
-    "href": "technical_projects/insurance_sql.html",
-    "title": "Health Insurance Database Management",
+    "objectID": "technical_projects/data_viz_coronary.html",
+    "href": "technical_projects/data_viz_coronary.html",
+    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
     "section": "",
-    "text": "Final Research Paper",
+    "text": "Develop a final visualisation product to answer a specific question. We have selected the question: “What set of factors leads to high serum cholesterol levels within male patients in Cleveland?”",
     "crumbs": [
       "Technical Projects",
-      "Health Insurance Database Management"
+      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/insurance_sql.html#problem-statement",
-    "href": "technical_projects/insurance_sql.html#problem-statement",
-    "title": "Health Insurance Database Management",
-    "section": "Problem Statement",
-    "text": "Problem Statement\nModern technologies have improved our quality of life, making everything more convenient than ever by reducing workload and stress from various sources. This allows people to focus on their health more efficiently. With modern health information technologies, users can receive immediate feedback on their physical condition anytime, anywhere (Li et al., 2019). Health insurance is essential and beneficial, as uninsured individuals often experience poorer health and receive less medical care, often with delays (Bovbjerg, Hadley, 2006).\nHowever, the extent to which health insurance impacts health remains debatable. As Levy and Meltzer suggest, determining whether health insurance significantly influences health will require substantial investment in social experiments (Levy, Meltzer, 2008). According to the Institute of Medicine (US) Committee on the Consequences of Uninsurance, there have been various studies and examinations across the past several decades on both the relationship between health insurance and health outcomes, and the mechanisms used to measure and determine that relationship (Institute of Medicine (US) Committee on the Consequences of Uninsurance, 1970). Across a body of studies that use a variety of data sources and different analytic approaches, researchers have determined a consistent, positive relationship between health insurance coverage and health-related outcomes, with the best evidence suggesting that health insurance is associated with more appropriate use of health care services and better health outcomes for adults (Institute of Medicine (US) Committee on the Consequences of Uninsurance, 1970a).\nAlthough this paper does not directly answer the ultimate question or fill the gap, it contributes by presenting significant findings that serve as supporting evidence, aiming to attract attention in the healthcare and health insurance fields. Specifically, we explore how health insurance coverage impacts health outcomes among U.S. adults. The impact of health insurance will be measured in three ways: (1) by sex (male and female), focusing on coronary heart disease mortality by sex; (2) by state, examining coronary heart disease mortality across different states; and (3) by disease, comparing coronary heart disease mortality with various cancer mortalities.",
+    "objectID": "technical_projects/data_viz_coronary.html#problem-statement",
+    "href": "technical_projects/data_viz_coronary.html#problem-statement",
+    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
+    "section": "",
+    "text": "Develop a final visualisation product to answer a specific question. We have selected the question: “What set of factors leads to high serum cholesterol levels within male patients in Cleveland?”",
     "crumbs": [
       "Technical Projects",
-      "Health Insurance Database Management"
+      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/insurance_sql.html#process-and-approach",
-    "href": "technical_projects/insurance_sql.html#process-and-approach",
-    "title": "Health Insurance Database Management",
+    "objectID": "technical_projects/data_viz_coronary.html#process-and-approach",
+    "href": "technical_projects/data_viz_coronary.html#process-and-approach",
+    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
     "section": "Process and Approach",
-    "text": "Process and Approach\n\nIterated on the research questions that could be studied given sufficiently effective and available data.\n\nFind prior work that can supplement the research questions and their purpose.\n\nObtained and clean a group of datasets to be approved by the instructor on whether or not they can provide sufficient analysis and fit the theme selected, as well as explain how the datasets could be combined to provide detailed information.\n\nThe theme selected was “Healthcare”.\nIn our case, we selected the table ‘U.S. Chronic Disease Indicators’ in HealthData.gov from U.S. Chronic Disease Indicators (Centers for Disease Control and Prevention) and ‘Health Insurance Coverage of Adults Ages 19-64’ from the Kaiser Family Foundation (KFF) respectively.\n\nDetermined the evaluation methods used for our queries.\n\nWe have split our evaluations on the data by differing types of segregation: Impact by sex, impact by state and impact by disease.\n\nConducted exploratory data analysis by creating visualisations to spot trends in the data.\nCreated an outlined SQL formatting for the datasets obtained, and produced an SQL script to load data into the database.\n\nSQL script\n\nWrote conclusion, discussed the results and how this investigation could be developed further.",
+    "text": "Process and Approach\nThe data used are datasets for patients undergoing angiography tests within the Cleveland Clinic in Cleveland, Ohio, the Hungarian Institute of Cardiology in Budapest, Hungary, and the V eterans Administration Medical Center in Long Beach, California. (Detrano, Janosi, Steinbrunn, Pfisterer, Schmid, Sandhu, Guppy, Lee, Froelicher, 1989) These datasets were retrieved from the Heart Disease dataset from the UCI machine learning repository and converted from .data files to Excel files, then CSV files.\nWithin R, each CSV file is read separately, then merged into a single dataframe, with a “location” column added for each clinic’s dataset. Specific columns are missing the majority of their data and thus have been removed under the assumption that they are irrelevant. Any patients with \"?\" for any variables, trestbps = 0 or chol = 0, are assumed to be invalid and have been removed. Any values of num ≥ 1 provide the same result and thus have been converted to 1. The updated data frame is converted to an Excel spreadsheet with their respective definitions to be uploaded into Power BI.\nTo answer our question, we selected the median serum cholesterol level as our test statistic. The proportions for each variable category may differ, and prior exploratory data analysis indicates that serum cholesterol levels contain many outliers that are not representative of the data. As the diagnosis of heart disease was a result produced by a predictive model based on the Cleveland dataset, it has been ignored.",
     "crumbs": [
       "Technical Projects",
-      "Health Insurance Database Management"
+      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/insurance_sql.html#conclusion-reflection",
-    "href": "technical_projects/insurance_sql.html#conclusion-reflection",
-    "title": "Health Insurance Database Management",
-    "section": "Conclusion, Reflection",
-    "text": "Conclusion, Reflection\nIn Massachusetts, the estimated CHD deaths were 16 for females and 36 for males, yielding higher mortality rates in males when adjusted per 100,000 population. Similarly, the CHD deaths are estimated at 29 for females and 57 for males in Texas. This indicates that males exhibit higher mortality rates. Additionally, the uninsured rate was higher among males in both states.\nThe analysis of different cancer types revealed that lung cancer exhibits the highest mortality rate in both states, followed by breast, prostate, colorectal, and cervical cancers. Massachusetts showed a higher mortality rate overall compared to Texas, specifically, higher mortality rates for breast, colorectal, lung, and prostate cancers. Notably, CHD mortality rates were 84.0 per 100,000 in Massachusetts and 88.3 per 100,000 in Texas. Despite the significantly higher uninsured rate in Texas compared to Massachusetts, the average mortality outcomes for CHD and cancer were similar between the two states. Regression plots indicated a positive relationship between uninsured rates and CHD mortality rates, which supports the fact that the CHD mortality rate is higher in Texas compared to Massachusetts. However, this behaviour diminished in the 65+ age group. SVR models further suggested that geographic location, represented by state-specific support vectors, had limited predictive power for younger age groups but was more influential among older adults. Rhode Island emerged as a notable support vector across all age groups.\nThis paper comprehensively analyzes the impact of insurance rates from three perspectives: by sex, by disease, and by state, addressing three core research questions. This study presents key findings that provide supporting evidence intended to inform and engage stakeholders in the healthcare and health insurance sectors.",
+    "objectID": "technical_projects/data_viz_coronary.html#results",
+    "href": "technical_projects/data_viz_coronary.html#results",
+    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
+    "section": "Results",
+    "text": "Results\nAcross all patients, the presence of asymptomatic chest pain left ventricular hypertrophy from ECG results, as well as the presence of exercise-induced angina, leads to higher median serum cholesterol levels. Both resting blood pressure and maximum heart rate produce a trend line with median serum cholesterol level with positive gradients close to 0. Male patients in Cleveland with the ECG result of ST-T wave abnormality have the highest median serum cholesterol, as well as a stronger correlation between resting blood pressure and serum cholesterol, but otherwise produce similar results.\nIn conclusion, the set of factors that relate to high serum cholesterol levels within male patients in Cleveland are ST-T wave abnormality, exercise-induced angina, high resting blood pressure and high maximum heart rate.\nVisualisation",
     "crumbs": [
       "Technical Projects",
-      "Health Insurance Database Management"
+      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/insurance_sql.html#future-improvements",
-    "href": "technical_projects/insurance_sql.html#future-improvements",
-    "title": "Health Insurance Database Management",
-    "section": "Future Improvements",
-    "text": "Future Improvements\n\nDue to resource limitations, some of the observed outcomes may be attributable to random variation; future research could benefit from expanding the geographic scope, thereby generating a more comprehensive dataset suitable for deeper statistical analysis and more refined age stratifications (e.g., five- or ten-year intervals).\nStudy does not account for potential confounding factors that may influence the results, representing a limitation; incorporating other confounding factors, such as income and educational attainment, would enable more precise differentiation between the effects of insurance coverage and broader social determinants of health, and different types of insurance (e.g., private versus public) could also be investigated.\nAnalysis primarily addresses the surface-level aspects of the topic; a more in-depth investigation could improve the accuracy and reliability of the findings.",
-    "crumbs": [
-      "Technical Projects",
-      "Health Insurance Database Management"
-    ]
-  },
-  {
-    "objectID": "technical_projects/insurance_sql.html#references",
-    "href": "technical_projects/insurance_sql.html#references",
-    "title": "Health Insurance Database Management",
+    "objectID": "technical_projects/data_viz_coronary.html#references",
+    "href": "technical_projects/data_viz_coronary.html#references",
+    "title": "Data Visualisation of Coronary Heart Disease Diagnosis Report",
     "section": "References",
-    "text": "References\n\nNicholas Tam, Kevin Shiao, and Minghao Wang. 2025. cpsc368_knm_project. (February 2025). Retrieved April 3, 2025 from https://github.com/Nick-2003/cpsc368_knm_project\nCenters for Disease Control and Prevention. 2024. U.S. Chronic Disease Indicators. (March 2024). Retrieved February 9, 2025 from https://healthdata.gov/dataset/U-S-Chronic-Disease-Indicators/dhcp-wb3k/about_data\nKFF. 2024. (October 2024). Retrieved February 10, 2025 from https://www.kff.org/other/state-indicator/adults-19-64/\nHHS Office of the Secretary and Office of Budget (OB). 2019. Centers for Disease Control and Prevention. (November 2019). Retrieved February 9, 2025 from https://web.archive.org/web/20200410150453/https://www.hhs.gov/about/budget/fy-2020-cdc-contingency-staffing-plan/index.html\nWonkblog Team. 2013. Presenting the third annual WONKY Awards - The Washington Post. (December 2013). Retrieved February 9, 2025 from https://www.washingtonpost.com/news/wonk/wp/2013/12/31/presenting-the-third-annual-wonky-awards/\nKFF. 2024. (October 2024). Retrieved February 10, 2025 from https://www.kff.org/other/state-indicator/health-insurance-coverage-of-women-19-64/\nKFF. 2024. (October 2024). Retrieved February 10, 2025 from https://www.kff.org/other/state-indicator/health-insurance-coverage-of-men-19-64/\nCenters for Disease Control and Prevention. 2024a. Indicator Data Sources. (June 2024). Retrieved February 10, 2025 from https://www.cdc.gov/cdi/about/indicator-data-sources.html\nJunde Li, Qi Ma, Alan HS. Chan, and S.S. Man. 2019. Health monitoring through wearable technologies for older adults: Smart wearables acceptance model. Applied Ergonomics 75 (February 2019), 162–169. DOI: http://dx.doi.org/10.1016/j.apergo.2018.10.006\nRandall R. Bovbjerg and J. Hadley. “Why Health Insurance Is Important,” Urban Institute, 2006. [Online]. Available: https://www.urban.org/sites/default/files/publication/46826/411569-Why-Health-Insurance-Is-Important.PDF. [Accessed: 10-Feb-2025].\nHelen Levy and David Meltzer. 2008. The impact of health insurance on Health. Annual Review of Public Health 29, 1 (April 2008), 399–409. DOI: http://dx.doi.org/10.1146/annurev.publhealth.28.021406.144042\nLerner, D. J., & Kannel, W. B. (1986). Patterns of coronary heart disease morbidity and mortality in the sexes: a 26-year follow-up of the Framingham population. American Heart Journal, 111(2), 383–390. DOI: https://doi.org/10.1016/0002-8703(86)90155-9\nInstitute of Medicine (US) Committee on the Consequences of Uninsurance. 1970. Mechanisms and methods: Looking at the impact of health insurance on Health. (January 1970). Retrieved March 31, 2025 from https://www.ncbi.nlm.nih.gov/books/NBK220631/\nInstitute of Medicine (US) Committee on the Consequences of Uninsurance. 1970a. Effects of health insurance on Health. (January 1970). Retrieved March 31, 2025 from https://www.ncbi.nlm.nih.gov/books/NBK220636/\nU.S. Census Bureau. 2025. Massachusetts QuickFacts. Retrieved April 2, 2025 from https://www.census.gov/quickfacts/fact/table/MA/SEX255223#SEX255223\nU.S. Census Bureau. 2025. Texas QuickFacts. Retrieved April 2, 2025 from https://www.census.gov/quickfacts/fact/table/TX/PST045224",
+    "text": "References\n\nJanosi,Andras, Steinbrunn,William, Pfisterer,Matthias, and Detrano,Robert. (1988). Heart Disease. UCI Machine Learning Repository. https://doi.org/10.24432/C52P4X\nDetrano, R., Janosi, A., Steinbrunn, W., Pfisterer, M., Schmid, J. J., Sandhu, S., Guppy, K. H., Lee, S., & Froelicher, V . (1989). International application of a new probability algorithm for the diagnosis of coronary artery disease. The American journal of cardiology, 64(5), 304–310. https://doi.org/10.1016/0002-9149(89)90524-9 (Detrano, Janosi, Steinbrunn, Pfisterer, Schmid, Sandhu, Guppy, Lee, Froelicher, 1989)",
     "crumbs": [
       "Technical Projects",
-      "Health Insurance Database Management"
+      "Data Visualisation of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/inventory_system.html",
-    "href": "technical_projects/inventory_system.html",
-    "title": "Inventory System",
+    "objectID": "technical_projects/stat_model_coronary.html",
+    "href": "technical_projects/stat_model_coronary.html",
+    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
     "section": "",
-    "text": "Develop a software construction project with a GUI interface. Include user stories, instructions on its use, a sample of its usage, and how the project could have been further improved.",
+    "text": "Sourced from UBC STAT 301 website:\n“As in DSCI 100 and STAT 201, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). The electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as fitting and selecting a model. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.\nFor this project, you will need to formulate formulate a research question of your choice, and then identify and use a dataset to answer to the question. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team.”",
     "crumbs": [
       "Technical Projects",
-      "Inventory System"
+      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/inventory_system.html#problem-statement",
-    "href": "technical_projects/inventory_system.html#problem-statement",
-    "title": "Inventory System",
+    "objectID": "technical_projects/stat_model_coronary.html#problem-statement",
+    "href": "technical_projects/stat_model_coronary.html#problem-statement",
+    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
     "section": "",
-    "text": "Develop a software construction project with a GUI interface. Include user stories, instructions on its use, a sample of its usage, and how the project could have been further improved.",
+    "text": "Sourced from UBC STAT 301 website:\n“As in DSCI 100 and STAT 201, students will work in groups to complete a Data Science project from the beginning (downloading data from the web) to the end (communicating their methods and conclusions in an electronic report). The electronic report will be a Jupyter notebook in which the code cells will download a dataset from the web, reproducibly and sensibly wrangle and clean, summarize and visualize the data, as well as fitting and selecting a model. Throughout the document, markdown cells will be used to communicate the question asked, methods used, and the conclusion reached.\nFor this project, you will need to formulate formulate a research question of your choice, and then identify and use a dataset to answer to the question. We list some suggested data sets below; however, we encourage you to use another data set that interests you. If you are unsure whether your dataset is adequate, please reach out to a member of the teaching team.”",
     "crumbs": [
       "Technical Projects",
-      "Inventory System"
+      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/inventory_system.html#project-goals-and-objectives",
-    "href": "technical_projects/inventory_system.html#project-goals-and-objectives",
-    "title": "Inventory System",
+    "objectID": "technical_projects/stat_model_coronary.html#project-goals-and-objectives",
+    "href": "technical_projects/stat_model_coronary.html#project-goals-and-objectives",
+    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
     "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives\nThis project is intended to be used as an inventory system for shopkeepers and cashiers to keep track of items in a convenience store. It will contain most of the general operations to allow the system to function, such as creating a receipt, keep track of the availability of items, search for specific items, and so on.",
+    "text": "Project Goals and Objectives\nFor our research project, we have selected datasets containing processed angiography data on patients in various clinics in 1988, applying a probability model derived from test results of 303 patients at the Cleveland Clinic in Cleveland, Ohio to generate and estimate results for the diagnosis of coronary heart disease (Janosi, Steinbrunn, Pfisterer, Detrano, 1989). The datasets include the following patients undergoing angiography: - 303 patients at the Cleveland Clinic in Cleveland, Ohio (Original dataset for model) - 425 patients at the Hungarian Institute of Cardiology in Budapest, Hungary - 200 patients at the Veterans Administration Medical Center in Long Beach, California - 143 patients from the University Hospitals in Zurich and Basel, Switzerland\nThese datasets were retrieved from the Heart Disease dataset from UCI machine learning repository, and converted from .data files to CSV files with Excel. The dataset obtained contains the following 14 attributes out of 76 attributes from the initial dataset for each patient:\n\nmyTable &lt;- data.frame(\n  Variable = c(\"age\", \"sex\", \"cp\", \"trestbps\", \"chol\", \"fbs\", \"restecg\", \"thalach\", \"exang\", \"oldpeak\", \"slope\", \"ca\", \"thal\", \"num\"),\n  Definition = c(\"Age\", \"Sex\", \"Chest pain type\", \"Resting blood pressure on admission to hospital\", \"Serum cholesterol\", \"Presence of high blood sugar\", \"Resting electrocardiographic results\", \"Maximum heart rate achieved\", \"Exercise induced angina\", \"ST depression induced by exercise relative to rest\", \"Slope of the peak exercise ST segment\", \"Number of major vessels coloured by fluoroscopy\", \"Presence of defect\", \"Diagnosis of heart disease\"),\n  Type = c(\"Numerical\", \"Categorical\", \"Categorical\", \"Numerical\", \"Numerical\", \"Categorical\", \"Categorical\", \"Numerical\", \"Categorical\", \"Numerical\", \"Categorical\", \"Numerical\", \"Categorical\", \"Categorical\"),\n  Unit = c(\"Years\", \"N/A\", \"N/A\", \"mmHg\", \"mg/dl\", \"N/A\", \"N/A\", \"BPM\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\", \"N/A\"),\n  Categories = c(\"N/A\", \"0: Female; 1: Male\", \"1: Typical angina; 2: Atypical angina; 3: Non-anginal pain; 4: Asymptomatic\", \"N/A\", \"N/A\", \"0: False; 1: True\", \"0: Normal; 1: Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV); 2: Showing probable or definite left ventricular hypertrophy by Estes' criteria\", \"N/A\", \"0: No; 1: Yes\", \"N/A\", \"1: Upsloping; 2: Flat; 3: Downsloping\", \"Range from 1-3\", \"3: Normal; 6: Fixed defect; 7: Reversible defect\", \"0: &lt; 50% diameter narrowing; 1+: &gt; 50% diameter narrowing\"),\n  AnyMissingValues = c(\"No\", \"No\", \"No\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"Yes\", \"No\")\n)\nmyTable\n\n   Variable                                         Definition        Type\n1       age                                                Age   Numerical\n2       sex                                                Sex Categorical\n3        cp                                    Chest pain type Categorical\n4  trestbps    Resting blood pressure on admission to hospital   Numerical\n5      chol                                  Serum cholesterol   Numerical\n6       fbs                       Presence of high blood sugar Categorical\n7   restecg               Resting electrocardiographic results Categorical\n8   thalach                        Maximum heart rate achieved   Numerical\n9     exang                            Exercise induced angina Categorical\n10  oldpeak ST depression induced by exercise relative to rest   Numerical\n11    slope              Slope of the peak exercise ST segment Categorical\n12       ca    Number of major vessels coloured by fluoroscopy   Numerical\n13     thal                                 Presence of defect Categorical\n14      num                         Diagnosis of heart disease Categorical\n    Unit\n1  Years\n2    N/A\n3    N/A\n4   mmHg\n5  mg/dl\n6    N/A\n7    N/A\n8    BPM\n9    N/A\n10   N/A\n11   N/A\n12   N/A\n13   N/A\n14   N/A\n                                                                                                                                                                                       Categories\n1                                                                                                                                                                                             N/A\n2                                                                                                                                                                              0: Female; 1: Male\n3                                                                                                                     1: Typical angina; 2: Atypical angina; 3: Non-anginal pain; 4: Asymptomatic\n4                                                                                                                                                                                             N/A\n5                                                                                                                                                                                             N/A\n6                                                                                                                                                                               0: False; 1: True\n7  0: Normal; 1: Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV); 2: Showing probable or definite left ventricular hypertrophy by Estes' criteria\n8                                                                                                                                                                                             N/A\n9                                                                                                                                                                                   0: No; 1: Yes\n10                                                                                                                                                                                            N/A\n11                                                                                                                                                          1: Upsloping; 2: Flat; 3: Downsloping\n12                                                                                                                                                                                 Range from 1-3\n13                                                                                                                                               3: Normal; 6: Fixed defect; 7: Reversible defect\n14                                                                                                                                      0: &lt; 50% diameter narrowing; 1+: &gt; 50% diameter narrowing\n   AnyMissingValues\n1                No\n2                No\n3                No\n4               Yes\n5               Yes\n6               Yes\n7               Yes\n8               Yes\n9               Yes\n10              Yes\n11              Yes\n12              Yes\n13              Yes\n14               No\n\n\nOur project question is:\n\n“Given the sample data for angiography patients, what model would be most effective in predicting each patient’s diagnosis?”\nOur analysis will involve the development of a predictive model to estimate the likelihood of angiographic coronary disease based on these variables. This research question is primarily focused on predictions, as we seek to generate a predictive model given the provided data to estimate diagnoses of new observations. Inference will also be required to a lesser extent, to gain insights into factors influencing the likelihood of coronary disease diagnosis in different demographic groups.",
     "crumbs": [
       "Technical Projects",
-      "Inventory System"
+      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/inventory_system.html#process-and-approach",
-    "href": "technical_projects/inventory_system.html#process-and-approach",
-    "title": "Inventory System",
+    "objectID": "technical_projects/stat_model_coronary.html#process-and-approach",
+    "href": "technical_projects/stat_model_coronary.html#process-and-approach",
+    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
     "section": "Process and Approach",
-    "text": "Process and Approach\n\nSelect a project idea to work with; I selected an inventory system, as described in the project goals.\nCreate user stories and implement them.\nCreate folders for various data objects and develop the items accordingly:\n\nThe main user GUI\nmodel objects such as Item and ItemList\nui functionalities, including models to contain item lists, and features to modify item properties and access item lists\npersistance tools to save and reload item lists using JSON\nexceptions to be thrown under circumstances specific to the system, such as negative or insufficient item numbers\n\nImplement tests for the various system attributes.\nDevelop and test interface usage.\nDesigned UML diagram to illustrate connections within user interface, system variables, and corresponding tools.\nProvide samples and further improvements.",
+    "text": "Process and Approach\n\nDeveloped a team contract with my peers to reach an understanding of how we would conduct ourselves and what goals we would seek to accomplish over the course of the project.\nSelected a group of datasets on the diagnosis on coronary heart disease across 4 hospitals in distinct locations, and demonstrated that the datasets can be read from the web into R.\nCleaned and wrangled the data into a tidy format by converting them from .data files to .csv files and merging them into a single dataframe.\nEach of us created independent reports on the dataset, and organised our results to compose a cohesive final report.\n\nWrote a brief description of the dataset indicating how the data had been collected and where it came from.\nPerformed exploratory data analysis; in my case, I obtained the VIFs for each variable to test for multicollinearity between independent variables, along with summary statistics on each independent quantitative variable.\nConducted hypothesis tests for the continuous variable coefficients \\(\\beta_{j}\\) and the statistical significance in the mean number of patients with coronary heart disease between categorical variable groups, based on a provided reference level.\n\nIndependently attempted stepwise Akaike Information Criterion (AIC), ridge regression and LASSO regression, and compared the models produced from each method to identify the most effective model for the given datasets on predicting coronary heart disease diagnosis.",
     "crumbs": [
       "Technical Projects",
-      "Inventory System"
+      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/inventory_system.html#future-improvements",
-    "href": "technical_projects/inventory_system.html#future-improvements",
-    "title": "Inventory System",
-    "section": "Future Improvements",
-    "text": "Future Improvements\n\nCould have changed the loading function to not rely on the putIntoList method, which would minimise confusion from the EventLog.\nMore efficient way to create tool functions in system.\nReformat the panel creation in StoreAppGUI to allow changes in screen size (Currently only works with fixed size).",
+    "objectID": "technical_projects/stat_model_coronary.html#results-from-discussion-in-the-final-report",
+    "href": "technical_projects/stat_model_coronary.html#results-from-discussion-in-the-final-report",
+    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
+    "section": "Results (From Discussion in the final report)",
+    "text": "Results (From Discussion in the final report)\n\nLogistic Regression Models with Stepwise Akaike Information Criterion (AIC)\nThe confusion matrix of our logistic regression model with num as response and all other variables as input generated an 84.24% accuracy, with a Kappa value of 0.685. The result of the stepAIC() method applied to find models which explain the most variation in data included the terms age, sex, cp, trestbps, thalach, and exang, with an AIC of 454.78. After stepAIC(), the out-of-sample error rate became smaller with value 0.5222 compared with the regular model’s training error rate of 0.5369, implying that the new model fits the testing data set better. However, the stepAIC() model becomes less accurate as a consequence, with an accuracy of 82.76% and Kappa value of 0.6554.\n\n\nLogistic Regression Models with Regularisation methods\nThe ordinary regression model performs better in distinguishing between positive and negative classes compared to the regularised models, with the largest AUC value at 0.8417. This suggests that the regularised methods may have excessively shrunken the coefficients, leading to underfitting. The LASSO regression model has also been selected such that it would be significantly simpler, leading to a lower AUC value.",
     "crumbs": [
       "Technical Projects",
-      "Inventory System"
+      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
     ]
   },
   {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html",
-    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "objectID": "technical_projects/stat_model_coronary.html#conclusion",
+    "href": "technical_projects/stat_model_coronary.html#conclusion",
+    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
+    "section": "Conclusion",
+    "text": "Conclusion\nIn conclusion, the model most effective in predicting each patient’s diagnosis would be the one obtained through stepAIC(), with the variables age, sex, cp, trestbps, thalach, and exang, and without regularised regression models applied.\nQuadratic or interaction terms to the logistic regression model could be added to account for the possibility that the explanatory variables are not independent and the relationship between log odds of the response variable and explanatory variables may not be linear. We could also optimise regularisation parameters through techniques such as cross-validation to find the best model, which can access model performance using techniques like k-folds to ensure robustness.\nThis project could lead to several relevant future questions, such as: - How do lifestyle and environment factors affect the diagnosis of coronary heart disease? - How can big data and predictive analytics be employed to improve the accuracy of the logistic regression model? - How to use this logistic regression model to predict an individual’s risk of coronary heart disease?",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
+    ]
+  },
+  {
+    "objectID": "technical_projects/stat_model_coronary.html#references",
+    "href": "technical_projects/stat_model_coronary.html#references",
+    "title": "Statistical Modelling of Coronary Heart Disease Diagnosis Report",
+    "section": "References",
+    "text": "References\n\nLloyd-Jones, D. M., Larson, M. G., Beiser, A., & Levy, D. (1999, February 19). Lifetime risk of developing coronary heart disease. The Lancet. https://www.sciencedirect.com/science/article/pii/S0140673698102799?via%3Dihub\nLawes, C. M. M., Bennett, D. A., Lewington, S., & Rodgers, A. (2003, January 22). Blood pressure and coronary heart disease: A review of the evidence. Seminars in Vascular Medicine. https://www.thieme-connect.com/products/ejournals/html/10.1055/s-2002-36765\nLaw, M. R., Wald, N. J., & Thompson, S. G. (1994, February 5). By how much and how quickly does reduction in serum cholesterol concentration lower risk of ischaemic heart disease?. The BMJ. https://www.bmj.com/content/308/6925/367.full\nBeckett, N., Nunes, M., & Bulpitt, C. (2000). Is it advantageous to lower cholesterol in the elderly hypertensive?. Cardiovascular drugs and therapy, 14(4), 397–405. https://doi.org/10.1023/a:1007812232328\nHajar R. (2017). Risk Factors for Coronary Artery Disease: Historical Perspectives. Heart views : the official journal of the Gulf Heart Association, 18(3), 109–114. https://doi.org/10.4103/HEARTVIEWS.HEARTVIEWS_106_17\nSchell, A. (n.d.). Empirical logit plots for logistic regression specification search - Alex Schell. https://alexschell.github.io/emplogit.html",
+    "crumbs": [
+      "Technical Projects",
+      "Statistical Modelling of Coronary Heart Disease Diagnosis Report"
+    ]
+  },
+  {
+    "objectID": "technical_projects/ea_software_eng-forage.html",
+    "href": "technical_projects/ea_software_eng-forage.html",
+    "title": "Electronic Arts Software Engineering Virtual Experience Program",
     "section": "",
-    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nLine Plot of Dates and Prices",
+    "text": "Wrote a feature proposal for a minigame for EA Sports’ College Football, by maintaining a football drive for as long as possible.\n\nProvided details on how the minigame would improve the player’s abilities and encourage competition between human players.\nNotes on how the minigame would operate on the system.",
     "crumbs": [
       "Technical Projects",
-      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+      "Electronic Arts Software Engineering Virtual Experience Program"
     ]
   },
   {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-1",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-1",
-    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "objectID": "technical_projects/ea_software_eng-forage.html#task-1",
+    "href": "technical_projects/ea_software_eng-forage.html#task-1",
+    "title": "Electronic Arts Software Engineering Virtual Experience Program",
     "section": "",
-    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nLine Plot of Dates and Prices",
+    "text": "Wrote a feature proposal for a minigame for EA Sports’ College Football, by maintaining a football drive for as long as possible.\n\nProvided details on how the minigame would improve the player’s abilities and encourage competition between human players.\nNotes on how the minigame would operate on the system.",
     "crumbs": [
       "Technical Projects",
-      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+      "Electronic Arts Software Engineering Virtual Experience Program"
     ]
   },
   {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-2",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-2",
-    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "objectID": "technical_projects/ea_software_eng-forage.html#task-2",
+    "href": "technical_projects/ea_software_eng-forage.html#task-2",
+    "title": "Electronic Arts Software Engineering Virtual Experience Program",
     "section": "Task 2",
-    "text": "Task 2\n\nCreate a prototype pricing model that can go through further validation and testing before being put into production.\nInputs\n\nDictionary of injection and withdrawal dates (in the form %Y-%m-%d) and amounts\nList of prices at which the commodity can be purchased/sold on those dates\nRate at which the gas can be injected/withdrawn\nMaximum volume that can be stored\nFixed fees per month for storing\n\nOutput: Predicted contract price\n\n```{python}\ndef contractprice(injewithdates, pricelist, gasrate, maxvol, storagecost):\n    \"\"\"\n    Given existing price data and input parameters, produce contract price. \n    Assumes that injection and withdrawal involve buying and selling of fuel respectively.\n    \n    Parameters:\n    -----------\n        \n    injewithdates: dictionary\n        Dictionary of injection and withdrawal dates (in the form %Y-%m-%d) and amounts.\n        Injections are positive, withdrawals are negative.\n        \n    pricelist: dataframe \n        Prices at which the commodity can be purchased/sold on those dates.\n\n    gasrate: float \n        Rate at which the gas can be injected/withdrawn.\n        \n    maxvol: float \n        Maximum volume that can be stored.\n        \n    storagecost: float\n        Fixed fees per month for storing.\n\n    Returns:\n    --------\n    Contract price. \n    \"\"\" \n\n    amount = 0\n    dict1 = {pd.to_datetime(key): value for key, value in injewithdates.items()}\n    dict2 = pricelist.to_dict()[\"Prices\"]\n    sumcosts = {key: None for key in dict1.keys()}\n    for k, v in dict1.items(): \n        if (v &lt; 0) and (amount &gt;= abs(v)): \n            amount -= v\n        elif ((amount + v) &lt;= maxvol): \n            amount += v\n        else: \n            raise Exception(\"Invalid storage amount\")\n        \n        if k in df_exist_dict: \n            sumcosts[k] = v * dict2[k]\n        else: \n            sumcosts[k] = v * pricepredict([k])[\"Prices\"][0]\n\n    display(sumcosts)\n    finalexchanges = sum(sumcosts.values())\n    date1 = min(dict1.keys())\n    date2 = max(dict1.keys())\n    nummonths = 12 * relativedelta(date2, date1).years + relativedelta(date2, date1).months\n    \n    totalgasprice = gasrate * sum(abs(number) for number in dict1.values())\n    total_storagecost = storagecost * nummonths\n    \n    final_price = finalexchanges - totalgasprice - total_storagecost\n    return final_price\n```",
+    "text": "Task 2\n\nClass diagram for the given “Indefinite Drive” minigame proposed in Task 1.\n\nFootball Player class (for player and NPCs) as the primary base.\nMovement and Action categories for determining Football Player’s attributes.\nAction activates depending on player inputs, leading to a corresponding Movement.",
     "crumbs": [
       "Technical Projects",
-      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+      "Electronic Arts Software Engineering Virtual Experience Program"
     ]
   },
   {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-3",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-3",
-    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "objectID": "technical_projects/ea_software_eng-forage.html#task-3",
+    "href": "technical_projects/ea_software_eng-forage.html#task-3",
+    "title": "Electronic Arts Software Engineering Virtual Experience Program",
     "section": "Task 3",
-    "text": "Task 3\n\nAssessed a right-censored loan book using survival analysis models (e.g. Kaplan-Meier Survival Curve) to estimate a customer’s probability of default, and by proxy the expected loss\nEquation: \\(EL = PD * (1 - RR) * EAD\\)\n\n\\(EL\\) = Expected loss\n\\(PD\\) = Probability of default (KM_estimate)\n\\(RR\\) = Recovery rate (Provided as 10%)\n\\(EAD\\) = Exposure at default (Due to lack of provided information, assume this is total_debt_outstanding)\n\n\n```{python}\nkmf = lifelines.KaplanMeierFitter()\nkmf.fit(train_df_surv[\"years_employed\"], train_df_surv[\"default\"]);\npdestimates = kmf.survival_function_.to_dict()[\"KM_estimate\"]\n\ndef expectedloss(total_debt_outstanding, years_employed, recovery_rate = 0.1, default = 0, survival_estimates = pdestimates): \n    \"\"\"\n    Returns expected losses given loan properties. \n    \n    Parameters:\n    -----------\n        \n    total_debt_outstanding: float\n        Total outstanding debt. \n\n    years_employed: int\n        Number of years individual has been employed. \n\n    recovery_rate: float\n        Amount recovered when a loan defaults.\n\n    default: bool\n        Whether or not the individual has defaulted by this point or not. \n        Already defaulted individuals will assume probability of 1, non-defaulted individuals will assume survival_estimates.\n\n    survival_estimates: dictionary \n        Dictionary of survival probabilities corresponding to the number of years individual has been employed.\n        \n    Returns:\n    --------\n    Corresponding expected loss given \n    \"\"\" \n    km_estimate = 1 \n    if default == 0: \n        km_estimate = survival_estimates.get(years_employed)\n    expected_loss = km_estimate * (1 - recovery_rate) * total_debt_outstanding\n    return expected_loss \n```",
+    "text": "Task 3\n\nClass definitions in .cpp file for classes defined in Task 3.",
     "crumbs": [
       "Technical Projects",
-      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+      "Electronic Arts Software Engineering Virtual Experience Program"
     ]
   },
   {
-    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-4",
-    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-4",
-    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "objectID": "technical_projects/ea_software_eng-forage.html#task-4",
+    "href": "technical_projects/ea_software_eng-forage.html#task-4",
+    "title": "Electronic Arts Software Engineering Virtual Experience Program",
     "section": "Task 4",
-    "text": "Task 4\n\nUtilised dynamic programming to convert FICO scores into categorical data to predict defaults\n\n\n\n\nFICO distributions\n\n\n\nOptions considered:\n\nUse mean and standard distribution as intervals for data.\nUse quartiles and boxplot whiskers.\nKMeans to create intervals.\n\n\n\n\n\nMean and Standard Distribution\n\n\n\n\n\nBoxplot\n\n\n\nKMeans was selected due to allowing any number of buckets to be created by the user’s choosing.\n\nNone of the labels overlap in terms of specific values.\nProvided example uses 10 buckets\n\n\n\n\n\nFICO Labelling",
+    "text": "Task 4\n\nCreated patch for bugfix in EA Sports’ College Football game.\nReplace the C style array with a vector to optimize the codebase.",
     "crumbs": [
       "Technical Projects",
-      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+      "Electronic Arts Software Engineering Virtual Experience Program"
     ]
   },
   {
-    "objectID": "technical_projects/datacom_cloud-forage.html#project-goals-and-objectives",
-    "href": "technical_projects/datacom_cloud-forage.html#project-goals-and-objectives",
-    "title": "Datacom Introduction to Cloud Job Simulation",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
+    "objectID": "technical_projects/quantium_analytics-forage.html",
+    "href": "technical_projects/quantium_analytics-forage.html",
+    "title": "Quantium Data Analytics Job Simulation",
+    "section": "",
+    "text": "Exploratory data analysis on provided transaction data alongside cleaning.\n\nRemoving digits and special characters from product names.\nChecked for nulls and possible outliers.\nSummarised numerical attributes of transaction data and filtered out outlier data.\nCharted number of transactions over time.\nCreated histogram of Pack_SIZE values.\nConverted similar BRAND values to common values.\n\nExploratory data analysis on provided customer data alongside cleaning.\n\nChecked for nulls and possible outliers.\n\nPerformed data analysis on customer segments.\n\nFocused on the following metrics of interest:\n\nWho spends the most on chips (total sales), describing customers by lifestage and how premium their general purchasing behaviour is.\nHow many customers are in each segment.\nHow many chips are bought per customer by segment - What’s the average chip price by customer segment.\n\nCreated barplots of total sales grouped by each customer’s lifestage and customer status.\nCalculated and plotted average price per unit, grouped by lifestage and customer status.\nCalculated and plotted average number of units per customer, grouped by lifestage and customer status.\nPerformed Welch two-sample t-test to determine if the difference in average price per unit between MIDAGE SINGLES/COUPLES and YOUNG SINGLES/COUPLES was statistically significant.\n\nFurther insights on specific customer segment LIFESTAGE == \"YOUNG SINGLES/COUPLES\" and PREMIUM_CUSTOMER == \"Mainstream\".\n\nCreated bar plot of relative frequency of brands bought.\nCreated density plot of pack sizes.",
     "crumbs": [
       "Technical Projects",
-      "Datacom Introduction to Cloud Job Simulation"
+      "Quantium Data Analytics Job Simulation"
     ]
   },
   {
-    "objectID": "technical_projects/datacom_cloud-forage.html#process-and-approach",
-    "href": "technical_projects/datacom_cloud-forage.html#process-and-approach",
-    "title": "Datacom Introduction to Cloud Job Simulation",
-    "section": "Process and Approach",
-    "text": "Process and Approach",
+    "objectID": "technical_projects/quantium_analytics-forage.html#task-1",
+    "href": "technical_projects/quantium_analytics-forage.html#task-1",
+    "title": "Quantium Data Analytics Job Simulation",
+    "section": "",
+    "text": "Exploratory data analysis on provided transaction data alongside cleaning.\n\nRemoving digits and special characters from product names.\nChecked for nulls and possible outliers.\nSummarised numerical attributes of transaction data and filtered out outlier data.\nCharted number of transactions over time.\nCreated histogram of Pack_SIZE values.\nConverted similar BRAND values to common values.\n\nExploratory data analysis on provided customer data alongside cleaning.\n\nChecked for nulls and possible outliers.\n\nPerformed data analysis on customer segments.\n\nFocused on the following metrics of interest:\n\nWho spends the most on chips (total sales), describing customers by lifestage and how premium their general purchasing behaviour is.\nHow many customers are in each segment.\nHow many chips are bought per customer by segment - What’s the average chip price by customer segment.\n\nCreated barplots of total sales grouped by each customer’s lifestage and customer status.\nCalculated and plotted average price per unit, grouped by lifestage and customer status.\nCalculated and plotted average number of units per customer, grouped by lifestage and customer status.\nPerformed Welch two-sample t-test to determine if the difference in average price per unit between MIDAGE SINGLES/COUPLES and YOUNG SINGLES/COUPLES was statistically significant.\n\nFurther insights on specific customer segment LIFESTAGE == \"YOUNG SINGLES/COUPLES\" and PREMIUM_CUSTOMER == \"Mainstream\".\n\nCreated bar plot of relative frequency of brands bought.\nCreated density plot of pack sizes.",
     "crumbs": [
       "Technical Projects",
-      "Datacom Introduction to Cloud Job Simulation"
+      "Quantium Data Analytics Job Simulation"
     ]
   },
   {
-    "objectID": "technical_projects/datacom_cloud-forage.html#results",
-    "href": "technical_projects/datacom_cloud-forage.html#results",
-    "title": "Datacom Introduction to Cloud Job Simulation",
-    "section": "Results",
-    "text": "Results",
+    "objectID": "technical_projects/quantium_analytics-forage.html#task-2",
+    "href": "technical_projects/quantium_analytics-forage.html#task-2",
+    "title": "Quantium Data Analytics Job Simulation",
+    "section": "Task 2",
+    "text": "Task 2\n\nFor each store and month, calculated total sales, number of customers, transactions per customer, chips per customer and average price per unit.\ncalculateCorrelation() created to calculate correlation for a measure, looping through each control store.\ncalculateMagnitudeDistance() created to calculate a standardised magnitude distance for a measure, looping through each control store.\nIdentified benchmark stores for conducting uplift testing on trial store layouts.\n\nCreated a combined score score_nSales composed of correlation and magnitude, with corr_weight to adjust the weights for correlation and magnitude in the calculation.\nCreated the finalControlScore metric to combine scores across the drivers by simple average of total number of sales and number of customers.\nVisualised checks on trends based on the drivers.\nAssessed the differences between the performances of the control store and the trial store.\nRepeated the above 3 times total for stores 77, 86 and 88.\n\nResults for trial stores 77 and 88 during the trial period show a significant difference in at least two of the three trial months but not for trial store 86.",
     "crumbs": [
       "Technical Projects",
-      "Datacom Introduction to Cloud Job Simulation"
+      "Quantium Data Analytics Job Simulation"
     ]
   },
   {
-    "objectID": "technical_projects/datacom_cloud-forage.html#impact-and-reflection",
-    "href": "technical_projects/datacom_cloud-forage.html#impact-and-reflection",
-    "title": "Datacom Introduction to Cloud Job Simulation",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
+    "objectID": "technical_projects/quantium_analytics-forage.html#task-3",
+    "href": "technical_projects/quantium_analytics-forage.html#task-3",
+    "title": "Quantium Data Analytics Job Simulation",
+    "section": "Task 3",
+    "text": "Task 3\n\nProduced a Powerpoint report that incorporated data visualizations, key insights, and recommendations, based on the previous tasks, to be provided to the Category Manager of chips.",
     "crumbs": [
       "Technical Projects",
-      "Datacom Introduction to Cloud Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/datacom_cloud-forage.html#future-improvements",
-    "href": "technical_projects/datacom_cloud-forage.html#future-improvements",
-    "title": "Datacom Introduction to Cloud Job Simulation",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
-    "crumbs": [
-      "Technical Projects",
-      "Datacom Introduction to Cloud Job Simulation"
+      "Quantium Data Analytics Job Simulation"
     ]
   },
   {
@@ -966,6 +764,61 @@
     ]
   },
   {
+    "objectID": "technical_projects/inventory_system.html",
+    "href": "technical_projects/inventory_system.html",
+    "title": "Inventory System",
+    "section": "",
+    "text": "Develop a software construction project with a GUI interface. Include user stories, instructions on its use, a sample of its usage, and how the project could have been further improved.",
+    "crumbs": [
+      "Technical Projects",
+      "Inventory System"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#problem-statement",
+    "href": "technical_projects/inventory_system.html#problem-statement",
+    "title": "Inventory System",
+    "section": "",
+    "text": "Develop a software construction project with a GUI interface. Include user stories, instructions on its use, a sample of its usage, and how the project could have been further improved.",
+    "crumbs": [
+      "Technical Projects",
+      "Inventory System"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#project-goals-and-objectives",
+    "href": "technical_projects/inventory_system.html#project-goals-and-objectives",
+    "title": "Inventory System",
+    "section": "Project Goals and Objectives",
+    "text": "Project Goals and Objectives\nThis project is intended to be used as an inventory system for shopkeepers and cashiers to keep track of items in a convenience store. It will contain most of the general operations to allow the system to function, such as creating a receipt, keep track of the availability of items, search for specific items, and so on.",
+    "crumbs": [
+      "Technical Projects",
+      "Inventory System"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#process-and-approach",
+    "href": "technical_projects/inventory_system.html#process-and-approach",
+    "title": "Inventory System",
+    "section": "Process and Approach",
+    "text": "Process and Approach\n\nSelect a project idea to work with; I selected an inventory system, as described in the project goals.\nCreate user stories and implement them.\nCreate folders for various data objects and develop the items accordingly:\n\nThe main user GUI\nmodel objects such as Item and ItemList\nui functionalities, including models to contain item lists, and features to modify item properties and access item lists\npersistance tools to save and reload item lists using JSON\nexceptions to be thrown under circumstances specific to the system, such as negative or insufficient item numbers\n\nImplement tests for the various system attributes.\nDevelop and test interface usage.\nDesigned UML diagram to illustrate connections within user interface, system variables, and corresponding tools.\nProvide samples and further improvements.",
+    "crumbs": [
+      "Technical Projects",
+      "Inventory System"
+    ]
+  },
+  {
+    "objectID": "technical_projects/inventory_system.html#future-improvements",
+    "href": "technical_projects/inventory_system.html#future-improvements",
+    "title": "Inventory System",
+    "section": "Future Improvements",
+    "text": "Future Improvements\n\nCould have changed the loading function to not rely on the putIntoList method, which would minimise confusion from the EventLog.\nMore efficient way to create tool functions in system.\nReformat the panel creation in StoreAppGUI to allow changes in screen size (Currently only works with fixed size).",
+    "crumbs": [
+      "Technical Projects",
+      "Inventory System"
+    ]
+  },
+  {
     "objectID": "technical_projects/lloyds_datasci-forage.html#project-goals-and-objectives",
     "href": "technical_projects/lloyds_datasci-forage.html#project-goals-and-objectives",
     "title": "Lloyds Banking Group Data Science Job Simulation",
@@ -1018,6 +871,61 @@
     "crumbs": [
       "Technical Projects",
       "Lloyds Banking Group Data Science Job Simulation"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "section": "",
+    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nLine Plot of Dates and Prices",
+    "crumbs": [
+      "Technical Projects",
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-1",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-1",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "section": "",
+    "text": "Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their \\(R^{2}\\) score for both the train and test data.\nUtilised a linear model lr_regressor_nolag() that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.\n\n\n\n\nlr_regressor_nolag\n\n\n\n\n\nLine Plot of Dates and Prices",
+    "crumbs": [
+      "Technical Projects",
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-2",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-2",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "section": "Task 2",
+    "text": "Task 2\n\nCreate a prototype pricing model that can go through further validation and testing before being put into production.\nInputs\n\nDictionary of injection and withdrawal dates (in the form %Y-%m-%d) and amounts\nList of prices at which the commodity can be purchased/sold on those dates\nRate at which the gas can be injected/withdrawn\nMaximum volume that can be stored\nFixed fees per month for storing\n\nOutput: Predicted contract price\n\n```{python}\ndef contractprice(injewithdates, pricelist, gasrate, maxvol, storagecost):\n    \"\"\"\n    Given existing price data and input parameters, produce contract price. \n    Assumes that injection and withdrawal involve buying and selling of fuel respectively.\n    \n    Parameters:\n    -----------\n        \n    injewithdates: dictionary\n        Dictionary of injection and withdrawal dates (in the form %Y-%m-%d) and amounts.\n        Injections are positive, withdrawals are negative.\n        \n    pricelist: dataframe \n        Prices at which the commodity can be purchased/sold on those dates.\n\n    gasrate: float \n        Rate at which the gas can be injected/withdrawn.\n        \n    maxvol: float \n        Maximum volume that can be stored.\n        \n    storagecost: float\n        Fixed fees per month for storing.\n\n    Returns:\n    --------\n    Contract price. \n    \"\"\" \n\n    amount = 0\n    dict1 = {pd.to_datetime(key): value for key, value in injewithdates.items()}\n    dict2 = pricelist.to_dict()[\"Prices\"]\n    sumcosts = {key: None for key in dict1.keys()}\n    for k, v in dict1.items(): \n        if (v &lt; 0) and (amount &gt;= abs(v)): \n            amount -= v\n        elif ((amount + v) &lt;= maxvol): \n            amount += v\n        else: \n            raise Exception(\"Invalid storage amount\")\n        \n        if k in df_exist_dict: \n            sumcosts[k] = v * dict2[k]\n        else: \n            sumcosts[k] = v * pricepredict([k])[\"Prices\"][0]\n\n    display(sumcosts)\n    finalexchanges = sum(sumcosts.values())\n    date1 = min(dict1.keys())\n    date2 = max(dict1.keys())\n    nummonths = 12 * relativedelta(date2, date1).years + relativedelta(date2, date1).months\n    \n    totalgasprice = gasrate * sum(abs(number) for number in dict1.values())\n    total_storagecost = storagecost * nummonths\n    \n    final_price = finalexchanges - totalgasprice - total_storagecost\n    return final_price\n```",
+    "crumbs": [
+      "Technical Projects",
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-3",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-3",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "section": "Task 3",
+    "text": "Task 3\n\nAssessed a right-censored loan book using survival analysis models (e.g. Kaplan-Meier Survival Curve) to estimate a customer’s probability of default, and by proxy the expected loss\nEquation: \\(EL = PD * (1 - RR) * EAD\\)\n\n\\(EL\\) = Expected loss\n\\(PD\\) = Probability of default (KM_estimate)\n\\(RR\\) = Recovery rate (Provided as 10%)\n\\(EAD\\) = Exposure at default (Due to lack of provided information, assume this is total_debt_outstanding)\n\n\n```{python}\nkmf = lifelines.KaplanMeierFitter()\nkmf.fit(train_df_surv[\"years_employed\"], train_df_surv[\"default\"]);\npdestimates = kmf.survival_function_.to_dict()[\"KM_estimate\"]\n\ndef expectedloss(total_debt_outstanding, years_employed, recovery_rate = 0.1, default = 0, survival_estimates = pdestimates): \n    \"\"\"\n    Returns expected losses given loan properties. \n    \n    Parameters:\n    -----------\n        \n    total_debt_outstanding: float\n        Total outstanding debt. \n\n    years_employed: int\n        Number of years individual has been employed. \n\n    recovery_rate: float\n        Amount recovered when a loan defaults.\n\n    default: bool\n        Whether or not the individual has defaulted by this point or not. \n        Already defaulted individuals will assume probability of 1, non-defaulted individuals will assume survival_estimates.\n\n    survival_estimates: dictionary \n        Dictionary of survival probabilities corresponding to the number of years individual has been employed.\n        \n    Returns:\n    --------\n    Corresponding expected loss given \n    \"\"\" \n    km_estimate = 1 \n    if default == 0: \n        km_estimate = survival_estimates.get(years_employed)\n    expected_loss = km_estimate * (1 - recovery_rate) * total_debt_outstanding\n    return expected_loss \n```",
+    "crumbs": [
+      "Technical Projects",
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
+    ]
+  },
+  {
+    "objectID": "technical_projects/jpmorgan_quantitative-forage.html#task-4",
+    "href": "technical_projects/jpmorgan_quantitative-forage.html#task-4",
+    "title": "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program",
+    "section": "Task 4",
+    "text": "Task 4\n\nUtilised dynamic programming to convert FICO scores into categorical data to predict defaults\n\n\n\n\nFICO distributions\n\n\n\nOptions considered:\n\nUse mean and standard distribution as intervals for data.\nUse quartiles and boxplot whiskers.\nKMeans to create intervals.\n\n\n\n\n\nMean and Standard Distribution\n\n\n\n\n\nBoxplot\n\n\n\nKMeans was selected due to allowing any number of buckets to be created by the user’s choosing.\n\nNone of the labels overlap in terms of specific values.\nProvided example uses 10 buckets\n\n\n\n\n\nFICO Labelling",
+    "crumbs": [
+      "Technical Projects",
+      "JPMorgan Chase & Co. Quantitative Research Virtual Experience Program"
     ]
   }
 ]

@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../technical_projects/bcg_datasci-forage.html" rel="next">
-<link href="../technical_projects/datacom_cloud-forage.html" rel="prev">
+<link href="../technical_projects/ea_software_eng-forage.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a98ec624fb63d9b712fc3a6f62e2b305.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -205,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/ba_datasci.html" class="sidebar-item-text sidebar-link">
+  <a href="../technical_projects/ba_datasci-forage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">British Airways Data Science Job Simulation</span></a>
   </div>
 </li>
@@ -213,12 +213,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../technical_projects/ea_software_eng-forage.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Electronic Arts Software Engineering Virtual Experience Program</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/datacom_cloud-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Datacom Introduction to Cloud Job Simulation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,12 +243,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link active" data-scroll-target="#problem-statement">Problem Statement</a></li>
-  <li><a href="#project-goals-and-objectives" id="toc-project-goals-and-objectives" class="nav-link" data-scroll-target="#project-goals-and-objectives">Project Goals and Objectives</a></li>
-  <li><a href="#process-and-approach" id="toc-process-and-approach" class="nav-link" data-scroll-target="#process-and-approach">Process and Approach</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#impact-and-reflection" id="toc-impact-and-reflection" class="nav-link" data-scroll-target="#impact-and-reflection">Impact and Reflection</a></li>
-  <li><a href="#future-improvements" id="toc-future-improvements" class="nav-link" data-scroll-target="#future-improvements">Future Improvements</a></li>
+  <li><a href="#task-1" id="toc-task-1" class="nav-link active" data-scroll-target="#task-1">Task 1</a></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/quantium_analytics-forage.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/quantium_analytics-forage.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -280,23 +271,65 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="problem-statement" class="level2">
-<h2 class="anchored" data-anchor-id="problem-statement">Problem Statement</h2>
+<section id="task-1" class="level2">
+<h2 class="anchored" data-anchor-id="task-1"><a href="https://github.com/Nick-2003/forage-quantium-data_analytics/blob/master/forage_quantium_task1.pdf">Task 1</a></h2>
+<ul>
+<li>Exploratory data analysis on provided transaction data alongside cleaning.
+<ul>
+<li>Removing digits and special characters from product names.</li>
+<li>Checked for nulls and possible outliers.</li>
+<li>Summarised numerical attributes of transaction data and filtered out outlier data.</li>
+<li>Charted number of transactions over time.</li>
+<li>Created histogram of <code>Pack_SIZE</code> values.</li>
+<li>Converted similar <code>BRAND</code> values to common values.</li>
+</ul></li>
+<li>Exploratory data analysis on provided customer data alongside cleaning.
+<ul>
+<li>Checked for nulls and possible outliers.</li>
+</ul></li>
+<li>Performed data analysis on customer segments.
+<ul>
+<li>Focused on the following metrics of interest:
+<ul>
+<li>Who spends the most on chips (total sales), describing customers by lifestage and how premium their general purchasing behaviour is.</li>
+<li>How many customers are in each segment.</li>
+<li>How many chips are bought per customer by segment - What’s the average chip price by customer segment.</li>
+</ul></li>
+<li>Created barplots of total sales grouped by each customer’s lifestage and customer status.</li>
+<li>Calculated and plotted average price per unit, grouped by lifestage and customer status.</li>
+<li>Calculated and plotted average number of units per customer, grouped by lifestage and customer status.</li>
+<li>Performed Welch two-sample t-test to determine if the difference in average price per unit between <code>MIDAGE SINGLES/COUPLES</code> and <code>YOUNG SINGLES/COUPLES</code> was statistically significant.</li>
+</ul></li>
+<li>Further insights on specific customer segment <code>LIFESTAGE == "YOUNG SINGLES/COUPLES"</code> and <code>PREMIUM_CUSTOMER == "Mainstream"</code>.
+<ul>
+<li>Created bar plot of relative frequency of brands bought.</li>
+<li>Created density plot of pack sizes.</li>
+</ul></li>
+</ul>
 </section>
-<section id="project-goals-and-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="project-goals-and-objectives">Project Goals and Objectives</h2>
+<section id="task-2" class="level2">
+<h2 class="anchored" data-anchor-id="task-2"><a href="https://github.com/Nick-2003/forage-quantium-data_analytics/blob/master/forage_quantium_task2.pdf">Task 2</a></h2>
+<ul>
+<li>For each store and month, calculated total sales, number of customers, transactions per customer, chips per customer and average price per unit.</li>
+<li><code>calculateCorrelation()</code> created to calculate correlation for a measure, looping through each control store.</li>
+<li><code>calculateMagnitudeDistance()</code> created to calculate a standardised magnitude distance for a measure, looping through each control store.</li>
+<li>Identified benchmark stores for conducting uplift testing on trial store layouts.
+<ul>
+<li>Created a combined score <code>score_nSales</code> composed of correlation and magnitude, with <code>corr_weight</code> to adjust the weights for correlation and magnitude in the calculation.</li>
+<li>Created the <code>finalControlScore</code> metric to combine scores across the drivers by simple average of total number of sales and number of customers.</li>
+<li>Visualised checks on trends based on the drivers.</li>
+<li>Assessed the differences between the performances of the control store and the trial store.</li>
+<li>Repeated the above 3 times total for stores 77, 86 and 88.</li>
+</ul></li>
+<li>Results for trial stores 77 and 88 during the trial period show a significant difference in at least two of the three trial months but not for trial store 86.</li>
+</ul>
 </section>
-<section id="process-and-approach" class="level2">
-<h2 class="anchored" data-anchor-id="process-and-approach">Process and Approach</h2>
-</section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
-</section>
-<section id="impact-and-reflection" class="level2">
-<h2 class="anchored" data-anchor-id="impact-and-reflection">Impact and Reflection</h2>
-</section>
-<section id="future-improvements" class="level2">
-<h2 class="anchored" data-anchor-id="future-improvements">Future Improvements</h2>
+<section id="task-3" class="level2">
+<h2 class="anchored" data-anchor-id="task-3"><a href="https://github.com/Nick-2003/forage-quantium-data_analytics/blob/master/Task%203%20-%20presentation%20guide_BRAND_TTLN.pptx.pdf">Task 3</a></h2>
+<ul>
+<li>Produced a Powerpoint report that incorporated data visualizations, key insights, and recommendations, based on the previous tasks, to be provided to the Category Manager of chips.</li>
+<li></li>
+</ul>
 
 
 </section>
@@ -703,8 +736,8 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../technical_projects/datacom_cloud-forage.html" class="pagination-link" aria-label="Datacom Introduction to Cloud Job Simulation">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Datacom Introduction to Cloud Job Simulation</span>
+      <a href="../technical_projects/ea_software_eng-forage.html" class="pagination-link" aria-label="Electronic Arts Software Engineering Virtual Experience Program">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Electronic Arts Software Engineering Virtual Experience Program</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
