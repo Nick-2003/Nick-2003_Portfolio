@@ -1,15 +1,59 @@
 ---
 title: "Lloyds Banking Group Data Science Job Simulation"
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/forage-lloyds_banking_group-data_science
 ---
 
-## Problem Statement
+Task: "We've observed a worrying trend of customers, particularly young professionals and small business owners, leaving for competitors. This project aims to reverse that trend by identifying at-risk customers and implementing targeted interventions. Our findings will directly impact the strategies we deploy to retain our customers. We need accurate, insightful analysis to inform these strategies."
 
-## Project Goals and Objectives
+## [Task 1](https://github.com/Nick-2003/forage-lloyds_banking_group-data_science/blob/master/Lloyds_Banking_Group_Data_Science_Task1.ipynb)
 
-## Process and Approach
+### Exploratory Data Analysis for datasets `df_transaction`, `df_customer`, `df_online` and `df_churn`.
+- Acquired information on each variable's data type and number of null values with `.info()`.
+- Obtained distributions of numerical variables within each dataset.
+- Counted number of unique values within each variable column.
+- Visualised the distributions of categories in the categorical features of each dataset.
+- Calculated the number of transactions and interactions for each customer, which are derived from the number of unique `TransactionID` and `InteractionID` values respectively grouped by `CustomerID`.
+- Visualised proportions of customers in each `ProductCategory` and proportions of resolved customer interactions for each `InteractionType` with bar plots.
+- Created histograms of `AmountSpent` within each `ProductCategory` and `LoginFrequency` within each `ServiceUsage`.
 
-## Results
+### Data Cleaning and Preprocessing
+- Provided as a pipeline before model training.
+- `StandardScaler()` to standardise all numeric variables.
+- Forcibly converted all non-numeric variables to categorical with a function provided [here](https://stackoverflow.com/questions/59476179/is-it-possible-to-change-pandas-column-data-type-within-a-sklearn-pipeline)
+- For ordinal variables, use `OrdinalEncoder(categories=<ORDER>)` with given `<ORDER>` as list or list of lists.
+- For categorical variables, use `OneHotEncoder()` for automatic encoding in pipeline.
+  - For binary variables, use `OneHotEncoder(..., drop = "if_binary")` to ensure that there are no redundant columns.
 
-## Impact and Reflection
+## [Task 2](https://github.com/Nick-2003/forage-lloyds_banking_group-data_science/blob/master/Lloyds_Banking_Group_Data_Science_Task2.ipynb)
 
-## Future Improvements
+### Feature Engineering
+- Created `df_total` as final dataset to undergo training of machine learning model.
+- `NumTransactions`: Total number of transactions for given `CustomerID` in `df_transaction`.
+- `AmountSpent_<CATEGORY>`: Total amount spent for given `CustomerID` in `ProductCategory == <CATEGORY>`.
+- `NumInteractions`: Total number of interactions for given `CustomerID` in `df_customer`.
+- `ResolvedProportion`: Proportion of interactions for given `CustomerID` that have been resolved.
+- `DaysSinceLastLogin`: Days since the customer's last login from 2024-01-01.
+
+### Model Training Selection
+- Preprocessing steps from Task 1 applied here again.
+- `mean_std_cross_val_scores()` provided to assist in training and evaluation of model.
+- Each model will be followed with hyperparameter optimisation to improve f1-score to ensure balance in precision and recall, and to mitigate issue with class imbalance of `ChurnStatus`.
+- Many hyperparameter optimisations include class weight to mitigate class imbalance.
+- Models compared: `LogisticRegression()`, `DecisionTreeClassifier()`, `RandomForestClassifier()`, `HistGradientBoostingClassifier()`.
+
+### Evaluating Most Optimal Model
+- The initial decision tree, random forest, and tree-based ensemble models have extremely high `train_f1` scores of 1.000 (+/- 0.000), which is unrealistically high and implies overfitting onto the training set. This is further supported by having significantly lower `test_f1` scores in comparison to the rest of the models.
+- The optimised tree-based ensemble model also has a high `train_f1` score of 0.994 (+/- 0.004), so it is rejected.
+- Due to having a `train_recall` and `test_recall` score of 1.000 (+/- 0.000), the optimised random forest model may be overfitted or be heavily affected by the class imbalance, and thus may need to be rejected due to risk of overfitting.
+- Under the assumption that the F1-score test metric provides the most information about the quality of the model, while mitigating the confusion from class imbalance, we have selected the model with the greatest cross-validation F1-score without other potentially suspect classification metrics as our best performing model. Given the results table below, we believe that the optimised decision tree model had the best overall performance, with the optimised random forest model also in consideration. 
+
+### Results on Test Set
+- Models provided allow preprocessing of initial dataset to be included alongside training and testing.
+- Optimised random forest model provides slightly better results.
+- Models allow for identification of customers at risk of churning in advance, so marketers know who to target for retention strategies.
+- Biggest issue for both of these models is that feature importances are difficult to extract, so determining which metrics to focus on for retention strategies may be difficult beyond identifying common tendencies between customers at risk of churn.

@@ -5,10 +5,10 @@ format:
     code-links:
       - text: Project Code
         icon: github
-        href: https://github.com/Nick-2003/JP-Morgan-Quantitative-Research
+        href: https://github.com/Nick-2003/forage-jpmorgan-quantitative_research
 ---
 
-## [Task 1](https://github.com/Nick-2003/JP-Morgan-Quantitative-Research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%201%20(V2).ipynb)
+## [Task 1](https://github.com/Nick-2003/forage-jpmorgan-quantitative_research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%201%20(V2).ipynb)
 
 -   Tested various methods to encode time, such as POSIX time, month and year features and one-hot encoding (OHE) of months and years, along with implementing interaction features and lag features, for the time series analysis of price data, by plotting out their prediction and calculating their $R^{2}$ score for both the train and test data.
 -   Utilised a linear model `lr_regressor_nolag()` that uses one-hot encoding for months and years along with interaction features to predict future price data, under the assumption that price will increase indefinitely over the years, and will have the same pattern of price changes across months.
@@ -17,7 +17,7 @@ format:
 
 ![Line Plot of Dates and Prices](../assets/images/jpmorgan_quantitative_future.png)
 
-## [Task 2](https://github.com/Nick-2003/JP-Morgan-Quantitative-Research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%202%20(V1).ipynb)
+## [Task 2](https://github.com/Nick-2003/forage-jpmorgan-quantitative_research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%202%20(V1).ipynb)
 
 -   Create a prototype pricing model that can go through further validation and testing before being put into production.
 -   Inputs
@@ -88,7 +88,7 @@ def contractprice(injewithdates, pricelist, gasrate, maxvol, storagecost):
     return final_price
 ```
 
-## [Task 3](https://github.com/Nick-2003/JP-Morgan-Quantitative-Research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%203%20(V1).ipynb)
+## [Task 3](https://github.com/Nick-2003/forage-jpmorgan-quantitative_research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%203%20(V1).ipynb)
 
 -   Assessed a right-censored loan book using survival analysis models (e.g. Kaplan-Meier Survival Curve) to estimate a customer's probability of default, and by proxy the expected loss
 -   Equation: $EL = PD * (1 - RR) * EAD$
@@ -136,7 +136,7 @@ def expectedloss(total_debt_outstanding, years_employed, recovery_rate = 0.1, de
     return expected_loss 
 ```
 
-## [Task 4](https://github.com/Nick-2003/JP-Morgan-Quantitative-Research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%204%20(V1).ipynb)
+## [Task 4](https://github.com/Nick-2003/forage-jpmorgan-quantitative_research/blob/master/JP%20Morgan%20Quantitative%20Research%20Task%204%20(V1).ipynb)
 
 -   Utilised dynamic programming to convert FICO scores into categorical data to predict defaults
 
