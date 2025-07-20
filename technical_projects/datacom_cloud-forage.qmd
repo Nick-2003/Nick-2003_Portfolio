@@ -2,14 +2,6 @@
 title: "Datacom Introduction to Cloud Job Simulation"
 ---
 
-## Problem Statement
+## [Task 1](https://github.com/Nick-2003/forage-datacom-introduction_to_cloud/blob/master/Datacom%20Introduction%20to%20Cloud%20Task%201.pdf)
 
-## Project Goals and Objectives
-
-## Process and Approach
-
-## Results
-
-## Impact and Reflection
-
-## Future Improvements
+## [Task 2](https://github.com/Nick-2003/forage-datacom-introduction_to_cloud/tree/master/2025-05-07-forage-datacom)

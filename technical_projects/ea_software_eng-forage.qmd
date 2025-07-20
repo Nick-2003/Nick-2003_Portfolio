@@ -2,14 +2,24 @@
 title: "Electronic Arts Software Engineering Virtual Experience Program"
 ---
 
-## Problem Statement
+## [Task 1](../assets/documents/Electronic Arts Software Engineering Task 1.docx)
 
-## Project Goals and Objectives
+- Wrote a feature proposal for a minigame for EA Sports' College Football, by maintaining a football drive for as long as possible.
+  - Provided details on how the minigame would improve the player's abilities and encourage competition between human players.
+  - Notes on how the minigame would operate on the system.
 
-## Process and Approach
+## [Task 2](https://github.com/Nick-2003/forage-electronic_arts-software_engineering/blob/master/Electronic%20Arts%20Software%20Engineering%20Task%202.drawio.pdf)
 
-## Results
+- Class diagram for the given "Indefinite Drive" minigame proposed in Task 1.
+  - `Football Player` class (for player and NPCs) as the primary base.
+  - `Movement` and `Action` categories for determining `Football Player`'s attributes.
+  - `Action` activates depending on player inputs, leading to a corresponding `Movement`.
 
-## Impact and Reflection
+## [Task 3](https://github.com/Nick-2003/forage-electronic_arts-software_engineering/blob/master/football_player.cpp)
 
-## Future Improvements
+- Class definitions in `.cpp` file for classes defined in Task 3.
+
+## [Task 4](https://github.com/Nick-2003/forage-electronic_arts-software_engineering/blob/master/task-4-starter_nt.cpp)
+
+- Created patch for bugfix in EA Sports' College Football game.
+- Replace the C style array with a vector to optimize the codebase.

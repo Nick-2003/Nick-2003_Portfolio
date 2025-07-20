@@ -8,7 +8,7 @@ format:
         href: https://github.com/Nick-2003/BGC-X-GenAI
 ---
 
-## [Task 1](https://github.com/Nick-2003/BGC-X-GenAI/blob/master/BGC%20X%20GenAI%20Task%201/BGC%20X%20GenAI%20Task%201.ipynb)
+## [Task 1](https://github.com/Nick-2003/forage-bcg_x-genai/blob/master/BGC%20X%20GenAI%20Task%201/BGC%20X%20GenAI%20Task%201.ipynb)
 
 - Extracted key financial data for the last three fiscal years from the 10-K and 10-Q reports of Microsoft, Tesla, and Apple.
   - Growth columns created to analyse year-over-year changes in financial metrics.
@@ -27,7 +27,7 @@ format:
   - Apple consistently demonstrates high cash flows, but low or even negative growths compared to the other companies, suggesting great financial stability along with lack of long-term potential.
   - Microsoft often hits the middle ground in terms of cash flows and growths, along with often attaining relatively high metric ratios, which implies that it is relatively stable in terms of both the short term and the long term, though with likely lower returns than Apple or Tesla.
 
-## [Task 2](https://github.com/Nick-2003/BGC-X-GenAI/blob/master/BGC%20X%20GenAI%20Task%202/BGC%20X%20GenAI%20Task%202%20(V2).ipynb)
+## [Task 2](https://github.com/Nick-2003/forage-bcg_x-genai/blob/master/BGC%20X%20GenAI%20Task%202/BGC%20X%20GenAI%20Task%202%20(V2).ipynb)
 
 - Applied rule-based logic for financial chatbot development to provide user-friendly financial insights and analysis.
 - Chatbot has 2 major queries it can respond to:
