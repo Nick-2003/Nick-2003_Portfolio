@@ -830,55 +830,33 @@
     ]
   },
   {
-    "objectID": "technical_projects/lloyds_datasci-forage.html#project-goals-and-objectives",
-    "href": "technical_projects/lloyds_datasci-forage.html#project-goals-and-objectives",
+    "objectID": "technical_projects/lloyds_datasci-forage.html",
+    "href": "technical_projects/lloyds_datasci-forage.html",
     "title": "Lloyds Banking Group Data Science Job Simulation",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
+    "section": "",
+    "text": "Task: “We’ve observed a worrying trend of customers, particularly young professionals and small business owners, leaving for competitors. This project aims to reverse that trend by identifying at-risk customers and implementing targeted interventions. Our findings will directly impact the strategies we deploy to retain our customers. We need accurate, insightful analysis to inform these strategies.”",
     "crumbs": [
       "Technical Projects",
       "Lloyds Banking Group Data Science Job Simulation"
     ]
   },
   {
-    "objectID": "technical_projects/lloyds_datasci-forage.html#process-and-approach",
-    "href": "technical_projects/lloyds_datasci-forage.html#process-and-approach",
+    "objectID": "technical_projects/lloyds_datasci-forage.html#task-1",
+    "href": "technical_projects/lloyds_datasci-forage.html#task-1",
     "title": "Lloyds Banking Group Data Science Job Simulation",
-    "section": "Process and Approach",
-    "text": "Process and Approach",
+    "section": "Task 1",
+    "text": "Task 1\n\nExploratory Data Analysis for datasets df_transaction, df_customer, df_online and df_churn.\n\nAcquired information on each variable’s data type and number of null values with .info().\nObtained distributions of numerical variables within each dataset.\nCounted number of unique values within each variable column.\nVisualised the distributions of categories in the categorical features of each dataset.\nCalculated the number of transactions and interactions for each customer, which are derived from the number of unique TransactionID and InteractionID values respectively grouped by CustomerID.\nVisualised proportions of customers in each ProductCategory and proportions of resolved customer interactions for each InteractionType with bar plots.\nCreated histograms of AmountSpent within each ProductCategory and LoginFrequency within each ServiceUsage.\n\n\n\nData Cleaning and Preprocessing\n\nProvided as a pipeline before model training.\nStandardScaler() to standardise all numeric variables.\nForcibly converted all non-numeric variables to categorical with a function provided here\nFor ordinal variables, use OrdinalEncoder(categories=&lt;ORDER&gt;) with given &lt;ORDER&gt; as list or list of lists.\nFor categorical variables, use OneHotEncoder() for automatic encoding in pipeline.\n\nFor binary variables, use OneHotEncoder(..., drop = \"if_binary\") to ensure that there are no redundant columns.",
     "crumbs": [
       "Technical Projects",
       "Lloyds Banking Group Data Science Job Simulation"
     ]
   },
   {
-    "objectID": "technical_projects/lloyds_datasci-forage.html#results",
-    "href": "technical_projects/lloyds_datasci-forage.html#results",
+    "objectID": "technical_projects/lloyds_datasci-forage.html#task-2",
+    "href": "technical_projects/lloyds_datasci-forage.html#task-2",
     "title": "Lloyds Banking Group Data Science Job Simulation",
-    "section": "Results",
-    "text": "Results",
-    "crumbs": [
-      "Technical Projects",
-      "Lloyds Banking Group Data Science Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/lloyds_datasci-forage.html#impact-and-reflection",
-    "href": "technical_projects/lloyds_datasci-forage.html#impact-and-reflection",
-    "title": "Lloyds Banking Group Data Science Job Simulation",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Technical Projects",
-      "Lloyds Banking Group Data Science Job Simulation"
-    ]
-  },
-  {
-    "objectID": "technical_projects/lloyds_datasci-forage.html#future-improvements",
-    "href": "technical_projects/lloyds_datasci-forage.html#future-improvements",
-    "title": "Lloyds Banking Group Data Science Job Simulation",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
+    "section": "Task 2",
+    "text": "Task 2\n\nFeature Engineering\n\nCreated df_total as final dataset to undergo training of machine learning model.\nNumTransactions: Total number of transactions for given CustomerID in df_transaction.\nAmountSpent_&lt;CATEGORY&gt;: Total amount spent for given CustomerID in ProductCategory == &lt;CATEGORY&gt;.\nNumInteractions: Total number of interactions for given CustomerID in df_customer.\nResolvedProportion: Proportion of interactions for given CustomerID that have been resolved.\nDaysSinceLastLogin: Days since the customer’s last login from 2024-01-01.\n\n\n\nModel Training Selection\n\nPreprocessing steps from Task 1 applied here again.\nmean_std_cross_val_scores() provided to assist in training and evaluation of model.\nEach model will be followed with hyperparameter optimisation to improve f1-score to ensure balance in precision and recall, and to mitigate issue with class imbalance of ChurnStatus.\nMany hyperparameter optimisations include class weight to mitigate class imbalance.\nModels compared: LogisticRegression(), DecisionTreeClassifier(), RandomForestClassifier(), HistGradientBoostingClassifier().\n\n\n\nEvaluating Most Optimal Model\n\nThe initial decision tree, random forest, and tree-based ensemble models have extremely high train_f1 scores of 1.000 (+/- 0.000), which is unrealistically high and implies overfitting onto the training set. This is further supported by having significantly lower test_f1 scores in comparison to the rest of the models.\nThe optimised tree-based ensemble model also has a high train_f1 score of 0.994 (+/- 0.004), so it is rejected.\nDue to having a train_recall and test_recall score of 1.000 (+/- 0.000), the optimised random forest model may be overfitted or be heavily affected by the class imbalance, and thus may need to be rejected due to risk of overfitting.\nUnder the assumption that the F1-score test metric provides the most information about the quality of the model, while mitigating the confusion from class imbalance, we have selected the model with the greatest cross-validation F1-score without other potentially suspect classification metrics as our best performing model. Given the results table below, we believe that the optimised decision tree model had the best overall performance, with the optimised random forest model also in consideration.\n\n\n\nResults on Test Set\n\nModels provided allow preprocessing of initial dataset to be included alongside training and testing.\nOptimised random forest model provides slightly better results.\nModels allow for identification of customers at risk of churning in advance, so marketers know who to target for retention strategies.\nBiggest issue for both of these models is that feature importances are difficult to extract, so determining which metrics to focus on for retention strategies may be difficult beyond identifying common tendencies between customers at risk of churn.",
     "crumbs": [
       "Technical Projects",
       "Lloyds Banking Group Data Science Job Simulation"
