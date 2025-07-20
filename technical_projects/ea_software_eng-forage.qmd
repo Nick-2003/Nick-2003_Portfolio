@@ -1,5 +1,11 @@
 ---
 title: "Electronic Arts Software Engineering Virtual Experience Program"
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/forage-electronic_arts-software_engineering
 ---
 
 ## [Task 1](../assets/documents/Electronic Arts Software Engineering Task 1.docx)

@@ -1,9 +1,14 @@
 ---
 title: "British Airways Data Science Job Simulation"
-format: html
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/forage-british_airways-data_science
 ---
 
-## [Task 1](https://github.com/Nick-2003/British-Ariways-Data-Science/tree/master/British%20Ariways%20Data%20Science%20Task%201)
+## [Task 1](https://github.com/Nick-2003/forage-british_airways-data_science/tree/master/British%20Ariways%20Data%20Science%20Task%201)
 
 - Extracted and cleaned review data for British Airways from [Airline Quality](https://www.airlinequality.com/airline-reviews/british-airways)
   - Used `BeautifulSoup` from `bs4` to scrape review data, to be saved into a `.csv` file.
@@ -20,7 +25,7 @@ format: html
   - Different types of aircrafts have different proportions of each type of seating, and thus may impact the accessibility for lounge usages, such as Tier 1 permitting all First Class customers, so `AIRCRAFT_TYPE` was used as a category.
 - Proportions of eligible customers for each tier per flight calculated using `TIER1_ELIGIBLE_PAX`, `TIER2_ELIGIBLE_PAX`, `TIER3_ELIGIBLE_PAX` divided by the total number of passengers in their corresponding flights.
 
-## [Task 2](https://github.com/Nick-2003/British-Ariways-Data-Science/tree/master/British%20Ariways%20Data%20Science%20Task%202)
+## [Task 2](https://github.com/Nick-2003/forage-british_airways-data_science/tree/master/British%20Ariways%20Data%20Science%20Task%202)
 
 - Conducted exploratory data analysis on the customer booking data
   - `.info()` to determine the data types and number of `null` values for each column.
