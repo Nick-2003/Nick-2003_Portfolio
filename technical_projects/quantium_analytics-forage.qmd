@@ -2,14 +2,43 @@
 title: "Quantium Data Analytics Job Simulation"
 ---
 
-## Problem Statement
+## [Task 1](https://github.com/Nick-2003/forage-quantium-data_analytics/blob/master/forage_quantium_task1.pdf)
 
-## Project Goals and Objectives
+- Exploratory data analysis on provided transaction data alongside cleaning.
+  - Removing digits and special characters from product names.
+  - Checked for nulls and possible outliers.
+  - Summarised numerical attributes of transaction data and filtered out outlier data.
+  - Charted number of transactions over time.
+  - Created histogram of `Pack_SIZE` values.
+  - Converted similar `BRAND` values to common values.
+- Exploratory data analysis on provided customer data alongside cleaning.
+  - Checked for nulls and possible outliers.
+- Performed data analysis on customer segments.
+  - Focused on the following metrics of interest: 
+    - Who spends the most on chips (total sales), describing customers by lifestage and how premium their general purchasing behaviour is.
+    - How many customers are in each segment.
+    - How many chips are bought per customer by segment - What’s the average chip price by customer segment.
+  - Created barplots of total sales grouped by each customer's lifestage and customer status.
+  - Calculated and plotted average price per unit, grouped by lifestage and customer status.
+  - Calculated and plotted average number of units per customer, grouped by lifestage and customer status.
+  - Performed Welch two-sample t-test to determine if the difference in average price per unit between `MIDAGE SINGLES/COUPLES` and `YOUNG SINGLES/COUPLES` was statistically significant.
+- Further insights on specific customer segment `LIFESTAGE == "YOUNG SINGLES/COUPLES"` and `PREMIUM_CUSTOMER == "Mainstream"`.
+  - Created bar plot of relative frequency of brands bought.
+  - Created density plot of pack sizes.
 
-## Process and Approach
+## [Task 2](https://github.com/Nick-2003/forage-quantium-data_analytics/blob/master/forage_quantium_task2.pdf)
 
-## Results
+- For each store and month, calculated total sales, number of customers, transactions per customer, chips per customer and average price per unit.
+- `calculateCorrelation()` created to calculate correlation for a measure, looping through each control store.
+- `calculateMagnitudeDistance()` created to calculate a standardised magnitude distance for a measure, looping through each control store.
+- Identified benchmark stores for conducting uplift testing on trial store layouts.
+  - Created a combined score `score_nSales` composed of correlation and magnitude, with `corr_weight` to adjust the weights for correlation and magnitude in the calculation.
+  - Created the `finalControlScore` metric to combine scores across the drivers by simple average of total number of sales and number of customers.
+  - Visualised checks on trends based on the drivers.
+  - Assessed the differences between the performances of the control store and the trial store.
+  - Repeated the above 3 times total for stores 77, 86 and 88.
+- Results for trial stores 77 and 88 during the trial period show a significant difference in at least two of the three trial months but not for trial store 86.
 
-## Impact and Reflection
-
-## Future Improvements
+## [Task 3](https://github.com/Nick-2003/forage-quantium-data_analytics/blob/master/Task%203%20-%20presentation%20guide_BRAND_TTLN.pptx.pdf)
+- Produced a Powerpoint report that incorporated data visualizations, key insights, and recommendations, based on the previous tasks, to be provided to the Category Manager of chips.
+- 
