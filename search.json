@@ -381,55 +381,22 @@
     ]
   },
   {
-    "objectID": "professional_experience/luk_fook-2020.html#project-goals-and-objectives",
-    "href": "professional_experience/luk_fook-2020.html#project-goals-and-objectives",
-    "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
-    "section": "Project Goals and Objectives",
-    "text": "Project Goals and Objectives",
+    "objectID": "professional_experience/sharp_point_limited-2022.html",
+    "href": "professional_experience/sharp_point_limited-2022.html",
+    "title": "Sharp Point Limited – Software Developer",
+    "section": "",
+    "text": "Leveraged PyAlgoTrade and jQuery libraries for advanced algorithmic trading and web development.\nDirected rigorous testing of 5 major API functions, employing historical and real-time market data collection.\nCollaborated on back-testing Python-based algorithmic trading strategies using company servers.\nGenerated daily profit and loss reports for comprehensive technical analysis to maximise trader performance.\nDesigned framework for broker and API handler to facilitate seamless order creation, utilisation, and modification.",
     "crumbs": [
       "Professional Experience",
-      "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
+      "Sharp Point Limited -- Software Developer"
     ]
   },
   {
-    "objectID": "professional_experience/luk_fook-2020.html#process-and-approach",
-    "href": "professional_experience/luk_fook-2020.html#process-and-approach",
+    "objectID": "professional_experience/luk_fook-2020.html",
+    "href": "professional_experience/luk_fook-2020.html",
     "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
-    "section": "Process and Approach",
-    "text": "Process and Approach",
-    "crumbs": [
-      "Professional Experience",
-      "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
-    ]
-  },
-  {
-    "objectID": "professional_experience/luk_fook-2020.html#results",
-    "href": "professional_experience/luk_fook-2020.html#results",
-    "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
-    "section": "Results",
-    "text": "Results",
-    "crumbs": [
-      "Professional Experience",
-      "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
-    ]
-  },
-  {
-    "objectID": "professional_experience/luk_fook-2020.html#impact-and-reflection",
-    "href": "professional_experience/luk_fook-2020.html#impact-and-reflection",
-    "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
-    "section": "Impact and Reflection",
-    "text": "Impact and Reflection",
-    "crumbs": [
-      "Professional Experience",
-      "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
-    ]
-  },
-  {
-    "objectID": "professional_experience/luk_fook-2020.html#future-improvements",
-    "href": "professional_experience/luk_fook-2020.html#future-improvements",
-    "title": "Luk Fook Financial Services Limited – Equity Research Summer Analyst",
-    "section": "Future Improvements",
-    "text": "Future Improvements",
+    "section": "",
+    "text": "Liaised with banking and quantitative analysts to gain a stronger understanding of financial markets and its’ products.\nPerformed qualitative research on the technology sector to identify high potential growth stocks in the industry.\nConducted due diligence on Cryptocurrencies, including cost-benefit analysis & potential economic implications.\nPitched foreseeable impact of digital assets on the financial landscape & investments to a panel of managing directors.",
     "crumbs": [
       "Professional Experience",
       "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
@@ -476,6 +443,17 @@
     "title": "Education",
     "section": "",
     "text": "GPA: 3.315/4.3, GRE: 158V, 165Q\nSep 2021 - Apr 2025\nRelevant coursework: Calculus III and IV, Mathematical Proof, Matrix Algebra, Differential Equations I, Applied Linear Algebra, Linear Programming, Models of Computation, Software Construction, Statistics for Applications, Statistical Inference for Data Science, Statistical Modelling for Data Science, Applied Machine Learning, Data Relationships"
+  },
+  {
+    "objectID": "professional_experience/sharp_point_limited-2023.html",
+    "href": "professional_experience/sharp_point_limited-2023.html",
+    "title": "Sharp Point Limited – Frontend Engineer",
+    "section": "",
+    "text": "Optimised the platforms’ API calls for password and product search to increase user accessibility.\nLeveraged Riverpod to restructure the search bar product reader, improving performance.\nCollaborated with designers to modernise the mobile app UI with Flutter, achieving deadline of 2 weeks.\nRearchitected user setting’s function and designed advanced components including search bars & toggle tools.",
+    "crumbs": [
+      "Professional Experience",
+      "Sharp Point Limited -- Frontend Engineer"
+    ]
   },
   {
     "objectID": "technical_projects/data_viz_coronary.html",
