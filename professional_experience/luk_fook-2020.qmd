@@ -1,16 +1,15 @@
 ---
 title: "Luk Fook Financial Services Limited -- Equity Research Summer Analyst"
-subtitle: "Jul 2020, Hong Kong"
+subtitle: "July 2020, Hong Kong"
+format:
+  html:
+    code-links:
+      - text: Project Code
+        icon: filetype-pptx
+        href: "../assets/images/Lukfook Financial Project Presentation.pptx"
 ---
 
-## Problem Statement
-
-## Project Goals and Objectives
-
-## Process and Approach
-
-## Results
-
-## Impact and Reflection
-
-## Future Improvements
+- Liaised with banking and quantitative analysts to gain a stronger understanding of financial markets and its’ products.
+- Performed qualitative research on the technology sector to identify high potential growth stocks in the industry.
+- Conducted due diligence on Cryptocurrencies, including cost-benefit analysis & potential economic implications.
+- Pitched foreseeable impact of digital assets on the financial landscape & investments to a panel of managing directors.

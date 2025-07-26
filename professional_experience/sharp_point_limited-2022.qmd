@@ -1,4 +1,10 @@
 ---
-title: "sharp_point_limited-2022"
+title: "Sharp Point Limited -- Software Developer"
+subtitle: "June 2022 - July 2022, Hong Kong"
 ---
 
+- Leveraged `PyAlgoTrade` and `jQuery` libraries for advanced algorithmic trading and web development.
+- Directed rigorous testing of 5 major API functions, employing historical and real-time market data collection.
+- Collaborated on back-testing Python-based algorithmic trading strategies using company servers.
+- Generated daily profit and loss reports for comprehensive technical analysis to maximise trader performance.
+- Designed framework for broker and API handler to facilitate seamless order creation, utilisation, and modification.

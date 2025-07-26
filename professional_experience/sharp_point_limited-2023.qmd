@@ -1,4 +1,9 @@
 ---
-title: "sharp_point_limited-2023"
+title: "Sharp Point Limited -- Frontend Engineer"
+subtitle: "July 2023 - August 2023, Hong Kong"
 ---
 
+- Optimised the platforms’ API calls for password and product search to increase user accessibility.
+- Leveraged Riverpod to restructure the search bar product reader, improving performance.
+- Collaborated with designers to modernise the mobile app UI with Flutter, achieving deadline of 2 weeks.
+- Rearchitected user setting’s function and designed advanced components including search bars & toggle tools.
