@@ -4,12 +4,12 @@ subtitle: "July 2020, Hong Kong"
 format:
   html:
     code-links:
-      - text: Project Code
+      - text: Stock Pitch
         icon: filetype-pptx
         href: "../assets/images/Lukfook Financial Project Presentation.pptx"
 ---
 
 - Liaised with banking and quantitative analysts to gain a stronger understanding of financial markets and its’ products.
 - Performed qualitative research on the technology sector to identify high potential growth stocks in the industry.
-- Conducted due diligence on Cryptocurrencies, including cost-benefit analysis & potential economic implications.
+- Conducted due diligence on cryptocurrencies, including cost-benefit analysis & potential economic implications.
 - Pitched foreseeable impact of digital assets on the financial landscape & investments to a panel of managing directors.
