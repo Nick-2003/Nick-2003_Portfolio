@@ -6,6 +6,9 @@ format:
       - text: Project Code
         icon: github
         href: https://github.com/Nick-2003/agent-broker-original
+      - text: Application
+        icon: app
+        href: https://github.com/Nick-2003/agent-broker-original
 ---
 
 ## Project Goals and Objectives
