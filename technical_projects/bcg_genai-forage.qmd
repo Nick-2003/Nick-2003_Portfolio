@@ -18,6 +18,7 @@ format:
     - $\text{Return on Assets} = \frac{\text{Net Income}}{\text{Total Assets}}$
   - Operating cash flow ratio as measure of operational efficiency.
     - $\text{Operating Cash Flow Ratio} = \frac{\text{Operating Cash Flow}}{\text{Total Revenue}}$
+
 ![Key Data](../assets/images/bcg_genai_keydata.png)
 
 - Conducted exploratory data analysis by comparing boxplots of financial data metrics for each company grouped by year.

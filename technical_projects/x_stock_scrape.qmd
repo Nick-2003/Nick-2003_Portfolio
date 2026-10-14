@@ -1,0 +1,30 @@
+---
+title: "x_stock_scrape"
+format: 
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/X_Stock_Scrape
+---
+
+## Project Goals and Objectives
+
+This project acts as a monitoring tool to track specific, reliable accounts on the social platform X (formerly Twitter) to assess potential investment opportunities for a financial portfolio earlier than users needing to manually assess posted details.
+
+## Process and Approach
+
+- Initial outline consists of accounts database, scripts to run three-phase system described below, configuration.
+- Three-phase system:
+  - Scraper to capture posts on X from selected accounts.
+  - Scoring model to assess which posts have sufficient engagement and engagement velocity; extra priority for more valuable accounts.
+  - AI to develop summary based on scraped information and scoring model from prior steps along with [Sentiment_Analysis_Stock_Tweets_FineTuned](https://huggingface.co/vidhivaish03/Sentiment_Analysis_Stock_Tweets_FineTuned) for sentiment analysis and [phrase-ticker](https://huggingface.co/datasets/rohanmahen/phrase-ticker) for ticker extraction; results sent to a Telegram bot created by the user(s).
+- Reinforced process to run `X_Stock_Scrape` and ensure Telegram messages are transmitted.
+- Updated AI output process to filter down to only messages that can determine tickers, one alert per ticker when post mentions multiple tickers; posts that do not contain extracted tickers will be disregarded.
+- Signal quality tests for ticker extraction, sentiment direction, confidence floors, bullish and bearish full-pipeline examples, and the no-ticker case. The module loads the Hugging Face dataset and sentiment model through a module-scoped fixture.
+
+## Evaluation and Future Improvements
+
+- Most signals provided are of neutral sentiment with insufficient price data; considering methods to filter down noise.
+- Consider setting multiple price exit targets to avoid suggestions from being too restrictive.
+- The suite is not hermetic and its ticker-only tests execute before the model fixture has necessarily populated the ticker dataset.
