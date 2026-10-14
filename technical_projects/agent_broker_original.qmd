@@ -1,0 +1,35 @@
+---
+title: "agent_broker_original"
+format: 
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/agent-broker-original
+---
+
+## Project Goals and Objectives
+
+This project is a minimum-value product for an agentic brokerage as a proof of concept for further developments of more dedicated and focused trading platforms. It is a prompt-first mobile brokerage where every action - research, charting, trading, alerts, risk audits - is a prompt that generates a personalised widget that can be pinned to a dashboard. Functionalities include authenticated email login, connection to IBKR and Snaptrade portfolios, research on US-focused tickers and TradingView charting.
+
+## Process and Approach
+
+- Provided initial outline of agentic brokerage, which includes repository architecture, backend agent loop, frontend shell, security, Anthropic prompt, Alpaca adapter, and execution widgets.
+- Expanded on research tools such as Yahoo Finance, TradingView MCP and FMP research into backend for usage in execution widgets.
+- Applied persistence for chat functionality. 
+- Supabase Auth/RLS created to ensure user authentication for app.
+- Implemented PostHog and Langfuse for Bottom of Funnel (BOFU) application analysis
+- Set up connections for IBKR Flex portfolio without enabling trading, and briefing generation and delivery through Twilio to WhatsApp and email; Alpaca was also implemented as alternative portfolio as proof-of-concept.
+- Updated IBKR portfolio implementation to be by per-user rather than shared across all users for security purposes.
+- Improved delivery channels and chat rendering in UI, added HK technicals/charts, news, image input, conversation memory, and portfolio visualisations.
+- Applied new LLM provider rails into backend to act as backups for token usage limits, trust validation, more transparent error messaging on UX.
+- Created SnapTrade portfolio connection as alternative to IBKR (which allows for connections to various brokers, including IBKR itself); trading remains unavailable.
+- Confirmed and further reinforced Supabase account selection and per-user isolation.
+
+## Evaluation and Future Improvements
+
+- Splitting the `agent-broker-original-stage` into separate repositories would allow for more clarity for changes made in each commit; current format is due to being deliberate beta for other projects and thus for preservation.
+- Chat costs rack up rapidly, may want to consider cheaper LLM providers for API backend.
+- Waitlist presently provides no functionality beyond recording provided email into Supabase.
+- Twilio connection is on lower-tier plan and thus has to be reestablished on regular basis.
+- Langfuse connection with `agent-broker-original` still needs to be repaired.

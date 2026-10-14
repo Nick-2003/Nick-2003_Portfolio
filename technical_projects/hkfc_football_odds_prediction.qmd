@@ -1,0 +1,543 @@
+---
+title: "hkfc_football_odds_prediction"
+format: 
+  html:
+    code-links:
+      - text: Project Code
+        icon: github
+        href: https://github.com/Nick-2003/football_prediction_model_V2
+      - text: Historical Version
+        icon: github
+        href: https://github.com/Nick-2003/football_prediction_model_V1
+---
+
+## Project Goals and Objectives
+
+A machine learning pipeline that predicts HKJC (Hong Kong Jockey Club) football betting odds (Home/Draw/Away, 1X2) for upcoming matches. The model compares predicted odds against HKJC's published odds to identify potential value bets.
+
+It takes everything knowable about a football match before it is played -- team strength, recent form, squad injuries, news sentiment, and historical odds -- and predicts what the Home / Draw / Away (1X2) betting odds for that match should be. Those predicted odds are then compared against the odds that HKJC actually publishes. If the model thinks a team is more likely to win than HKJC's odds imply, that is flagged as a potential value bet.
+
+- Inputs (features): Team ratings, recent results, squad injury reports, news headlines, published HKJC odds, handicap lines, pool liquidity, line movement between fetch snapshots, and (new in v4) API-Football pre-match win probability predictions.
+- Outputs (targets): Three decimal odds -- `odds_home`, `odds_draw`, `odds_away`.
+
+Why predict odds and not just the winner? Odds encode probability and the bookmaker's margin in one number. Predicting odds directly is richer than predicting a binary win/loss outcome, because it lets you measure by how much you disagree with the market and whether that disagreement is large enough to act on.
+
+## Overall data flow
+
+```         
++-------------------------------------------------------------------------+
+|                        RAW DATA SOURCES                                 |
+|                                                                         |
+|  HKJC (S1 + S1b)                   API-Football (S2)  [v4]              |
+|  --hkjc-source fetch (default)       api_football_client.py             |
+|    fetch_hkjc_match_details.py        apif_incremental_fetch.py         |
+|    -> matchDetail_*.parquet           -> apif_enrichment.parquet        |
+|    -> GCS hkjc/fetched/              -> GCS sportsapipro/               |
+|  --hkjc-source parquet               Free tier: form, squad, H2H,       |
+|    data/hkjc/df_hkjc.parquet         standings, predictions             |
+|  --hkjc-source api                   Pro tier: + 1X2 opening odds       |
+|    Node.js bridge -> HKJC GraphQL                                       |
++-------------------+-----------------------------+-----------------------+
+                    |                             |
+                    v                             v
+       +------------------------------------------------+
+       |              FEATURE ENGINEERING               |
+       |  Pi-Ratings (S3)   Form (S4)   Sentiment (S5)  |
+       |  Squad availability    H2H     Line movement   |
+       |  n_pools / has_fgs / match_week_band (v3)      |
+       |  apif_pred_home/draw/away_pct (v4, optional)   |
+       |  [neutral defaults when SP_SOURCE = parquet]   |
+       +------------------------+-----------------------+
+                                |
+                                v
+       +------------------------------------------------+
+       |          PREPROCESSING PIPELINE (S6)           |
+       |  Scale numbers | Encode categories |           |
+       |  Fill missing values | Binarise flags          |
+       +------------------------+-----------------------+
+                                |
+                                v
+       +------------------------------------------------+
+       |            MODEL (S7) + WEIGHTS (S8)           |
+       |   CatBoost / XGBoost                           |
+       |   RegressorChain: home -> draw -> away         |
+       |   Sample weights: recency * freq * volume      |
+       +------------------------+-----------------------+
+                                |
+                         +------+------+
+                         v             v
+              TRAINING (S9)      INFERENCE (S12)
+              TimeSeriesSplit    Live upcoming fixtures
+              MLflow logging     Edge detection vs HKJC
+              GCS sync (S13)           |
+                         |             v
+                         v         RESULTS (S13)
+              EVALUATION (S11)    gs://bucket/results/
+              MAE, CLV, Brier,    JSON run summaries
+              Sentiment corr.
+```
+
+## Process and Approach
+
+- Initially begin with acquisition of Elo rankings data, initial acquisition of HKJC football match data from `[hkjc-api](https://github.com/Bobosky2005/hkjc-api)` repository, and investigations on acquired JSON data, how data is formatted and can be stored; Elo rankings data regularly updated.
+- Selected multioutput regression as machine learning method of focus for prediction of odds for home team victory, away team victory, or draw.
+  - Given how the sum of reciprocals of odds must sum up to approximately 1 (+ bookmaker margin), `odds_away`, `odds_draw`, `odds_home` are assumed to not be entirely independent from one another; regardless, both direct multioutput regression (`MultiOutputRegressor()`) and chained multioutput regression (`RegressorChain()`) are tested, with chained multioutput regression optimised for ordering of chain.
+  - Categorical feature types: `venue_code`, `tournament_frontEndId`, `tournament_nameProfileId`, `tournament_code`
+  - Enforced "sum of reciprocals of odds must sum up to approximately 1 (+ bookmaker margin)" with `ConstrainedOddsWrapper()` class.
+
+### Data Storage
+
+- All data acquired is saved and stored on Google Cloud as `.parquet` files to minimise storage space.
+
+#### HKJC Data Layer
+
+- HKJC data layer used as source of truth to acquire data that can be accessed with `fetch_hkjc_match_details.py` in conjunction with `[hkjc-api](https://github.com/Bobosky2005/hkjc-api)` repository; limited to matches in near future. `fetch_hkjc_match_details.py` specifically discovers current HKJC matches, fetches full details for each, saves the results locally, and uploads them to Google Cloud Services.
+- Integration paths:
+  - **Path A -- Node.js bridge (`--hkjc-source api`, bridge method):** The `hkjc-api` npm package wraps HKJC's internal GraphQL API. Requires Node.js and a Hong Kong IP address.
+  - **Path B -- Direct HTTP (`--hkjc-source api`, httpx method):** Uses Python's `httpx` library to call the same HKJC endpoint directly. Also requires HK IP. Currently unreliable in practice.
+  - **Path C -- Local Parquet (`--hkjc-source parquet`, default):** Loads `data/hkjc/df_hkjc.parquet`. No network calls, no IP restriction.
+  - **Path D -- Fetch Parquets (`--hkjc-source fetch`):** Loads all `matchDetail_*.parquet` files from `data/hkjc/` produced by `fetch_hkjc_match_details.py`. Richer than Path C because it includes additional columns and computes line movement between snapshots. Additional columns from Path D (fetch only).
+
+| Column | Description |
+|------------------------------------|------------------------------------|
+| `available_pools` | Comma-separated pool types (e.g. `HAD,HHA,CRS,FGS,...`) |
+| `venue_code` | Venue identifier |
+| `status` | Match status (`Resulted`, `PreEvent`, etc.) |
+| `lm_home` / `lm_draw` / `lm_away` | Odds drift between earliest and latest snapshot |
+| `n_pools` | Number of bet pool types offered (liquidity proxy) |
+| `has_fgs` | 1 if First Goal Scorer pool exists |
+| `match_week_band` | `"weekend"` or `"midweek"` |
+| `is_neutral_venue` | 1 if venue code indicates neutral ground |
+
+#### API-Football Enrichment Layer
+
+- API-Football fills the gaps in data from HKJC data with team form, squad availability, H2H history, league standings, and a pre-match win probability model. It runs alongside SportsAPIPro as a parallel enrichment option -- both write to separate parquet files and the pipeline selects between them via `--sp-parquet`.
+- Two-layer design of enrichment system:
+
+```         
+apif_incremental_fetch.py  (orchestration layer)
+  |-- Loads HKJC parquet(s)
+  |-- Builds coverage index from existing APIF parquet
+  |-- Identifies uncovered matches
+  |-- Batches calls to client
+  |-- Merges and deduplicates results
+  |-- Saves output parquet + caches
+  |-- Uploads to GCS
+  |
+  +-- APIFootballClient  (HTTP layer, api_football_client.py)
+        |-- Rate limiting (10 req/min, 6s between requests)
+        |-- Daily quota tracking (soft cap at daily_limit)
+        |-- Exponential backoff on 429 (10s, 20s, 40s, 80s)
+        |-- Team ID cache (persistent JSON)
+        |-- No-result log (avoids re-querying known failures)
+        |
+        +-- v3.football.api-sports.io
+              /teams  /fixtures  /fixtures/headtohead
+              /players/squads  /injuries
+              /predictions  /odds  /standings
+```
+
+- `api_football_client.py` is a pure library file never run directly. All HTTP calls go through a single `_get(endpoint, params)` method that handles four concerns:
+  - **Rate limiting:** Enforces the 6-second inter-request gap unconditionally. No `time.sleep()` calls needed in endpoint functions.
+  - **Daily quota tracking:** `_daily_used` is incremented on every successful response. When it reaches `daily_limit`, all subsequent calls return `{}` without hitting the API. A quota warning is logged at 90% of the limit.
+  - **429 handling:** Retries with exponential backoff -- 10s, 20s, 40s, 80s. If all four retries fail, returns `{}` and the match is skipped cleanly.
+  - **Error isolation:** All HTTP errors are caught and converted to `{}`. A failed call for one match never aborts enrichment of subsequent matches.
+
+##### Team ID resolution
+
+- HKJC provides English team names; API-Football uses integer IDs. `resolve_team_id()` translates via `/teams?search=`:
+  - **Pass 1 -- exact case-insensitive match.** Covers the majority of well-known club names.
+  - **Pass 2 -- country hint filter.** If provided by the caller, filters results by country (e.g. `"England"`). Not populated automatically by `enrich_match()` but available for manual overrides.
+  - **Pass 3 -- fuzzy best match.** rapidfuzz `token_sort_ratio ≥ 70` across all candidate names. Handles variations like `"Atletico Madrid"` vs `"Atletico de Madrid"`.
+- Output: `data/sportsapipro/apif_enrichment.parquet`. Column names mirror `sportsapipro_data_odds.parquet` so `--sp-parquet` is the only change needed in the pipeline.
+  - Schema:
+
+**Core identity columns:**
+
+| Column | Description |
+|------------------------------------|------------------------------------|
+| `home_name` / `away_name` | HKJC English team names |
+| `home_name_normalised` / `away_name_normalised` | Lowercased, stripped (dedup key) |
+| `match_date` | YYYY-MM-DD string |
+| `sp_home_id` / `sp_away_id` | API-Football team IDs (reuse SP column names) |
+| `sp_game_id` | API-Football fixture ID (reuses SP column name) |
+
+**Form columns (mirror SP schema):**
+
+| Column | Description |
+|------------------------------------|------------------------------------|
+| `form_h_win_rate` | Home team win rate over last 5 matches |
+| `form_h_ppg` | Home team points per game over last 5 |
+| `form_h_gf_avg` / `form_h_ga_avg` / `form_h_gd_avg` | Goals scored / conceded / difference per game |
+| `form_a_*` | Same for away team |
+
+**Squad availability columns (mirror SP schema):**
+
+| Column             | Description                               |
+|--------------------|-------------------------------------------|
+| `home_squad_avail` | Fraction of home squad not injured (0--1) |
+| `home_gk_missing`  | 1 if a home goalkeeper is injured         |
+| `home_fw_missing`  | 1 if a home forward is injured            |
+| `away_*`           | Same for away team                        |
+
+**H2H columns (mirror SP schema):**
+
+| Column        | Description                                       |
+|---------------|---------------------------------------------------|
+| `h2h_home_wr` | Home team win rate in H2H history                 |
+| `h2h_avg_gd`  | Average goal difference in H2H (home perspective) |
+| `h2h_n`       | Number of H2H fixtures found                      |
+
+**Cross-market odds (Pro tier only; mirror SP schema):**
+
+| Column | Description |
+|------------------------------------|------------------------------------|
+| `sp_odds_home_open` / `sp_odds_draw_open` / `sp_odds_away_open` | Bet365 pre-match 1X2 decimal odds |
+| `sp_odds_home_close` / `sp_odds_draw_close` / `sp_odds_away_close` | Same as open (no closing line in snapshot) |
+| `sp_trend_home` / `sp_trend_draw` / `sp_trend_away` | Set to 2 (stable) |
+
+**Standings columns (mirror SP schema):**
+
+| Column | Description |
+|----|----|
+| `home_standing` / `away_standing` | League table position |
+| `standing_gap` | `home_standing - away_standing` |
+| `home_win_rate_season` / `away_win_rate_season` | Season win rate |
+
+**New columns (no SP equivalent):**
+
+| Column                 | Description                               |
+|------------------------|-------------------------------------------|
+| `apif_pred_home_pct`   | API-Football model P(home win), e.g. 0.60 |
+| `apif_pred_draw_pct`   | API-Football model P(draw), e.g. 0.20     |
+| `apif_pred_away_pct`   | API-Football model P(away win), e.g. 0.20 |
+| `apif_pred_goals_home` | API-Football predicted goals (home team)  |
+| `apif_pred_goals_away` | API-Football predicted goals (away team)  |
+
+##### HKJC tournament code mapping
+
+- `HKJC_TO_APIF_LEAGUE` in `api_football_client.py` maps HKJC `tournament_code` values to API-Football league IDs. Used by `fetch_standings()` and fixture resolution. Covers EPL, La Liga, Bundesliga, Serie A, Ligue 1, UCL, UEL, and 50+ other competitions.
+
+##### Incremental fetch script -- `apif_incremental_fetch.py`
+
+Four steps on every run: - **Step 1 -- Build coverage index.** Reads existing `apif_enrichment.parquet` and builds `(home_norm, away_norm)` lookup dict. HKJC matches with fuzzy score ≥ 80 against any key are considered covered and skipped. - **Step 2 -- Identify uncovered matches.** `find_uncovered_matches()` uses exact then fuzzy matching, returning only rows that fail both. Matches already in `apif_no_result_matches.json` are also skipped before any API call. - **Step 3 -- Batched API calls.** Uncovered matches are grouped into batches of `batch_size` (default 8). Before each batch the quota is checked -- if fewer than \~9 requests remain, the run stops cleanly at a batch boundary. `batch_sleep` (default 5s) is a safety margin above the per-request rate limiting inside `_get()`. - **Step 4 -- Merge and save.** New rows are concatenated with existing parquet and deduplicated on `(home_name_normalised, away_name_normalised, match_date)` with `keep="last"`. Sorted by `match_date`, saved as snappy-compressed parquet, caches written to disk, parquet uploaded to GCS.
+
+##### `apif_incremental_fetch.py` CLI flag reference
+
+| Flag | Default | Description |
+|------------------------|------------------------|------------------------|
+| `--hkjc-parquet` | `data/hkjc/df_hkjc.parquet` | HKJC training parquet |
+| `--apif-parquet` | `data/sportsapipro/apif_enrichment.parquet` | Existing APIF parquet to extend |
+| `--output` | `data/sportsapipro/apif_enrichment.parquet` | Output path |
+| `--include-fetch-dir` | *(none)* | Also include `matchDetail_*.parquet` files |
+| `--batch-size` | `8` | Matches per API batch |
+| `--batch-sleep` | `5.0` | Seconds between batches |
+| `--fuzzy-threshold` | `80` | Fuzzy match cutoff (0--100) |
+| `--daily-limit` | `100` | Request ceiling (100 = free, 4000 = Pro) |
+| `--season-range` | `2022-2024` | Season year filter (free tier accessible window) |
+| `--date-range` | *(none)* | Absolute date filter `YYYY-MM-DD:YYYY-MM-DD` |
+| `--fetch-odds` | off | Fetch 1X2 odds via `/odds` (Pro tier only) |
+| `--no-predictions` | off | Skip `/predictions` endpoint (\~1 req/match saved) |
+| `--dry-run` | off | Coverage report only, no API calls |
+| `--no-gcs` | off | Skip GCS upload |
+
+#### API-Football Evaluation Script
+
+- `api_football_evaluate.py` is a standalone coverage evaluator that runs against the HKJC parquet before committing to a full incremental fetch. It samples N matches, attempts full enrichment for each within a configurable request budget, and produces a JSON coverage report with aggregate metrics.
+- The API-Football coverage for HKJC matches -- particularly for Women's leagues, Asian regional competitions, and international friendlies -- is not guaranteed. The evaluation script validates coverage rates before spending the daily API quota on a full fetch run.
+
+| Metric | What it measures |
+|------------------------------------|------------------------------------|
+| `team_resolution_rate` | Fraction of sampled matches where both team IDs resolved |
+| `fixture_resolution_rate` | Fraction where a fixture ID was found |
+| `odds_coverage_rate` | Fraction with 1X2 odds available (Pro tier) |
+| `injuries_coverage` | Fraction with injury data available |
+| `h2h_coverage` | Fraction with H2H history available |
+| `avg_requests_per_match` | Mean API calls consumed per tested match |
+| `total_requests_used` | Total requests used by this evaluation run |
+
+### Feature Engineering
+
+- Transforms raw data into numerical features, to ensure regression methods can be applied for estimation.
+
+#### Features populated from fetch data (v3 and v4)
+
+| Feature | v2 behaviour | v3/v4 with `--hkjc-source fetch` |
+|------------------------|------------------------|------------------------|
+| `lm_home`, `lm_draw`, `lm_away` | Always 0.0 | Computed from snapshot delta |
+| `match_week_band` | Always `"mid"` | `"weekend"` or `"midweek"` |
+| `is_neutral_venue` | Always 0 | 1 if `venue_code` indicates neutral ground |
+| `n_pools` | Not in v2 | Count of bet pool types |
+| `has_fgs` | Not in v2 | 1 if FGS pool exists |
+
+#### Features populated by enrichment parquet (SP or APIF, whichever is loaded)
+
+Both `sportsapipro_data_odds.parquet` and `apif_enrichment.parquet` use the same column names for shared features. The pipeline reads whichever file is passed to `--sp-parquet`.
+
+| Feature | Default when absent | SportsAPIPro source | API-Football source |
+|------------------|------------------|------------------|------------------|
+| `form_h_win_rate`, `form_h_ppg`, etc. | 0.5, neutral | `/games/results` | `/fixtures?status=FT` |
+| `h2h_home_wr`, `h2h_avg_gd`, `h2h_n` | 0.5, 0.0, 0 | `/games/h2h` | `/fixtures/headtohead` |
+| `home_squad_avail`, `home_gk_missing`, etc. | 1.0, 0, 0 | `/squads/team-squad` | `/players/squads` + `/injuries` |
+| `home_standing`, `away_standing`, `standing_gap` | median | `/standings/get` | `/standings` |
+| `sp_odds_home_open`, etc. | neutral | `/bets/lines` | `/odds` (Pro only) |
+
+#### New optional features (v4 only -- not yet in NUMERIC_COLS)
+
+| Feature                | Description                         |
+|------------------------|-------------------------------------|
+| `apif_pred_home_pct`   | API-Football model P(home win)      |
+| `apif_pred_draw_pct`   | API-Football model P(draw)          |
+| `apif_pred_away_pct`   | API-Football model P(away win)      |
+| `apif_pred_goals_home` | API-Football predicted goals (home) |
+| `apif_pred_goals_away` | API-Football predicted goals (away) |
+
+### NLP / Sentiment Layer
+
+- Reads recent news headlines, scores sentiment, and produces model features. Only active when `SP_SOURCE = "api"`. `spacy`/`nltk` imports are wrapped in `try/except` due to typer/click version conflicts; `_NLP_AVAILABLE` flag controls whether sentiment features are computed.
+
+### Preprocessing Pipeline
+
+- Prepares all raw features for the model.
+- `n_pools` and `has_fgs` are in `NUMERIC_COLS`. The five `apif_pred_*` columns are commented out in `NUMERIC_COLS` -- uncomment them in `football_hkjc_ml_pipeline_v3.py` S6 to activate them as model features when using `apif_enrichment.parquet`.
+
+```         
+NUMERIC_COLS     -> [impute median] -> [StandardScaler]   -+
+CATEGORICAL_COLS -> [to_categorical] -> [impute] -> [OHE]  +-> feature matrix
+ORDINAL_COLS     -> [impute] -> [StandardScaler]          -+
+BINARY_COLS      -> [impute]                              -+
+```
+
+### Model Architecture
+
+- **RegressorChain (default):** Predicts in sequence: home odds first, then draw using home as input, then away using both. Forces the model to respect the overround constraint (`1/home + 1/draw + 1/away ≈ 1.10`).
+- **Key hyperparameters:** `iterations=900`, `learning_rate=0.04`, `depth=6`, `l2_leaf_reg=3.0`, `random_seed=42`.
+
+### Volume & Sample Weights
+
+- Weights training rows by recency, team frequency, and market liquidity.
+
+```         
+w = recency_weight * frequency_weight * liquidity_weight
+
+recency    = exp(-ln(2) * days_ago / 180)   # 180-day half-life
+frequency  ∝ abs(home_win_rate - 0.5) + abs(away_win_rate - 0.5)
+liquidity  ∝ 1 / overround
+```
+
+### Training Pipeline
+
+- Orchestrates the full training process. GCS sync before loading data and GCS upload of results after training.
+- At the start of training, `sync_down()` pulls from GCS:
+
+```         
+hkjc/fetched/  -> data/hkjc/
+hkjc/training/ -> data/hkjc/
+sportsapipro/  -> data/sportsapipro/
+```
+
+After training: `mlruns/` synced to GCS; JSON training summary saved to `results/train/`.
+
+#### `build_training_dataset()` enrichment branches
+
+| Feature group | `SP_SOURCE = "api"` | `SP_SOURCE = "parquet"` |
+|------------------------|------------------------|------------------------|
+| Form vectors | Live API | SP / APIF parquet lookup |
+| H2H features | Live API | SP / APIF parquet lookup |
+| Squad availability | Live API | SP / APIF parquet lookup |
+| SP / APIF cross-market odds | Live `/bets/lines` or `/odds` | `_lookup_sp_odds()` |
+| Sentiment | `sp_fetch_news()` + NLP | Neutral defaults |
+
+### Google Cloud Storage Integration
+
+`data/gcs_utils.py` provides a thin wrapper around the GCS Python SDK. All pipeline files import via `from data.gcs_utils import ...`. The pipeline degrades gracefully if GCS is unavailable.
+
+#### Bucket structure (updated for v4)
+
+| Path | Contents | Written by |
+|------------------------|------------------------|------------------------|
+| `hkjc/raw/` | `matchDetail_*.json` raw API responses | `fetch_hkjc_match_details.py` |
+| `hkjc/fetched/` | `matchDetail_*.parquet` flat tables | `fetch_hkjc_match_details.py` |
+| `hkjc/training/` | `df_hkjc.parquet` historical data | Manual `gcloud storage cp` |
+| `sportsapipro/` | `sportsapipro_data_odds.parquet` (SP), `apif_enrichment.parquet` (APIF), cache files for both | `sp_incremental_fetch.py`, `apif_incremental_fetch.py` |
+| `apifootball/` | `coverage_report_*.json`, team ID and no-result caches | `api_football_evaluate.py` |
+| `mlflow/` | MLflow run artifacts | `football_hkjc_ml_pipeline_v3.py` train |
+| `results/train/` | JSON training summaries | `football_hkjc_ml_pipeline_v3.py` train |
+| `results/eval/` | JSON eval summaries + APIF coverage reports | `football_hkjc_ml_pipeline_v3.py` eval, `api_football_evaluate.py` |
+
+#### `gcs_utils.py` function reference
+
+| Function | Description |
+|------------------------------------|------------------------------------|
+| `upload_file(local_path, gcs_path)` | Upload one file |
+| `download_file(gcs_path, local_path, overwrite=False)` | Download one file; skip if exists |
+| `sync_down(gcs_prefix, local_dir)` | Pull all files under prefix not already local |
+| `upload_dir(local_dir, gcs_prefix)` | Upload directory tree preserving structure |
+| `log_run_results(run_id, metrics, params, mode, extra)` | Save JSON summary to GCS |
+
+## Setup & Running
+
+### Step 1 -- Install Python
+
+Requires Python 3.10 or higher.
+
+``` bash
+python --version
+```
+
+### Step 2 -- Install Python dependencies
+
+``` bash
+# Core ML and data
+pip install catboost xgboost scikit-learn pandas numpy requests httpx scipy pyarrow
+
+# Fuzzy name matching (also used by API-Football client)
+pip install rapidfuzz
+
+# NLP (only needed when --sp-source api)
+pip install nltk spacy transformers sentence-transformers
+python -m spacy download en_core_web_sm
+
+# Experiment tracking
+pip install mlflow
+
+# GCS integration
+pip install google-cloud-storage
+```
+
+### Step 3 -- Install Node.js and set up the fetch pipeline
+
+``` bash
+node --version   # requires v18+
+
+cd hkjc-api
+npm install
+cd ..
+
+cd hkjc-api && npx ts-node --version && cd ..
+```
+
+Bridge files in `hkjc_api_extract/`:
+
+```         
+football_prediction_model_V2/
+  fetch_hkjc_match_details.py
+  hkjc_api_extract/
+    hkjc_match_list_bridge.ts
+    hkjc_match_details_bridge.ts
+  hkjc-api/           <- external repo, do not touch
+    src/
+    tsconfig.json
+    package.json
+```
+
+### Step 4 -- Set up enrichment API keys
+
+**SportsAPIPro (existing -- if not already configured):**
+
+Create `config/params_sapip.py` (gitignored):
+
+``` python
+API_KEY = "your_sportsapipro_key_here"
+```
+
+**API-Football (new parallel option):**
+
+Register at `https://dashboard.api-football.com/register` (free, no credit card).
+
+Create `config/params_apifootball.py` (gitignored):
+
+``` python
+API_KEY = "your_api_football_key_here"
+```
+
+Or export as environment variable:
+
+``` bash
+export APIFOOTBALL_KEY="your_api_football_key_here"
+echo 'export APIFOOTBALL_KEY="your_api_football_key_here"' >> ~/.bash_profile
+```
+
+Verify API-Football connection:
+
+``` python
+from api_football_client import APIFootballClient
+client = APIFootballClient()
+print(client.check_quota())
+# {'plan': 'Free', 'requests_used': 1, 'requests_limit': 100, 'requests_remaining': 99}
+```
+
+### Step 5 -- Set up Google Cloud Storage
+
+``` bash
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.gcp/YOUR-KEY-FILE.json"
+echo 'export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.gcp/YOUR-KEY-FILE.json"' >> ~/.bash_profile
+
+touch data/__init__.py
+
+python -c "
+from data.gcs_utils import GCS_BUCKET
+from google.cloud import storage
+client = storage.Client()
+print('Bucket exists:', client.bucket(GCS_BUCKET).exists())
+"
+```
+
+### Step 6 -- Running the pipeline
+
+#### Daily data collection workflow (v4)
+
+``` bash
+# 1. Fetch current live HKJC matches
+python fetch_hkjc_match_details.py --live
+
+# 2a. Enrich with SportsAPIPro (existing)
+python sp_incremental_fetch.py --include-fetch-dir data/hkjc
+
+# 2b. Enrich with API-Football (parallel option, free tier)
+python apif_incremental_fetch.py --include-fetch-dir data/hkjc
+
+# 3. Train -- choose which enrichment parquet to use
+python football_hkjc_ml_pipeline_v3.py \
+    --mode train \
+    --hkjc-source fetch \
+    --sp-parquet data/sportsapipro/sportsapipro_data_odds.parquet   # SP
+    # --sp-parquet data/sportsapipro/apif_enrichment.parquet        # APIF
+
+# 4. Evaluate
+python football_hkjc_ml_pipeline_v3.py \
+    --mode eval \
+    --hkjc-source fetch \
+    --sp-parquet data/sportsapipro/apif_enrichment.parquet
+
+# 5. Predict upcoming matches
+python football_hkjc_ml_pipeline_v3.py \
+    --mode predict \
+    --hkjc-source fetch \
+    --sp-parquet data/sportsapipro/apif_enrichment.parquet \
+    --predict-start 2026-05-19 \
+    --predict-end   2026-05-25
+```
+
+#### CLI flag reference (ML pipeline)
+
+| Flag | Choices | Default | Description |
+|------------------|------------------|------------------|------------------|
+| `--mode` | `train`, `predict`, `eval` | `train` | Pipeline mode |
+| `--hkjc-source` | `api`, `parquet`, `fetch` | `parquet` | HKJC data source |
+| `--sp-source` | `api`, `parquet`, `api-incremental` | `parquet` | SP enrichment source |
+| `--sp-parquet` | any path | `data/sportsapipro/sportsapipro_data_odds.parquet` | SP / APIF odds parquet path |
+| `--fetch-dir` | any path | `data/hkjc` | Directory of `matchDetail_*.parquet` files |
+| `--hkjc-parquet` | any path | `data/hkjc/df_hkjc.parquet` | HKJC parquet path (parquet mode) |
+| `--predict-start` | YYYY-MM-DD | `2025-04-01` | Prediction window start |
+| `--predict-end` | YYYY-MM-DD | `2025-04-14` | Prediction window end |
+| `--sp-batch-size` | int | `10` | Matches per SP API batch (api-incremental) |
+| `--sp-batch-sleep` | float | `2.0` | Seconds between SP batches |
+| `--sp-fuzzy-threshold` | int | `80` | Fuzzy match threshold (api-incremental) |
+
+## Evaluation and Future Improvements
+
+- Limitations on `[hkjc-api](https://github.com/Bobosky2005/hkjc-api)` mean HKJC historical and significantly further future data cannot be acquired; difficult to backtest or test on unseen data, and generally difficult to acquire HKJC data to begn with.
+- Difficult to acquire football odds data; the most reliable source of football betting odds, Opta data, is strictly locked behind an enterprise-level B2B paywall and is not available via public, open-access, or low-cost hobbyist tiers, and other providers found are of questionable credibility and/or far too costly for a smaller project.
+- Questionable if prior betting odds and corresponding match information would even be sufficient for predicting future football betting odds, or are even in the right direction for such.
+- Could be more beneficial to acquire movement data within each match and utilise a machine learning method that could account for such.
