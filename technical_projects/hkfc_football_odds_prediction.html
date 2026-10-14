@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>hkfc_football_odds_prediction – Nick-2003_Portfolio</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../technical_projects/lloyds_datasci-forage.html" rel="next">
+<link href="../technical_projects/x_stock_scrape.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Nick-2003_Portfolio</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../education.html"> 
+<span class="menu-text">Education</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../professional_experience.html"> 
+<span class="menu-text">Professional Experience</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../technical_projects.html" aria-current="page"> 
+<span class="menu-text">Technical Projects</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../assets/documents/Tsun Li Nicholas Tam Resume (2025) (V9).docx.pdf"> 
+<span class="menu-text">Resume</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../technical_projects/hkfc_football_odds_prediction.html">hkfc_football_odds_prediction</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Technical Projects</span></a>
+  </div>
+</li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/agent_broker_original.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">agent_broker_original</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/x_stock_scrape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">x_stock_scrape</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/hkfc_football_odds_prediction.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">hkfc_football_odds_prediction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/lloyds_datasci-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lloyds Banking Group Data Science Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/bcg_datasci-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BCG Data Science Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/quantium_analytics-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantium Data Analytics Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/ea_software_eng-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electronic Arts Software Engineering Virtual Experience Program</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/ba_datasci-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">British Airways Data Science Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/diabetes_risk_report_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Modelling of Diabetes Risk Report and Workflow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/insurance_sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health Insurance Database Management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/urban_forest_viz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Urban Forest Visualisations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/stat_relationships_breast_cancer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/bcg_genai-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BCG GenAI Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/jpmorgan_quantitative-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JPMorgan Chase &amp; Co. Quantitative Research Virtual Experience Program</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/data_viz_coronary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Visualisation of Coronary Heart Disease Diagnosis Report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/stat_model_coronary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Modelling of Coronary Heart Disease Diagnosis Report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/stat_inference_pm25.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Inference of PM2.5 Concentrations Report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/inventory_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inventory System</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#project-goals-and-objectives" id="toc-project-goals-and-objectives" class="nav-link active" data-scroll-target="#project-goals-and-objectives">Project Goals and Objectives</a></li>
+  <li><a href="#overall-data-flow" id="toc-overall-data-flow" class="nav-link" data-scroll-target="#overall-data-flow">Overall data flow</a></li>
+  <li><a href="#process-and-approach" id="toc-process-and-approach" class="nav-link" data-scroll-target="#process-and-approach">Process and Approach</a>
+  <ul class="collapse">
+  <li><a href="#data-storage" id="toc-data-storage" class="nav-link" data-scroll-target="#data-storage">Data Storage</a></li>
+  <li><a href="#feature-engineering" id="toc-feature-engineering" class="nav-link" data-scroll-target="#feature-engineering">Feature Engineering</a></li>
+  <li><a href="#nlp-sentiment-layer" id="toc-nlp-sentiment-layer" class="nav-link" data-scroll-target="#nlp-sentiment-layer">NLP / Sentiment Layer</a></li>
+  <li><a href="#preprocessing-pipeline" id="toc-preprocessing-pipeline" class="nav-link" data-scroll-target="#preprocessing-pipeline">Preprocessing Pipeline</a></li>
+  <li><a href="#model-architecture" id="toc-model-architecture" class="nav-link" data-scroll-target="#model-architecture">Model Architecture</a></li>
+  <li><a href="#volume-sample-weights" id="toc-volume-sample-weights" class="nav-link" data-scroll-target="#volume-sample-weights">Volume &amp; Sample Weights</a></li>
+  <li><a href="#training-pipeline" id="toc-training-pipeline" class="nav-link" data-scroll-target="#training-pipeline">Training Pipeline</a></li>
+  <li><a href="#google-cloud-storage-integration" id="toc-google-cloud-storage-integration" class="nav-link" data-scroll-target="#google-cloud-storage-integration">Google Cloud Storage Integration</a></li>
+  </ul></li>
+  <li><a href="#setup-running" id="toc-setup-running" class="nav-link" data-scroll-target="#setup-running">Setup &amp; Running</a>
+  <ul class="collapse">
+  <li><a href="#step-1-install-python" id="toc-step-1-install-python" class="nav-link" data-scroll-target="#step-1-install-python">Step 1 – Install Python</a></li>
+  <li><a href="#step-2-install-python-dependencies" id="toc-step-2-install-python-dependencies" class="nav-link" data-scroll-target="#step-2-install-python-dependencies">Step 2 – Install Python dependencies</a></li>
+  <li><a href="#step-3-install-node.js-and-set-up-the-fetch-pipeline" id="toc-step-3-install-node.js-and-set-up-the-fetch-pipeline" class="nav-link" data-scroll-target="#step-3-install-node.js-and-set-up-the-fetch-pipeline">Step 3 – Install Node.js and set up the fetch pipeline</a></li>
+  <li><a href="#step-4-set-up-enrichment-api-keys" id="toc-step-4-set-up-enrichment-api-keys" class="nav-link" data-scroll-target="#step-4-set-up-enrichment-api-keys">Step 4 – Set up enrichment API keys</a></li>
+  <li><a href="#step-5-set-up-google-cloud-storage" id="toc-step-5-set-up-google-cloud-storage" class="nav-link" data-scroll-target="#step-5-set-up-google-cloud-storage">Step 5 – Set up Google Cloud Storage</a></li>
+  <li><a href="#step-6-running-the-pipeline" id="toc-step-6-running-the-pipeline" class="nav-link" data-scroll-target="#step-6-running-the-pipeline">Step 6 – Running the pipeline</a></li>
+  </ul></li>
+  <li><a href="#evaluation-and-future-improvements" id="toc-evaluation-and-future-improvements" class="nav-link" data-scroll-target="#evaluation-and-future-improvements">Evaluation and Future Improvements</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/hkfc_football_odds_prediction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/hkfc_football_odds_prediction.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/Nick-2003/football_prediction_model_V2"><i class="bi bi-github"></i>Project Code</a></li><li><a href="https://github.com/Nick-2003/football_prediction_model_V1"><i class="bi bi-github"></i>Historical Version</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">hkfc_football_odds_prediction</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="project-goals-and-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="project-goals-and-objectives">Project Goals and Objectives</h2>
+<p>A machine learning pipeline that predicts HKJC (Hong Kong Jockey Club) football betting odds (Home/Draw/Away, 1X2) for upcoming matches. The model compares predicted odds against HKJC’s published odds to identify potential value bets.</p>
+<p>It takes everything knowable about a football match before it is played – team strength, recent form, squad injuries, news sentiment, and historical odds – and predicts what the Home / Draw / Away (1X2) betting odds for that match should be. Those predicted odds are then compared against the odds that HKJC actually publishes. If the model thinks a team is more likely to win than HKJC’s odds imply, that is flagged as a potential value bet.</p>
+<ul>
+<li>Inputs (features): Team ratings, recent results, squad injury reports, news headlines, published HKJC odds, handicap lines, pool liquidity, line movement between fetch snapshots, and (new in v4) API-Football pre-match win probability predictions.</li>
+<li>Outputs (targets): Three decimal odds – <code>odds_home</code>, <code>odds_draw</code>, <code>odds_away</code>.</li>
+</ul>
+<p>Why predict odds and not just the winner? Odds encode probability and the bookmaker’s margin in one number. Predicting odds directly is richer than predicting a binary win/loss outcome, because it lets you measure by how much you disagree with the market and whether that disagreement is large enough to act on.</p>
+</section>
+<section id="overall-data-flow" class="level2">
+<h2 class="anchored" data-anchor-id="overall-data-flow">Overall data flow</h2>
+<pre><code>+-------------------------------------------------------------------------+
+|                        RAW DATA SOURCES                                 |
+|                                                                         |
+|  HKJC (S1 + S1b)                   API-Football (S2)  [v4]              |
+|  --hkjc-source fetch (default)       api_football_client.py             |
+|    fetch_hkjc_match_details.py        apif_incremental_fetch.py         |
+|    -&gt; matchDetail_*.parquet           -&gt; apif_enrichment.parquet        |
+|    -&gt; GCS hkjc/fetched/              -&gt; GCS sportsapipro/               |
+|  --hkjc-source parquet               Free tier: form, squad, H2H,       |
+|    data/hkjc/df_hkjc.parquet         standings, predictions             |
+|  --hkjc-source api                   Pro tier: + 1X2 opening odds       |
+|    Node.js bridge -&gt; HKJC GraphQL                                       |
++-------------------+-----------------------------+-----------------------+
+                    |                             |
+                    v                             v
+       +------------------------------------------------+
+       |              FEATURE ENGINEERING               |
+       |  Pi-Ratings (S3)   Form (S4)   Sentiment (S5)  |
+       |  Squad availability    H2H     Line movement   |
+       |  n_pools / has_fgs / match_week_band (v3)      |
+       |  apif_pred_home/draw/away_pct (v4, optional)   |
+       |  [neutral defaults when SP_SOURCE = parquet]   |
+       +------------------------+-----------------------+
+                                |
+                                v
+       +------------------------------------------------+
+       |          PREPROCESSING PIPELINE (S6)           |
+       |  Scale numbers | Encode categories |           |
+       |  Fill missing values | Binarise flags          |
+       +------------------------+-----------------------+
+                                |
+                                v
+       +------------------------------------------------+
+       |            MODEL (S7) + WEIGHTS (S8)           |
+       |   CatBoost / XGBoost                           |
+       |   RegressorChain: home -&gt; draw -&gt; away         |
+       |   Sample weights: recency * freq * volume      |
+       +------------------------+-----------------------+
+                                |
+                         +------+------+
+                         v             v
+              TRAINING (S9)      INFERENCE (S12)
+              TimeSeriesSplit    Live upcoming fixtures
+              MLflow logging     Edge detection vs HKJC
+              GCS sync (S13)           |
+                         |             v
+                         v         RESULTS (S13)
+              EVALUATION (S11)    gs://bucket/results/
+              MAE, CLV, Brier,    JSON run summaries
+              Sentiment corr.</code></pre>
+</section>
+<section id="process-and-approach" class="level2">
+<h2 class="anchored" data-anchor-id="process-and-approach">Process and Approach</h2>
+<ul>
+<li>Initially begin with acquisition of Elo rankings data, initial acquisition of HKJC football match data from <code>[hkjc-api](https://github.com/Bobosky2005/hkjc-api)</code> repository, and investigations on acquired JSON data, how data is formatted and can be stored; Elo rankings data regularly updated.</li>
+<li>Selected multioutput regression as machine learning method of focus for prediction of odds for home team victory, away team victory, or draw.
+<ul>
+<li>Given how the sum of reciprocals of odds must sum up to approximately 1 (+ bookmaker margin), <code>odds_away</code>, <code>odds_draw</code>, <code>odds_home</code> are assumed to not be entirely independent from one another; regardless, both direct multioutput regression (<code>MultiOutputRegressor()</code>) and chained multioutput regression (<code>RegressorChain()</code>) are tested, with chained multioutput regression optimised for ordering of chain.</li>
+<li>Categorical feature types: <code>venue_code</code>, <code>tournament_frontEndId</code>, <code>tournament_nameProfileId</code>, <code>tournament_code</code></li>
+<li>Enforced “sum of reciprocals of odds must sum up to approximately 1 (+ bookmaker margin)” with <code>ConstrainedOddsWrapper()</code> class.</li>
+</ul></li>
+</ul>
+<section id="data-storage" class="level3">
+<h3 class="anchored" data-anchor-id="data-storage">Data Storage</h3>
+<ul>
+<li>All data acquired is saved and stored on Google Cloud as <code>.parquet</code> files to minimise storage space.</li>
+</ul>
+<section id="hkjc-data-layer" class="level4">
+<h4 class="anchored" data-anchor-id="hkjc-data-layer">HKJC Data Layer</h4>
+<ul>
+<li>HKJC data layer used as source of truth to acquire data that can be accessed with <code>fetch_hkjc_match_details.py</code> in conjunction with <code>[hkjc-api](https://github.com/Bobosky2005/hkjc-api)</code> repository; limited to matches in near future. <code>fetch_hkjc_match_details.py</code> specifically discovers current HKJC matches, fetches full details for each, saves the results locally, and uploads them to Google Cloud Services.</li>
+<li>Integration paths:
+<ul>
+<li><strong>Path A – Node.js bridge (<code>--hkjc-source api</code>, bridge method):</strong> The <code>hkjc-api</code> npm package wraps HKJC’s internal GraphQL API. Requires Node.js and a Hong Kong IP address.</li>
+<li><strong>Path B – Direct HTTP (<code>--hkjc-source api</code>, httpx method):</strong> Uses Python’s <code>httpx</code> library to call the same HKJC endpoint directly. Also requires HK IP. Currently unreliable in practice.</li>
+<li><strong>Path C – Local Parquet (<code>--hkjc-source parquet</code>, default):</strong> Loads <code>data/hkjc/df_hkjc.parquet</code>. No network calls, no IP restriction.</li>
+<li><strong>Path D – Fetch Parquets (<code>--hkjc-source fetch</code>):</strong> Loads all <code>matchDetail_*.parquet</code> files from <code>data/hkjc/</code> produced by <code>fetch_hkjc_match_details.py</code>. Richer than Path C because it includes additional columns and computes line movement between snapshots. Additional columns from Path D (fetch only).</li>
+</ul></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>available_pools</code></td>
+<td>Comma-separated pool types (e.g.&nbsp;<code>HAD,HHA,CRS,FGS,...</code>)</td>
+</tr>
+<tr class="even">
+<td><code>venue_code</code></td>
+<td>Venue identifier</td>
+</tr>
+<tr class="odd">
+<td><code>status</code></td>
+<td>Match status (<code>Resulted</code>, <code>PreEvent</code>, etc.)</td>
+</tr>
+<tr class="even">
+<td><code>lm_home</code> / <code>lm_draw</code> / <code>lm_away</code></td>
+<td>Odds drift between earliest and latest snapshot</td>
+</tr>
+<tr class="odd">
+<td><code>n_pools</code></td>
+<td>Number of bet pool types offered (liquidity proxy)</td>
+</tr>
+<tr class="even">
+<td><code>has_fgs</code></td>
+<td>1 if First Goal Scorer pool exists</td>
+</tr>
+<tr class="odd">
+<td><code>match_week_band</code></td>
+<td><code>"weekend"</code> or <code>"midweek"</code></td>
+</tr>
+<tr class="even">
+<td><code>is_neutral_venue</code></td>
+<td>1 if venue code indicates neutral ground</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api-football-enrichment-layer" class="level4">
+<h4 class="anchored" data-anchor-id="api-football-enrichment-layer">API-Football Enrichment Layer</h4>
+<ul>
+<li>API-Football fills the gaps in data from HKJC data with team form, squad availability, H2H history, league standings, and a pre-match win probability model. It runs alongside SportsAPIPro as a parallel enrichment option – both write to separate parquet files and the pipeline selects between them via <code>--sp-parquet</code>.</li>
+<li>Two-layer design of enrichment system:</li>
+</ul>
+<pre><code>apif_incremental_fetch.py  (orchestration layer)
+  |-- Loads HKJC parquet(s)
+  |-- Builds coverage index from existing APIF parquet
+  |-- Identifies uncovered matches
+  |-- Batches calls to client
+  |-- Merges and deduplicates results
+  |-- Saves output parquet + caches
+  |-- Uploads to GCS
+  |
+  +-- APIFootballClient  (HTTP layer, api_football_client.py)
+        |-- Rate limiting (10 req/min, 6s between requests)
+        |-- Daily quota tracking (soft cap at daily_limit)
+        |-- Exponential backoff on 429 (10s, 20s, 40s, 80s)
+        |-- Team ID cache (persistent JSON)
+        |-- No-result log (avoids re-querying known failures)
+        |
+        +-- v3.football.api-sports.io
+              /teams  /fixtures  /fixtures/headtohead
+              /players/squads  /injuries
+              /predictions  /odds  /standings</code></pre>
+<ul>
+<li><code>api_football_client.py</code> is a pure library file never run directly. All HTTP calls go through a single <code>_get(endpoint, params)</code> method that handles four concerns:
+<ul>
+<li><strong>Rate limiting:</strong> Enforces the 6-second inter-request gap unconditionally. No <code>time.sleep()</code> calls needed in endpoint functions.</li>
+<li><strong>Daily quota tracking:</strong> <code>_daily_used</code> is incremented on every successful response. When it reaches <code>daily_limit</code>, all subsequent calls return <code>{}</code> without hitting the API. A quota warning is logged at 90% of the limit.</li>
+<li><strong>429 handling:</strong> Retries with exponential backoff – 10s, 20s, 40s, 80s. If all four retries fail, returns <code>{}</code> and the match is skipped cleanly.</li>
+<li><strong>Error isolation:</strong> All HTTP errors are caught and converted to <code>{}</code>. A failed call for one match never aborts enrichment of subsequent matches.</li>
+</ul></li>
+</ul>
+<section id="team-id-resolution" class="level5">
+<h5 class="anchored" data-anchor-id="team-id-resolution">Team ID resolution</h5>
+<ul>
+<li>HKJC provides English team names; API-Football uses integer IDs. <code>resolve_team_id()</code> translates via <code>/teams?search=</code>:
+<ul>
+<li><strong>Pass 1 – exact case-insensitive match.</strong> Covers the majority of well-known club names.</li>
+<li><strong>Pass 2 – country hint filter.</strong> If provided by the caller, filters results by country (e.g.&nbsp;<code>"England"</code>). Not populated automatically by <code>enrich_match()</code> but available for manual overrides.</li>
+<li><strong>Pass 3 – fuzzy best match.</strong> rapidfuzz <code>token_sort_ratio ≥ 70</code> across all candidate names. Handles variations like <code>"Atletico Madrid"</code> vs <code>"Atletico de Madrid"</code>.</li>
+</ul></li>
+<li>Output: <code>data/sportsapipro/apif_enrichment.parquet</code>. Column names mirror <code>sportsapipro_data_odds.parquet</code> so <code>--sp-parquet</code> is the only change needed in the pipeline.
+<ul>
+<li>Schema:</li>
+</ul></li>
+</ul>
+<p><strong>Core identity columns:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>home_name</code> / <code>away_name</code></td>
+<td>HKJC English team names</td>
+</tr>
+<tr class="even">
+<td><code>home_name_normalised</code> / <code>away_name_normalised</code></td>
+<td>Lowercased, stripped (dedup key)</td>
+</tr>
+<tr class="odd">
+<td><code>match_date</code></td>
+<td>YYYY-MM-DD string</td>
+</tr>
+<tr class="even">
+<td><code>sp_home_id</code> / <code>sp_away_id</code></td>
+<td>API-Football team IDs (reuse SP column names)</td>
+</tr>
+<tr class="odd">
+<td><code>sp_game_id</code></td>
+<td>API-Football fixture ID (reuses SP column name)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Form columns (mirror SP schema):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>form_h_win_rate</code></td>
+<td>Home team win rate over last 5 matches</td>
+</tr>
+<tr class="even">
+<td><code>form_h_ppg</code></td>
+<td>Home team points per game over last 5</td>
+</tr>
+<tr class="odd">
+<td><code>form_h_gf_avg</code> / <code>form_h_ga_avg</code> / <code>form_h_gd_avg</code></td>
+<td>Goals scored / conceded / difference per game</td>
+</tr>
+<tr class="even">
+<td><code>form_a_*</code></td>
+<td>Same for away team</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Squad availability columns (mirror SP schema):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>home_squad_avail</code></td>
+<td>Fraction of home squad not injured (0–1)</td>
+</tr>
+<tr class="even">
+<td><code>home_gk_missing</code></td>
+<td>1 if a home goalkeeper is injured</td>
+</tr>
+<tr class="odd">
+<td><code>home_fw_missing</code></td>
+<td>1 if a home forward is injured</td>
+</tr>
+<tr class="even">
+<td><code>away_*</code></td>
+<td>Same for away team</td>
+</tr>
+</tbody>
+</table>
+<p><strong>H2H columns (mirror SP schema):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>h2h_home_wr</code></td>
+<td>Home team win rate in H2H history</td>
+</tr>
+<tr class="even">
+<td><code>h2h_avg_gd</code></td>
+<td>Average goal difference in H2H (home perspective)</td>
+</tr>
+<tr class="odd">
+<td><code>h2h_n</code></td>
+<td>Number of H2H fixtures found</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cross-market odds (Pro tier only; mirror SP schema):</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>sp_odds_home_open</code> / <code>sp_odds_draw_open</code> / <code>sp_odds_away_open</code></td>
+<td>Bet365 pre-match 1X2 decimal odds</td>
+</tr>
+<tr class="even">
+<td><code>sp_odds_home_close</code> / <code>sp_odds_draw_close</code> / <code>sp_odds_away_close</code></td>
+<td>Same as open (no closing line in snapshot)</td>
+</tr>
+<tr class="odd">
+<td><code>sp_trend_home</code> / <code>sp_trend_draw</code> / <code>sp_trend_away</code></td>
+<td>Set to 2 (stable)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Standings columns (mirror SP schema):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>home_standing</code> / <code>away_standing</code></td>
+<td>League table position</td>
+</tr>
+<tr class="even">
+<td><code>standing_gap</code></td>
+<td><code>home_standing - away_standing</code></td>
+</tr>
+<tr class="odd">
+<td><code>home_win_rate_season</code> / <code>away_win_rate_season</code></td>
+<td>Season win rate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>New columns (no SP equivalent):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>apif_pred_home_pct</code></td>
+<td>API-Football model P(home win), e.g.&nbsp;0.60</td>
+</tr>
+<tr class="even">
+<td><code>apif_pred_draw_pct</code></td>
+<td>API-Football model P(draw), e.g.&nbsp;0.20</td>
+</tr>
+<tr class="odd">
+<td><code>apif_pred_away_pct</code></td>
+<td>API-Football model P(away win), e.g.&nbsp;0.20</td>
+</tr>
+<tr class="even">
+<td><code>apif_pred_goals_home</code></td>
+<td>API-Football predicted goals (home team)</td>
+</tr>
+<tr class="odd">
+<td><code>apif_pred_goals_away</code></td>
+<td>API-Football predicted goals (away team)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hkjc-tournament-code-mapping" class="level5">
+<h5 class="anchored" data-anchor-id="hkjc-tournament-code-mapping">HKJC tournament code mapping</h5>
+<ul>
+<li><code>HKJC_TO_APIF_LEAGUE</code> in <code>api_football_client.py</code> maps HKJC <code>tournament_code</code> values to API-Football league IDs. Used by <code>fetch_standings()</code> and fixture resolution. Covers EPL, La Liga, Bundesliga, Serie A, Ligue 1, UCL, UEL, and 50+ other competitions.</li>
+</ul>
+</section>
+<section id="incremental-fetch-script-apif_incremental_fetch.py" class="level5">
+<h5 class="anchored" data-anchor-id="incremental-fetch-script-apif_incremental_fetch.py">Incremental fetch script – <code>apif_incremental_fetch.py</code></h5>
+<p>Four steps on every run: - <strong>Step 1 – Build coverage index.</strong> Reads existing <code>apif_enrichment.parquet</code> and builds <code>(home_norm, away_norm)</code> lookup dict. HKJC matches with fuzzy score ≥ 80 against any key are considered covered and skipped. - <strong>Step 2 – Identify uncovered matches.</strong> <code>find_uncovered_matches()</code> uses exact then fuzzy matching, returning only rows that fail both. Matches already in <code>apif_no_result_matches.json</code> are also skipped before any API call. - <strong>Step 3 – Batched API calls.</strong> Uncovered matches are grouped into batches of <code>batch_size</code> (default 8). Before each batch the quota is checked – if fewer than ~9 requests remain, the run stops cleanly at a batch boundary. <code>batch_sleep</code> (default 5s) is a safety margin above the per-request rate limiting inside <code>_get()</code>. - <strong>Step 4 – Merge and save.</strong> New rows are concatenated with existing parquet and deduplicated on <code>(home_name_normalised, away_name_normalised, match_date)</code> with <code>keep="last"</code>. Sorted by <code>match_date</code>, saved as snappy-compressed parquet, caches written to disk, parquet uploaded to GCS.</p>
+</section>
+<section id="apif_incremental_fetch.py-cli-flag-reference" class="level5">
+<h5 class="anchored" data-anchor-id="apif_incremental_fetch.py-cli-flag-reference"><code>apif_incremental_fetch.py</code> CLI flag reference</h5>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--hkjc-parquet</code></td>
+<td><code>data/hkjc/df_hkjc.parquet</code></td>
+<td>HKJC training parquet</td>
+</tr>
+<tr class="even">
+<td><code>--apif-parquet</code></td>
+<td><code>data/sportsapipro/apif_enrichment.parquet</code></td>
+<td>Existing APIF parquet to extend</td>
+</tr>
+<tr class="odd">
+<td><code>--output</code></td>
+<td><code>data/sportsapipro/apif_enrichment.parquet</code></td>
+<td>Output path</td>
+</tr>
+<tr class="even">
+<td><code>--include-fetch-dir</code></td>
+<td><em>(none)</em></td>
+<td>Also include <code>matchDetail_*.parquet</code> files</td>
+</tr>
+<tr class="odd">
+<td><code>--batch-size</code></td>
+<td><code>8</code></td>
+<td>Matches per API batch</td>
+</tr>
+<tr class="even">
+<td><code>--batch-sleep</code></td>
+<td><code>5.0</code></td>
+<td>Seconds between batches</td>
+</tr>
+<tr class="odd">
+<td><code>--fuzzy-threshold</code></td>
+<td><code>80</code></td>
+<td>Fuzzy match cutoff (0–100)</td>
+</tr>
+<tr class="even">
+<td><code>--daily-limit</code></td>
+<td><code>100</code></td>
+<td>Request ceiling (100 = free, 4000 = Pro)</td>
+</tr>
+<tr class="odd">
+<td><code>--season-range</code></td>
+<td><code>2022-2024</code></td>
+<td>Season year filter (free tier accessible window)</td>
+</tr>
+<tr class="even">
+<td><code>--date-range</code></td>
+<td><em>(none)</em></td>
+<td>Absolute date filter <code>YYYY-MM-DD:YYYY-MM-DD</code></td>
+</tr>
+<tr class="odd">
+<td><code>--fetch-odds</code></td>
+<td>off</td>
+<td>Fetch 1X2 odds via <code>/odds</code> (Pro tier only)</td>
+</tr>
+<tr class="even">
+<td><code>--no-predictions</code></td>
+<td>off</td>
+<td>Skip <code>/predictions</code> endpoint (~1 req/match saved)</td>
+</tr>
+<tr class="odd">
+<td><code>--dry-run</code></td>
+<td>off</td>
+<td>Coverage report only, no API calls</td>
+</tr>
+<tr class="even">
+<td><code>--no-gcs</code></td>
+<td>off</td>
+<td>Skip GCS upload</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="api-football-evaluation-script" class="level4">
+<h4 class="anchored" data-anchor-id="api-football-evaluation-script">API-Football Evaluation Script</h4>
+<ul>
+<li><code>api_football_evaluate.py</code> is a standalone coverage evaluator that runs against the HKJC parquet before committing to a full incremental fetch. It samples N matches, attempts full enrichment for each within a configurable request budget, and produces a JSON coverage report with aggregate metrics.</li>
+<li>The API-Football coverage for HKJC matches – particularly for Women’s leagues, Asian regional competitions, and international friendlies – is not guaranteed. The evaluation script validates coverage rates before spending the daily API quota on a full fetch run.</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Metric</th>
+<th>What it measures</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>team_resolution_rate</code></td>
+<td>Fraction of sampled matches where both team IDs resolved</td>
+</tr>
+<tr class="even">
+<td><code>fixture_resolution_rate</code></td>
+<td>Fraction where a fixture ID was found</td>
+</tr>
+<tr class="odd">
+<td><code>odds_coverage_rate</code></td>
+<td>Fraction with 1X2 odds available (Pro tier)</td>
+</tr>
+<tr class="even">
+<td><code>injuries_coverage</code></td>
+<td>Fraction with injury data available</td>
+</tr>
+<tr class="odd">
+<td><code>h2h_coverage</code></td>
+<td>Fraction with H2H history available</td>
+</tr>
+<tr class="even">
+<td><code>avg_requests_per_match</code></td>
+<td>Mean API calls consumed per tested match</td>
+</tr>
+<tr class="odd">
+<td><code>total_requests_used</code></td>
+<td>Total requests used by this evaluation run</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="feature-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="feature-engineering">Feature Engineering</h3>
+<ul>
+<li>Transforms raw data into numerical features, to ensure regression methods can be applied for estimation.</li>
+</ul>
+<section id="features-populated-from-fetch-data-v3-and-v4" class="level4">
+<h4 class="anchored" data-anchor-id="features-populated-from-fetch-data-v3-and-v4">Features populated from fetch data (v3 and v4)</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>v2 behaviour</th>
+<th>v3/v4 with <code>--hkjc-source fetch</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>lm_home</code>, <code>lm_draw</code>, <code>lm_away</code></td>
+<td>Always 0.0</td>
+<td>Computed from snapshot delta</td>
+</tr>
+<tr class="even">
+<td><code>match_week_band</code></td>
+<td>Always <code>"mid"</code></td>
+<td><code>"weekend"</code> or <code>"midweek"</code></td>
+</tr>
+<tr class="odd">
+<td><code>is_neutral_venue</code></td>
+<td>Always 0</td>
+<td>1 if <code>venue_code</code> indicates neutral ground</td>
+</tr>
+<tr class="even">
+<td><code>n_pools</code></td>
+<td>Not in v2</td>
+<td>Count of bet pool types</td>
+</tr>
+<tr class="odd">
+<td><code>has_fgs</code></td>
+<td>Not in v2</td>
+<td>1 if FGS pool exists</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="features-populated-by-enrichment-parquet-sp-or-apif-whichever-is-loaded" class="level4">
+<h4 class="anchored" data-anchor-id="features-populated-by-enrichment-parquet-sp-or-apif-whichever-is-loaded">Features populated by enrichment parquet (SP or APIF, whichever is loaded)</h4>
+<p>Both <code>sportsapipro_data_odds.parquet</code> and <code>apif_enrichment.parquet</code> use the same column names for shared features. The pipeline reads whichever file is passed to <code>--sp-parquet</code>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Default when absent</th>
+<th>SportsAPIPro source</th>
+<th>API-Football source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>form_h_win_rate</code>, <code>form_h_ppg</code>, etc.</td>
+<td>0.5, neutral</td>
+<td><code>/games/results</code></td>
+<td><code>/fixtures?status=FT</code></td>
+</tr>
+<tr class="even">
+<td><code>h2h_home_wr</code>, <code>h2h_avg_gd</code>, <code>h2h_n</code></td>
+<td>0.5, 0.0, 0</td>
+<td><code>/games/h2h</code></td>
+<td><code>/fixtures/headtohead</code></td>
+</tr>
+<tr class="odd">
+<td><code>home_squad_avail</code>, <code>home_gk_missing</code>, etc.</td>
+<td>1.0, 0, 0</td>
+<td><code>/squads/team-squad</code></td>
+<td><code>/players/squads</code> + <code>/injuries</code></td>
+</tr>
+<tr class="even">
+<td><code>home_standing</code>, <code>away_standing</code>, <code>standing_gap</code></td>
+<td>median</td>
+<td><code>/standings/get</code></td>
+<td><code>/standings</code></td>
+</tr>
+<tr class="odd">
+<td><code>sp_odds_home_open</code>, etc.</td>
+<td>neutral</td>
+<td><code>/bets/lines</code></td>
+<td><code>/odds</code> (Pro only)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="new-optional-features-v4-only-not-yet-in-numeric_cols" class="level4">
+<h4 class="anchored" data-anchor-id="new-optional-features-v4-only-not-yet-in-numeric_cols">New optional features (v4 only – not yet in NUMERIC_COLS)</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>apif_pred_home_pct</code></td>
+<td>API-Football model P(home win)</td>
+</tr>
+<tr class="even">
+<td><code>apif_pred_draw_pct</code></td>
+<td>API-Football model P(draw)</td>
+</tr>
+<tr class="odd">
+<td><code>apif_pred_away_pct</code></td>
+<td>API-Football model P(away win)</td>
+</tr>
+<tr class="even">
+<td><code>apif_pred_goals_home</code></td>
+<td>API-Football predicted goals (home)</td>
+</tr>
+<tr class="odd">
+<td><code>apif_pred_goals_away</code></td>
+<td>API-Football predicted goals (away)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="nlp-sentiment-layer" class="level3">
+<h3 class="anchored" data-anchor-id="nlp-sentiment-layer">NLP / Sentiment Layer</h3>
+<ul>
+<li>Reads recent news headlines, scores sentiment, and produces model features. Only active when <code>SP_SOURCE = "api"</code>. <code>spacy</code>/<code>nltk</code> imports are wrapped in <code>try/except</code> due to typer/click version conflicts; <code>_NLP_AVAILABLE</code> flag controls whether sentiment features are computed.</li>
+</ul>
+</section>
+<section id="preprocessing-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="preprocessing-pipeline">Preprocessing Pipeline</h3>
+<ul>
+<li>Prepares all raw features for the model.</li>
+<li><code>n_pools</code> and <code>has_fgs</code> are in <code>NUMERIC_COLS</code>. The five <code>apif_pred_*</code> columns are commented out in <code>NUMERIC_COLS</code> – uncomment them in <code>football_hkjc_ml_pipeline_v3.py</code> S6 to activate them as model features when using <code>apif_enrichment.parquet</code>.</li>
+</ul>
+<pre><code>NUMERIC_COLS     -&gt; [impute median] -&gt; [StandardScaler]   -+
+CATEGORICAL_COLS -&gt; [to_categorical] -&gt; [impute] -&gt; [OHE]  +-&gt; feature matrix
+ORDINAL_COLS     -&gt; [impute] -&gt; [StandardScaler]          -+
+BINARY_COLS      -&gt; [impute]                              -+</code></pre>
+</section>
+<section id="model-architecture" class="level3">
+<h3 class="anchored" data-anchor-id="model-architecture">Model Architecture</h3>
+<ul>
+<li><strong>RegressorChain (default):</strong> Predicts in sequence: home odds first, then draw using home as input, then away using both. Forces the model to respect the overround constraint (<code>1/home + 1/draw + 1/away ≈ 1.10</code>).</li>
+<li><strong>Key hyperparameters:</strong> <code>iterations=900</code>, <code>learning_rate=0.04</code>, <code>depth=6</code>, <code>l2_leaf_reg=3.0</code>, <code>random_seed=42</code>.</li>
+</ul>
+</section>
+<section id="volume-sample-weights" class="level3">
+<h3 class="anchored" data-anchor-id="volume-sample-weights">Volume &amp; Sample Weights</h3>
+<ul>
+<li>Weights training rows by recency, team frequency, and market liquidity.</li>
+</ul>
+<pre><code>w = recency_weight * frequency_weight * liquidity_weight
+
+recency    = exp(-ln(2) * days_ago / 180)   # 180-day half-life
+frequency  ∝ abs(home_win_rate - 0.5) + abs(away_win_rate - 0.5)
+liquidity  ∝ 1 / overround</code></pre>
+</section>
+<section id="training-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="training-pipeline">Training Pipeline</h3>
+<ul>
+<li>Orchestrates the full training process. GCS sync before loading data and GCS upload of results after training.</li>
+<li>At the start of training, <code>sync_down()</code> pulls from GCS:</li>
+</ul>
+<pre><code>hkjc/fetched/  -&gt; data/hkjc/
+hkjc/training/ -&gt; data/hkjc/
+sportsapipro/  -&gt; data/sportsapipro/</code></pre>
+<p>After training: <code>mlruns/</code> synced to GCS; JSON training summary saved to <code>results/train/</code>.</p>
+<section id="build_training_dataset-enrichment-branches" class="level4">
+<h4 class="anchored" data-anchor-id="build_training_dataset-enrichment-branches"><code>build_training_dataset()</code> enrichment branches</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature group</th>
+<th><code>SP_SOURCE = "api"</code></th>
+<th><code>SP_SOURCE = "parquet"</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Form vectors</td>
+<td>Live API</td>
+<td>SP / APIF parquet lookup</td>
+</tr>
+<tr class="even">
+<td>H2H features</td>
+<td>Live API</td>
+<td>SP / APIF parquet lookup</td>
+</tr>
+<tr class="odd">
+<td>Squad availability</td>
+<td>Live API</td>
+<td>SP / APIF parquet lookup</td>
+</tr>
+<tr class="even">
+<td>SP / APIF cross-market odds</td>
+<td>Live <code>/bets/lines</code> or <code>/odds</code></td>
+<td><code>_lookup_sp_odds()</code></td>
+</tr>
+<tr class="odd">
+<td>Sentiment</td>
+<td><code>sp_fetch_news()</code> + NLP</td>
+<td>Neutral defaults</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="google-cloud-storage-integration" class="level3">
+<h3 class="anchored" data-anchor-id="google-cloud-storage-integration">Google Cloud Storage Integration</h3>
+<p><code>data/gcs_utils.py</code> provides a thin wrapper around the GCS Python SDK. All pipeline files import via <code>from data.gcs_utils import ...</code>. The pipeline degrades gracefully if GCS is unavailable.</p>
+<section id="bucket-structure-updated-for-v4" class="level4">
+<h4 class="anchored" data-anchor-id="bucket-structure-updated-for-v4">Bucket structure (updated for v4)</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Path</th>
+<th>Contents</th>
+<th>Written by</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>hkjc/raw/</code></td>
+<td><code>matchDetail_*.json</code> raw API responses</td>
+<td><code>fetch_hkjc_match_details.py</code></td>
+</tr>
+<tr class="even">
+<td><code>hkjc/fetched/</code></td>
+<td><code>matchDetail_*.parquet</code> flat tables</td>
+<td><code>fetch_hkjc_match_details.py</code></td>
+</tr>
+<tr class="odd">
+<td><code>hkjc/training/</code></td>
+<td><code>df_hkjc.parquet</code> historical data</td>
+<td>Manual <code>gcloud storage cp</code></td>
+</tr>
+<tr class="even">
+<td><code>sportsapipro/</code></td>
+<td><code>sportsapipro_data_odds.parquet</code> (SP), <code>apif_enrichment.parquet</code> (APIF), cache files for both</td>
+<td><code>sp_incremental_fetch.py</code>, <code>apif_incremental_fetch.py</code></td>
+</tr>
+<tr class="odd">
+<td><code>apifootball/</code></td>
+<td><code>coverage_report_*.json</code>, team ID and no-result caches</td>
+<td><code>api_football_evaluate.py</code></td>
+</tr>
+<tr class="even">
+<td><code>mlflow/</code></td>
+<td>MLflow run artifacts</td>
+<td><code>football_hkjc_ml_pipeline_v3.py</code> train</td>
+</tr>
+<tr class="odd">
+<td><code>results/train/</code></td>
+<td>JSON training summaries</td>
+<td><code>football_hkjc_ml_pipeline_v3.py</code> train</td>
+</tr>
+<tr class="even">
+<td><code>results/eval/</code></td>
+<td>JSON eval summaries + APIF coverage reports</td>
+<td><code>football_hkjc_ml_pipeline_v3.py</code> eval, <code>api_football_evaluate.py</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gcs_utils.py-function-reference" class="level4">
+<h4 class="anchored" data-anchor-id="gcs_utils.py-function-reference"><code>gcs_utils.py</code> function reference</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>upload_file(local_path, gcs_path)</code></td>
+<td>Upload one file</td>
+</tr>
+<tr class="even">
+<td><code>download_file(gcs_path, local_path, overwrite=False)</code></td>
+<td>Download one file; skip if exists</td>
+</tr>
+<tr class="odd">
+<td><code>sync_down(gcs_prefix, local_dir)</code></td>
+<td>Pull all files under prefix not already local</td>
+</tr>
+<tr class="even">
+<td><code>upload_dir(local_dir, gcs_prefix)</code></td>
+<td>Upload directory tree preserving structure</td>
+</tr>
+<tr class="odd">
+<td><code>log_run_results(run_id, metrics, params, mode, extra)</code></td>
+<td>Save JSON summary to GCS</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="setup-running" class="level2">
+<h2 class="anchored" data-anchor-id="setup-running">Setup &amp; Running</h2>
+<section id="step-1-install-python" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-install-python">Step 1 – Install Python</h3>
+<p>Requires Python 3.10 or higher.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-2-install-python-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-install-python-dependencies">Step 2 – Install Python dependencies</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Core ML and data</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install catboost xgboost scikit-learn pandas numpy requests httpx scipy pyarrow</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fuzzy name matching (also used by API-Football client)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install rapidfuzz</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># NLP (only needed when --sp-source api)</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install nltk spacy transformers sentence-transformers</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> spacy download en_core_web_sm</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Experiment tracking</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install mlflow</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># GCS integration</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install google-cloud-storage</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-3-install-node.js-and-set-up-the-fetch-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-install-node.js-and-set-up-the-fetch-pipeline">Step 3 – Install Node.js and set up the fetch pipeline</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">node</span> <span class="at">--version</span>   <span class="co"># requires v18+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> hkjc-api</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> hkjc-api <span class="kw">&amp;&amp;</span> <span class="ex">npx</span> ts-node <span class="at">--version</span> <span class="kw">&amp;&amp;</span> <span class="bu">cd</span> ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Bridge files in <code>hkjc_api_extract/</code>:</p>
+<pre><code>football_prediction_model_V2/
+  fetch_hkjc_match_details.py
+  hkjc_api_extract/
+    hkjc_match_list_bridge.ts
+    hkjc_match_details_bridge.ts
+  hkjc-api/           &lt;- external repo, do not touch
+    src/
+    tsconfig.json
+    package.json</code></pre>
+</section>
+<section id="step-4-set-up-enrichment-api-keys" class="level3">
+<h3 class="anchored" data-anchor-id="step-4-set-up-enrichment-api-keys">Step 4 – Set up enrichment API keys</h3>
+<p><strong>SportsAPIPro (existing – if not already configured):</strong></p>
+<p>Create <code>config/params_sapip.py</code> (gitignored):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>API_KEY <span class="op">=</span> <span class="st">"your_sportsapipro_key_here"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>API-Football (new parallel option):</strong></p>
+<p>Register at <code>https://dashboard.api-football.com/register</code> (free, no credit card).</p>
+<p>Create <code>config/params_apifootball.py</code> (gitignored):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>API_KEY <span class="op">=</span> <span class="st">"your_api_football_key_here"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Or export as environment variable:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">APIFOOTBALL_KEY</span><span class="op">=</span><span class="st">"your_api_football_key_here"</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export APIFOOTBALL_KEY="your_api_football_key_here"'</span> <span class="op">&gt;&gt;</span> ~/.bash_profile</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Verify API-Football connection:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> api_football_client <span class="im">import</span> APIFootballClient</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> APIFootballClient()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(client.check_quota())</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># {'plan': 'Free', 'requests_used': 1, 'requests_limit': 100, 'requests_remaining': 99}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-5-set-up-google-cloud-storage" class="level3">
+<h3 class="anchored" data-anchor-id="step-5-set-up-google-cloud-storage">Step 5 – Set up Google Cloud Storage</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">GOOGLE_APPLICATION_CREDENTIALS</span><span class="op">=</span><span class="st">"</span><span class="va">$HOME</span><span class="st">/.gcp/YOUR-KEY-FILE.json"</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">'export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.gcp/YOUR-KEY-FILE.json"'</span> <span class="op">&gt;&gt;</span> ~/.bash_profile</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> data/__init__.py</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="st">from data.gcs_utils import GCS_BUCKET</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="st">from google.cloud import storage</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="st">client = storage.Client()</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="st">print('Bucket exists:', client.bucket(GCS_BUCKET).exists())</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="step-6-running-the-pipeline" class="level3">
+<h3 class="anchored" data-anchor-id="step-6-running-the-pipeline">Step 6 – Running the pipeline</h3>
+<section id="daily-data-collection-workflow-v4" class="level4">
+<h4 class="anchored" data-anchor-id="daily-data-collection-workflow-v4">Daily data collection workflow (v4)</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Fetch current live HKJC matches</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> fetch_hkjc_match_details.py <span class="at">--live</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2a. Enrich with SportsAPIPro (existing)</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> sp_incremental_fetch.py <span class="at">--include-fetch-dir</span> data/hkjc</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2b. Enrich with API-Football (parallel option, free tier)</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> apif_incremental_fetch.py <span class="at">--include-fetch-dir</span> data/hkjc</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Train -- choose which enrichment parquet to use</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> football_hkjc_ml_pipeline_v3.py <span class="dt">\</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">--mode</span> train <span class="dt">\</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">--hkjc-source</span> fetch <span class="dt">\</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">--sp-parquet</span> data/sportsapipro/sportsapipro_data_odds.parquet   <span class="co"># SP</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># --sp-parquet data/sportsapipro/apif_enrichment.parquet        # APIF</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Evaluate</span></span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> football_hkjc_ml_pipeline_v3.py <span class="dt">\</span></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">--mode</span> eval <span class="dt">\</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">--hkjc-source</span> fetch <span class="dt">\</span></span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">--sp-parquet</span> data/sportsapipro/apif_enrichment.parquet</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Predict upcoming matches</span></span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> football_hkjc_ml_pipeline_v3.py <span class="dt">\</span></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">--mode</span> predict <span class="dt">\</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">--hkjc-source</span> fetch <span class="dt">\</span></span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">--sp-parquet</span> data/sportsapipro/apif_enrichment.parquet <span class="dt">\</span></span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">--predict-start</span> 2026-05-19 <span class="dt">\</span></span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">--predict-end</span>   2026-05-25</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="cli-flag-reference-ml-pipeline" class="level4">
+<h4 class="anchored" data-anchor-id="cli-flag-reference-ml-pipeline">CLI flag reference (ML pipeline)</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Choices</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>--mode</code></td>
+<td><code>train</code>, <code>predict</code>, <code>eval</code></td>
+<td><code>train</code></td>
+<td>Pipeline mode</td>
+</tr>
+<tr class="even">
+<td><code>--hkjc-source</code></td>
+<td><code>api</code>, <code>parquet</code>, <code>fetch</code></td>
+<td><code>parquet</code></td>
+<td>HKJC data source</td>
+</tr>
+<tr class="odd">
+<td><code>--sp-source</code></td>
+<td><code>api</code>, <code>parquet</code>, <code>api-incremental</code></td>
+<td><code>parquet</code></td>
+<td>SP enrichment source</td>
+</tr>
+<tr class="even">
+<td><code>--sp-parquet</code></td>
+<td>any path</td>
+<td><code>data/sportsapipro/sportsapipro_data_odds.parquet</code></td>
+<td>SP / APIF odds parquet path</td>
+</tr>
+<tr class="odd">
+<td><code>--fetch-dir</code></td>
+<td>any path</td>
+<td><code>data/hkjc</code></td>
+<td>Directory of <code>matchDetail_*.parquet</code> files</td>
+</tr>
+<tr class="even">
+<td><code>--hkjc-parquet</code></td>
+<td>any path</td>
+<td><code>data/hkjc/df_hkjc.parquet</code></td>
+<td>HKJC parquet path (parquet mode)</td>
+</tr>
+<tr class="odd">
+<td><code>--predict-start</code></td>
+<td>YYYY-MM-DD</td>
+<td><code>2025-04-01</code></td>
+<td>Prediction window start</td>
+</tr>
+<tr class="even">
+<td><code>--predict-end</code></td>
+<td>YYYY-MM-DD</td>
+<td><code>2025-04-14</code></td>
+<td>Prediction window end</td>
+</tr>
+<tr class="odd">
+<td><code>--sp-batch-size</code></td>
+<td>int</td>
+<td><code>10</code></td>
+<td>Matches per SP API batch (api-incremental)</td>
+</tr>
+<tr class="even">
+<td><code>--sp-batch-sleep</code></td>
+<td>float</td>
+<td><code>2.0</code></td>
+<td>Seconds between SP batches</td>
+</tr>
+<tr class="odd">
+<td><code>--sp-fuzzy-threshold</code></td>
+<td>int</td>
+<td><code>80</code></td>
+<td>Fuzzy match threshold (api-incremental)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="evaluation-and-future-improvements" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-and-future-improvements">Evaluation and Future Improvements</h2>
+<ul>
+<li>Limitations on <code>[hkjc-api](https://github.com/Bobosky2005/hkjc-api)</code> mean HKJC historical and significantly further future data cannot be acquired; difficult to backtest or test on unseen data, and generally difficult to acquire HKJC data to begn with.</li>
+<li>Difficult to acquire football odds data; the most reliable source of football betting odds, Opta data, is strictly locked behind an enterprise-level B2B paywall and is not available via public, open-access, or low-cost hobbyist tiers, and other providers found are of questionable credibility and/or far too costly for a smaller project.</li>
+<li>Questionable if prior betting odds and corresponding match information would even be sufficient for predicting future football betting odds, or are even in the right direction for such.</li>
+<li>Could be more beneficial to acquire movement data within each match and utilise a machine learning method that could account for such.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/Nick-2003\.github\.io\/Nick-2003_Portfolio\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../technical_projects/x_stock_scrape.html" class="pagination-link" aria-label="x_stock_scrape">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">x_stock_scrape</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../technical_projects/lloyds_datasci-forage.html" class="pagination-link" aria-label="Lloyds Banking Group Data Science Job Simulation">
+        <span class="nav-page-text">Lloyds Banking Group Data Science Job Simulation</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/edit/main/technical_projects/hkfc_football_odds_prediction.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/blob/main/technical_projects/hkfc_football_odds_prediction.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/Nick-2003/Nick-2003_Portfolio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

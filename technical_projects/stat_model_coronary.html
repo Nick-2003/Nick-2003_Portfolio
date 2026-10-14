@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Statistical Modelling of Coronary Heart Disease Diagnosis Report – Nick-2003_Portfolio</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -65,18 +71,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../technical_projects/data_viz_coronary.html" rel="next">
-<link href="../technical_projects/stat_inference_pm25.html" rel="prev">
+<link href="../technical_projects/stat_inference_pm25.html" rel="next">
+<link href="../technical_projects/data_viz_coronary.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -119,7 +125,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -209,80 +215,26 @@ window.Quarto = {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/inventory_system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inventory System</span></a>
+  <a href="../technical_projects/agent_broker_original.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">agent_broker_original</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/stat_inference_pm25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Inference of PM2.5 Concentrations Report</span></a>
+  <a href="../technical_projects/x_stock_scrape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">x_stock_scrape</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/stat_model_coronary.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Statistical Modelling of Coronary Heart Disease Diagnosis Report</span></a>
+  <a href="../technical_projects/hkfc_football_odds_prediction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">hkfc_football_odds_prediction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/data_viz_coronary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Visualisation of Coronary Heart Disease Diagnosis Report</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/jpmorgan_quantitative-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JPMorgan Chase &amp; Co. Quantitative Research Virtual Experience Program</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/bcg_genai-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">BCG GenAI Job Simulation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/stat_relationships_breast_cancer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/urban_forest_viz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Urban Forest Visualisations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/insurance_sql.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Health Insurance Database Management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/diabetes_risk_report_workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Modelling of Diabetes Risk Report and Workflow</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/ba_datasci-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">British Airways Data Science Job Simulation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/ea_software_eng-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Electronic Arts Software Engineering Virtual Experience Program</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/quantium_analytics-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quantium Data Analytics Job Simulation</span></a>
+  <a href="../technical_projects/lloyds_datasci-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lloyds Banking Group Data Science Job Simulation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -293,8 +245,80 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/lloyds_datasci-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lloyds Banking Group Data Science Job Simulation</span></a>
+  <a href="../technical_projects/quantium_analytics-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantium Data Analytics Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/ea_software_eng-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electronic Arts Software Engineering Virtual Experience Program</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/ba_datasci-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">British Airways Data Science Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/diabetes_risk_report_workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Modelling of Diabetes Risk Report and Workflow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/insurance_sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health Insurance Database Management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/urban_forest_viz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Urban Forest Visualisations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/stat_relationships_breast_cancer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/bcg_genai-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BCG GenAI Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/jpmorgan_quantitative-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JPMorgan Chase &amp; Co. Quantitative Research Virtual Experience Program</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/data_viz_coronary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Visualisation of Coronary Heart Disease Diagnosis Report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/stat_model_coronary.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Statistical Modelling of Coronary Heart Disease Diagnosis Report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/stat_inference_pm25.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Inference of PM2.5 Concentrations Report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/inventory_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inventory System</span></a>
   </div>
 </li>
     </ul>
@@ -353,7 +377,7 @@ window.Quarto = {
 <p>For our research project, we have selected datasets containing processed angiography data on patients in various clinics in 1988, applying a probability model derived from test results of 303 patients at the Cleveland Clinic in Cleveland, Ohio to generate and estimate results for the diagnosis of coronary heart disease (Janosi, Steinbrunn, Pfisterer, Detrano, 1989). The datasets include the following patients undergoing angiography: - 303 patients at the Cleveland Clinic in Cleveland, Ohio (Original dataset for model) - 425 patients at the Hungarian Institute of Cardiology in Budapest, Hungary - 200 patients at the Veterans Administration Medical Center in Long Beach, California - 143 patients from the University Hospitals in Zurich and Basel, Switzerland</p>
 <p>These datasets were retrieved from the <a href="https://archive.ics.uci.edu/dataset/45/heart+disease">Heart Disease</a> dataset from UCI machine learning repository, and converted from .data files to CSV files with Excel. The dataset obtained contains the following 14 attributes out of 76 attributes from the initial dataset for each patient:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myTable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myTable <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">c</span>(<span class="st">"age"</span>, <span class="st">"sex"</span>, <span class="st">"cp"</span>, <span class="st">"trestbps"</span>, <span class="st">"chol"</span>, <span class="st">"fbs"</span>, <span class="st">"restecg"</span>, <span class="st">"thalach"</span>, <span class="st">"exang"</span>, <span class="st">"oldpeak"</span>, <span class="st">"slope"</span>, <span class="st">"ca"</span>, <span class="st">"thal"</span>, <span class="st">"num"</span>),</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Definition =</span> <span class="fu">c</span>(<span class="st">"Age"</span>, <span class="st">"Sex"</span>, <span class="st">"Chest pain type"</span>, <span class="st">"Resting blood pressure on admission to hospital"</span>, <span class="st">"Serum cholesterol"</span>, <span class="st">"Presence of high blood sugar"</span>, <span class="st">"Resting electrocardiographic results"</span>, <span class="st">"Maximum heart rate achieved"</span>, <span class="st">"Exercise induced angina"</span>, <span class="st">"ST depression induced by exercise relative to rest"</span>, <span class="st">"Slope of the peak exercise ST segment"</span>, <span class="st">"Number of major vessels coloured by fluoroscopy"</span>, <span class="st">"Presence of defect"</span>, <span class="st">"Diagnosis of heart disease"</span>),</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Type =</span> <span class="fu">c</span>(<span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Numerical"</span>, <span class="st">"Categorical"</span>, <span class="st">"Categorical"</span>),</span>
@@ -361,7 +385,7 @@ window.Quarto = {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Categories =</span> <span class="fu">c</span>(<span class="st">"N/A"</span>, <span class="st">"0: Female; 1: Male"</span>, <span class="st">"1: Typical angina; 2: Atypical angina; 3: Non-anginal pain; 4: Asymptomatic"</span>, <span class="st">"N/A"</span>, <span class="st">"N/A"</span>, <span class="st">"0: False; 1: True"</span>, <span class="st">"0: Normal; 1: Having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of &gt; 0.05 mV); 2: Showing probable or definite left ventricular hypertrophy by Estes' criteria"</span>, <span class="st">"N/A"</span>, <span class="st">"0: No; 1: Yes"</span>, <span class="st">"N/A"</span>, <span class="st">"1: Upsloping; 2: Flat; 3: Downsloping"</span>, <span class="st">"Range from 1-3"</span>, <span class="st">"3: Normal; 6: Fixed defect; 7: Reversible defect"</span>, <span class="st">"0: &lt; 50% diameter narrowing; 1+: &gt; 50% diameter narrowing"</span>),</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">AnyMissingValues =</span> <span class="fu">c</span>(<span class="st">"No"</span>, <span class="st">"No"</span>, <span class="st">"No"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>myTable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>myTable</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Variable                                         Definition        Type
 1       age                                                Age   Numerical
@@ -529,13 +553,14 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -879,13 +904,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../technical_projects/stat_inference_pm25.html" class="pagination-link" aria-label="Statistical Inference of PM2.5 Concentrations Report">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Statistical Inference of PM2.5 Concentrations Report</span>
+      <a href="../technical_projects/data_viz_coronary.html" class="pagination-link" aria-label="Data Visualisation of Coronary Heart Disease Diagnosis Report">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Visualisation of Coronary Heart Disease Diagnosis Report</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../technical_projects/data_viz_coronary.html" class="pagination-link" aria-label="Data Visualisation of Coronary Heart Disease Diagnosis Report">
-        <span class="nav-page-text">Data Visualisation of Coronary Heart Disease Diagnosis Report</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../technical_projects/stat_inference_pm25.html" class="pagination-link" aria-label="Statistical Inference of PM2.5 Concentrations Report">
+        <span class="nav-page-text">Statistical Inference of PM2.5 Concentrations Report</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

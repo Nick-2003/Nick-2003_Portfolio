@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Statistical Modelling of Diabetes Risk Report and Workflow – Nick-2003_Portfolio</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -24,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -50,18 +55,18 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../technical_projects/ba_datasci-forage.html" rel="next">
-<link href="../technical_projects/insurance_sql.html" rel="prev">
+<link href="../technical_projects/insurance_sql.html" rel="next">
+<link href="../technical_projects/ba_datasci-forage.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -165,80 +170,26 @@ div.csl-indent {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/inventory_system.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Inventory System</span></a>
+  <a href="../technical_projects/agent_broker_original.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">agent_broker_original</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/stat_inference_pm25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Inference of PM2.5 Concentrations Report</span></a>
+  <a href="../technical_projects/x_stock_scrape.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">x_stock_scrape</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/stat_model_coronary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Modelling of Coronary Heart Disease Diagnosis Report</span></a>
+  <a href="../technical_projects/hkfc_football_odds_prediction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">hkfc_football_odds_prediction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/data_viz_coronary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Visualisation of Coronary Heart Disease Diagnosis Report</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/jpmorgan_quantitative-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JPMorgan Chase &amp; Co. Quantitative Research Virtual Experience Program</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/bcg_genai-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">BCG GenAI Job Simulation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/stat_relationships_breast_cancer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/urban_forest_viz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Urban Forest Visualisations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/insurance_sql.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Health Insurance Database Management</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/diabetes_risk_report_workflow.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Statistical Modelling of Diabetes Risk Report and Workflow</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/ba_datasci-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">British Airways Data Science Job Simulation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/ea_software_eng-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Electronic Arts Software Engineering Virtual Experience Program</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../technical_projects/quantium_analytics-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Quantium Data Analytics Job Simulation</span></a>
+  <a href="../technical_projects/lloyds_datasci-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lloyds Banking Group Data Science Job Simulation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -249,8 +200,80 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../technical_projects/lloyds_datasci-forage.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lloyds Banking Group Data Science Job Simulation</span></a>
+  <a href="../technical_projects/quantium_analytics-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Quantium Data Analytics Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/ea_software_eng-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Electronic Arts Software Engineering Virtual Experience Program</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/ba_datasci-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">British Airways Data Science Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/diabetes_risk_report_workflow.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Statistical Modelling of Diabetes Risk Report and Workflow</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/insurance_sql.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Health Insurance Database Management</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/urban_forest_viz.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Urban Forest Visualisations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/stat_relationships_breast_cancer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Inference and Modelling of Breast Invasive Ductal Carcinoma Treatments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/bcg_genai-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">BCG GenAI Job Simulation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/jpmorgan_quantitative-forage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JPMorgan Chase &amp; Co. Quantitative Research Virtual Experience Program</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/data_viz_coronary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Visualisation of Coronary Heart Disease Diagnosis Report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/stat_model_coronary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Modelling of Coronary Heart Disease Diagnosis Report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/stat_inference_pm25.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statistical Inference of PM2.5 Concentrations Report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../technical_projects/inventory_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inventory System</span></a>
   </div>
 </li>
     </ul>
@@ -365,7 +388,7 @@ div.csl-indent {
 </section>
 <section id="impact-and-reflection" class="level2">
 <h2 class="anchored" data-anchor-id="impact-and-reflection">Impact and Reflection</h2>
-<p>Our model was optimized for recall through hyperparameter tuning, with cross-validation used to evaluate model performance during the process. However, despite our results, the model falls short of what is expected in clinical applications. For example, more complex models in the literature which incorporate advanced feature selection techniques <span class="citation" data-cites="Alhussan2023">(<a href="#ref-Alhussan2023" role="doc-biblioref">Alhussan et al. 2023</a>)</span> or Generative Adversarial Networks (GANs) <span class="citation" data-cites="Feng2023">(<a href="#ref-Feng2023" role="doc-biblioref">Feng, Cai, and Xin 2023</a>)</span> can achieve recall and AUC scores upwards of 97%. Our findings serve as a proof of concept for the feasibility of classification models to predict the risk of diabetes based on publicly available health data. Since our model did relatively well compared to random guessing, this indicates potential correlations between health indicators and the likelihood of developing diabetes. With this information, people might be more aware of their health and lifestyle choices. They may be inclined to work harder to reduce cholesterol levels, manage high blood pressure, keep alcohol consumption under control and maintain a healthy lifestyle. Thus, this may help decrease the global mortality rate from diabetes through early interventions and lifestyle changes.</p>
+<p>Our model was optimized for recall through hyperparameter tuning, with cross-validation used to evaluate model performance during the process. However, despite our results, the model falls short of what is expected in clinical applications. For example, more complex models in the literature which incorporate advanced feature selection techniques <span class="citation" data-cites="Alhussan2023">(<a href="#ref-Alhussan2023" role="doc-biblioref">Alhussan et al. 2023</a>)</span> or Generative Adversarial Networks (GANs) <span class="citation" data-cites="Feng2023">(<a href="#ref-Feng2023" role="doc-biblioref">Feng et al. 2023</a>)</span> can achieve recall and AUC scores upwards of 97%. Our findings serve as a proof of concept for the feasibility of classification models to predict the risk of diabetes based on publicly available health data. Since our model did relatively well compared to random guessing, this indicates potential correlations between health indicators and the likelihood of developing diabetes. With this information, people might be more aware of their health and lifestyle choices. They may be inclined to work harder to reduce cholesterol levels, manage high blood pressure, keep alcohol consumption under control and maintain a healthy lifestyle. Thus, this may help decrease the global mortality rate from diabetes through early interventions and lifestyle changes.</p>
 <p>Future directions could include how we can improve our classification method to more accurately predict the risk of diabetes in patients. We can explore more rigorous feature selection techniques or implement other machine learning models such as boosted trees to improve our classification performance. In the context of the healthcare system, we can look to integrate classification models into the diagnosis process to help detect diabetes early to improve patient outcomes.</p>
 </section>
 <section id="references" class="level2">
@@ -375,12 +398,12 @@ div.csl-indent {
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-Alhussan2023" class="csl-entry" role="listitem">
-Alhussan, A. A., A. A. Abdelhamid, S. K. Towfek, A. Ibrahim, M. M. Eid, D. S. Khafaga, and M. S. Saraya. 2023. <span>“Classification of Diabetes Using Feature Selection and Hybrid Al-Biruni Earth Radius and Dipper Throated Optimization.”</span> <em>Diagnostics</em> 13 (12): 2038. <a href="https://doi.org/10.3390/diagnostics13122038">https://doi.org/10.3390/diagnostics13122038</a>.
+Alhussan, A. A., A. A. Abdelhamid, S. K. Towfek, et al. 2023. <span>“Classification of Diabetes Using Feature Selection and Hybrid Al-Biruni Earth Radius and Dipper Throated Optimization.”</span> <em>Diagnostics</em> 13 (12): 2038. <a href="https://doi.org/10.3390/diagnostics13122038">https://doi.org/10.3390/diagnostics13122038</a>.
 </div>
 <div id="ref-CDC2023" class="csl-entry" role="listitem">
-Centers for Disease Control and Prevention. 2023. <span>“CDC Diabetes Health Indicators [Data Set].”</span> UCI Machine Learning Repository. <a href="https://doi.org/10.24432/C53919">https://doi.org/10.24432/C53919</a>.
+Centers for Disease Control and Prevention. 2023. <em>CDC Diabetes Health Indicators [Data Set]</em>. UCI Machine Learning Repository. <a href="https://doi.org/10.24432/C53919">https://doi.org/10.24432/C53919</a>.
 </div>
 <div id="ref-Feng2023" class="csl-entry" role="listitem">
 Feng, X., Y. Cai, and R. Xin. 2023. <span>“Optimizing Diabetes Classification with a Machine Learning-Based Framework.”</span> <em>BMC Bioinformatics</em> 24 (1). <a href="https://doi.org/10.1186/s12859-023-05467-x">https://doi.org/10.1186/s12859-023-05467-x</a>.
@@ -437,13 +460,14 @@ Feng, X., Y. Cai, and R. Xin. 2023. <span>“Optimizing Diabetes Classification 
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -787,13 +811,13 @@ Feng, X., Y. Cai, and R. Xin. 2023. <span>“Optimizing Diabetes Classification 
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../technical_projects/insurance_sql.html" class="pagination-link" aria-label="Health Insurance Database Management">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Health Insurance Database Management</span>
+      <a href="../technical_projects/ba_datasci-forage.html" class="pagination-link" aria-label="British Airways Data Science Job Simulation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">British Airways Data Science Job Simulation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../technical_projects/ba_datasci-forage.html" class="pagination-link" aria-label="British Airways Data Science Job Simulation">
-        <span class="nav-page-text">British Airways Data Science Job Simulation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../technical_projects/insurance_sql.html" class="pagination-link" aria-label="Health Insurance Database Management">
+        <span class="nav-page-text">Health Insurance Database Management</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
