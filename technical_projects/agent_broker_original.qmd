@@ -1,5 +1,5 @@
 ---
-title: "agent_broker_original"
+title: "Simple Agentic Brokerage Chatbot"
 format: 
   html:
     code-links:

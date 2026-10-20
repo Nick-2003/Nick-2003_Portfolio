@@ -1,5 +1,5 @@
 ---
-title: "x_stock_scrape"
+title: "X Stock Scraper"
 format: 
   html:
     code-links:

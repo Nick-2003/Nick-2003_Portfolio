@@ -1,5 +1,5 @@
 ---
-title: "hkfc_football_odds_prediction"
+title: "HKFC Foobtall Odds Prediction Model"
 format: 
   html:
     code-links:
